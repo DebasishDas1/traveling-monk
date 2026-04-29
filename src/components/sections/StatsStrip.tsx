@@ -1,40 +1,69 @@
-'use client'
+"use client";
 
-import React, { useEffect, useState, useRef } from 'react'
-import { motion, useInView, animate } from 'framer-motion'
+import { useEffect, useState, useRef } from "react";
+import { useInView, animate } from "framer-motion";
+import { cn } from "@/lib/utils";
 
-const StatItem = ({ value, label, suffix = "" }: { value: number, label: string, suffix?: string }) => {
-  const [count, setCount] = useState(0)
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+const StatItem = ({
+  value,
+  label,
+  suffix = "",
+}: {
+  value: number;
+  label: string;
+  suffix?: string;
+}) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   useEffect(() => {
     if (isInView) {
       const controls = animate(0, value, {
         duration: 2,
         ease: "easeOut",
-        onUpdate: (latest) => setCount(Math.floor(latest) === latest ? latest : Number(latest.toFixed(1))),
-      })
-      return () => controls.stop()
+        onUpdate: (latest) =>
+          setCount(
+            Math.floor(latest) === latest ? latest : Number(latest.toFixed(1)),
+          ),
+      });
+      return () => controls.stop();
     }
-  }, [isInView, value])
+  }, [isInView, value]);
 
   return (
-    <div ref={ref} className="text-center flex flex-col items-center py-12 px-4 border-l border-white/5 first:border-l-0">
-      <div className="font-display text-5xl md:text-6xl text-saffron mb-2">
-        {count}{suffix}
+    <div
+      ref={ref}
+      className={cn(
+        "relative flex flex-col items-center justify-center",
+        "py-14 px-6 text-center",
+      )}
+    >
+      {/* ✨ Subtle divider */}
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 h-12 w-px bg-linear-to-b from-transparent via-forest/20 to-transparent first:hidden" />
+
+      {/* 🔢 Number */}
+      <div className="font-display text-5xl md:text-7xl font-semibold text-forest tracking-tight">
+        {count}
+        <span className="text-saffron ml-1">{suffix}</span>
       </div>
-      <div className="text-white/40 text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold">
+
+      {/* 🏷 Label */}
+      <div className="mt-3 text-sm md:text-base text-forest/60 tracking-wide">
         {label}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export const StatsStrip = () => {
   return (
-    <section className="bg-[#1a140f] border-t border-white/5">
-      <div className="container max-w-6xl mx-auto">
+    <section className="relative py-10">
+      {/* 🌾 Background layers */}
+      <div className="absolute inset-0 backdrop-blur-xl" />
+
+      {/* Content */}
+      <div className="relative container max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4">
           <StatItem value={47} label="Treks Completed" suffix="+" />
           <StatItem value={600} label="Lives Changed" suffix="+" />
@@ -43,5 +72,5 @@ export const StatsStrip = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

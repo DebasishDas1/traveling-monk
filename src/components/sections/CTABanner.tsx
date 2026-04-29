@@ -1,64 +1,92 @@
 "use client";
 
-import React, { useRef } from "react";
+import { useRef, useMemo } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useReducedMotion,
+} from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 export const CTABanner = () => {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
+  // 🧠 Respect user's motion preference
+  const shouldReduceMotion = useReducedMotion();
+
+  const y = useTransform(
+    scrollYProgress,
+    [0, 1],
+    shouldReduceMotion ? ["0%", "0%"] : ["-20%", "20%"],
+  );
+
+  // 🧠 Static content memo (tiny optimization)
+  const content = useMemo(
+    () => ({
+      title: "Ready to find your way?",
+      description:
+        "Join our upcoming seasonal treks and begin your journey of transformation. Limited spots available for small group experiences.",
+    }),
+    [],
+  );
 
   return (
     <section
       ref={containerRef}
       className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden"
     >
-      {/* Parallax Background */}
+      {/* 🌄 Parallax Background */}
       <motion.div
         style={{ y }}
-        className="absolute inset-0 z-0 h-[140%] top-[-20%]"
+        className="absolute inset-0 z-0 h-[140%] top-[-20%] will-change-transform"
       >
         <Image
           src="https://images.unsplash.com/photo-1434394354979-a235cd36269d?auto=format&fit=crop&q=80&w=2000"
           alt="Mountain landscape"
           fill
+          priority
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-forest/50" />
       </motion.div>
 
+      {/* ✍️ Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.95 }}
+          whileInView={shouldReduceMotion ? {} : { opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="text-4xl md:text-6xl text-white font-display italic mb-6">
-            Ready to find your way?
+            {content.title}
           </h2>
+
           <p className="text-white/80 text-lg md:text-xl font-sans font-light max-w-2xl mx-auto mb-10 leading-relaxed">
-            Join our upcoming seasonal treks and begin your journey of
-            transformation. Limited spots available for small group experiences.
+            {content.description}
           </p>
+
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button
               variant="saffron"
               size="lg"
-              className="h-14 px-10 rounded-full font-bold uppercase tracking-widest text-sm"
+              className="h-14 px-10 rounded-full font-bold uppercase tracking-widest text-sm focus-visible:ring-2 focus-visible:ring-white"
             >
               Book Your Trek
             </Button>
+
             <Button
               variant="outline"
               size="lg"
-              className="h-14 px-10 rounded-full border-white text-white hover:bg-white hover:text-forest transition-colors font-bold uppercase tracking-widest text-sm"
+              className="h-14 px-10 rounded-full font-bold uppercase tracking-widest text-sm focus-visible:ring-2 focus-visible:ring-white"
             >
               Request Custom Trip
             </Button>

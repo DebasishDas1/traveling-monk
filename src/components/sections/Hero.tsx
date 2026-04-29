@@ -24,7 +24,7 @@ export const Hero = () => {
       {/* Background Image Wrapper */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1551884831-bbf3cdc6469e?auto=format&fit=crop&q=80&w=2400"
+          src="/images/treks/hero-pic.jpg"
           alt="The Traveling Monk Hero"
           fill
           priority
@@ -92,7 +92,7 @@ export const Hero = () => {
             <Button
               variant="outline"
               size="lg"
-              className="min-w-[180px] h-12 rounded-full border-white text-white hover:bg-white hover:text-forest transition-colors font-bold uppercase tracking-widest"
+              className="min-w-[180px] h-12 rounded-full border-white font-bold uppercase tracking-widest"
             >
               Our Story
             </Button>

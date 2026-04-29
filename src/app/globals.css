@@ -16,6 +16,11 @@
   --color-forest: #0B2019;
   --color-saffron: #F5A623;
   --color-parchment: #DBC8AC;
+  --color-monk-dark: #1a140f;
+  --color-monk-muted: #8c7851;
+  --color-monk-beige: #dad0be;
+  --color-monk-brown-deep: #3b2412;
+  --color-monk-brown-warm: #4a2e16;
 
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
