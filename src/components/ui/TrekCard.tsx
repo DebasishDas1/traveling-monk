@@ -35,84 +35,52 @@ export const TrekCard = ({ trek, variant = "default" }: TrekCardProps) => {
     <motion.div
       whileHover={{ y: -5 }}
       transition={{ duration: 0.3 }}
-      className="h-full"
+      className="h-full group cursor-pointer"
+      onClick={handleClick}
     >
-      <Card
-        onClick={handleClick}
-        className="group relative h-full overflow-hidden border-t-2 border-t-saffron rounded-xl bg-white shadow-md hover:shadow-xl transition-all cursor-pointer flex flex-col"
-      >
-        {/* Image Area */}
-        <div className="relative aspect-3/4 overflow-hidden">
-          {/* <Image
-            src={trek.image}
-            alt={trek.name}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-110"
-          /> */}
+      <div className="relative aspect-[4/5] overflow-hidden rounded-lg mb-6">
+        <Image
+          src={trek.image}
+          alt={trek.name}
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        {/* Tier Badge */}
+        <div className="absolute top-4 right-4">
+          <Badge className="bg-saffron text-forest border-none px-3 py-1 text-[10px] uppercase tracking-widest font-bold rounded-sm shadow-lg">
+            {trek.tier === 'Standard' ? 'Weekend' : trek.tier}
+          </Badge>
+        </div>
+        {/* Overlay Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      </div>
 
-          {/* Saffron Stripe Hover Effect */}
-          <div className="absolute inset-x-0 bottom-0 h-12 bg-saffron translate-y-full transition-transform duration-300 group-hover:translate-y-0 flex items-center justify-center">
-            <span className="text-forest font-bold text-sm uppercase tracking-widest">
-              View Trek →
+      <div className="space-y-4">
+        <h3 className="font-display text-3xl text-forest leading-tight">
+          {trek.name}
+        </h3>
+        
+        <div className="flex items-center gap-3 text-[11px] text-[#8c7851] uppercase tracking-[0.2em] font-bold">
+          <span>{trek.duration}</span>
+          <span className="w-1 h-1 rounded-full bg-[#8c7851]/30" />
+          <span>{trek.altitude}</span>
+          <span className="w-1 h-1 rounded-full bg-[#8c7851]/30" />
+          <span>{trek.groupSize}</span>
+        </div>
+
+        <div className="flex flex-col gap-3 pt-2">
+          <div className="flex items-baseline gap-2">
+            <span className="text-[#8c7851] text-xs font-bold uppercase tracking-widest">From</span>
+            <span className="text-saffron font-display text-3xl">
+              ₹{trek.price.toLocaleString()}
             </span>
           </div>
-
-          {/* Urgency Badge */}
-          {trek.spotsLeft < 4 && (
-            <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-md flex items-center gap-1.5 shadow-sm">
-              <span className="size-2 rounded-full bg-red-500 animate-pulse" />
-              <span className="text-[10px] font-bold text-red-600 uppercase tracking-tighter">
-                Only {trek.spotsLeft} spots
-              </span>
-            </div>
-          )}
-        </div>
-
-        {/* Content Area */}
-        <div className="p-5 flex flex-col grow">
-          <div className="flex items-center gap-2 mb-3">
-            <Badge
-              variant="outline"
-              className={cn(
-                "text-[10px] uppercase tracking-wider font-bold px-2 py-0.5",
-                difficultyColor[trek.difficulty],
-              )}
-            >
-              {trek.difficulty}
-            </Badge>
-            <Badge
-              variant="secondary"
-              className="text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 bg-forest/5 text-forest/60 border-forest/10"
-            >
-              {trek.tier}
-            </Badge>
-          </div>
-
-          <h3 className="font-display text-2xl text-forest mb-1 leading-tight group-hover:text-saffron transition-colors">
-            {trek.name}
-          </h3>
-          <p className="text-stone-500 text-sm font-light mb-4 line-clamp-2">
-            {trek.tagline}
-          </p>
-
-          <div className="mt-auto">
-            <div className="flex items-center gap-2 text-[11px] text-stone-400 uppercase tracking-widest mb-3">
-              <span>{trek.duration}</span>
-              <span className="size-1 rounded-full bg-stone-300" />
-              <span>{trek.altitude}</span>
-              <span className="size-1 rounded-full bg-stone-300" />
-              <span>{trek.groupSize}</span>
-            </div>
-
-            <div className="flex items-baseline gap-1">
-              <span className="text-stone-400 text-xs font-light">From</span>
-              <span className="text-saffron font-display text-2xl">
-                ₹{trek.price.toLocaleString()}
-              </span>
-            </div>
+          
+          <div className="flex items-center gap-2 text-forest font-bold uppercase tracking-widest text-[10px] group-hover:text-saffron transition-colors">
+            Explore trek <span className="text-lg">→</span>
           </div>
         </div>
-      </Card>
+      </div>
     </motion.div>
   );
 };

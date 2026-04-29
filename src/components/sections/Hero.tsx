@@ -24,7 +24,7 @@ export const Hero = () => {
       {/* Background Image Wrapper */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
-          src="/images/hero.jpg"
+          src="https://images.unsplash.com/photo-1551884831-bbf3cdc6469e?auto=format&fit=crop&q=80&w=2400"
           alt="The Traveling Monk Hero"
           fill
           priority

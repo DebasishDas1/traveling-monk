@@ -11,13 +11,13 @@ export const FeaturedTreks = () => {
   const treks = getFeaturedTreks()
 
   return (
-    <section className="py-24 px-6 bg-stone-50">
-      <div className="container mx-auto max-w-7xl">
-        <div className="mb-16 text-center">
-          <span className="text-saffron text-xs font-bold uppercase tracking-[0.3em] block mb-4">
-            Curated Experiences
+    <section className="py-32 px-6 bg-parchment-texture relative overflow-hidden">
+      <div className="container mx-auto max-w-7xl relative z-10">
+        <div className="mb-20 text-center">
+          <span className="text-[#8c7851] text-[10px] font-bold uppercase tracking-[0.4em] block mb-4">
+            Upcoming Experiences
           </span>
-          <h2 className="text-4xl md:text-5xl text-forest font-display italic">
+          <h2 className="text-5xl md:text-6xl text-forest font-display italic">
             Choose your trail.
           </h2>
         </div>
