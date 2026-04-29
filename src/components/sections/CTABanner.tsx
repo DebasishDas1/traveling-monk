@@ -48,7 +48,7 @@ export const CTABanner = () => {
         className="absolute inset-0 z-0 h-[140%] top-[-20%] will-change-transform"
       >
         <Image
-          src="https://images.unsplash.com/photo-1434394354979-a235cd36269d?auto=format&fit=crop&q=80&w=2000"
+          src="/CTABanner_pic.jpg"
           alt="Mountain landscape"
           fill
           priority

@@ -4,7 +4,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Explore Treks | The Traveling Monk",
-  description: "Browse our curated seasonal treks through the Himalayas and beyond. Beginner to advanced expeditions available.",
+  description:
+    "Browse our curated seasonal treks through the Himalayas and beyond. Beginner to advanced expeditions available.",
 };
 
 export default function TreksPage() {
@@ -29,7 +30,8 @@ export default function TreksPage() {
             Find your trail.
           </h1>
           <p className="font-sans font-light text-white/80 text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto drop-shadow-lg">
-            Every trek is designed to push you further than you thought possible.
+            Every trek is designed to push you further than you thought
+            possible.
           </p>
         </div>
       </section>

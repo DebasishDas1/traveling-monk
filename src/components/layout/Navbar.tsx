@@ -26,7 +26,6 @@ const navLinks = [
   { name: "Treks", href: "/treks" },
   { name: "About", href: "/about" },
   { name: "Community", href: "/community" },
-  { name: "Corporate", href: "/corporate" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -52,9 +51,14 @@ export const Navbar = () => {
   return (
     <nav
       className={cn(
-        "fixed top-0 inset-x-0 z-50 transition-all duration-500 px-6",
+        "fixed top-0 inset-x-0 z-50 px-6 transition-all duration-500",
         navScrolled
-          ? "bg-parchment/95 backdrop-blur-md py-3 shadow-sm"
+          ? [
+              "py-3",
+              "bg-parchment/20", // very light tint₹
+              "backdrop-blur-xl", // stronger blur
+              "supports-backdrop-filter:bg-parchment/40",
+            ]
           : "bg-transparent py-4",
       )}
     >
@@ -64,14 +68,11 @@ export const Navbar = () => {
           href="/"
           className={cn(
             "font-display italic text-[22px] font-semibold transition-colors",
-            navScrolled
-              ? "text-saffron"
-              : "text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]",
+            navScrolled ? "text-monk-brown-deep" : "text-white",
           )}
         >
           The Traveling Monk
         </Link>
-
         {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center gap-8">
           <NavigationMenu>
@@ -83,10 +84,8 @@ export const Navbar = () => {
                       href={link.href}
                       className={cn(
                         "bg-transparent hover:bg-transparent focus:bg-transparent px-3 py-2",
-                        "text-[11px] uppercase tracking-[0.2em] font-medium transition-colors",
-                        navScrolled
-                          ? "text-forest/70 hover:text-forest"
-                          : "text-white/80 hover:text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]",
+                        "text-lg tracking-widest font-black transition-colors",
+                        navScrolled ? "text-monk-brown-deep" : "text-white",
                       )}
                     >
                       {link.name}
@@ -106,7 +105,6 @@ export const Navbar = () => {
             Join a Trek <ArrowRight className="size-3 ml-2" />
           </Button>
         </div>
-
         {/* Mobile Menu Toggle */}
         <div className="md:hidden">
           <Sheet
@@ -140,14 +138,14 @@ export const Navbar = () => {
                 <span className="font-display italic text-2xl text-forest">
                   The Traveling Monk
                 </span>
-                <SheetClose asChild>
+                {/* <SheetClose asChild>
                   <button
                     onClick={closeMobileMenu}
                     className="p-2 text-forest/60 hover:text-forest"
                   >
                     <X className="size-6" />
                   </button>
-                </SheetClose>
+                </SheetClose> */}
               </div>
 
               <div className="grow flex flex-col justify-center px-10 gap-8">

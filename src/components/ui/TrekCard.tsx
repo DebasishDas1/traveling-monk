@@ -38,7 +38,7 @@ export const TrekCard = ({ trek, variant = "default" }: TrekCardProps) => {
       className="h-full group cursor-pointer"
       onClick={handleClick}
     >
-      <div className="relative aspect-4/5 overflow-hidden rounded-lg mb-6">
+      <div className="relative aspect-4/5 overflow-hidden rounded-4xl mb-6">
         <Image
           src={trek.image}
           alt={trek.name}
