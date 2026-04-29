@@ -15,11 +15,11 @@ export default function TreksPage() {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000"
-            // src="/images/treks-header.jpg" // User requested path
+            src="/treks-page.jpg"
             alt="Mountains"
             fill
             priority
+            sizes="100vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-forest/50 backdrop-blur-[2px]" />

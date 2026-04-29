@@ -46,7 +46,8 @@ export const metadata: Metadata = {
     url: "/",
     siteName: "The Traveling Monk",
     title: "The Traveling Monk | Transformational Trekking",
-    description: "Premium guided trekking experiences across India. Transformation through nature.",
+    description:
+      "Premium guided trekking experiences across India. Transformation through nature.",
     images: [
       {
         url: "/og-image.jpg",
@@ -93,6 +94,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
+      data-scroll-behavior="smooth"
       className={cn(
         "h-full scroll-smooth",
         "antialiased",

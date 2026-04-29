@@ -2,8 +2,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { StatsStrip } from "@/components/sections/StatsStrip";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Award, ShieldCheck, MapPin } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { MessageCircle, Award, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Our Story | The Traveling Monk",
@@ -49,12 +48,12 @@ export default function AboutPage() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000"
-            // src="/images/about-hero.jpg"
+            src="/about-page.jpg"
             alt="Founder on a mountain"
             fill
             priority
             className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
           <div className="absolute inset-0 bg-forest/40" />
         </div>
