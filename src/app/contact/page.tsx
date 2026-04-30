@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -11,16 +12,14 @@ import {
   Mail,
   Phone,
   ChevronDown,
-  Send,
   CheckCircle2,
-  AlertCircle,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { trekData } from "@/lib/treks";
 
 // --- Validation Schema ---
-const contactSchema = z.z.object({
+const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
   phone: z
@@ -236,7 +235,7 @@ export default function ContactPage() {
                           <input
                             {...register("name")}
                             className={cn(
-                              "w-full bg-bone border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-saffron/50 transition-all",
+                              "w-full bg-monk-bone border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-saffron/50 transition-all",
                               errors.name && "border-rose-500 ring-rose-500/10",
                             )}
                             placeholder="Your name"
@@ -256,7 +255,7 @@ export default function ContactPage() {
                           <input
                             {...register("email")}
                             className={cn(
-                              "w-full bg-bone border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-saffron/50 transition-all",
+                              "w-full bg-monk-bone border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-saffron/50 transition-all",
                               errors.email &&
                                 "border-rose-500 ring-rose-500/10",
                             )}
@@ -279,7 +278,7 @@ export default function ContactPage() {
                           <input
                             {...register("phone")}
                             className={cn(
-                              "w-full bg-bone border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-saffron/50 transition-all",
+                              "w-full bg-monk-bone border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-saffron/50 transition-all",
                               errors.phone &&
                                 "border-rose-500 ring-rose-500/10",
                             )}
@@ -300,7 +299,7 @@ export default function ContactPage() {
                           <select
                             {...register("trek")}
                             className={cn(
-                              "w-full bg-bone border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-saffron/50 transition-all",
+                              "w-full bg-monk-bone border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-saffron/50 transition-all",
                               errors.trek && "border-rose-500 ring-rose-500/10",
                             )}
                           >
@@ -329,7 +328,7 @@ export default function ContactPage() {
                           <select
                             {...register("timing")}
                             className={cn(
-                              "w-full bg-bone border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-saffron/50 transition-all",
+                              "w-full bg-monk-bone border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-saffron/50 transition-all",
                               errors.timing &&
                                 "border-rose-500 ring-rose-500/10",
                             )}
@@ -357,7 +356,7 @@ export default function ContactPage() {
                           <select
                             {...register("groupSize")}
                             className={cn(
-                              "w-full bg-bone border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-saffron/50 transition-all",
+                              "w-full bg-monk-bone border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-saffron/50 transition-all",
                               errors.groupSize &&
                                 "border-rose-500 ring-rose-500/10",
                             )}
@@ -388,7 +387,7 @@ export default function ContactPage() {
                           {...register("message")}
                           rows={4}
                           className={cn(
-                            "w-full bg-bone border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-saffron/50 transition-all resize-none",
+                            "w-full bg-monk-bone border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-saffron/50 transition-all resize-none",
                             errors.message &&
                               "border-rose-500 ring-rose-500/10",
                           )}
@@ -503,5 +502,4 @@ export default function ContactPage() {
   );
 }
 
-// Helper Link component to avoid next/link issues in one-file build
-import Link from "next/link";
+

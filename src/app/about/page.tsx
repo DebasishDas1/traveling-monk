@@ -19,7 +19,7 @@ const guides = [
     quote:
       "The mountain doesn't care about your ego. It only cares about your breath.",
     image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1a?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=400",
   },
   {
     name: "Priya Sharma",
@@ -45,17 +45,17 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-parchment">
       {/* 1. HERO */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/about-page.jpg"
-            alt="Founder on a mountain"
+            alt="Contact Hero"
             fill
             priority
+            sizes="100vw"
             className="object-cover"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
-          <div className="absolute inset-0 bg-forest/40" />
+          <div className="absolute inset-0 bg-forest/60" />
         </div>
         <div className="relative z-10 text-center px-6">
           <h1 className="font-display italic text-6xl md:text-8xl text-white leading-tight drop-shadow-2xl">
@@ -71,9 +71,9 @@ export default function AboutPage() {
             <div className="aspect-4/5 rounded-3xl overflow-hidden shadow-2xl relative z-10">
               <Image
                 src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&q=80&w=800"
-                // src="/images/founder.jpg"
                 alt="Founder Portrait"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
@@ -185,6 +185,7 @@ export default function AboutPage() {
                     src={guide.image}
                     alt={guide.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-forest/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -228,12 +229,22 @@ export default function AboutPage() {
             {/* Background Mosaic / Collage (Blurred) */}
             <div className="absolute inset-0 z-0 opacity-20 grayscale blur-sm">
               <div className="grid grid-cols-4 h-full w-full">
-                {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-                  <div key={i} className="relative h-full w-full">
+                {[
+                  "1519389953867-2e205bb7ee60",
+                  "1523307730650-5ce0bc224bc9",
+                  "1500648767791-00dcc994a43e",
+                  "1534528741775-53994a69daeb",
+                  "1599566150163-29194dcaad36",
+                  "1492562080023-ab3db95bfbce",
+                  "1544005313-94ddf0286df2",
+                  "1507003211169-0a1dd7228f2d",
+                ].map((id, index) => (
+                  <div key={index} className="relative h-full w-full">
                     <Image
-                      src={`https://images.unsplash.com/photo-${1500000000000 + i * 50000}?auto=format&fit=crop&q=40&w=400`}
+                      src={`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&q=40&w=400`}
                       alt="community"
                       fill
+                      sizes="25vw"
                       className="object-cover"
                     />
                   </div>

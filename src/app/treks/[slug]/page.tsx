@@ -138,14 +138,19 @@ export default async function TrekDetailPage({ params }: PageProps) {
             </div>
 
             <div className="grid grid-cols-4 gap-4">
-              {[1, 2, 3, 4].map((i) => (
+              {[
+                "1544735716-392fe2489ffa",
+                "1465146344425-f00d5f5c8f07",
+                "1501785888041-af3ef285b470",
+                "1519389953867-2e205bb7ee60",
+              ].map((photoId, i) => (
                 <div
                   key={i}
                   className="relative aspect-square rounded-2xl overflow-hidden shadow-md cursor-pointer hover:ring-2 hover:ring-saffron transition-all"
                 >
                   <Image
-                    src={`https://images.unsplash.com/photo-${1500000000000 + i * 10000}?auto=format&fit=crop&q=80&w=400`}
-                    alt={`${trek.name} gallery ${i}`}
+                    src={`https://images.unsplash.com/photo-${photoId}?auto=format&fit=crop&q=80&w=400`}
+                    alt={`${trek.name} gallery ${i + 1}`}
                     fill
                     sizes="(max-width: 768px) 25vw, 15vw"
                     className="object-cover"
@@ -466,7 +471,7 @@ export default async function TrekDetailPage({ params }: PageProps) {
                   </Button>
 
                   <Link
-                    href={`https://wa.me/yournumber?text=Hi, I have a question about ${trek.name}`}
+                    href={`https://wa.me/919876543210?text=Hi, I have a question about the ${trek.name} trek`}
                     target="_blank"
                   >
                     <Button

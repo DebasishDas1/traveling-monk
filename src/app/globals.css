@@ -13,120 +13,337 @@
   --font-display: var(--font-display);
   --font-body: var(--font-sans);
 
-  --color-forest: #0B2019;
-  --color-saffron: #F5A623;
-  --color-parchment: #DBC8AC;
-  --color-monk-dark: #1a140f;
-  --color-monk-muted: #8c7851;
-  --color-monk-beige: #dad0be;
-  --color-monk-brown-deep: #3b2412;
-  --color-monk-brown-warm: #4a2e16;
+  /* ── Monk brand tokens ── */
+  --color-forest:            #0B2019;
+  --color-saffron:           #F5A623;
+  --color-saffron-light:     #FBBF4A;
+  --color-saffron-dark:      #C4791A;
+  --color-parchment:         #DBC8AC;
+  --color-parchment-light:   #EDE3D2;
+  --color-parchment-dark:    #C8A97E;
+  --color-monk-dark:         #1A140F;
+  --color-monk-muted:        #8C7851;
+  --color-monk-beige:        #DAD0BE;
+  --color-monk-brown-deep:   #3B2412;
+  --color-monk-brown-warm:   #4A2E16;
+  --color-monk-stone:        #6B6058;
+  --color-monk-sand:         #E8D5B0;
+  --color-monk-bone:         #F7F3ED;
 
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
+  /* ── Radius scale ── */
+  --radius-sm:  calc(var(--radius) * 0.6);
+  --radius-md:  calc(var(--radius) * 0.8);
+  --radius-lg:  var(--radius);
+  --radius-xl:  calc(var(--radius) * 1.4);
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
+  /* ── Shadcn semantic aliases → monk tokens ── */
+  --color-card:             var(--card);
+  --color-card-foreground:  var(--card-foreground);
+  --color-popover:          var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary:          var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary:        var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted:            var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent:           var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive:      var(--destructive);
+  --color-border:           var(--border);
+  --color-input:            var(--input);
+  --color-ring:             var(--ring);
+  --color-sidebar:          var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary:  var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent:   var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border:   var(--sidebar-border);
+  --color-sidebar-ring:     var(--sidebar-ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* ── Keyframes ── */
   @keyframes ken-burns {
-    0% { transform: scale(1); }
+    0%   { transform: scale(1); }
     100% { transform: scale(1.08); }
   }
   @keyframes scrollPulse {
-    0% { transform: scaleY(0); transform-origin: top; }
-    50% { transform: scaleY(1); transform-origin: top; }
-    51% { transform: scaleY(1); transform-origin: bottom; }
-    100% { transform: scaleY(0); transform-origin: bottom; }
+    0%   { transform: scaleY(0);   transform-origin: top; }
+    50%  { transform: scaleY(1);   transform-origin: top; }
+    51%  { transform: scaleY(1);   transform-origin: bottom; }
+    100% { transform: scaleY(0);   transform-origin: bottom; }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(32px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position:  200% center; }
   }
 
-  --animate-ken-burns: ken-burns 12s alternate infinite ease-in-out;
+  --animate-ken-burns:    ken-burns 12s alternate infinite ease-in-out;
   --animate-scroll-pulse: scrollPulse 2s infinite ease-in-out;
+  --animate-fade-in-up:   fadeInUp 0.6s cubic-bezier(0.16,1,0.3,1) both;
+  --animate-shimmer:      shimmer 2s linear infinite;
 }
 
+/* ─────────────────────────────────────────────
+   LIGHT MODE  — parchment-first warm palette
+───────────────────────────────────────────── */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
+  /* Page chrome */
+  --background:        #EDE3D2;   /* parchment light — the canvas */
+  --foreground:        #1A140F;   /* monk-dark — primary text */
+
+  /* Cards & popovers sit slightly lighter than the page */
+  --card:              #F7F3ED;   /* monk-bone */
+  --card-foreground:   #1A140F;
+
+  --popover:           #F7F3ED;
+  --popover-foreground: #1A140F;
+
+  /* Primary action = saffron */
+  --primary:           #F5A623;
+  --primary-foreground: #1A140F;  /* dark text on saffron — always readable */
+
+  /* Secondary = warm beige */
+  --secondary:         #DAD0BE;   /* monk-beige */
+  --secondary-foreground: #3B2412;
+
+  /* Muted = mid parchment */
+  --muted:             #DBC8AC;   /* parchment */
+  --muted-foreground:  #8C7851;   /* monk-muted */
+
+  /* Accent = saffron-light for hover states */
+  --accent:            #FBBF4A;
+  --accent-foreground: #1A140F;
+
+  /* Danger */
+  --destructive:       oklch(0.577 0.245 27.325);
+
+  /* Borders & inputs — warm, not cold gray */
+  --border:            rgba(59,36,18,0.18);   /* monk-brown-deep at low opacity */
+  --input:             rgba(59,36,18,0.12);
+  --ring:              #F5A623;               /* saffron focus ring */
+
+  /* Radius */
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-  
-  --font-display: "Playfair Display", serif;
+
+  /* Charts — warm earth ramp */
+  --chart-1: #F5A623;   /* saffron */
+  --chart-2: #C4791A;   /* saffron-dark */
+  --chart-3: #8C7851;   /* monk-muted */
+  --chart-4: #4A2E16;   /* monk-brown-warm */
+  --chart-5: #0B2019;   /* forest */
+
+  /* Sidebar */
+  --sidebar:                    #DAD0BE;
+  --sidebar-foreground:         #1A140F;
+  --sidebar-primary:            #F5A623;
+  --sidebar-primary-foreground: #1A140F;
+  --sidebar-accent:             #DBC8AC;
+  --sidebar-accent-foreground:  #3B2412;
+  --sidebar-border:             rgba(59,36,18,0.15);
+  --sidebar-ring:               #F5A623;
+
+  /* Typography */
+  --font-display: "Cormorant Garamond", "Playfair Display", Georgia, serif;
 }
 
-.bg-parchment-texture {
-  background-color: var(--color-parchment);
-  background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+/* ─────────────────────────────────────────────
+   DARK MODE  — forest-first deep palette
+───────────────────────────────────────────── */
+.dark {
+  /* Page chrome */
+  --background:        #0B2019;   /* forest — rich dark canvas */
+  --foreground:        #EDE3D2;   /* parchment-light — primary text */
+
+  /* Cards sit one step lighter than forest */
+  --card:              #1A140F;   /* monk-dark */
+  --card-foreground:   #EDE3D2;
+
+  --popover:           #1A140F;
+  --popover-foreground: #EDE3D2;
+
+  /* Primary = saffron stays the same — already pops on dark */
+  --primary:           #F5A623;
+  --primary-foreground: #0B2019;
+
+  /* Secondary = deep brown */
+  --secondary:         #3B2412;
+  --secondary-foreground: #DAD0BE;
+
+  /* Muted */
+  --muted:             #4A2E16;   /* monk-brown-warm */
+  --muted-foreground:  #8C7851;
+
+  /* Accent */
+  --accent:            #C4791A;   /* saffron-dark for dark-mode hovers */
+  --accent-foreground: #EDE3D2;
+
+  /* Danger */
+  --destructive:       oklch(0.704 0.191 22.216);
+
+  /* Borders & inputs — parchment at low opacity */
+  --border:            rgba(219,200,172,0.12);
+  --input:             rgba(219,200,172,0.08);
+  --ring:              #F5A623;
+
+  /* Charts */
+  --chart-1: #F5A623;
+  --chart-2: #FBBF4A;
+  --chart-3: #DBC8AC;
+  --chart-4: #8C7851;
+  --chart-5: #DAD0BE;
+
+  /* Sidebar */
+  --sidebar:                    #1A140F;
+  --sidebar-foreground:         #EDE3D2;
+  --sidebar-primary:            #F5A623;
+  --sidebar-primary-foreground: #0B2019;
+  --sidebar-accent:             #3B2412;
+  --sidebar-accent-foreground:  #DAD0BE;
+  --sidebar-border:             rgba(219,200,172,0.1);
+  --sidebar-ring:               #F5A623;
 }
 
+/* ─────────────────────────────────────────────
+   TEXTURE & CARD UTILITIES  (inside @layer so
+   Tailwind v4 registers them correctly)
+───────────────────────────────────────────── */
+@layer components {
+
+  .bg-parchment-texture {
+    background-color: var(--color-parchment);
+    background-image: url("/images/parchment-bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+  /* Swap to scroll on iOS — fixed causes jank */
+  @media (max-width: 768px) {
+    .bg-parchment-texture {
+      background-attachment: scroll;
+    }
+  }
+
+  /* Transparent card that lets parchment breathe through */
+  .card-parchment {
+    background: rgba(247,243,237,0.55);
+    border: 0.5px solid rgba(59,36,18,0.2);
+    border-top: 2px solid #F5A623;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .dark .card-parchment {
+    background: rgba(26,20,15,0.75);
+    border-color: rgba(219,200,172,0.12);
+  }
+
+  /* Forest section overlay — used for dark strips over texture */
+  .section-forest {
+    background: rgba(11,32,25,0.88);
+    border-top: 1px solid rgba(245,166,35,0.2);
+    border-bottom: 1px solid rgba(245,166,35,0.2);
+  }
+
+}
+
+/* ─────────────────────────────────────────────
+   BASE LAYER
+───────────────────────────────────────────── */
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
   }
+
+  /* All headings use the display serif */
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
+    font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
+  }
+
+  /* Smooth selection colour — saffron tint */
+  ::selection {
+    background: rgba(245,166,35,0.25);
+    color: #1A140F;
+  }
+
+  /* Custom scrollbar — thin, warm */
+  ::-webkit-scrollbar       { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(140,120,81,0.4);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: #F5A623; }
+}
+
+/* ─────────────────────────────────────────────
+   COMPONENT UTILITIES
+   Use these as @apply shortcuts in components
+───────────────────────────────────────────── */
+@layer components {
+
+  /* ── Buttons ── */
+  .btn-monk-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full
+           bg-saffron text-monk-dark font-sans font-medium text-sm
+           tracking-wide transition-all duration-200
+           hover:bg-saffron-light hover:scale-[1.02]
+           active:scale-[0.98]
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-saffron;
+  }
+
+  .btn-monk-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full
+           border border-monk-brown-deep/40 text-monk-brown-warm
+           font-sans font-medium text-sm tracking-wide
+           transition-all duration-200
+           hover:border-saffron hover:text-saffron
+           active:scale-[0.98];
+  }
+
+  /* ── Section headings ── */
+  .eyebrow {
+    @apply text-[11px] font-medium tracking-[0.14em] uppercase text-monk-muted;
+  }
+
+  .section-heading {
+    @apply font-display text-4xl font-semibold text-monk-dark leading-tight;
+  }
+
+  /* ── Saffron accent rule ── */
+  .saffron-rule {
+    @apply block w-16 h-px bg-saffron mx-auto my-4 opacity-70;
+  }
+
+  /* ── Trek / content cards ── */
+  .trek-card {
+    @apply rounded-xl overflow-hidden
+           transition-transform duration-300 hover:scale-[1.015];
   }
 }

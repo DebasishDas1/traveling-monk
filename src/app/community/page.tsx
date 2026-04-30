@@ -13,17 +13,20 @@ export const metadata: Metadata = {
 
 export default function CommunityPage() {
   return (
-    <div>
+    <main className="min-h-screen">
       {/* HERO */}
-      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
-        <Image
-          src="/community-page.jpg"
-          alt="Community gathering"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/community-page.jpg"
+            alt="Community Hero"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-forest/60" />
+        </div>
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-linear-to-b from-forest/60 via-forest/40 to-forest/80" />
@@ -127,6 +130,6 @@ export default function CommunityPage() {
         {/* Top Fade */}
         <div className="absolute top-0 inset-x-0 h-32 bg-linear-to-b from-parchment to-transparent opacity-10" />
       </section>
-    </div>
+    </main>
   );
 }

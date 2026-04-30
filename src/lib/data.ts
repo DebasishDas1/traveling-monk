@@ -1,23 +1,23 @@
 export const dummyTestimonials = [
   {
     quote:
-      "This was the most soul-stirring trek of my life. The silence of the mountains and the warmth of the crew made it unforgettable.",
+      "I came for a trek. I didn't expect to cry on a mountain at 5am and realise I'd been living someone else's life for three years. This wasn't a trip — it was the turning point I didn't know I needed.",
+    name: "Priya Sharma",
+    designation: "Bangalore · Kedarkantha Trek",
+    src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    quote:
+      "The silence at the summit was something I had never experienced in my life. I returned a different person — calmer, clearer, more purposeful. I keep coming back.",
     name: "Anirban Bose",
-    designation: "Senior Software Engineer",
-    src: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    designation: "Mumbai · Rupin Pass",
+    src: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
   },
   {
     quote:
-      "Every step felt like a meditation. The arrangements were perfect, and the guides were incredibly knowledgeable.",
-    name: "Sneha Ghosh",
-    designation: "Yoga Instructor",
-    src: "https://images.unsplash.com/photo-1529614039716-c148f6883754?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    quote:
-      "The itinerary was challenging yet manageable. The highlight was stargazing from the campsite—pure magic!",
+      "Every step felt like a meditation. The guides weren't just showing the way — they were part of the experience. The Monk Method is real.",
     name: "Rajiv Malhotra",
-    designation: "Architect",
-    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    designation: "Delhi · Valley of Flowers",
+    src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
   },
 ];

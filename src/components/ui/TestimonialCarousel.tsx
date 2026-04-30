@@ -1,10 +1,8 @@
 "use client";
 
 import SectionHeader from "@/components/sections/SectionHeader";
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import Image from "next/image";
 
 type Testimonial = {
   quote: string;
@@ -30,105 +28,79 @@ export const TestimonialCarousel = ({
     setActive((p) => (p + 1) % length);
   }, [length]);
 
-  const prev = useCallback(() => {
-    setActive((p) => (p - 1 + length) % length);
-  }, [length]);
-
-  const activeTestimonial = useMemo(
-    () => testimonials[active],
-    [testimonials, active],
-  );
-
   useEffect(() => {
     if (isPaused || isSingle) return;
-
-    const interval = setInterval(next, 6000);
+    const interval = setInterval(next, 7000);
     return () => clearInterval(interval);
   }, [isPaused, next, isSingle]);
 
   return (
     <section
-      className="relative py-60 overflow-hidden flex items-center flex-col"
+      className="relative py-32 px-6 overflow-hidden bg-parchment"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* 🏷 Title */}
-      <div className="relative z-10 text-center mb-16 px-6">
-        <SectionHeader
-          title="Testimonials"
-          subtitle="What people are saying about us"
-        />
+      {/* Section Header */}
+      <div className="text-center mb-16">
+        <SectionHeader title="Returned. Changed." subtitle="What Monks Say" />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-        {/* 🖼 Image */}
-        <div className="relative h-[420px] w-full max-w-md mx-auto">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTestimonial.src}
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.98 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute inset-0"
+      {/* Single Card */}
+      <div className="max-w-3xl mx-auto">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={active}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            className="relative bg-parchment-light border border-monk-brown-deep/10 rounded-3xl p-10 md:p-14 shadow-sm"
+          >
+            {/* Large opening quote mark */}
+            <span
+              className="block font-display text-saffron leading-none select-none mb-6"
+              style={{ fontSize: "4rem", lineHeight: 1 }}
+              aria-hidden="true"
             >
-              <Image
-                src={activeTestimonial.src}
-                alt={activeTestimonial.name}
-                fill
-                priority
-                className="object-cover rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.25)]"
-              />
-            </motion.div>
-          </AnimatePresence>
+              "
+            </span>
 
-          <div className="absolute inset-0 rounded-3xl bg-linear-to-t from-black/20 to-transparent" />
-        </div>
+            {/* Quote body */}
+            <p className="font-serif italic text-xl md:text-2xl text-monk-dark leading-relaxed mb-10">
+              {testimonials[active].quote}
+            </p>
 
-        {/* ✍️ Text */}
-        <div className="flex flex-col justify-center">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={active}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.6 }}
-            >
-              <p className="text-xl md:text-2xl leading-relaxed text-forest/90 font-serif italic">
-                “{activeTestimonial.quote}”
-              </p>
-
-              <div className="mt-10">
-                <p className="text-base font-semibold text-forest">
-                  {activeTestimonial.name}
+            {/* Author */}
+            <div className="flex items-center gap-4 pt-6 border-t border-monk-brown-deep/10">
+              <div className="space-y-0.5">
+                <p className="font-sans font-bold text-sm uppercase tracking-widest text-monk-dark">
+                  {testimonials[active].name}
                 </p>
-                <p className="text-sm text-forest/60">
-                  {activeTestimonial.designation}
+                <p className="font-sans text-xs text-monk-muted tracking-wide">
+                  {testimonials[active].designation}
                 </p>
               </div>
-            </motion.div>
-          </AnimatePresence>
+            </div>
+          </motion.div>
+        </AnimatePresence>
 
-          {/* 🎮 Controls */}
-          <div className="flex gap-4 mt-12">
-            <button
-              onClick={prev}
-              disabled={isSingle}
-              className="group flex h-10 w-10 items-center justify-center rounded-full border border-forest/20 hover:border-saffron transition disabled:opacity-40"
-            >
-              <ArrowLeft className="size-4 text-forest group-hover:-translate-x-1 transition" />
-            </button>
-
-            <button
-              onClick={next}
-              disabled={isSingle}
-              className="group flex h-10 w-10 items-center justify-center rounded-full border border-forest/20 hover:border-saffron transition disabled:opacity-40"
-            >
-              <ArrowRight className="size-4 text-forest group-hover:translate-x-1 transition" />
-            </button>
+        {/* Dot Navigation */}
+        {!isSingle && (
+          <div className="flex items-center justify-center gap-3 mt-10">
+            {testimonials.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setActive(idx)}
+                aria-label={`Go to testimonial ${idx + 1}`}
+                className={`rounded-full transition-all duration-300 ${
+                  idx === active
+                    ? "w-6 h-2 bg-saffron"
+                    : "w-2 h-2 bg-monk-brown-deep/20 hover:bg-monk-brown-deep/40"
+                }`}
+              />
+            ))}
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
