@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TrekCard } from "@/components/ui/TrekCard";
 import { getFeaturedTreks } from "@/lib/trek-utils";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import SectionHeader from "./SectionHeader";
+import TrekCard from "./TrekCard";
 
 export const FeaturedTreks = () => {
   const treks = getFeaturedTreks();
@@ -42,7 +42,7 @@ export const FeaturedTreks = () => {
               }}
               className="will-change-transform"
             >
-              <TrekCard trek={trek} />
+              <TrekCard trek={trek} index={index} />
             </motion.div>
           ))}
         </div>

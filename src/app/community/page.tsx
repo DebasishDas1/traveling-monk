@@ -15,18 +15,15 @@ export default function CommunityPage() {
   return (
     <main className="min-h-screen">
       {/* HERO */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/community-page.jpg"
-            alt="Community Hero"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-forest/60" />
-        </div>
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <Image
+          src="/community-page.jpg"
+          alt="Community Hero"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-linear-to-b from-forest/60 via-forest/40 to-forest/80" />

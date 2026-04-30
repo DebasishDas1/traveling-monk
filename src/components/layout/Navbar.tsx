@@ -19,6 +19,7 @@ import {
   SheetTrigger,
   SheetClose,
   SheetTitle,
+  SheetDescription,
 } from "@/components/ui/sheet";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
@@ -132,6 +133,7 @@ export const Navbar = () => {
             >
               <VisuallyHidden>
                 <SheetTitle>Mobile Navigation Menu</SheetTitle>
+                <SheetDescription>Navigate through our mountain journeys and philosophy.</SheetDescription>
               </VisuallyHidden>
 
               <div className="p-8 flex justify-between items-center">

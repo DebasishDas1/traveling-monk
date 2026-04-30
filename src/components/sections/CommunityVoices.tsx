@@ -60,75 +60,70 @@ export const CommunityVoices = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {voices.map((voice, i) => (
-            <motion.div
+            <motion.article
               key={voice.name}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, margin: "-80px" }}
               transition={{
-                delay: i * 0.15,
+                delay: i * 0.12,
                 duration: 0.7,
                 ease: "easeOut",
               }}
+              className="group"
             >
-              <Card className="h-full bg-white border-0 rounded-[32px] overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 flex flex-col group">
-                {/* IMAGE (square) */}
-                <div className="relative aspect-square overflow-hidden">
-                  <div className="relative aspect-square overflow-hidden">
-                    <Image
-                      src={voice.image}
-                      alt={voice.name}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover transition-transform duration-1200 ease-out group-hover:scale-110"
-                      priority={i === 0}
-                    />
-
-                    {/* Overlay */}
-                    <div
-                      className={`absolute inset-0 ${voice.color} backdrop-blur-[1.5px] transition-opacity duration-500 group-hover:opacity-0`}
-                    />
-
-                    {/* Quote icon */}
-                    <div className="absolute top-6 left-6">
-                      <div className="bg-white/20 backdrop-blur-md p-3 rounded-full border border-white/30">
-                        <Quote className="size-5 text-white fill-white" />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Overlay */}
-                  <div
-                    className={`absolute inset-0 ${voice.color} backdrop-blur-[1.5px] transition-opacity duration-500 group-hover:opacity-0`}
+              <Card className="h-full rounded-[28px] overflow-hidden border border-black/5 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white flex flex-col">
+                {/* 🖼 IMAGE */}
+                <div className="relative aspect-4/5 overflow-hidden">
+                  <Image
+                    src={voice.image}
+                    alt={voice.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover group-hover:scale-110 transition duration-1200 ease-out"
+                    priority={i === 0}
                   />
 
+                  {/* Strong cinematic overlay */}
+                  <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
+
                   {/* Quote icon */}
-                  <div className="absolute top-6 left-6">
-                    <div className="bg-white/20 backdrop-blur-md p-3 rounded-full border border-white/30">
+                  <div className="absolute top-5 left-5">
+                    <div className="bg-white/20 backdrop-blur-md p-3 rounded-full border border-white/30 shadow">
                       <Quote className="size-5 text-white fill-white" />
                     </div>
                   </div>
-                </div>
 
-                {/* CONTENT */}
-                <div className="p-8 flex flex-col grow justify-between">
-                  <p className="text-forest/80 text-[15px] leading-relaxed font-sans italic mb-6">
-                    "{voice.quote}"
-                  </p>
-
-                  <div>
-                    <h4 className="font-display text-xl text-forest">
+                  {/* Name over image */}
+                  <div className="absolute bottom-5 left-5 right-5">
+                    <h4 className="text-white text-xl font-semibold leading-tight drop-shadow-lg">
                       {voice.name}
                     </h4>
-                    <p className="text-monk-muted text-[10px] uppercase tracking-widest font-bold mt-1">
+                    <p className="text-white/70 text-[11px] uppercase tracking-widest font-bold mt-1">
                       {voice.location}
                     </p>
                   </div>
                 </div>
+
+                {/* 📄 CONTENT */}
+                <div className="p-7 flex flex-col flex-1">
+                  <p className="text-forest text-[16px] leading-relaxed font-serif italic">
+                    “{voice.quote}”
+                  </p>
+
+                  <div className="flex-1" />
+
+                  {/* subtle divider */}
+                  <div className="w-10 h-[2px] bg-saffron mt-6 mb-3 opacity-70" />
+
+                  <span className="text-[11px] text-monk-muted uppercase tracking-widest font-bold">
+                    Verified Traveler
+                  </span>
+                </div>
               </Card>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>

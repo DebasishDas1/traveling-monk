@@ -1,11 +1,9 @@
 "use client";
 
-import React, { useEffect } from "react";
 import Image from "next/image";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useUiStore } from "@/stores/uiStore";
-import { cn } from "@/lib/utils";
 
 export const Hero = () => {
   const setNavScrolled = useUiStore((state) => state.setNavScrolled);
@@ -28,7 +26,8 @@ export const Hero = () => {
           alt="The Traveling Monk Hero"
           fill
           priority
-          className="object-cover animate-ken-burns"
+          sizes="100vw"
+          className="object-cover"
         />
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-forest/40" />

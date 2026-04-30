@@ -142,7 +142,7 @@ export default async function TrekDetailPage({ params }: PageProps) {
                 "1544735716-392fe2489ffa",
                 "1465146344425-f00d5f5c8f07",
                 "1501785888041-af3ef285b470",
-                "1519389953867-2e205bb7ee60",
+                "1464822759023-fed622ff2c3b",
               ].map((photoId, i) => (
                 <div
                   key={i}
@@ -338,17 +338,13 @@ export default async function TrekDetailPage({ params }: PageProps) {
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               <div className="col-span-2 row-span-2 relative aspect-square rounded-3xl overflow-hidden shadow-xl">
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover"
-                  poster={trek.image}
-                  // loading="lazy"
-                >
-                  <source src="/videos/placeholder.mp4" type="video/mp4" />
-                </video>
+                <Image
+                  src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200"
+                  alt="Atmospheric mountain view"
+                  fill
+                  className="object-cover transition-transform duration-10000 hover:scale-110"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
               </div>
               <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
                 <Image

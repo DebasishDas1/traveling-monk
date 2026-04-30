@@ -1,57 +1,66 @@
-export type Trek = {
-  slug: string
-  name: string
-  tagline: string
-  image: string
-  difficulty: 'Easy' | 'Moderate' | 'Hard' | 'Extreme'
-  tier: 'Standard' | 'Premium' | 'Transformation'
-  duration: string
-  altitude: string
-  groupSize: string
-  price: number
-  spotsLeft: number
-}
+import { Trek } from "./treks";
 
 export const getFeaturedTreks = (): Trek[] => {
   return [
     {
-      slug: 'kedarkantha-trek',
-      name: 'Kedarkantha Trek',
-      tagline: 'Transformation',
-      image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=80&w=1000',
-      difficulty: 'Moderate',
-      tier: 'Transformation',
-      duration: '6 Days',
-      altitude: '12,500 ft',
-      groupSize: 'Max 15 pax',
-      price: 18000,
-      spotsLeft: 5,
-    },
-    {
-      slug: 'chopta-tungnath',
-      name: 'Chopta–Tungnath',
-      tagline: 'Weekend',
-      image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&q=80&w=1000',
-      difficulty: 'Easy',
-      tier: 'Standard', // Will map to "Weekend" in badge if needed, but let's use tier
-      duration: '3 Days',
-      altitude: '13,100 ft',
-      groupSize: 'Max 20 pax',
-      price: 9500,
-      spotsLeft: 12,
-    },
-    {
-      slug: 'himalayan-monk-retreat',
-      name: 'Himalayan Monk Retreat',
-      tagline: 'Premium',
-      image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=1000',
-      difficulty: 'Hard',
-      tier: 'Premium',
-      duration: '10 Days',
-      altitude: '15,000 ft',
-      groupSize: 'Max 10 pax',
-      price: 65000,
+      slug: "kedarkantha",
+      name: "Kedarkantha Trek",
+      tagline: "The winter transformation.",
+      region: "Uttarakhand",
+      duration: "6 Days",
+      difficulty: "Moderate",
+      tier: "Transformation",
+      priceFrom: 18000,
+      maxGroupSize: 15,
+      altitude: "12,500 ft",
+      image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=80&w=1000",
+      highlights: ["Summit sunrise", "Juda Ka Talab", "Pine forests"],
+      nextDate: "Dec 15, 2024",
       spotsLeft: 4,
+      description: "A classic winter expedition...",
+      itinerary: [],
+      testimonials: [],
+      availableDates: [],
     },
-  ]
-}
+    {
+      slug: "chopta-tungnath",
+      name: "Chopta-Tungnath",
+      tagline: "Walking through the clouds.",
+      region: "Uttarakhand",
+      duration: "3 Days",
+      difficulty: "Beginner",
+      tier: "Weekend",
+      priceFrom: 9500,
+      maxGroupSize: 20,
+      altitude: "13,100 ft",
+      image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&q=80&w=1000",
+      highlights: ["Highest Shiva Temple", "Chandrashila Summit"],
+      nextDate: "Nov 10, 2024",
+      spotsLeft: 12,
+      description: "Mini Switzerland of India...",
+      itinerary: [],
+      testimonials: [],
+      availableDates: [],
+    },
+    {
+      slug: "rupin-pass",
+      name: "Rupin Pass",
+      tagline: "The ultimate Himalayan crossover.",
+      region: "Himachal",
+      duration: "8 Days",
+      difficulty: "Challenging",
+      tier: "Premium",
+      priceFrom: 28000,
+      maxGroupSize: 10,
+      altitude: "15,250 ft",
+      image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=1000",
+      highlights: ["Three-stage waterfall", "Rupin river valley"],
+      nextDate: "May 20, 2025",
+      spotsLeft: 3,
+      description: "Classic high-altitude crossover...",
+      itinerary: [],
+      testimonials: [],
+      availableDates: [],
+    },
+  ];
+};

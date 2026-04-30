@@ -58,7 +58,7 @@ const StatItem = ({
 
 export const StatsStrip = () => {
   return (
-    <section className="relative py-10">
+    <section className="relative py-10 z-20">
       {/* 🌾 Background layers */}
       <div className="absolute inset-0 backdrop-blur-xl" />
 

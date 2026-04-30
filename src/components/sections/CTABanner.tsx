@@ -40,12 +40,12 @@ export const CTABanner = () => {
   return (
     <section
       ref={containerRef}
-      className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden"
+      className="relative isolate h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden"
     >
       {/* 🌄 Parallax Background */}
       <motion.div
-        style={{ y }}
         className="absolute inset-0 z-0 h-[140%] top-[-20%] will-change-transform"
+        style={{ y }}
       >
         <Image
           src="/CTABanner_pic.jpg"

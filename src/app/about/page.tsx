@@ -230,8 +230,8 @@ export default function AboutPage() {
             <div className="absolute inset-0 z-0 opacity-20 grayscale blur-sm">
               <div className="grid grid-cols-4 h-full w-full">
                 {[
-                  "1519389953867-2e205bb7ee60",
-                  "1523307730650-5ce0bc224bc9",
+                  "1464822759023-fed622ff2c3b",
+                  "1531233108376-7873d97c9c11",
                   "1500648767791-00dcc994a43e",
                   "1534528741775-53994a69daeb",
                   "1599566150163-29194dcaad36",
