@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useUiStore } from "@/stores/uiStore";
+import Link from "next/link";
 
 export const Hero = () => {
   const setNavScrolled = useUiStore((state) => state.setNavScrolled);
@@ -81,20 +82,24 @@ export const Hero = () => {
             transition={{ delay: 0.45, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Button
-              variant="saffron"
-              size="lg"
-              className="min-w-[180px] h-12 rounded-full font-bold uppercase tracking-widest"
-            >
-              Explore Treks →
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="min-w-[180px] h-12 rounded-full border-white font-bold uppercase tracking-widest"
-            >
-              Our Story
-            </Button>
+            <Link href="/treks">
+              <Button
+                variant="saffron"
+                size="lg"
+                className="min-w-[180px] h-12 rounded-full font-bold uppercase tracking-widest"
+              >
+                Explore Treks →
+              </Button>
+            </Link>
+            <Link href="/about">
+              <Button
+                variant="outline"
+                size="lg"
+                className="min-w-[180px] h-12 rounded-full border-white font-bold uppercase tracking-widest"
+              >
+                Our Story
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

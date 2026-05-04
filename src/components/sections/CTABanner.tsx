@@ -9,6 +9,7 @@ import {
   useReducedMotion,
 } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export const CTABanner = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -75,21 +76,25 @@ export const CTABanner = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button
-              variant="saffron"
-              size="lg"
-              className="h-14 px-10 rounded-full font-bold uppercase tracking-widest text-sm focus-visible:ring-2 focus-visible:ring-white"
-            >
-              Book Your Trek
-            </Button>
+            <Link href="/treks">
+              <Button
+                variant="saffron"
+                size="lg"
+                className="h-14 px-10 rounded-full font-bold uppercase tracking-widest text-sm focus-visible:ring-2 focus-visible:ring-white"
+              >
+                Book Your Trek
+              </Button>
+            </Link>
 
-            <Button
-              variant="outline"
-              size="lg"
-              className="h-14 px-10 rounded-full font-bold uppercase tracking-widest text-sm focus-visible:ring-2 focus-visible:ring-white"
-            >
-              Request Custom Trip
-            </Button>
+            <Link href="/contact">
+              <Button
+                variant="outline"
+                size="lg"
+                className="h-14 px-10 rounded-full font-bold uppercase tracking-widest text-sm focus-visible:ring-2 focus-visible:ring-white"
+              >
+                Request Custom Trip
+              </Button>
+            </Link>
           </div>
         </motion.div>
       </div>

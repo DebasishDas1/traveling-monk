@@ -12,32 +12,29 @@ export const metadata: Metadata = {
 
 const guides = [
   {
-    name: "Tenzing Sherpa",
+    name: "Debasish Das",
     role: "Lead Expedition Guide",
-    exp: "15+ Years",
+    exp: "5+ Years",
     certs: "IMF Certified, WFA Advanced",
     quote:
       "The mountain doesn't care about your ego. It only cares about your breath.",
-    image:
-      "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=400",
+    image: "/images/about/founder-2.png",
   },
   {
-    name: "Priya Sharma",
+    name: "Subarna Banik",
     role: "Wilderness Specialist",
     exp: "8 Years",
     certs: "NOLS Mountaineering, Yoga Alliance",
     quote: "True strength is found in the moments between the climb.",
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=400",
+    image: "/images/about/founder-4.jpeg",
   },
   {
-    name: "Vikram Negi",
+    name: "Saikat Saha",
     role: "Safety & Logistics",
     exp: "12 Years",
     certs: "HMI Basic & Advance, Rescue Specialist",
     quote: "Safety is not just a protocol; it's a state of mind.",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400",
+    image: "/images/about/founder-4.jpeg",
   },
 ];
 
@@ -48,7 +45,7 @@ export default function AboutPage() {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/about-page.jpg"
+            src="/images/about/about-hero.jpg"
             alt="Contact Hero"
             fill
             priority
@@ -70,7 +67,7 @@ export default function AboutPage() {
           <div className="relative">
             <div className="aspect-4/5 rounded-3xl overflow-hidden shadow-2xl relative z-10">
               <Image
-                src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&q=80&w=800"
+                src="/images/about/founder-1.png"
                 alt="Founder Portrait"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -111,7 +108,7 @@ export default function AboutPage() {
             </div>
             <div className="pt-4">
               <p className="font-display italic text-3xl text-forest tracking-wide">
-                — Arjun Singh
+                — Akash Mukherjee
               </p>
               <p className="text-xs uppercase tracking-widest text-stone-400 mt-2 font-bold">
                 Founder, The Traveling Monk
