@@ -1,66 +1,7 @@
-import { Trek } from "./treks";
+import { Trek, trekData } from "./treks";
 
 export const getFeaturedTreks = (): Trek[] => {
-  return [
-    {
-      slug: "kedarkantha",
-      name: "Kedarkantha Trek",
-      tagline: "The winter transformation.",
-      region: "Uttarakhand",
-      duration: "6 Days",
-      difficulty: "Moderate",
-      tier: "Transformation",
-      priceFrom: 18000,
-      maxGroupSize: 15,
-      altitude: "12,500 ft",
-      image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=80&w=1000",
-      highlights: ["Summit sunrise", "Juda Ka Talab", "Pine forests"],
-      nextDate: "Dec 15, 2024",
-      spotsLeft: 4,
-      description: "A classic winter expedition...",
-      itinerary: [],
-      testimonials: [],
-      availableDates: [],
-    },
-    {
-      slug: "chopta-tungnath",
-      name: "Chopta-Tungnath",
-      tagline: "Walking through the clouds.",
-      region: "Uttarakhand",
-      duration: "3 Days",
-      difficulty: "Beginner",
-      tier: "Weekend",
-      priceFrom: 9500,
-      maxGroupSize: 20,
-      altitude: "13,100 ft",
-      image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&q=80&w=1000",
-      highlights: ["Highest Shiva Temple", "Chandrashila Summit"],
-      nextDate: "Nov 10, 2024",
-      spotsLeft: 12,
-      description: "Mini Switzerland of India...",
-      itinerary: [],
-      testimonials: [],
-      availableDates: [],
-    },
-    {
-      slug: "rupin-pass",
-      name: "Rupin Pass",
-      tagline: "The ultimate Himalayan crossover.",
-      region: "Himachal",
-      duration: "8 Days",
-      difficulty: "Challenging",
-      tier: "Premium",
-      priceFrom: 28000,
-      maxGroupSize: 10,
-      altitude: "15,250 ft",
-      image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=1000",
-      highlights: ["Three-stage waterfall", "Rupin river valley"],
-      nextDate: "May 20, 2025",
-      spotsLeft: 3,
-      description: "Classic high-altitude crossover...",
-      itinerary: [],
-      testimonials: [],
-      availableDates: [],
-    },
-  ];
+  // Logic: Return top 3 treks or those marked as featured
+  // For now, returning the first 3 from the main dataset
+  return trekData.slice(0, 3);
 };

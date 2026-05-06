@@ -1,0 +1,95 @@
+import {
+  CheckCircle2,
+  XCircle,
+  ShieldCheck,
+  Soup,
+  Home,
+  Map,
+  Briefcase,
+  HeartPulse,
+  Sparkles,
+} from "lucide-react";
+
+export const TrekInclusions = () => {
+  const inclusions = [
+    { text: "Expert Monk Guides", icon: <Map className="size-4" /> },
+    { text: "Mindfulness Workshops", icon: <Sparkles className="size-4" /> },
+    { text: "Traditional Mountain Stays", icon: <Home className="size-4" /> },
+    { text: "Local Satvik Meals", icon: <Soup className="size-4" /> },
+    {
+      text: "Safety & Medical Support",
+      icon: <HeartPulse className="size-4" />,
+    },
+    { text: "Trek Equipment", icon: <ShieldCheck className="size-4" /> },
+  ];
+
+  const exclusions = [
+    "Travel to Base Camp",
+    "Personal Gear",
+    "Insurance",
+    "Emergency Evacuation",
+    "Personal Expenses",
+  ];
+
+  return (
+    <section className="py-24 px-10 bg-white/40 rounded-[3rem] border border-white border-b-stone-200/50 shadow-sm">
+      <div className="grid md:grid-cols-2 gap-20">
+        {/* Included */}
+        <div className="space-y-12">
+          <div className="space-y-4">
+            <span className="text-forest text-[10px] uppercase tracking-[0.4em] font-black block">
+              Provisions
+            </span>
+            <h3 className="font-display text-3xl text-forest italic">
+              The path provides.
+            </h3>
+          </div>
+
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            {inclusions.map((item) => (
+              <li key={item.text} className="flex items-start gap-4 group">
+                <div className="size-10 rounded-2xl bg-forest/5 flex items-center justify-center text-forest group-hover:bg-forest group-hover:text-white transition-all duration-300">
+                  {item.icon}
+                </div>
+                <div className="space-y-1">
+                  <p className="font-sans text-sm font-bold text-forest tracking-wide">
+                    {item.text}
+                  </p>
+                  <p className="text-[10px] text-stone-400 uppercase tracking-widest font-bold">
+                    Included
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Not Included */}
+        <div className="space-y-12 md:pl-12 md:border-l border-stone-100">
+          <div className="space-y-4">
+            <span className="text-[10px] uppercase tracking-[0.4em] font-black block">
+              Responsibility
+            </span>
+            <h3 className="font-display text-3xl italic">Self-reliance.</h3>
+          </div>
+
+          <ul className="space-y-6">
+            {exclusions.map((item) => (
+              <li key={item} className="flex items-center gap-4 group">
+                <div className="size-2 rounded-full bg-stone-200 group-hover:bg-saffron transition-all" />
+                <span className="font-sans text-sm font-light tracking-wide">
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <p className="p-6 rounded-2xl bg-stone-50 border border-stone-100 text-[11px] text-stone-400 leading-relaxed font-light italic">
+            "We recommend carrying only what you need. A light pack leads to a
+            clear mind."
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};

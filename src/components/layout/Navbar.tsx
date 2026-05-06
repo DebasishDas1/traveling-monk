@@ -22,6 +22,7 @@ import {
   SheetDescription,
 } from "@/components/ui/sheet";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { name: "Treks", href: "/treks" },
@@ -39,6 +40,9 @@ export const Navbar = () => {
     closeMobileMenu,
     openBookingDrawer,
   } = useUiStore();
+
+  const pathname = usePathname();
+  const isTreksPage = pathname.startsWith("/treks");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,7 +73,7 @@ export const Navbar = () => {
           href="/"
           className={cn(
             "font-display italic text-[22px] font-semibold transition-colors",
-            navScrolled ? "text-monk-brown-deep" : "text-white",
+            isTreksPage || navScrolled ? "text-monk-brown-deep" : "text-white",
           )}
         >
           The Traveling Monk
@@ -86,7 +90,9 @@ export const Navbar = () => {
                       className={cn(
                         "bg-transparent hover:bg-transparent focus:bg-transparent px-3 py-2",
                         "text-lg tracking-widest font-black transition-colors",
-                        navScrolled ? "text-monk-brown-deep" : "text-white",
+                        isTreksPage || navScrolled
+                          ? "text-monk-brown-deep"
+                          : "text-white",
                       )}
                     >
                       {link.name}
@@ -133,7 +139,9 @@ export const Navbar = () => {
             >
               <VisuallyHidden>
                 <SheetTitle>Mobile Navigation Menu</SheetTitle>
-                <SheetDescription>Navigate through our mountain journeys and philosophy.</SheetDescription>
+                <SheetDescription>
+                  Navigate through our mountain journeys and philosophy.
+                </SheetDescription>
               </VisuallyHidden>
 
               <div className="p-8 flex justify-between items-center">
