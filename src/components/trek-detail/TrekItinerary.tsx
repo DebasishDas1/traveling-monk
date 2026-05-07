@@ -1,12 +1,12 @@
 "use client";
 
-import { Trek } from "@/lib/treks";
-import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+import type { TrekType } from "@/lib/type";
 import TrekItineraryCard from "@/components/trek-detail/TrekItineraryCard";
 
 interface TrekItineraryProps {
-  trek: Trek;
+  trek: TrekType;
 }
 
 export const TrekItinerary = ({ trek }: TrekItineraryProps) => {
@@ -18,6 +18,7 @@ export const TrekItinerary = ({ trek }: TrekItineraryProps) => {
           <span className="text-saffron text-[10px] uppercase tracking-[0.5em] font-black block">
             The Daily Passage
           </span>
+
           <h2 className="font-display text-4xl md:text-5xl text-forest italic tracking-tight">
             The Experience Arc
           </h2>
@@ -30,8 +31,8 @@ export const TrekItinerary = ({ trek }: TrekItineraryProps) => {
 
       {/* 🧵 Timeline */}
       <div className="relative pl-12 md:pl-20">
-        {/* 🌿 Softer Timeline Line */}
-        <div className="absolute left-[35px] md:left-[58px] top-10 bottom-10 w-[2px] bg-linear-to-b from-saffron/70 via-forest/30 to-forest/60" />
+        {/* 🌿 Timeline Line */}
+        <div className="absolute left-[35px] md:left-[58px] top-10 bottom-10 w-[2px] bg-black" />
 
         {trek.itinerary.map((day, idx) => {
           return (
@@ -43,7 +44,7 @@ export const TrekItinerary = ({ trek }: TrekItineraryProps) => {
               transition={{ duration: 0.35, delay: idx * 0.04 }}
               className="relative pb-16 md:pb-20"
             >
-              {/* 📍 Marker */}
+              {/* 📍 Timeline Marker */}
               <div
                 className={cn(
                   "absolute left-[-38px] md:left-[-60px] top-2 z-20",
@@ -54,27 +55,51 @@ export const TrekItinerary = ({ trek }: TrekItineraryProps) => {
                   "ring-4 ring-white",
                 )}
               >
-                {/* Label */}
                 <span className="text-[8px] md:text-[10px] tracking-[0.3em] uppercase text-white/40 leading-none mb-1">
                   Day
                 </span>
 
-                {/* 💥 Strong Number */}
                 <span className="font-display text-2xl md:text-4xl font-extrabold text-white leading-none tracking-tight drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
                   {day.day}
                 </span>
               </div>
 
+              {/* 🏔️ Card */}
               <TrekItineraryCard
+                day={day.day}
                 image={day.imageUrl}
                 title={day.title}
                 description={day.description}
-                idx={idx}
+                from={day.from}
+                to={day.to}
+                altitude={day.altitude}
+                duration={day.duration}
               />
             </motion.div>
           );
         })}
       </div>
+
+      {/* 🌄 Journey End Marker */}
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="relative text-center"
+      >
+        {/* Soft Glow Dot */}
+        <div className="mx-auto mb-6 h-3 w-3 rounded-full bg-saffron shadow-[0_0_25px_rgba(255,180,60,0.6)]" />
+
+        <h3 className="font-display text-2xl md:text-3xl italic text-forest">
+          The journey completes, but something remains.
+        </h3>
+
+        <p className="mt-3 mx-auto max-w-md text-sm md:text-base leading-relaxed text-stone-500">
+          You return to where you started — but the mountains do not leave you.
+          They settle quietly within.
+        </p>
+      </motion.div>
     </section>
   );
 };

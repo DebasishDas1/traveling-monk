@@ -1,17 +1,21 @@
 import Image from "next/image";
 import { Star } from "lucide-react";
-import { Trek } from "@/lib/treks";
+import type { TrekType } from "@/lib/type";
 
 interface TrekTestimonialsProps {
-  trek: Trek;
+  trek: TrekType;
 }
 
 export const TrekTestimonials = ({ trek }: TrekTestimonialsProps) => {
   return (
     <section className="space-y-16 py-20">
       <div className="text-center space-y-4">
-        <span className="text-[10px] uppercase tracking-[0.5em] font-bold text-saffron">Voices of the Path</span>
-        <h2 className="font-display text-4xl md:text-5xl text-forest italic">Reflections from Fellow Monks</h2>
+        <span className="text-[10px] uppercase tracking-[0.5em] font-bold text-saffron">
+          Voices of the Path
+        </span>
+        <h2 className="font-display text-4xl md:text-5xl text-forest italic">
+          Reflections from Fellow Monks
+        </h2>
       </div>
 
       <div className="grid md:grid-cols-2 gap-10">
@@ -25,7 +29,7 @@ export const TrekTestimonials = ({ trek }: TrekTestimonialsProps) => {
                 <Star key={s} className="size-3.5 fill-saffron text-saffron" />
               ))}
             </div>
-            
+
             <p className="text-stone-700 italic leading-relaxed font-display text-2xl">
               “{t.quote}”
             </p>

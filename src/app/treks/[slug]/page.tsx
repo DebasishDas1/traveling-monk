@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { trekData } from "@/lib/treks";
+import Script from "next/script";
+
+import { trekData } from "@/lib/data/treks";
+
 import { TrekHero } from "@/components/trek-detail/TrekHero";
 import { TrekOverview } from "@/components/trek-detail/TrekOverview";
 import { TrekItinerary } from "@/components/trek-detail/TrekItinerary";
@@ -8,9 +11,9 @@ import { TrekInclusions } from "@/components/trek-detail/TrekInclusions";
 import { TrekGallery } from "@/components/trek-detail/TrekGallery";
 import { TrekTestimonials } from "@/components/trek-detail/TrekTestimonials";
 import { TrekBookingWidget } from "@/components/trek-detail/TrekBookingWidget";
-import { MobileReserveBar } from "@/components/trek-detail/MobileReserveBar";
 import { TrekContact } from "@/components/trek-detail/TrekContact";
 import { TrekRelated } from "@/components/trek-detail/TrekRelated";
+import { MobileReserveBar } from "@/components/trek-detail/MobileReserveBar";
 
 // --- Types ---
 interface PageProps {
@@ -24,12 +27,17 @@ export async function generateStaticParams() {
   }));
 }
 
+// --- SEO Metadata ---
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { slug } = await params;
+
   const trek = trekData.find((t) => t.slug === slug);
-  if (!trek) return { title: "Trek Not Found" };
+
+  if (!trek) {
+    return { title: "Trek Not Found" };
+  }
 
   return {
     title: `${trek.name} | The Traveling Monk`,
@@ -52,8 +60,12 @@ export async function generateMetadata({
 // --- Main Page ---
 export default async function TrekDetailPage({ params }: PageProps) {
   const { slug } = await params;
+
   const trek = trekData.find((t) => t.slug === slug);
-  if (!trek) notFound();
+
+  if (!trek) {
+    notFound();
+  }
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -71,60 +83,52 @@ export default async function TrekDetailPage({ params }: PageProps) {
       "@type": "Place",
       name: trek.region,
     },
-    startDate: trek.nextDate,
+    ...(trek.nextDate !== "Available on request" && {
+      startDate: trek.nextDate,
+    }),
   };
 
   return (
     <main className="min-h-screen bg-parchment pb-32">
-      <script
+      {/* ✅ JSON-LD */}
+      <Script
+        id="trek-jsonld"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+        strategy="beforeInteractive"
+      >
+        {JSON.stringify(jsonLd)}
+      </Script>
 
-      {/* 1. Hero & Visuals - Grand edge-to-edge feel */}
+      {/* Hero */}
       <div className="w-full pt-14 md:pt-16 pb-8 md:pb-16">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8">
           <TrekHero trek={trek} />
         </div>
       </div>
 
-      {/* Main Content & Sidebar Container */}
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-[1400px]">
+      {/* Layout */}
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-[1400px] relative">
         <div className="grid grid-cols-1 xl:grid-cols-[1fr_400px] gap-12 xl:gap-20 items-start">
-          {/* ⛰️ Main Content Area */}
           <div className="space-y-24 md:space-y-32 xl:pr-4 min-w-0">
-            {/* 2. Core Information */}
             <div className="pt-8 border-t border-stone-200/50">
               <TrekOverview trek={trek} />
             </div>
 
-            {/* 3. The Path (Itinerary) */}
             <TrekItinerary trek={trek} />
-
-            {/* 4. Practical Details */}
             <TrekInclusions />
-
-            {/* 5. Atmosphere Gallery */}
             <TrekGallery trek={trek} />
-
-            {/* 6. Community Feedback */}
             <TrekTestimonials trek={trek} />
-
-            {/* 7. Contact / Ask a Monk */}
             <TrekContact />
-
-            {/* 8. Other Treks */}
             <TrekRelated currentTrekSlug={trek.slug} />
           </div>
 
-          {/* 💳 Conversion Widget (Sticky Sidebar) */}
+          {/* Sticky fix needs relative parent */}
           <div className="sticky top-32 xl:pt-8 hidden lg:block">
             <TrekBookingWidget trek={trek} />
           </div>
         </div>
       </div>
 
-      {/* 📱 Mobile Reserve Bar */}
       <MobileReserveBar trek={trek} />
     </main>
   );

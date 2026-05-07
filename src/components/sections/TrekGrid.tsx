@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import TrekCard from "./TrekCard";
 import { motion, AnimatePresence } from "framer-motion";
-import { trekData } from "@/lib/treks";
+import { trekData } from "@/lib/data/treks";
 
 const FILTERS = [
   "All",

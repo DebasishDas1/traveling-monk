@@ -1,11 +1,11 @@
 "use client";
 
+import type { TrekType } from "@/lib/type";
 import { Button } from "@/components/ui/button";
-import { Trek } from "@/lib/treks";
 import { useUiStore } from "@/stores/uiStore";
 
 interface MobileReserveBarProps {
-  trek: Trek;
+  trek: TrekType;
 }
 
 export const MobileReserveBar = ({ trek }: MobileReserveBarProps) => {

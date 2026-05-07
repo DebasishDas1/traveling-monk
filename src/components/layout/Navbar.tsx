@@ -42,7 +42,7 @@ export const Navbar = () => {
   } = useUiStore();
 
   const pathname = usePathname();
-  const isTreksPage = pathname.startsWith("/treks");
+  const isTreksPage = pathname.startsWith("/treks/") && pathname !== "/treks/";
 
   useEffect(() => {
     const handleScroll = () => {

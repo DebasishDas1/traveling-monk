@@ -33,7 +33,7 @@ import {
   User,
   Users2,
 } from "lucide-react";
-import { Trek } from "@/lib/treks";
+import { TrekType } from "@/lib/type";
 import { submitBooking } from "@/lib/actions/booking";
 
 const bookingSchema = z.object({
@@ -47,7 +47,7 @@ const bookingSchema = z.object({
 type BookingFormValues = z.infer<typeof bookingSchema>;
 
 interface BookingModalProps {
-  trek: Trek;
+  trek: TrekType;
 }
 
 export const BookingModal = ({ trek }: BookingModalProps) => {

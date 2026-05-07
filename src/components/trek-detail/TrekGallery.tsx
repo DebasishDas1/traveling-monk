@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { Trek } from "@/lib/treks";
 import { Camera } from "lucide-react";
+import type { TrekType } from "@/lib/type";
 
 interface TrekGalleryProps {
-  trek: Trek;
+  trek: TrekType;
 }
 
 export const TrekGallery = ({ trek }: TrekGalleryProps) => {

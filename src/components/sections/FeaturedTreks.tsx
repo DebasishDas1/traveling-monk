@@ -1,14 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { getFeaturedTreks } from "@/lib/trek-utils";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import SectionHeader from "./SectionHeader";
 import TrekCard from "./TrekCard";
+import { trekData } from "@/lib/data/treks";
 
 export const FeaturedTreks = () => {
-  const treks = getFeaturedTreks();
+  const treks = trekData.slice(0, 3);
 
   return (
     <section className="relative py-32 px-6 overflow-hidden">

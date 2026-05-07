@@ -1,12 +1,12 @@
 "use client";
 
-import { Trek } from "@/lib/treks";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowRight, Clock, Users, Mountain } from "lucide-react";
+import type { TrekType } from "@/lib/type";
+import { ArrowRight, Users, Mountain } from "lucide-react";
 
-const TrekCard = ({ trek, index }: { trek: Trek; index: number }) => {
+const TrekCard = ({ trek, index }: { trek: TrekType; index: number }) => {
   return (
     <motion.div
       layout

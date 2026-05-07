@@ -40,7 +40,7 @@ import {
   X,
   Compass,
 } from "lucide-react";
-import { trekData } from "@/lib/treks";
+import { trekData } from "@/lib/data/treks";
 import { submitBooking } from "@/lib/actions/booking";
 
 const bookingSchema = z.object({

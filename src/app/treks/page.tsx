@@ -12,23 +12,28 @@ export default function TreksPage() {
   return (
     <main className="min-h-screen bg-parchment">
       {/* 🏞️ Hero Header */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/treks/treks-hero.jpg"
             alt="Mountains"
             fill
             priority
+            quality={60}
+            placeholder="blur"
+            blurDataURL="/dark-logo.png"
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-forest/50 backdrop-blur-[2px]" />
+
+          <div className="absolute inset-0 bg-forest/50" />
         </div>
 
         <div className="relative z-10 text-center px-6 max-w-4xl">
           <h1 className="font-display italic text-6xl md:text-8xl text-white leading-[1.1] mb-6 drop-shadow-2xl">
             Find your trail.
           </h1>
+
           <p className="font-sans font-light text-white/80 text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto drop-shadow-lg">
             Every trek is designed to push you further than you thought
             possible.

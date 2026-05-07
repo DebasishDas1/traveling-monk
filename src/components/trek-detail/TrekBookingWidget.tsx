@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useState, useEffect } from "react";
+import Link from "next/link";
 import {
   ChevronRight,
   MessageCircle,
@@ -10,12 +10,12 @@ import {
   Users,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Trek } from "@/lib/treks";
+import { TrekType } from "@/lib/type";
 import { useUiStore } from "@/stores/uiStore";
 import { whatsappNumber } from "@/lib/utils";
 
 interface TrekBookingWidgetProps {
-  trek: Trek;
+  trek: TrekType;
 }
 
 export const TrekBookingWidget = ({ trek }: TrekBookingWidgetProps) => {

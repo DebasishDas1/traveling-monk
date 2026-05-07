@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Trek } from "@/lib/treks";
 import { cn } from "@/lib/utils";
+import type { TrekType } from "@/lib/type";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -61,13 +61,15 @@ const FALLBACK_GALLERY = {
 };
 
 const difficultyColor: Record<string, string> = {
-  Beginner: "bg-emerald-500/90 text-white",
+  Easy: "bg-emerald-500/90 text-white",
+  "Easy to Moderate": "bg-emerald-500/90 text-white",
   Moderate: "bg-amber-500/90 text-white",
+  "Moderate to Challenging": "bg-amber-500/90 text-white",
   Challenging: "bg-rose-600/90 text-white",
 };
 
 interface TrekHeroProps {
-  trek: Trek;
+  trek: TrekType;
 }
 
 export const TrekHero = ({ trek }: TrekHeroProps) => {

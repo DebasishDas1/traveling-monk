@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { trekData } from "@/lib/treks";
+import { trekData } from "@/lib/data/treks";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://thetravelingmonk.in";

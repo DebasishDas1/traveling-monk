@@ -51,11 +51,14 @@ export default function AboutPage() {
             fill
             priority
             sizes="100vw"
+            quality={60}
+            placeholder="blur"
+            blurDataURL="/dark-logo.png"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-forest/60" />
 
-          <PaperCut color="#dbc8ac" />
+          {/* <PaperCut color="#dbc8ac" /> */}
         </div>
         <div className="relative z-10 text-center px-6">
           <h1 className="font-display italic text-6xl md:text-8xl text-white leading-tight drop-shadow-2xl">

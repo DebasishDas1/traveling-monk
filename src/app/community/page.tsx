@@ -34,8 +34,10 @@ export default function CommunityPage() {
           fill
           priority
           sizes="100vw"
-          quality={85}
           className="object-cover object-center"
+          quality={75}
+          placeholder="blur"
+          blurDataURL="/dark-logo.png"
         />
 
         {/* Cinematic gradient overlay */}

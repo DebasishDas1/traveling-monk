@@ -1,4 +1,4 @@
-import { trekData } from "@/lib/treks";
+import { trekData } from "@/lib/data/treks";
 import TrekCard from "@/components/sections/TrekCard";
 
 interface TrekRelatedProps {
@@ -16,7 +16,9 @@ export const TrekRelated = ({ currentTrekSlug }: TrekRelatedProps) => {
   return (
     <section className="space-y-12 py-12">
       <div className="flex items-center gap-6">
-        <h2 className="font-display text-4xl text-forest italic shrink-0">Other Paths</h2>
+        <h2 className="font-display text-4xl text-forest italic shrink-0">
+          Other Paths
+        </h2>
         <div className="h-px bg-stone-200 grow" />
       </div>
 
