@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Explore Treks | The Traveling Monk",
   description:
     "Browse our curated seasonal treks through the Himalayas and beyond. Beginner to advanced expeditions available.",
+  alternates: {
+    canonical: "/treks",
+  },
 };
 
 export default function TreksPage() {

@@ -12,44 +12,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-
-// ─────────────────────────────────────────────────────────
-// Per-trek curated gallery: hand-picked Unsplash photo IDs
-// that evoke the specific landscape of each expedition.
-// ─────────────────────────────────────────────────────────
-const TREK_GALLERIES: Record<string, { hero: string; side: [string, string] }> =
-  {
-    kedarkantha: {
-      // Kedarkantha: snow-draped Himalayan peaks, pine forests, winter light
-      hero: "1506905925346-21bda4d32df4",
-      side: ["1551632811-561732d1e306", "1464822759023-fed622ff2c3b"],
-    },
-    "chopta-tungnath": {
-      // Chopta: misty alpine meadows, lush green ridgelines
-      hero: "1455156218388-5e61287818dc",
-      side: ["1470770841072-f978cf4d7821", "1519681393784-d120267933ba"],
-    },
-    "coorg-trek": {
-      // Coorg: Western Ghats, rolling coffee estate hills, tropical mist
-      hero: "1590523277543-a94d2e4eb00b",
-      side: ["1592194996308-7b43878e84a6", "1586348943529-beaae6c28db9"],
-    },
-    "rupin-pass": {
-      // Rupin Pass: dramatic waterfall, high-altitude snow crossover
-      hero: "1501785888041-af3ef285b470",
-      side: ["1544735716-392fe2489ffa", "1522163182402-834f871fd851"],
-    },
-    "valley-of-flowers": {
-      // Valley of Flowers: technicolor wildflower meadows, glacial streams
-      hero: "1464822759023-fed622ff2c3b",
-      side: ["1506905925346-21bda4d32df4", "1470770841072-f978cf4d7821"],
-    },
-    "hampta-pass": {
-      // Hampta Pass: the legendary contrast — lush Kullu vs arid Spiti
-      hero: "1551632811-561732d1e306",
-      side: ["1455156218388-5e61287818dc", "1519681393784-d120267933ba"],
-    },
-  };
+import { getImageSrc } from "@/lib/utils";
 
 // Fallback for any unrecognised slug
 const FALLBACK_GALLERY = {
@@ -73,17 +36,17 @@ interface TrekHeroProps {
 }
 
 export const TrekHero = ({ trek }: TrekHeroProps) => {
-  const gallery = TREK_GALLERIES[trek.slug] ?? FALLBACK_GALLERY;
-  const heroUrl = `https://images.unsplash.com/photo-${gallery.hero}?auto=format&fit=crop&q=85&w=1600`;
-  const sideUrls = gallery.side.map(
-    (id) =>
-      `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&q=80&w=800`,
-  );
+  const gallery = trek.gallery || [];
+  const heroImage = getImageSrc(gallery[0]); // Using existing hero pic as fallback
+  const sideImages = gallery
+    .slice(1, 3)
+    .map((url) => getImageSrc(url))
+    .filter(Boolean) as string[];
 
   return (
     <section className="space-y-6 pt-4">
       {/* ── Breadcrumb ── */}
-      <Breadcrumb className="pt-4 px-4 sm:px-6 md:px-8 lg:px-0">
+      <Breadcrumb className="pt-4 px-4 sm:px-6 md:px-8 lg:px-0 container mx-auto max-w-7xl flex items-center justify-between">
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink href="/">Home</BreadcrumbLink>
@@ -109,7 +72,7 @@ export const TrekHero = ({ trek }: TrekHeroProps) => {
           className="md:col-span-8 lg:col-span-9 relative h-[60vh] md:h-full overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] shadow-[0_40px_100px_rgba(0,0,0,0.35)] group"
         >
           <Image
-            src={heroUrl}
+            src={heroImage}
             alt={trek.name}
             fill
             priority
@@ -182,7 +145,7 @@ export const TrekHero = ({ trek }: TrekHeroProps) => {
 
         {/* 🖼️ Side Gallery (Spans 4 or 3 cols depending on screen) */}
         <div className="md:col-span-4 lg:col-span-3 grid grid-cols-2 md:grid-cols-1 gap-4 md:gap-6">
-          {sideUrls.map((url, i) => (
+          {sideImages.map((url, i) => (
             <motion.div
               key={url}
               initial={{ opacity: 0, x: 15 }}

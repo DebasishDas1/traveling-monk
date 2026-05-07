@@ -4,18 +4,15 @@ import { useState, useMemo } from "react";
 import TrekCard from "./TrekCard";
 import { motion, AnimatePresence } from "framer-motion";
 import { trekData } from "@/lib/data/treks";
+import { cn } from "@/lib/utils";
 
 const FILTERS = [
   "All",
-  "Beginner",
+  "Easy",
+  "Easy to Moderate",
   "Moderate",
-  "Challenging",
-  "Weekend",
-  "Transformation",
-  "Premium",
-  "Uttarakhand",
-  "Himachal",
-  "South India",
+  "Moderate to Difficult",
+  "Difficult",
 ];
 
 export const TrekGrid = () => {
@@ -35,18 +32,18 @@ export const TrekGrid = () => {
   return (
     <div className="w-full">
       {/* 🧭 Filter Bar */}
-      {/* <div className="sticky top-15 z-40 w-full">
+      <div className="w-full">
         <div className="mx-auto">
           <div
-            className="relative flex flex-wrap gap-3 items-center justify-center py-3 px-4
-            rounded-b-3xl
-            backdrop-blur-xl
-            bg-parchment/20
+            className="top-6 z-40 relative flex flex-wrap gap-3 items-center justify-center py-3 px-4
+          rounded-b-3xl
+          backdrop-blur-xl
+          bg-parchment/20
 
-            before:absolute before:top-0 before:left-0 before:right-0 before:h-1/2
-            before:pointer-events-none
-            supports-backdrop-filter:bg-parchment/40
-            "
+          before:absolute before:top-0 before:left-0 before:right-0 before:h-1/2
+          before:pointer-events-none
+          supports-backdrop-filter:bg-parchment/40
+          "
           >
             {FILTERS.map((filter) => (
               <button
@@ -56,7 +53,7 @@ export const TrekGrid = () => {
                   "px-5 py-2 rounded-full text-xs uppercase tracking-widest font-medium transition-all duration-300 border",
                   activeFilter === filter
                     ? "bg-saffron border-saffron text-forest shadow-md"
-                    : "bg-transparent border-black text-forest hover:border-saffron hover:text-saffron",
+                    : "bg-transparent border-forest text-forest hover:border-monk-brown-warm hover:text-monk-brown-warm",
                 )}
               >
                 {filter}
@@ -64,7 +61,7 @@ export const TrekGrid = () => {
             ))}
           </div>
         </div>
-      </div> */}
+      </div>
 
       {/* 🏔️ Grid */}
       <div className="relative container mx-auto px-6 py-20">

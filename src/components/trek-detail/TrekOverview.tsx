@@ -1,5 +1,6 @@
 import { Mountain, Users, Calendar, MapPin, Compass, Wind } from "lucide-react";
 import type { TrekType } from "@/lib/type";
+import { cn } from "@/lib/utils";
 
 interface TrekOverviewProps {
   trek: TrekType;
@@ -75,18 +76,26 @@ export const TrekOverview = ({ trek }: TrekOverviewProps) => {
             {trek.description.split("\n\n").map((para, i) => (
               <p
                 key={i}
-                className="first-letter:text-5xl first-letter:font-display first-letter:italic first-letter:float-left first-letter:mr-3 first-letter:text-forest first-letter:mt-1"
+                className={cn(
+                  i === 0 &&
+                    "first-letter:text-6xl first-letter:font-display first-letter:italic first-letter:float-left first-letter:mr-3 first-letter:text-forest first-letter:mt-1",
+                )}
               >
                 {para}
               </p>
             ))}
           </div>
 
-          <div className="flex flex-wrap gap-3 pt-6">
+          {/* Highlights Section */}
+          <h2 className="font-display text-4xl md:text-5xl text-forest italic">
+            Why this trek?
+          </h2>
+
+          <div className="flex flex-wrap gap-3 pt-3">
             {trek.highlights.map((highlight) => (
               <span
                 key={highlight}
-                className="px-6 py-2.5 rounded-2xl bg-white border border-stone-100 text-monk-brown-deep text-xs font-bold tracking-widest uppercase shadow-sm hover:shadow-md transition-shadow cursor-default"
+                className="px-6 py-2.5 rounded-2xl bg-monk-brown-warm text-white text-xs font-bold tracking-widest uppercase shadow-sm hover:shadow-md transition-shadow cursor-default"
               >
                 {highlight}
               </span>

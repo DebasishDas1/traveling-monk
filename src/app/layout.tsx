@@ -37,13 +37,21 @@ export const metadata: Metadata = {
     "premium adventure travel",
     "transformation trek",
     "guided treks india",
+    "spiritual travel india",
+    "eco-friendly trekking",
   ],
   authors: [{ name: "The Traveling Monk Team" }],
   creator: "The Traveling Monk",
+  publisher: "The Traveling Monk",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "/",
+    url: "https://thetravelingmonk.in",
     siteName: "The Traveling Monk",
     title: "The Traveling Monk | Transformational Trekking",
     description:
@@ -53,7 +61,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "The Traveling Monk",
+        alt: "The Traveling Monk — Premium Treks",
       },
     ],
   },
@@ -67,15 +75,23 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
   verification: {
     google: "google-site-verification-placeholder",
-  },
-  alternates: {
-    canonical: "/",
   },
 };
 
@@ -83,6 +99,7 @@ export const viewport: Viewport = {
   themeColor: "#1A2E1F", // Forest color for UI
   width: "device-width",
   initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
@@ -90,6 +107,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "The Traveling Monk",
+    url: "https://thetravelingmonk.in",
+    logo: "https://thetravelingmonk.in/dark-logo.png",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+91-9108216171",
+      contactType: "customer service",
+      areaServed: "IN",
+      availableLanguage: "en",
+    },
+    sameAs: [
+      "https://www.instagram.com/thetravelingmonk.in",
+      "https://www.youtube.com/@thetravelingmonk",
+    ],
+  };
+
   return (
     <html
       lang="en"
@@ -103,6 +139,10 @@ export default function RootLayout({
       )}
     >
       <body className="min-h-full flex flex-col font-body bg-parchment text-forest">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

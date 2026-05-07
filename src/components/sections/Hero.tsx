@@ -30,11 +30,9 @@ export const Hero = () => {
           sizes="100vw"
           className="object-cover"
           quality={75}
-          placeholder="blur"
-          blurDataURL="/dark-logo.png"
         />
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-forest/40" />
+        <div className="absolute inset-0 bg-forest/40 backdrop-blur-[1px]" />
       </div>
 
       {/* Content Stack */}

@@ -60,7 +60,7 @@ export const Navbar = () => {
         navScrolled
           ? [
               "py-3",
-              "bg-parchment/20", // very light tint₹
+              "bg-parchment/20", // very light tint
               "backdrop-blur-xl", // stronger blur
               "supports-backdrop-filter:bg-parchment/40",
             ]

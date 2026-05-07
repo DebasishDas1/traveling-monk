@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -12,7 +13,7 @@ const socialLinks = [
   { name: "WhatsApp", href: whatsappLink },
   {
     name: "Instagram",
-    href: "https://www.instagram.com/thetravelingmonk.in?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    href: "https://www.instagram.com/thetravelingmonk.in",
   },
   {
     name: "Facebook",
@@ -44,9 +45,9 @@ const FooterLinkGroup = ({
               href={href}
               target={external ? "_blank" : undefined}
               rel={external ? "noopener noreferrer" : undefined}
-              className="group inline-flex text-sm text-parchment/70 transition-colors hover:text-parchment"
+              className="group inline-flex text-sm text-parchment/70 hover:text-parchment"
             >
-              <span className="border-b border-transparent pb-0.5 transition-colors group-hover:border-parchment/20">
+              <span className="border-b border-transparent pb-0.5 group-hover:border-parchment/20">
                 {name}
               </span>
             </Link>
@@ -58,13 +59,17 @@ const FooterLinkGroup = ({
 };
 
 export const Footer = () => {
+  const [year, setYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="relative overflow-hidden bg-black text-parchment/80">
-      {/* Background glow */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,180,80,0.06),transparent_45%)]" />
 
       <div className="container relative mx-auto max-w-7xl px-6 pb-12 pt-24">
-        {/* Main */}
         <div className="mb-20 grid gap-16 md:grid-cols-3 md:gap-12">
           {/* Brand */}
           <div className="space-y-8">
@@ -78,6 +83,8 @@ export const Footer = () => {
 
               <p className="max-w-xs font-display text-xl italic leading-relaxed text-parchment/50">
                 “Walk until you find yourself.”
+                <br />
+                {year ?? "—"} All rights reserved.
               </p>
             </div>
           </div>
@@ -85,7 +92,6 @@ export const Footer = () => {
           {/* Links */}
           <div className="grid gap-12 sm:grid-cols-2">
             <FooterLinkGroup title="Company" links={navLinks} />
-
             <FooterLinkGroup title="Socials" links={socialLinks} external />
           </div>
 
@@ -99,7 +105,7 @@ export const Footer = () => {
               <div className="space-y-3">
                 <a
                   href="mailto:team@thetravelingmonk.in"
-                  className="block text-lg text-parchment transition-colors hover:text-saffron"
+                  className="block text-lg text-parchment hover:text-saffron"
                 >
                   team@thetravelingmonk.in
                 </a>
@@ -125,23 +131,14 @@ export const Footer = () => {
                   type="email"
                   placeholder="Email address"
                   autoComplete="email"
-                  className="
-                    h-11 rounded-full border-white/10 bg-white/5
-                    px-5 text-parchment placeholder:text-parchment/30
-                    focus-visible:ring-1 focus-visible:ring-saffron/30
-                  "
+                  className="h-11 rounded-full border-white/10 bg-white/5 px-5 text-parchment placeholder:text-parchment/30"
                 />
 
                 <Button
                   type="submit"
                   size="icon"
                   aria-label="Subscribe"
-                  className="
-                    size-11 shrink-0 rounded-full
-                    bg-saffron text-black
-                    transition-all duration-300
-                    hover:bg-saffron/90
-                  "
+                  className="size-11 shrink-0 rounded-full bg-saffron text-black hover:bg-saffron/90"
                 >
                   <ArrowRight className="size-5" />
                 </Button>
@@ -151,15 +148,8 @@ export const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div
-          className="
-            flex flex-col items-center justify-between gap-4
-            border-t border-white/5 pt-8
-            text-[10px] font-semibold uppercase tracking-[0.28em]
-            text-parchment/20 md:flex-row
-          "
-        >
-          <span>© {new Date().getFullYear()} The Traveling Monk</span>
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 text-[10px] font-semibold uppercase tracking-[0.28em] text-parchment/20 md:flex-row">
+          <span>© {year ?? "—"} The Traveling Monk</span>
 
           <span className="italic tracking-[0.2em] text-parchment/25">
             Made with purpose in the mountains

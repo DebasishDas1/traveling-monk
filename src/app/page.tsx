@@ -38,30 +38,11 @@ const CTABanner = dynamic(() =>
   import("@/components/sections/CTABanner").then((mod) => mod.CTABanner),
 );
 
-export default function HomePage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "The Traveling Monk",
-    url: "https://thetravelingmonk.in",
-    logo: "https://thetravelingmonk.in/logo.png",
-    sameAs: [
-      "https://www.instagram.com/thetravelingmonk.in?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-      "https://www.youtube.com/@thetravelingmonk",
-    ],
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: `+91-${whatsappNumber}`,
-      contactType: "customer service",
-    },
-  };
+export const unstable_instant = true;
 
+export default function HomePage() {
   return (
     <main className="min-h-screen">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       {/* 🏔️ Above the fold: Priority loading */}
       <Hero />
       <StatsStrip />

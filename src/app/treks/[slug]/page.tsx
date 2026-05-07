@@ -42,17 +42,33 @@ export async function generateMetadata({
   return {
     title: `${trek.name} | The Traveling Monk`,
     description: trek.tagline,
+    keywords: [
+      `${trek.name}`,
+      `${trek.name} trek`,
+      `${trek.region} treks`,
+      "trekking india",
+      "premium treks",
+    ],
     openGraph: {
       title: `${trek.name} Trek | The Traveling Monk`,
       description: trek.tagline,
       images: [
         {
-          url: trek.image,
+          url: trek.gallery[0],
           width: 1200,
           height: 630,
           alt: trek.name,
         },
       ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${trek.name} Trek | The Traveling Monk`,
+      description: trek.tagline,
+      images: [trek.gallery[0]],
+    },
+    alternates: {
+      canonical: `/treks/${slug}`,
     },
   };
 }
@@ -72,7 +88,7 @@ export default async function TrekDetailPage({ params }: PageProps) {
     "@type": ["Product", "Event"],
     name: trek.name,
     description: trek.description,
-    image: trek.image,
+    image: trek.gallery[0],
     offers: {
       "@type": "Offer",
       price: trek.priceFrom,
@@ -91,13 +107,11 @@ export default async function TrekDetailPage({ params }: PageProps) {
   return (
     <main className="min-h-screen bg-parchment pb-32">
       {/* ✅ JSON-LD */}
-      <Script
-        id="trek-jsonld"
+      <script
         type="application/ld+json"
-        strategy="beforeInteractive"
-      >
-        {JSON.stringify(jsonLd)}
-      </Script>
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       {/* Hero */}
       <div className="w-full pt-14 md:pt-16 pb-8 md:pb-16">

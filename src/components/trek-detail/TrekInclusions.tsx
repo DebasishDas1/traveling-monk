@@ -29,6 +29,7 @@ export const TrekInclusions = () => {
     "Insurance",
     "Emergency Evacuation",
     "Personal Expenses",
+    "GST Charges",
   ];
 
   return (
@@ -48,7 +49,7 @@ export const TrekInclusions = () => {
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {inclusions.map((item) => (
               <li key={item.text} className="flex items-start gap-4 group">
-                <div className="size-10 rounded-2xl bg-forest/5 flex items-center justify-center text-forest group-hover:bg-forest group-hover:text-white transition-all duration-300">
+                <div className="size-10 rounded-2xl bg-green-100 flex items-center justify-center text-green-700">
                   {item.icon}
                 </div>
                 <div className="space-y-1">
@@ -76,7 +77,7 @@ export const TrekInclusions = () => {
           <ul className="space-y-6">
             {exclusions.map((item) => (
               <li key={item} className="flex items-center gap-4 group">
-                <div className="size-2 rounded-full bg-stone-200 group-hover:bg-saffron transition-all" />
+                <div className="size-2 rounded-full bg-red-400" />
                 <span className="font-sans text-sm font-light tracking-wide">
                   {item}
                 </span>

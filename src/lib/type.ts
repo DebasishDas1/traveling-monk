@@ -61,7 +61,7 @@ export type TrekType = {
   priceFrom: number;
   maxGroupSize: number;
 
-  image: string;
+  gallery: string[];
 
   highlights: string[];
 

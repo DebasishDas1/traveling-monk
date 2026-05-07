@@ -31,7 +31,7 @@ const TrekItineraryCard = ({
   return (
     <div className="overflow-hidden rounded-[2rem] border border-[#e7dccd] bg-[#fffdf9] shadow-[0_10px_40px_rgba(60,40,20,0.08)]">
       {/* 🖼️ Image */}
-      <div className="relative h-[220px] w-full overflow-hidden bg-[#efe7dc]">
+      <div className="relative h-[260px] md:h-[320px] w-full overflow-hidden rounded-[1.75rem] bg-[#efe7dc]">
         {imageSrc ? (
           <>
             <Image
@@ -39,22 +39,21 @@ const TrekItineraryCard = ({
               alt={title}
               fill
               priority={day === 1}
-              loading={day === 1 ? "eager" : "lazy"}
               sizes="(max-width: 768px) 100vw, 700px"
-              className="object-cover"
+              className="object-cover transition-transform duration-700 hover:scale-105"
             />
 
-            {/* Luxury Overlay */}
-            <div className="absolute inset-0 bg-linear-to-t from-black/30 via-black/5 to-transparent" />
+            {/* Soft parchment fade */}
+            <div className="absolute inset-0 bg-linear-to-t from-[#fdfaf4]/60 via-transparent to-transparent" />
           </>
         ) : (
           <div className="flex h-full items-center justify-center bg-[#efe7dc]">
             <Image
               src="/dark-logo.png"
               alt="The Traveling Monk"
-              width={90}
-              height={90}
-              className="opacity-40"
+              width={80}
+              height={80}
+              className="opacity-30"
             />
           </div>
         )}

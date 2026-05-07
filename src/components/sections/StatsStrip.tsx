@@ -36,11 +36,11 @@ const StatItem = ({
       ref={ref}
       className={cn(
         "relative flex flex-col items-center justify-center",
-        "py-14 px-6 text-center",
+        "py-14 px-6 text-center group",
       )}
     >
       {/* ✨ Subtle divider */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 h-12 w-px bg-linear-to-b from-transparent via-forest/20 to-transparent first:hidden" />
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 h-12 w-px bg-linear-to-b from-transparent via-forest/20 to-transparent hidden md:block group-first:hidden" />
 
       {/* 🔢 Number */}
       <div className="font-display text-5xl md:text-7xl font-semibold text-forest tracking-tight">
@@ -64,7 +64,7 @@ export const StatsStrip = () => {
 
       {/* Content */}
       <div className="relative container max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 group">
           <StatItem value={47} label="Treks Completed" suffix="+" />
           <StatItem value={600} label="Lives Changed" suffix="+" />
           <StatItem value={12} label="Mountain Ranges" />

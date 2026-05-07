@@ -1,14 +1,8 @@
 import { TrekType } from "../type";
 
-// ─── NEW TREKS FROM THIS BATCH ───────────────────────────────────────────────
-// Sar Pass      | 5D/4N | Easy-Moderate | ₹5,999  | Kasol
-// Buran Ghati   | 7D/6N | Moderate-Difficult | ₹16,500 | Shimla
-// Bhrigu Lake   | 4D/3N | Moderate      | ₹5,599  | Manali
-// Beas Kund     | 4D/3N | Easy-Moderate | ₹5,599  | Manali
-// ─────────────────────────────────────────────────────────────────────────────
-
 export const trekData: TrekType[] = [
-  // ── previously added treks (kheerganga, triund, hampta, bali, sar) ──────────
+
+  // ── KHEERGANGA TREK ─────────────────────────────────────────────────────────────────
   {
     slug: "kheerganga-trek",
     name: "Kheerganga Trek",
@@ -20,7 +14,9 @@ export const trekData: TrekType[] = [
     priceFrom: 1499,
     maxGroupSize: 30,
     altitude: "9,700 ft (~2,950m)",
-    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&q=80&w=1000",
+    gallery: [
+      "https://drive.google.com/file/d/1TxqE89xYRDCCUIZvkTL8cGXjF4YXOzLC/view?usp=sharing",
+    ],
     highlights: [
       "Parvati Kund hot springs",
       "Rudra Nag waterfall",
@@ -42,6 +38,7 @@ export const trekData: TrekType[] = [
         duration: "5–6 hrs trek (~12 km)",
         description:
           "Start from Barsheni and trek along the Parvati River through pine forests, villages, and waterfalls. Stop at Rudra Nag for scenic views. Reach Kheerganga by evening and enjoy camping in the peaceful mountain setting.",
+        imageUrl: "https://drive.google.com/file/d/1TxqE89xYRDCCUIZvkTL8cGXjF4YXOzLC/view?usp=sharing",
       },
       {
         day: 2,
@@ -73,6 +70,7 @@ export const trekData: TrekType[] = [
     availableDates: [{ date: "Flexible", spots: 30 }],
   },
 
+  // ── TRIUND TREK ─────────────────────────────────────────────────────────────────
   {
     slug: "triund-trek",
     name: "Triund Trek",
@@ -84,7 +82,9 @@ export const trekData: TrekType[] = [
     priceFrom: 1199,
     maxGroupSize: 30,
     altitude: "~2,828–2,875 meters",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=1000",
+    gallery: [
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=1000",
+    ],
     highlights: [
       "Panoramic Dhauladhar range views",
       "Kangra Valley vistas",
@@ -122,6 +122,7 @@ export const trekData: TrekType[] = [
     availableDates: [{ date: "Flexible", spots: 30 }],
   },
 
+  // ── HAMPTA PASS ─────────────────────────────────────────────────────────────────
   {
     slug: "hampta-pass",
     name: "Hampta Pass",
@@ -133,7 +134,9 @@ export const trekData: TrekType[] = [
     priceFrom: 6999,
     maxGroupSize: 30,
     altitude: "14,000 to 14,100 feet",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000",
+    gallery: [
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000",
+    ],
     highlights: [
       "Chandratal Lake visit",
       "Dramatic valley crossover – Kullu to Spiti",
@@ -201,6 +204,7 @@ export const trekData: TrekType[] = [
     availableDates: [{ date: "Flexible", spots: 30 }],
   },
 
+  // ── BALI PASS ─────────────────────────────────────────────────────────────────
   {
     slug: "bali-pass",
     name: "Bali Pass",
@@ -212,7 +216,9 @@ export const trekData: TrekType[] = [
     priceFrom: 18499,
     maxGroupSize: 30,
     altitude: "16,207 ft",
-    image: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=1000",
+    gallery: [
+      "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=1000",
+    ],
     highlights: [
       "Ruinsara Tal (glacial lake)",
       "Yamunotri Darshan – Char Dham temple",
@@ -322,7 +328,9 @@ export const trekData: TrekType[] = [
     priceFrom: 5999,
     maxGroupSize: 30,
     altitude: "~13,800 ft (4,200 m)",
-    image: "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&q=80&w=1000",
+    gallery:[ 
+      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&q=80&w=1000",
+    ],
     highlights: [
       "360-degree views from Sar Pass summit",
       "Views of Indrasan, Deo Tibba & Nagaru peaks",
@@ -402,7 +410,7 @@ export const trekData: TrekType[] = [
     priceFrom: 16500,
     maxGroupSize: 15,
     altitude: "~15,000 ft (4,575 m)",
-    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=1000",
+    gallery:[ "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=1000",],
     highlights: [
       "Buran Ghati Pass crossing at 15,000 ft",
       "Chandranahan Lake – glacial origin of Pabbar River",
@@ -502,7 +510,7 @@ export const trekData: TrekType[] = [
     priceFrom: 5599,
     maxGroupSize: 30,
     altitude: "14,000 ft (4,300 m)",
-    image: "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&q=80&w=1000",
+    gallery:[ "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&q=80&w=1000",],
     highlights: [
       "Bhrigu Lake at 14,000 ft – sacred high-altitude gem",
       "Sweeping Kullu Valley and snow-peak vistas",
@@ -572,7 +580,7 @@ export const trekData: TrekType[] = [
     priceFrom: 5599,
     maxGroupSize: 30,
     altitude: "3,700 m (12,139 ft)",
-    image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&q=80&w=1000",
+    gallery:[ "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&q=80&w=1000",],
     highlights: [
       "Beas Kund – sacred origin of the River Beas",
       "Views of Hanuman Tibba (5,990 m) and Friendship Peak",

@@ -5,8 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import type { TrekType } from "@/lib/type";
 import { ArrowRight, Users, Mountain } from "lucide-react";
+import { getImageSrc } from "@/lib/utils";
 
 const TrekCard = ({ trek, index }: { trek: TrekType; index: number }) => {
+  const imageSrc = getImageSrc(trek.gallery[0]);
+  if (!imageSrc) return null;
+
   return (
     <motion.div
       layout
@@ -22,7 +26,7 @@ const TrekCard = ({ trek, index }: { trek: TrekType; index: number }) => {
           {/* 🖼 IMAGE */}
           <div className="relative aspect-3/4">
             <Image
-              src={trek.image}
+              src={imageSrc}
               alt={trek.name}
               fill
               sizes="(max-width: 768px) 100vw, 33vw"

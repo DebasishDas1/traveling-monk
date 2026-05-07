@@ -9,26 +9,44 @@ export const whatsappNumber = "7003564123";
 export const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Hi, I have a question about your treks`)}`
 
 
-export const getImageSrc = (url?: string | null): string | null => {
-  if (!url) return null;
+const FALLBACK_IMAGE = "/dark-logo.png";
+
+export const getImageSrc = (url?: string | null): string => {
+  if (!url) return FALLBACK_IMAGE;
 
   const cleanUrl = url.trim();
-  if (!cleanUrl) return null;
+  if (!cleanUrl) return FALLBACK_IMAGE;
 
   try {
-    // Handle Google Drive
+    // --- Google Drive ---
     const driveMatch =
       cleanUrl.match(/\/d\/(.*?)\//) ||
       cleanUrl.match(/id=(.*?)(?:&|$)/);
 
     if (driveMatch) {
-      return `https://lh3.googleusercontent.com/d/${driveMatch[1]}`;
+      const id = driveMatch[1];
+      return `https://lh3.googleusercontent.com/d/${id}=w1200`;
     }
 
-    // Validate URL
-    new URL(cleanUrl);
-    return cleanUrl;
+    // --- Validate URL ---
+    const parsed = new URL(cleanUrl);
+
+    // --- Unsplash optimization ---
+    if (parsed.hostname.includes("unsplash.com")) {
+      parsed.searchParams.set("auto", "format");
+      parsed.searchParams.set("fit", "crop");
+      parsed.searchParams.set("q", "80");
+      parsed.searchParams.set("w", "1200");
+      return parsed.toString();
+    }
+
+    // --- Basic image extension check ---
+    if (!/\.(jpg|jpeg|png|webp|avif)$/i.test(parsed.pathname)) {
+      return FALLBACK_IMAGE;
+    }
+
+    return parsed.toString();
   } catch {
-    return null; // invalid URL fallback
+    return FALLBACK_IMAGE;
   }
 };
