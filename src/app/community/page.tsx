@@ -5,7 +5,6 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CommunityStats } from "@/components/sections/CommunityStats";
 import { CommunityVoices } from "@/components/sections/CommunityVoices";
-import { MembershipTiers } from "@/components/sections/MembershipTiers";
 import { PhotoMosaic } from "@/components/sections/PhotoMosaic";
 import { JoinForm } from "@/components/sections/JoinForm";
 import { InstagramStrip } from "@/components/sections/InstagramStrip";

@@ -1,4 +1,5 @@
 export type ItineraryDay = {
+  imageUrl?: string;
   day: number;
   title: string;
   description: string;

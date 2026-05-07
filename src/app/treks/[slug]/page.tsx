@@ -8,7 +8,6 @@ import { TrekInclusions } from "@/components/trek-detail/TrekInclusions";
 import { TrekGallery } from "@/components/trek-detail/TrekGallery";
 import { TrekTestimonials } from "@/components/trek-detail/TrekTestimonials";
 import { TrekBookingWidget } from "@/components/trek-detail/TrekBookingWidget";
-import { BookingModal } from "@/components/booking/BookingModal";
 import { MobileReserveBar } from "@/components/trek-detail/MobileReserveBar";
 import { TrekContact } from "@/components/trek-detail/TrekContact";
 import { TrekRelated } from "@/components/trek-detail/TrekRelated";
@@ -90,10 +89,10 @@ export default async function TrekDetailPage({ params }: PageProps) {
       </div>
 
       {/* Main Content & Sidebar Container */}
-      <div className="container mx-auto px-6 max-w-[1400px]">
-        <div className="grid grid-cols-1 xl:grid-cols-[1fr_420px] gap-16 xl:gap-24 items-start">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-[1400px]">
+        <div className="grid grid-cols-1 xl:grid-cols-[1fr_400px] gap-12 xl:gap-20 items-start">
           {/* ⛰️ Main Content Area */}
-          <div className="space-y-32 xl:pr-8">
+          <div className="space-y-24 md:space-y-32 xl:pr-4 min-w-0">
             {/* 2. Core Information */}
             <div className="pt-8 border-t border-stone-200/50">
               <TrekOverview trek={trek} />
@@ -116,9 +115,6 @@ export default async function TrekDetailPage({ params }: PageProps) {
 
             {/* 8. Other Treks */}
             <TrekRelated currentTrekSlug={trek.slug} />
-
-            {/* 9. Booking Modal */}
-            <BookingModal trek={trek} />
           </div>
 
           {/* 💳 Conversion Widget (Sticky Sidebar) */}

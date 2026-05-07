@@ -1,5 +1,7 @@
 import { PhoneCall, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { whatsappLink, whatsappNumber } from "@/lib/utils";
 
 export const TrekContact = () => {
   return (
@@ -18,10 +20,10 @@ export const TrekContact = () => {
         <div className="absolute top-0 right-0 w-64 h-64 bg-saffron/10 rounded-full blur-[90px]" />
 
         {/* Grid Layout */}
-        <div className="relative z-10 grid xl:grid-cols-[1.5fr_1fr] gap-10 xl:gap-16 items-center">
+        <div className="relative z-10 grid xl:grid-cols-1 gap-10 xl:gap-16 items-center">
           {/* LEFT SIDE */}
           <div className="space-y-6">
-            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl xl:text-5xl text-forest italic leading-tight">
+            <h3 className="font-display text-2xl sm:text-4xl xl:text-5xl text-forest italic leading-tight">
               Still have questions about this journey?
             </h3>
 
@@ -29,6 +31,16 @@ export const TrekContact = () => {
               Our expedition leaders are here to help you prepare, answer your
               questions, and ensure this path is the right one for you.
             </p>
+
+            {/* RIGHT SIDE (CTA) */}
+            <Link href={whatsappLink} target="_blank" className="block">
+              <Button
+                variant="outline"
+                className="h-12 md:h-14 xl:h-16 px-6 md:px-8 xl:px-10 rounded-full border-forest/20 text-forest hover:bg-forest hover:text-white transition-all uppercase tracking-widest text-xs font-bold w-full sm:w-auto shadow-sm"
+              >
+                Request a Call Back
+              </Button>
+            </Link>
 
             {/* Contact Row */}
             <div className="flex flex-col sm:flex-row xl:flex-row gap-6 xl:gap-10 pt-4">
@@ -38,11 +50,11 @@ export const TrekContact = () => {
                   <PhoneCall className="size-5 xl:size-6 text-forest" />
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.25em] font-bold text-stone-400">
+                  <p className="text-[10px] uppercase tracking-[0.25em] font-bold">
                     Call Us
                   </p>
                   <p className="text-base xl:text-lg text-forest font-bold tracking-wide group-hover:text-saffron transition-colors">
-                    +91 98765 43210
+                    {whatsappNumber}
                   </p>
                 </div>
               </div>
@@ -53,25 +65,15 @@ export const TrekContact = () => {
                   <Mail className="size-5 xl:size-6 text-forest" />
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.25em] font-bold text-stone-400">
+                  <p className="text-[10px] uppercase tracking-[0.25em] font-bold">
                     Email Us
                   </p>
-                  <p className="text-base xl:text-lg text-forest font-bold tracking-wide group-hover:text-saffron transition-colors break-words">
-                    namaste@travelingmonk.com
+                  <p className="text-base xl:text-lg text-forest font-bold tracking-wide group-hover:text-saffron transition-colors wrap-break-word">
+                    www.thetravelingmonk.in
                   </p>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* RIGHT SIDE (CTA) */}
-          <div className="flex xl:justify-end w-full">
-            <Button
-              variant="outline"
-              className="h-12 md:h-14 xl:h-16 px-6 md:px-8 xl:px-10 rounded-full border-forest/20 text-forest hover:bg-forest hover:text-white transition-all uppercase tracking-widest text-xs font-bold w-full sm:w-auto shadow-sm"
-            >
-              Request a Call Back
-            </Button>
           </div>
         </div>
       </div>

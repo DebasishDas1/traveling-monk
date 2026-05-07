@@ -1,140 +1,169 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { whatsappLink } from "@/lib/utils";
+import { navLinks } from "./Navbar";
+
+const socialLinks = [
+  { name: "WhatsApp", href: whatsappLink },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/thetravelingmonk.in?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+  },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61589167761191",
+  },
+] as const;
+
+type FooterLinkGroupProps = {
+  title: string;
+  links: readonly { name: string; href: string }[];
+  external?: boolean;
+};
+
+const FooterLinkGroup = ({
+  title,
+  links,
+  external = false,
+}: FooterLinkGroupProps) => {
+  return (
+    <div className="space-y-6">
+      <h4 className="text-[10px] font-semibold uppercase tracking-[0.35em] text-saffron/70">
+        {title}
+      </h4>
+
+      <ul className="space-y-3">
+        {links.map(({ name, href }) => (
+          <li key={name}>
+            <Link
+              href={href}
+              target={external ? "_blank" : undefined}
+              rel={external ? "noopener noreferrer" : undefined}
+              className="group inline-flex text-sm text-parchment/70 transition-colors hover:text-parchment"
+            >
+              <span className="border-b border-transparent pb-0.5 transition-colors group-hover:border-parchment/20">
+                {name}
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export const Footer = () => {
   return (
-    <footer className="bg-monk-dark text-parchment/80 pt-24 pb-12 px-6">
-      <div className="container mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12 mb-20">
-          {/* Col 1 - Brand */}
-          <div className="space-y-8">
-            <Link
-              href="/"
-              className="font-display italic text-3xl text-saffron block"
-            >
-              The Traveling Monk
-            </Link>
-            <p className="font-display italic text-xl text-parchment/60 max-w-xs">
-              "Walk until you find yourself."
-            </p>
-            <div className="flex gap-4">
-              {[
-                { icon: Phone, label: "Instagram" },
-                { icon: Phone, label: "Youtube" },
-                { icon: Phone, label: "Call" },
-              ].map((social) => (
-                <button
-                  key={social.label}
-                  className="size-10 rounded-full flex items-center justify-center bg-white/5 hover:bg-saffron/20 text-parchment/60 hover:text-saffron transition-all border border-white/5"
-                  aria-label={social.label}
-                >
-                  <social.icon className="size-5" />
-                </button>
-              ))}
-            </div>
-          </div>
+    <footer className="relative overflow-hidden bg-black text-parchment/80">
+      {/* Background glow */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,180,80,0.06),transparent_45%)]" />
 
-          {/* Col 2 - Explore */}
-          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
-            <div className="space-y-6">
-              <h4 className="text-saffron/60 text-[10px] uppercase tracking-[0.4em] font-bold">
-                Explore
-              </h4>
-              <ul className="space-y-4">
-                {[
-                  "All Treks",
-                  "Weekend Treks",
-                  "Transformation Treks",
-                  "Premium Retreats",
-                ].map((item) => (
-                  <li key={item}>
-                    <Link
-                      href="/treks"
-                      className="text-sm hover:text-parchment transition-colors border-b border-transparent hover:border-parchment/20 pb-0.5"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="space-y-6">
-              <h4 className="invisible h-0 md:visible md:h-auto text-saffron/60 text-[10px] uppercase tracking-[0.4em] font-bold">
-                Company
-              </h4>
-              <ul className="space-y-4">
-                {[
-                  "Corporate Offsites",
-                  "About Us",
-                  "Community",
-                  "Sustainability",
-                ].map((item) => (
-                  <li key={item}>
-                    <Link
-                      href="/about"
-                      className="text-sm hover:text-parchment transition-colors border-b border-transparent hover:border-parchment/20 pb-0.5"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Col 3 - Contact */}
+      <div className="container relative mx-auto max-w-7xl px-6 pb-12 pt-24">
+        {/* Main */}
+        <div className="mb-20 grid gap-16 md:grid-cols-3 md:gap-12">
+          {/* Brand */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <h4 className="text-saffron/60 text-[10px] uppercase tracking-[0.4em] font-bold">
+              <Link
+                href="/"
+                className="inline-block font-display text-3xl italic tracking-tight text-saffron"
+              >
+                The Traveling Monk
+              </Link>
+
+              <p className="max-w-xs font-display text-xl italic leading-relaxed text-parchment/50">
+                “Walk until you find yourself.”
+              </p>
+            </div>
+          </div>
+
+          {/* Links */}
+          <div className="grid gap-12 sm:grid-cols-2">
+            <FooterLinkGroup title="Company" links={navLinks} />
+
+            <FooterLinkGroup title="Socials" links={socialLinks} external />
+          </div>
+
+          {/* Contact */}
+          <div className="space-y-10">
+            <div className="space-y-5">
+              <h4 className="text-[10px] font-semibold uppercase tracking-[0.35em] text-saffron/70">
                 Find Us
               </h4>
-              <div className="space-y-2">
+
+              <div className="space-y-3">
                 <a
-                  href="mailto:hello@thetravelingmonk.in"
-                  className="block text-lg hover:text-saffron transition-colors"
+                  href="mailto:team@thetravelingmonk.in"
+                  className="block text-lg text-parchment transition-colors hover:text-saffron"
                 >
-                  hello@thetravelingmonk.in
+                  team@thetravelingmonk.in
                 </a>
-                <a
-                  href="https://wa.me/91XXXXXXXXXX"
-                  className="block text-parchment/60 hover:text-parchment transition-colors"
-                >
-                  WhatsApp Support →
-                </a>
-                <p className="text-sm text-parchment/40 italic pt-2">
+
+                <p className="pt-2 text-sm italic leading-relaxed text-parchment/35">
                   Based in India · Treks across the Himalayas
                 </p>
               </div>
             </div>
 
-            <div className="space-y-4 pt-4">
-              <p className="text-xs font-bold uppercase tracking-widest text-parchment/40">
+            {/* Newsletter */}
+            <form className="space-y-4">
+              <label
+                htmlFor="newsletter-email"
+                className="block text-[10px] font-semibold uppercase tracking-[0.35em] text-parchment/40"
+              >
                 Get trek updates
-              </p>
+              </label>
+
               <div className="flex gap-2">
                 <Input
+                  id="newsletter-email"
+                  type="email"
                   placeholder="Email address"
-                  className="bg-white/5 border-white/10 text-parchment rounded-full px-5 h-11 focus:ring-saffron/30"
+                  autoComplete="email"
+                  className="
+                    h-11 rounded-full border-white/10 bg-white/5
+                    px-5 text-parchment placeholder:text-parchment/30
+                    focus-visible:ring-1 focus-visible:ring-saffron/30
+                  "
                 />
+
                 <Button
+                  type="submit"
                   size="icon"
-                  className="size-11 rounded-full bg-saffron text-forest shrink-0 hover:bg-saffron/90"
+                  aria-label="Subscribe"
+                  className="
+                    size-11 shrink-0 rounded-full
+                    bg-saffron text-black
+                    transition-all duration-300
+                    hover:bg-saffron/90
+                  "
                 >
                   <ArrowRight className="size-5" />
                 </Button>
               </div>
-            </div>
+            </form>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold text-parchment/20">
-          <span>© 2024 The Traveling Monk</span>
-          <span className="italic">Made with purpose in the mountains</span>
+        {/* Bottom */}
+        <div
+          className="
+            flex flex-col items-center justify-between gap-4
+            border-t border-white/5 pt-8
+            text-[10px] font-semibold uppercase tracking-[0.28em]
+            text-parchment/20 md:flex-row
+          "
+        >
+          <span>© {new Date().getFullYear()} The Traveling Monk</span>
+
+          <span className="italic tracking-[0.2em] text-parchment/25">
+            Made with purpose in the mountains
+          </span>
         </div>
       </div>
     </footer>

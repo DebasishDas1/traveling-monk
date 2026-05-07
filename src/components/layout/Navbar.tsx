@@ -24,7 +24,7 @@ import {
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { usePathname } from "next/navigation";
 
-const navLinks = [
+export const navLinks = [
   { name: "Treks", href: "/treks" },
   { name: "About", href: "/about" },
   { name: "Community", href: "/community" },
@@ -107,7 +107,7 @@ export const Navbar = () => {
             variant="saffron"
             size="sm"
             className="rounded-full px-6 font-bold uppercase tracking-wider text-[10px] shadow-lg shadow-saffron/20"
-            onClick={openBookingDrawer}
+            onClick={() => openBookingDrawer()}
           >
             Join a Trek <ArrowRight className="size-3 ml-2" />
           </Button>
@@ -123,7 +123,9 @@ export const Navbar = () => {
                 <Menu
                   className={cn(
                     "size-6 transition-colors",
-                    navScrolled ? "text-forest" : "text-white",
+                    isTreksPage || navScrolled
+                      ? "text-monk-brown-deep"
+                      : "text-white",
                   )}
                 />
               </button>
@@ -134,7 +136,7 @@ export const Navbar = () => {
               className={cn(
                 "w-screen h-screen max-w-none border-none shadow-none",
                 "bg-monk-beige/50 backdrop-blur-2xl",
-                "p-8 flex flex-col",
+                "p-8 flex flex-col rounded-l-2xl",
               )}
             >
               <VisuallyHidden>
@@ -144,21 +146,13 @@ export const Navbar = () => {
                 </SheetDescription>
               </VisuallyHidden>
 
-              <div className="p-8 flex justify-between items-center">
-                <span className="font-display italic text-2xl text-forest">
+              <div className="pt-10 flex justify-between items-center">
+                <span className="font-display italic text-2xl text-forest font-light">
                   The Traveling Monk
                 </span>
-                {/* <SheetClose asChild>
-                  <button
-                    onClick={closeMobileMenu}
-                    className="p-2 text-forest/60 hover:text-forest"
-                  >
-                    <X className="size-6" />
-                  </button>
-                </SheetClose> */}
               </div>
 
-              <div className="grow flex flex-col justify-center px-10 gap-8">
+              <div className="grow flex flex-col justify-center gap-8">
                 <AnimatePresence>
                   {mobileMenuOpen &&
                     navLinks.map((link, i) => (
@@ -175,7 +169,7 @@ export const Navbar = () => {
                         <Link
                           href={link.href}
                           onClick={closeMobileMenu}
-                          className="text-4xl font-display italic text-forest"
+                          className="text-4xl font-bold font-display italic text-forest"
                         >
                           {link.name}
                         </Link>
@@ -184,7 +178,7 @@ export const Navbar = () => {
                 </AnimatePresence>
               </div>
 
-              <div className="p-12">
+              <div>
                 <Button
                   variant="saffron"
                   className="w-full rounded-full py-7 text-lg font-bold shadow-xl shadow-saffron/10"

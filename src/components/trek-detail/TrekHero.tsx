@@ -81,7 +81,7 @@ export const TrekHero = ({ trek }: TrekHeroProps) => {
   return (
     <section className="space-y-6 pt-4">
       {/* ── Breadcrumb ── */}
-      <Breadcrumb className="pt-4 md:pl-2">
+      <Breadcrumb className="pt-4 px-4 sm:px-6 md:px-8 lg:px-0">
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink href="/">Home</BreadcrumbLink>

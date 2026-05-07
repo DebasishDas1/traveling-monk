@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import { Hero } from "@/components/sections/Hero";
 import { StatsStrip } from "@/components/sections/StatsStrip";
 import { dummyTestimonials } from "@/lib/data";
+import { whatsappNumber } from "@/lib/utils";
 
 const FeaturedTreks = dynamic(
   () =>
@@ -45,12 +46,12 @@ export default function HomePage() {
     url: "https://thetravelingmonk.in",
     logo: "https://thetravelingmonk.in/logo.png",
     sameAs: [
-      "https://www.instagram.com/thetravelingmonk",
+      "https://www.instagram.com/thetravelingmonk.in?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
       "https://www.youtube.com/@thetravelingmonk",
     ],
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+91-9876543210",
+      telephone: `+91-${whatsappNumber}`,
       contactType: "customer service",
     },
   };

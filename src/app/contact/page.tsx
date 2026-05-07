@@ -14,9 +14,10 @@ import {
   ChevronDown,
   CheckCircle2,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, whatsappNumber } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { trekData } from "@/lib/treks";
+import { whatsappLink } from "@/lib/utils";
 
 // --- Validation Schema ---
 const contactSchema = z.object({
@@ -140,7 +141,7 @@ export default function ContactPage() {
             <p className="text-stone-500 text-sm mb-8 leading-relaxed">
               Chat directly with our trek team. Usually reply within 2 hours.
             </p>
-            <Link href="https://wa.me/919876543210" className="w-full">
+            <Link href={whatsappLink} className="w-full">
               <Button
                 variant="outline"
                 className="w-full rounded-xl border-stone-200 hover:border-saffron hover:text-saffron"
@@ -182,11 +183,11 @@ export default function ContactPage() {
             </span>
             <h3 className="font-display text-xl text-forest mb-2">Call Us</h3>
             <p className="text-stone-500 text-sm mb-8 leading-relaxed">
-              +91 98765 43210
+              +91 {whatsappNumber}
               <br />
               Mon–Sat, 9am–8pm IST
             </p>
-            <Link href="tel:+919876543210" className="w-full">
+            <Link href={`tel:${whatsappNumber}`} className="w-full">
               <Button
                 variant="outline"
                 className="w-full rounded-xl border-stone-200 hover:border-saffron hover:text-saffron"

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 // ─── Replace src values with real Instagram post images ────────────────────
 const posts = [
@@ -24,14 +25,18 @@ export const InstagramStrip = () => (
           @thetravelingmonk
         </span>
       </div>
-      <a
-        href="https://www.instagram.com/thetravelingmonk"
+      <Link
+        href={
+          "https://www.instagram.com/thetravelingmonk.in?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+        }
         target="_blank"
         rel="noopener noreferrer"
         className="text-forest/50 hover:text-saffron transition-colors text-[11px] font-bold uppercase tracking-[0.18em]"
       >
-        View all →
-      </a>
+        <span className="border-b border-transparent pb-0.5 transition-colors group-hover:border-parchment/20">
+          View all →
+        </span>
+      </Link>
     </div>
 
     {/* Scrollable strip */}

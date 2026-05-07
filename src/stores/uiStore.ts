@@ -7,6 +7,7 @@ export type UiState = {
   searchQuery: string
   lightboxImage: string | null // currently open lightbox image URL
   bookingDrawerOpen: boolean
+  activeTrekSlug: string | null
 }
 
 export type UiActions = {
@@ -17,8 +18,9 @@ export type UiActions = {
   setSearchQuery: (q: string) => void
   openLightbox: (url: string) => void
   closeLightbox: () => void
-  openBookingDrawer: () => void
+  openBookingDrawer: (trekSlug?: string) => void
   closeBookingDrawer: () => void
+  setActiveTrekSlug: (slug: string | null) => void
 }
 
 export const useUiStore = create<UiState & UiActions>((set) => ({
@@ -28,6 +30,7 @@ export const useUiStore = create<UiState & UiActions>((set) => ({
   searchQuery: '',
   lightboxImage: null,
   bookingDrawerOpen: false,
+  activeTrekSlug: null,
 
   setNavScrolled: (v) => set({ navScrolled: v }),
   toggleMobileMenu: () => set((state) => ({ mobileMenuOpen: !state.mobileMenuOpen })),
@@ -36,6 +39,10 @@ export const useUiStore = create<UiState & UiActions>((set) => ({
   setSearchQuery: (q) => set({ searchQuery: q }),
   openLightbox: (url) => set({ lightboxImage: url }),
   closeLightbox: () => set({ lightboxImage: null }),
-  openBookingDrawer: () => set({ bookingDrawerOpen: true }),
+  openBookingDrawer: (trekSlug) => set({ 
+    bookingDrawerOpen: true, 
+    activeTrekSlug: trekSlug || null 
+  }),
   closeBookingDrawer: () => set({ bookingDrawerOpen: false }),
+  setActiveTrekSlug: (slug) => set({ activeTrekSlug: slug }),
 }))

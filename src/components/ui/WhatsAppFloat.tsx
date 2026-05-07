@@ -1,43 +1,46 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { cn } from "@/lib/utils"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { whatsappLink } from "@/lib/utils";
 
 export const WhatsAppFloat = () => {
-  const [isHovered, setIsHovered] = useState(false)
-  const [isVisible, setIsVisible] = useState(true)
+  const [isHovered, setIsHovered] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     // Hide on mobile when keyboard is open
     const handleViewportChange = () => {
       if (window.visualViewport) {
         // If the viewport height decreases significantly, it's likely the keyboard
-        setIsVisible(window.visualViewport.height > window.innerHeight * 0.8)
+        setIsVisible(window.visualViewport.height > window.innerHeight * 0.8);
       }
-    }
+    };
 
     if (window.visualViewport) {
-      window.visualViewport.addEventListener("resize", handleViewportChange)
+      window.visualViewport.addEventListener("resize", handleViewportChange);
     }
 
     return () => {
       if (window.visualViewport) {
-        window.visualViewport.removeEventListener("resize", handleViewportChange)
+        window.visualViewport.removeEventListener(
+          "resize",
+          handleViewportChange,
+        );
       }
-    }
-  }, [])
+    };
+  }, []);
 
-  if (!isVisible) return null
+  if (!isVisible) return null;
 
   return (
-    <div 
+    <div
       className="fixed bottom-6 right-6 z-50 flex items-center justify-end"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <a
-        href="https://wa.me/919876543210?text=Hi%2C%20I'm%20interested%20in%20a%20trek"
+        href={whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center"
@@ -45,9 +48,9 @@ export const WhatsAppFloat = () => {
         <motion.div
           layout
           initial={{ borderRadius: "50%" }}
-          animate={{ 
+          animate={{
             borderRadius: isHovered ? "99px" : "50%",
-            backgroundColor: isHovered ? "#20BD5A" : "#25D366"
+            backgroundColor: isHovered ? "#20BD5A" : "#25D366",
           }}
           className="flex items-center h-14 overflow-hidden shadow-2xl transition-colors duration-300"
         >
@@ -63,10 +66,10 @@ export const WhatsAppFloat = () => {
               </motion.span>
             )}
           </AnimatePresence>
-          
+
           <div className="w-14 h-14 flex items-center justify-center shrink-0">
-            <svg 
-              viewBox="0 0 24 24" 
+            <svg
+              viewBox="0 0 24 24"
               className="size-7 fill-white"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -76,5 +79,5 @@ export const WhatsAppFloat = () => {
         </motion.div>
       </a>
     </div>
-  )
-}
+  );
+};

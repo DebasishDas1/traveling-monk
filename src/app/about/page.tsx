@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { StatsStrip } from "@/components/sections/StatsStrip";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Award, ShieldCheck } from "lucide-react";
+import PaperCut from "@/components/layout/PaperCut";
 
 export const metadata: Metadata = {
   title: "Our Story | The Traveling Monk",
@@ -53,6 +54,8 @@ export default function AboutPage() {
             className="object-cover"
           />
           <div className="absolute inset-0 bg-forest/60" />
+
+          <PaperCut color="#dbc8ac" />
         </div>
         <div className="relative z-10 text-center px-6">
           <h1 className="font-display italic text-6xl md:text-8xl text-white leading-tight drop-shadow-2xl">
@@ -265,7 +268,7 @@ export default function AboutPage() {
                   size="lg"
                   className="h-16 px-12 rounded-full font-bold uppercase tracking-widest text-sm shadow-xl hover:scale-105 transition-all"
                 >
-                  <MessageCircle className="size-5 mr-3" /> Enter the Community
+                  <MessageCircle className="size-5 mr-3" /> Join
                 </Button>
               </div>
             </div>

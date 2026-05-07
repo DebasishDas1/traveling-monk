@@ -23,8 +23,8 @@ export const MobileReserveBar = ({ trek }: MobileReserveBarProps) => {
       </div>
       <Button
         variant="saffron"
-        onClick={openBookingDrawer}
-        className="h-12 sm:h-14 px-6 sm:px-10 rounded-full font-black uppercase tracking-widest text-[10px] sm:text-xs shadow-xl shadow-saffron/20"
+        onClick={() => openBookingDrawer(trek.slug)}
+        className="h-12 sm:h-14 px-6 w-2/3 sm:px-10 rounded-full font-black uppercase tracking-widest text-[10px] sm:text-xs shadow-xl shadow-saffron/20"
       >
         Reserve
       </Button>

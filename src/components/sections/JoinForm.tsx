@@ -4,7 +4,7 @@ import { useState, useId } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { whatsappLink } from "@/lib/utils";
 
 // ─── WhatsApp SVG (no icon library dep) ───────────────────────────────────
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -33,7 +33,7 @@ const socials = [
   },
   {
     label: "WhatsApp Community",
-    href: "https://wa.me/919876543210?text=Hi%2C%20I%20want%20to%20join%20the%20Monk%20Tribe",
+    href: whatsappLink,
     icon: WhatsAppIcon,
   },
 ];

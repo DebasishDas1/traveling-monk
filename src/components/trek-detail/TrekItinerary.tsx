@@ -3,96 +3,77 @@
 import { Trek } from "@/lib/treks";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { Sun, Moon, Cloud, Sunrise, Sunset } from "lucide-react";
+import TrekItineraryCard from "@/components/trek-detail/TrekItineraryCard";
 
 interface TrekItineraryProps {
   trek: Trek;
 }
 
-const getIcon = (idx: number) => {
-  const icons = [<Sunrise />, <Sun />, <Sunset />, <Moon />, <Cloud />];
-  return icons[idx % icons.length];
-};
-
 export const TrekItinerary = ({ trek }: TrekItineraryProps) => {
   return (
     <section className="space-y-20 py-12">
+      {/* 🧭 Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div className="space-y-4">
           <span className="text-saffron text-[10px] uppercase tracking-[0.5em] font-black block">
             The Daily Passage
           </span>
-          <h2 className="font-display text-5xl text-forest italic leading-tight tracking-tight">
+          <h2 className="font-display text-4xl md:text-5xl text-forest italic tracking-tight">
             The Experience Arc
           </h2>
         </div>
-        <p className="text-stone-400 font-display text-xl italic max-w-xs md:text-right">
+
+        <p className="text-stone-400 font-display text-lg md:text-xl italic max-w-xs md:text-right">
           A rhythmic journey through silence and elevation.
         </p>
       </div>
 
-      <div className="relative space-y-0 pl-14 md:pl-20">
-        {/* 📜 The Path Line - Custom Gradient */}
-        <div className="absolute left-[27px] md:left-[39px] top-10 bottom-10 w-[2px] bg-linear-to-b from-saffron via-forest/40 to-forest" />
+      {/* 🧵 Timeline */}
+      <div className="relative pl-12 md:pl-20">
+        {/* 🌿 Softer Timeline Line */}
+        <div className="absolute left-[35px] md:left-[58px] top-10 bottom-10 w-[2px] bg-linear-to-b from-saffron/70 via-forest/30 to-forest/60" />
 
-        {trek.itinerary.map((day, idx) => (
-          <motion.div
-            key={day.day}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ delay: idx * 0.1 }}
-            className="relative pb-24 last:pb-0 group"
-          >
-            {/* 📍 Stylized Point */}
-            <div
-              className={cn(
-                "absolute left-[-47px] md:left-[-62px] top-0 size-12 md:size-16 rounded-full",
-                "bg-white border-2 border-stone-100 flex flex-col items-center justify-center",
-                "text-forest shadow-xl transition-all duration-500 group-hover:border-saffron group-hover:scale-110",
-              )}
+        {trek.itinerary.map((day, idx) => {
+          return (
+            <motion.div
+              key={day.day}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.35, delay: idx * 0.04 }}
+              className="relative pb-16 md:pb-20"
             >
-              <span className="text-[10px] font-black uppercase tracking-widest text-saffron/60 leading-none mb-1">
-                Day
-              </span>
-              <span className="font-display text-xl md:text-2xl font-bold leading-none">
-                {day.day}
-              </span>
-            </div>
+              {/* 📍 Marker */}
+              <div
+                className={cn(
+                  "absolute left-[-38px] md:left-[-60px] top-2 z-20",
+                  "w-14 h-14 md:w-20 md:h-20 rounded-full",
+                  "bg-linear-to-b from-monk-brown-warm to-monk-dark",
+                  "flex flex-col items-center justify-center",
+                  "shadow-[0_12px_40px_rgba(0,0,0,0.35)]",
+                  "ring-4 ring-white",
+                )}
+              >
+                {/* Label */}
+                <span className="text-[8px] md:text-[10px] tracking-[0.3em] uppercase text-white/40 leading-none mb-1">
+                  Day
+                </span>
 
-            {/* ☁️ Small Atmospheric Icon */}
-            <div className="absolute left-[-80px] md:left-[-110px] top-4 text-stone-200 group-hover:text-saffron/20 transition-colors duration-500">
-              {getIcon(idx)}
-            </div>
+                {/* 💥 Strong Number */}
+                <span className="font-display text-2xl md:text-4xl font-extrabold text-white leading-none tracking-tight drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
+                  {day.day}
+                </span>
+              </div>
 
-            <div className="space-y-4 bg-white/40 p-8 md:p-10 rounded-[3rem] border border-transparent group-hover:border-stone-100 group-hover:bg-white transition-all duration-500">
-              <h3 className="font-display text-3xl text-forest italic font-bold tracking-tight">
-                {day.title}
-              </h3>
-              <p className="text-stone-500 leading-relaxed max-w-2xl font-sans font-light text-lg">
-                {day.description}
-              </p>
-
-              {/* Subtle line indicator */}
-              <div className="h-px w-12 bg-saffron/30 group-hover:w-24 transition-all duration-700" />
-            </div>
-          </motion.div>
-        ))}
-
-        {/* 🏔️ The Culmination */}
-        <div className="relative pt-12">
-          <div className="absolute left-[-47px] md:left-[-62px] top-12 size-12 md:size-16 rounded-full bg-forest flex items-center justify-center text-white shadow-2xl ring-8 ring-white">
-            <span className="font-display text-3xl italic font-bold">∞</span>
-          </div>
-          <div className="space-y-4 pl-10 md:pl-0">
-            <h3 className="font-display text-4xl text-forest italic font-bold tracking-tight">
-              Return. Changed.
-            </h3>
-            <p className="text-stone-400 leading-relaxed max-w-xl font-sans font-light text-xl italic">
-              "The mountain does not move; it is we who are transformed."
-            </p>
-          </div>
-        </div>
+              <TrekItineraryCard
+                image={day.imageUrl}
+                title={day.title}
+                description={day.description}
+                idx={idx}
+              />
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );
