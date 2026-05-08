@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloat } from "@/components/ui/WhatsAppFloat";
 import { BookingDrawer } from "@/components/booking/BookingDrawer";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { instagramLink, facebookLink, youtubeLink } from "@/lib/social-links";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -125,10 +126,7 @@ export default function RootLayout({
       areaServed: "IN",
       availableLanguage: "en",
     },
-    sameAs: [
-      "https://www.instagram.com/thetravelingmonk.in",
-      "https://www.youtube.com/@thetravelingmonk",
-    ],
+    sameAs: [instagramLink, facebookLink, youtubeLink],
   };
 
   return (

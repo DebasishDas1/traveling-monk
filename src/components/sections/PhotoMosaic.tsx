@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
+import { instagramLink } from "@/lib/social-links";
 
-// ─── Data — replace with real community trek photos ─────────────────────────
-// Aspect ratios are intentionally varied for a mosaic feel
 const photos = [
   {
     src: "/images/community/mosaic-1.jpg",
@@ -66,8 +66,8 @@ export const PhotoMosaic = () => (
           </h2>
         </div>
 
-        <a
-          href="https://www.instagram.com/thetravelingmonk"
+        <Link
+          href={instagramLink}
           target="_blank"
           rel="noopener noreferrer"
           className="group inline-flex items-center gap-2 text-white/50 hover:text-saffron transition-colors text-xs uppercase tracking-[0.2em] font-bold"
@@ -86,7 +86,7 @@ export const PhotoMosaic = () => (
           >
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
-        </a>
+        </Link>
       </motion.div>
 
       {/* Mosaic grid */}

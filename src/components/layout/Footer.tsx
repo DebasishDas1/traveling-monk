@@ -6,20 +6,49 @@ import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { whatsappLink } from "@/lib/utils";
 import { navLinks } from "./Navbar";
+import {
+  whatsappLink,
+  facebookLink,
+  instagramLink,
+  youtubeLink,
+} from "@/lib/social-links";
+import {
+  WhatsAppIcon,
+  YouTubeIcon,
+  FacebookIcon,
+  InstagramIcon,
+} from "@/components/myIcons";
+import { useSubscribe } from "@/hooks/useSubscribe";
 
 const socialLinks = [
   { name: "WhatsApp", href: whatsappLink },
-  {
-    name: "Instagram",
-    href: "https://www.instagram.com/thetravelingmonk.in",
-  },
-  {
-    name: "Facebook",
-    href: "https://www.facebook.com/profile.php?id=61589167761191",
-  },
+  { name: "Instagram", href: instagramLink },
+  { name: "Facebook", href: facebookLink },
 ] as const;
+
+const socials = [
+  {
+    label: "Facebook",
+    href: facebookLink,
+    icon: FacebookIcon,
+  },
+  {
+    label: "Instagram",
+    href: instagramLink,
+    icon: InstagramIcon,
+  },
+  {
+    label: "YouTube",
+    href: youtubeLink,
+    icon: YouTubeIcon,
+  },
+  {
+    label: "WhatsApp Community",
+    href: whatsappLink,
+    icon: WhatsAppIcon,
+  },
+];
 
 type FooterLinkGroupProps = {
   title: string;
@@ -32,6 +61,7 @@ const FooterLinkGroup = ({
   links,
   external = false,
 }: FooterLinkGroupProps) => {
+
   return (
     <div className="space-y-6">
       <h4 className="text-[10px] font-semibold uppercase tracking-[0.35em] text-saffron/70">
@@ -60,10 +90,24 @@ const FooterLinkGroup = ({
 
 export const Footer = () => {
   const [year, setYear] = useState<number | null>(null);
+  const [email, setEmail] = useState("");
+
+  const { submit, reset, error, isLoading, isSuccess, isError } =
+    useSubscribe();
 
   useEffect(() => {
     setYear(new Date().getFullYear());
   }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const res = await submit(email);
+
+    if (res?.success) {
+      setEmail("");
+    }
+  };
 
   return (
     <footer className="relative overflow-hidden bg-black text-parchment/80">
@@ -80,12 +124,27 @@ export const Footer = () => {
               >
                 The Traveling Monk
               </Link>
-
               <p className="max-w-xs font-display text-xl italic leading-relaxed text-parchment/50">
                 “Walk until you find yourself.”
                 <br />
                 {year ?? "—"} All rights reserved.
               </p>
+
+              {/* Social icons */}
+              <div className="flex justify-start gap-5">
+                {socials.map(({ label, href, icon: Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="group p-3 rounded-full bg-white/5 border border-white/10 hover:bg-saffron/15 hover:border-saffron/40 transition-all duration-300"
+                  >
+                    <Icon className="size-5 text-white/50 group-hover:text-saffron transition-colors" />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -117,32 +176,48 @@ export const Footer = () => {
             </div>
 
             {/* Newsletter */}
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <label
                 htmlFor="newsletter-email"
                 className="block text-[10px] font-semibold uppercase tracking-[0.35em] text-parchment/40"
               >
-                Get trek updates
+                {isSuccess ? "Welcome to the tribe!" : "Get trek updates"}
               </label>
 
               <div className="flex gap-2">
                 <Input
                   id="newsletter-email"
                   type="email"
-                  placeholder="Email address"
-                  autoComplete="email"
-                  className="h-11 rounded-full border-white/10 bg-white/5 px-5 text-parchment placeholder:text-parchment/30"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (isError) reset();
+                  }}
+                  placeholder={isSuccess ? "Joined!" : "Email address"}
+                  disabled={isLoading || isSuccess}
+                  className="h-11 rounded-full border-white/10 bg-white/5 px-5 text-parchment placeholder:text-parchment/30 focus:ring-saffron/30"
                 />
 
                 <Button
                   type="submit"
                   size="icon"
+                  disabled={isLoading || isSuccess || !email.trim()}
                   aria-label="Subscribe"
-                  className="size-11 shrink-0 rounded-full bg-saffron text-black hover:bg-saffron/90"
+                  className="size-11 shrink-0 rounded-full bg-saffron text-black hover:bg-saffron/90 disabled:opacity-50"
                 >
-                  <ArrowRight className="size-5" />
+                  {isLoading ? (
+                    <div className="size-4 animate-spin rounded-full border-2 border-black/30 border-t-black" />
+                  ) : (
+                    <ArrowRight className="size-5" />
+                  )}
                 </Button>
               </div>
+
+              {isError && (
+                <p className="text-[10px] italic text-rose-400">
+                  {error || "Something went wrong."}
+                </p>
+              )}
             </form>
           </div>
         </div>

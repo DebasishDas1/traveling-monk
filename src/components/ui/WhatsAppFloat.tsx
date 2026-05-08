@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { whatsappLink } from "@/lib/utils";
+import { whatsappLink } from "@/lib/social-links";
 
 export const WhatsAppFloat = () => {
   const [isHovered, setIsHovered] = useState(false);

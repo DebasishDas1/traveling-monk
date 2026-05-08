@@ -12,7 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { TrekType } from "@/lib/type";
 import { useUiStore } from "@/stores/uiStore";
-import { whatsappNumber } from "@/lib/utils";
+import { whatsappNumber } from "@/lib/social-links";
 
 interface TrekBookingWidgetProps {
   trek: TrekType;

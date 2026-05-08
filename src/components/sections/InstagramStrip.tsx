@@ -1,75 +1,115 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { getImageSrc } from "@/lib/utils";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { instagramLink } from "@/lib/social-links";
 
-// ─── Replace src values with real Instagram post images ────────────────────
-const posts = [
-  // { src: "/images/community/ig-1.jpg", alt: "Summit at Kedarkantha" },
-  // { src: "/images/community/ig-2.jpg", alt: "Trail through the rhododendrons" },
-  // { src: "/images/community/ig-3.jpg", alt: "Campfire night at 11,000ft" },
-  { src: "/images/community/ig-4.jpg", alt: "Morning mist over the valley" },
-];
+// ─── Data ──────────────────────────────────────────────────────────────────
+const POSTS = [
+  "1SoeZqZMyyZmKLtKC81I1JGnAZ1NbEkkj",
+  "1WPG-U0x79knaJmJEnRgyNGANubWFpWuH",
+  "1ROr217G7M-_aPKRtSakwUKwQ0XQOyfw0",
+  "1yu3WywBjxAkho8EgQN_4-uqTZuZffFEP",
+  "1tSAzDU056BMH0dxO8nx4agwTLjNivCMq",
+]
+  .filter(Boolean)
+  .map((id) => ({
+    src: getImageSrc(`https://drive.google.com/file/d/${id}/view`),
+    alt: "Travel moment",
+  }));
 
-export const InstagramStrip = () => (
-  <section
-    className="py-20 bg-parchment-texture overflow-hidden"
-    aria-label="Instagram feed"
-  >
-    <div className="container mx-auto max-w-7xl px-6 mb-10 flex items-center justify-between">
-      <div className="flex items-center gap-3">
-        <ArrowRight className="size-5 text-monk-muted" aria-hidden="true" />
-        <span className="text-monk-muted text-[11px] font-bold uppercase tracking-[0.22em]">
-          @thetravelingmonk
-        </span>
-      </div>
-      <Link
-        href={
-          "https://www.instagram.com/thetravelingmonk.in?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-        }
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-forest/50 hover:text-saffron transition-colors text-[11px] font-bold uppercase tracking-[0.18em]"
-      >
-        <span className="border-b border-transparent pb-0.5 transition-colors group-hover:border-parchment/20">
-          View all →
-        </span>
-      </Link>
-    </div>
+// ─── Component ─────────────────────────────────────────────────────────────
+export const InstagramStrip = () => {
+  return (
+    <section className="py-16 bg-parchment-texture">
+      {/* Header */}
+      <div className="container mx-auto max-w-6xl px-4 mb-10 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <ArrowRight className="size-4 text-monk-muted" />
+          <span className="text-monk-muted text-[10px] font-semibold uppercase tracking-[0.25em]">
+            @thetravelingmonk
+          </span>
+        </div>
 
-    {/* Scrollable strip */}
-    <div className="flex gap-3 px-6 overflow-x-auto pb-2 scrollbar-hide snap-x snap-mandatory">
-      {posts.map((post, i) => (
-        <motion.a
-          key={post.src}
-          href="https://www.instagram.com/thetravelingmonk.in/"
+        <Link
+          href={instagramLink}
           target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Instagram: ${post.alt}`}
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: i * 0.06, duration: 0.55 }}
-          className="relative shrink-0 w-52 h-52 md:w-64 md:h-64 rounded-2xl overflow-hidden snap-start group"
+          className="text-forest/60 hover:text-saffron transition text-[10px] font-semibold uppercase tracking-[0.2em]"
         >
-          <Image
-            src={post.src}
-            alt={post.alt}
-            fill
-            sizes="256px"
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-          {/* Hover overlay */}
-          <div className="absolute inset-0 bg-forest/0 group-hover:bg-forest/40 transition-colors duration-400 flex items-center justify-center">
-            <ArrowRight
-              className="size-7 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              aria-hidden="true"
-            />
-          </div>
-        </motion.a>
-      ))}
-    </div>
-  </section>
-);
+          <span className="border-b border-transparent hover:border-saffron pb-0.5">
+            View all →
+          </span>
+        </Link>
+      </div>
+
+      {/* Carousel */}
+      <div className="relative px-4 md:px-20">
+        <Carousel
+          opts={{
+            align: "center",
+            loop: true,
+          }}
+        >
+          <CarouselContent className="-ml-3">
+            {POSTS.map((post, i) => (
+              <CarouselItem
+                key={i}
+                className="
+                  pl-3
+                  basis-[75%]     /* mobile: 1.3 cards peek */
+                  sm:basis-[55%]  /* small tablets */
+                  md:basis-[40%]  /* 2 cards */
+                  lg:basis-[30%]  /* 3 cards */
+                  xl:basis-[24%]  /* slightly smaller on big screens */
+                "
+              >
+                <Link
+                  href={instagramLink}
+                  target="_blank"
+                  className="group block"
+                >
+                  <div className="relative aspect-4/5 rounded-2xl overflow-hidden bg-black/5 shadow-sm transition-all duration-500 group-hover:shadow-lg">
+                    <Image
+                      src={post.src}
+                      alt={post.alt}
+                      fill
+                      sizes="
+                        (max-width: 640px) 70vw,
+                        (max-width: 1024px) 40vw,
+                        (max-width: 1280px) 30vw,
+                        20vw
+                      "
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+
+                    {/* Soft premium overlay */}
+                    <div className="absolute inset-0 bg-linear-to-t from-black/40 via-black/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
+
+                    {/* Icon */}
+                    <ArrowRight className="absolute inset-0 m-auto size-5 text-white opacity-0 group-hover:opacity-100 transition duration-300" />
+
+                    {/* Border glow */}
+                    <div className="absolute inset-0 rounded-2xl ring-1 ring-black/5 group-hover:ring-white/20 transition" />
+                  </div>
+                </Link>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+
+          {/* Controls */}
+          <CarouselPrevious className="hidden lg:flex -left-3 scale-90" />
+          <CarouselNext className="hidden lg:flex -right-3 scale-90" />
+        </Carousel>
+      </div>
+    </section>
+  );
+};

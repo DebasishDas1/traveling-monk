@@ -9,11 +9,6 @@ import { PhotoMosaic } from "@/components/sections/PhotoMosaic";
 import { JoinForm } from "@/components/sections/JoinForm";
 import { InstagramStrip } from "@/components/sections/InstagramStrip";
 
-// ─── SEO ──────────────────────────────────────────────────────────────────────
-// FIX: Added canonical URL — without it Google may index /community with query
-// strings as separate pages.
-// FIX: Expanded keywords list. OG image was a bare filename with no leading
-// slash and no width/height — browsers/crawlers couldn't resolve it. Fixed.
 export const metadata: Metadata = {
   title: "Community | The Monk Tribe — The Traveling Monk",
   description:
@@ -32,9 +27,6 @@ export const metadata: Metadata = {
     title: "The Monk Tribe | The Traveling Monk",
     description:
       "Join 600+ trekkers who find peace in thin air and strength in the shared path.",
-    // FIX: OG image needs an absolute path (or full URL). Bare filename without
-    // leading slash is unresolvable for crawlers. Added dimensions — required
-    // by Facebook/LinkedIn for proper link previews.
     images: [
       {
         url: "/images/community/community-hero.jpg",
@@ -59,18 +51,10 @@ export default function CommunityPage() {
           alt="Traveling Monk community of trekkers on a Himalayan mountain trail"
           fill
           priority
-          // FIX: More granular sizes hint. "100vw" tells the browser to fetch
-          // the largest srcset variant. These breakpoints let it pick a
-          // correctly-sized source early, before CSS is parsed.
-          sizes="(max-width: 640px) 640px, (max-width: 1280px) 1280px, 1920px"
+          sizes="100vw"
           className="object-cover object-center"
-          quality={75}
-          // FIX: Removed placeholder="blur" with blurDataURL="/dark-logo.png"
-          // Using a logo PNG as a blur placeholder is wrong — it shows a
-          // stretched logo artefact during load. Either generate a real base64
-          // blur hash from the image, or remove the placeholder entirely.
-          // For a priority hero image (preloaded), the blur placeholder adds
-          // no UX benefit anyway since the image loads before first paint.
+          quality={60}
+          fetchPriority="high"
         />
 
         {/* Cinematic gradient overlay */}
@@ -79,17 +63,13 @@ export default function CommunityPage() {
         {/* Content */}
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center text-white">
           {/* Eyebrow pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-saffron/20 backdrop-blur-md border border-saffron/30 mb-10">
-            <span className="size-1.5 rounded-full bg-saffron animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-saffron/20 border border-saffron/30 mb-10">
+            <span className="size-1.5 rounded-full bg-saffron" />
             <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-saffron">
               Welcome to the Monk Tribe
             </span>
           </div>
 
-          {/* FIX: h1 must contain the primary keyword for this page.
-              "The wild is better shared" is a tagline, not a keyword-rich heading.
-              Wrapping the key phrase in a visually hidden span keeps the design
-              intact while giving crawlers the semantic signal. */}
           <h1 className="font-display text-6xl sm:text-7xl md:text-9xl italic leading-[0.9] mb-8 drop-shadow-lg">
             The wild is better <br className="hidden sm:block" />
             <span className="text-saffron not-italic">shared.</span>
@@ -110,16 +90,14 @@ export default function CommunityPage() {
             >
               <Link href="#join">
                 Join the Circle
-                <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 size-4" />
               </Link>
             </Button>
 
             <Button
-              variant="outline"
+              variant="forest"
               size="lg"
               asChild
-              // FIX: text-monk-brown-deep on a translucent hero overlay will
-              // fail WCAG contrast. Changed to text-white to ensure readability.
               className="rounded-full px-10 h-14 text-sm font-bold uppercase tracking-widest border-white/40 text-white"
             >
               <Link href="/treks">Explore Treks</Link>

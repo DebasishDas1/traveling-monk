@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     instantNavigationDevToolsToggle: true,
   },
   images: {
+    qualities: [25, 50, 60, 75, 80, 90],
     remotePatterns: [
       {
         protocol: 'https',

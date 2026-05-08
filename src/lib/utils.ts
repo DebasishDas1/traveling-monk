@@ -5,10 +5,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const whatsappNumber = "7003564123";
-export const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Hi, I have a question about your treks`)}`
-
-
 const FALLBACK_IMAGE = "/dark-logo.png";
 
 export const getImageSrc = (url?: string | null): string => {
@@ -50,3 +46,7 @@ export const getImageSrc = (url?: string | null): string => {
     return FALLBACK_IMAGE;
   }
 };
+
+
+export const isValidEmail = (email: string) =>
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());

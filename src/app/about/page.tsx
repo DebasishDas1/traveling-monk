@@ -92,9 +92,10 @@ export default function AboutPage() {
             alt="Himalayan mountain landscape — The Traveling Monk about page"
             fill
             priority
-            sizes="(max-width: 768px) 768px, (max-width: 1440px) 1440px, 1920px"
-            quality={80}
+            sizes="100vw"
+            quality={60}
             className="object-cover"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-black/40" />
         </div>
@@ -135,11 +136,12 @@ export default function AboutPage() {
                 >
                   {/* IMAGE */}
                   <div className="relative">
-                    <div className="aspect-4/5 rounded-3xl overflow-hidden">
+                    <div className="relative aspect-4/5 rounded-3xl overflow-hidden">
                       <Image
                         src={f.image}
                         alt={f.name}
                         fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-cover rounded-[2.5rem]"
                       />
                     </div>

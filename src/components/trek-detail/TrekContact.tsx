@@ -1,7 +1,7 @@
 import { PhoneCall, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { whatsappLink, whatsappNumber } from "@/lib/utils";
+import { whatsappLink, whatsappNumber } from "@/lib/social-links";
 
 export const TrekContact = () => {
   return (

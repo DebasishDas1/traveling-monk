@@ -14,10 +14,10 @@ import {
   ChevronDown,
   CheckCircle2,
 } from "lucide-react";
-import { cn, whatsappNumber } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { trekData } from "@/lib/data/treks";
-import { whatsappLink } from "@/lib/utils";
+import { whatsappLink, whatsappNumber } from "@/lib/social-links";
 import { faqs } from "@/lib/data/faq";
 
 // --- Validation Schema ---
@@ -86,19 +86,14 @@ export default function ContactPage() {
             sizes="100vw"
             className="object-cover"
             quality={60}
-            placeholder="blur"
-            blurDataURL="/dark-logo.png"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-forest/60" />
         </div>
         <div className="relative z-10 text-center px-6">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="font-display italic text-5xl md:text-7xl text-white drop-shadow-2xl"
-          >
+          <h1 className="font-display italic text-5xl md:text-7xl text-white drop-shadow-2xl">
             Let's talk.
-          </motion.h1>
+          </h1>
         </div>
       </section>
 
