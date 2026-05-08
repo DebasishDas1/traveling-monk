@@ -2,7 +2,6 @@ import dynamic from "next/dynamic";
 import { Hero } from "@/components/sections/Hero";
 import { StatsStrip } from "@/components/sections/StatsStrip";
 import { dummyTestimonials } from "@/lib/data/dummyTestimonials";
-import { whatsappNumber } from "@/lib/utils";
 
 const FeaturedTreks = dynamic(
   () =>
