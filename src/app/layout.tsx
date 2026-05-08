@@ -39,6 +39,7 @@ export const metadata: Metadata = {
     "guided treks india",
     "spiritual travel india",
     "eco-friendly trekking",
+    "the traveling monk",
   ],
   authors: [{ name: "The Traveling Monk Team" }],
   creator: "The Traveling Monk",
@@ -47,6 +48,9 @@ export const metadata: Metadata = {
     email: false,
     address: false,
     telephone: false,
+  },
+  alternates: {
+    canonical: "/",
   },
   openGraph: {
     type: "website",
@@ -58,7 +62,7 @@ export const metadata: Metadata = {
       "Premium guided trekking experiences across India. Transformation through nature.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "The Traveling Monk — Premium Treks",
@@ -69,8 +73,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Traveling Monk | Transformational Trekking",
     description: "Premium guided trekking experiences across India.",
+    site: "@travelingmonk",
     creator: "@travelingmonk",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -91,7 +96,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
   verification: {
-    google: "google-site-verification-placeholder",
+    google: "rYiyNCTRV2Io8jDL4AWE9vxH2QmQ3Yycm6e6A2BIzaY",
   },
 };
 

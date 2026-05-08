@@ -38,8 +38,6 @@ const CTABanner = dynamic(() =>
   import("@/components/sections/CTABanner").then((mod) => mod.CTABanner),
 );
 
-export const unstable_instant = true;
-
 export default function HomePage() {
   return (
     <main className="min-h-screen">

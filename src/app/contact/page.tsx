@@ -206,7 +206,7 @@ export default function ContactPage() {
                       <div className="grid md:grid-cols-2 gap-6">
                         {/* Name */}
                         <div className="space-y-2">
-                          <label className="text-xs uppercase tracking-widest font-bold text-stone-400">
+                          <label className="text-xs uppercase tracking-widest font-bold ">
                             Name
                           </label>
                           <input
@@ -226,7 +226,7 @@ export default function ContactPage() {
 
                         {/* Email */}
                         <div className="space-y-2">
-                          <label className="text-xs uppercase tracking-widest font-bold text-stone-400">
+                          <label className="text-xs uppercase tracking-widest font-bold ">
                             Email
                           </label>
                           <input
@@ -249,7 +249,7 @@ export default function ContactPage() {
                       <div className="grid md:grid-cols-2 gap-6">
                         {/* Phone */}
                         <div className="space-y-2">
-                          <label className="text-xs uppercase tracking-widest font-bold text-stone-400">
+                          <label className="text-xs uppercase tracking-widest font-bold ">
                             Phone
                           </label>
                           <input
@@ -270,7 +270,7 @@ export default function ContactPage() {
 
                         {/* Trek Interest */}
                         <div className="space-y-2">
-                          <label className="text-xs uppercase tracking-widest font-bold text-stone-400">
+                          <label className="text-xs uppercase tracking-widest font-bold ">
                             Which trek interests you?
                           </label>
                           <select
@@ -299,7 +299,7 @@ export default function ContactPage() {
                       <div className="grid md:grid-cols-2 gap-6">
                         {/* Timing */}
                         <div className="space-y-2">
-                          <label className="text-xs uppercase tracking-widest font-bold text-stone-400">
+                          <label className="text-xs uppercase tracking-widest font-bold ">
                             When are you thinking?
                           </label>
                           <select
@@ -327,7 +327,7 @@ export default function ContactPage() {
 
                         {/* Group Size */}
                         <div className="space-y-2">
-                          <label className="text-xs uppercase tracking-widest font-bold text-stone-400">
+                          <label className="text-xs uppercase tracking-widest font-bold ">
                             Group size
                           </label>
                           <select
@@ -357,7 +357,7 @@ export default function ContactPage() {
 
                       {/* Message */}
                       <div className="space-y-2">
-                        <label className="text-xs uppercase tracking-widest font-bold text-stone-400">
+                        <label className="text-xs uppercase tracking-widest font-bold ">
                           Anything specific you want to know?
                         </label>
                         <textarea
@@ -451,7 +451,7 @@ export default function ContactPage() {
                 </span>
                 <ChevronDown
                   className={cn(
-                    "size-5 text-stone-400 transition-transform duration-300",
+                    "size-5  transition-transform duration-300",
                     activeFaq === idx && "rotate-180 text-saffron",
                   )}
                 />

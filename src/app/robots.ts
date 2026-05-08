@@ -8,5 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       disallow: "/private/",
     },
     sitemap: "https://thetravelingmonk.in/sitemap.xml",
+    host: "https://thetravelingmonk.in",
   };
 }

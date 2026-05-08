@@ -180,7 +180,7 @@ export const BookingModal = ({ trek }: BookingModalProps) => {
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
+                      <Label className="text-[10px] uppercase tracking-widest font-bold ">
                         Full Name
                       </Label>
                       <div className="relative">
@@ -199,7 +199,7 @@ export const BookingModal = ({ trek }: BookingModalProps) => {
                     </div>
 
                     <div className="space-y-2">
-                      <Label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
+                      <Label className="text-[10px] uppercase tracking-widest font-bold ">
                         Email Address
                       </Label>
                       <div className="relative">
@@ -218,7 +218,7 @@ export const BookingModal = ({ trek }: BookingModalProps) => {
                     </div>
 
                     <div className="space-y-2">
-                      <Label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
+                      <Label className="text-[10px] uppercase tracking-widest font-bold ">
                         Phone Number
                       </Label>
                       <div className="relative">
@@ -237,7 +237,7 @@ export const BookingModal = ({ trek }: BookingModalProps) => {
                     </div>
 
                     <div className="space-y-2">
-                      <Label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
+                      <Label className="text-[10px] uppercase tracking-widest font-bold ">
                         Select Date
                       </Label>
                       <Popover>
@@ -287,7 +287,7 @@ export const BookingModal = ({ trek }: BookingModalProps) => {
                     </div>
 
                     <div className="sm:col-span-2 space-y-2">
-                      <Label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
+                      <Label className="text-[10px] uppercase tracking-widest font-bold ">
                         Number of Guests
                       </Label>
                       <div className="relative">
@@ -320,7 +320,7 @@ export const BookingModal = ({ trek }: BookingModalProps) => {
                     )}
                   </Button>
 
-                  <p className="text-[10px] text-stone-400 text-center uppercase tracking-widest font-bold">
+                  <p className="text-[10px]  text-center uppercase tracking-widest font-bold">
                     No payment required now · Confirmation via call
                   </p>
 

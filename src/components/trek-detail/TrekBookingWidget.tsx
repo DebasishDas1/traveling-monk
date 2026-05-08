@@ -148,14 +148,14 @@ export const TrekBookingWidget = ({ trek }: TrekBookingWidgetProps) => {
 
         {/* Footer */}
         <div className="px-10 text-center space-y-4">
-          <p className="text-stone-400 text-[10px] uppercase tracking-[0.2em] font-bold">
+          <p className=" text-[10px] uppercase tracking-[0.2em] font-bold">
             Guiding Line
           </p>
           <p className="text-stone-600 font-display text-xl italic">
             +91 {whatsappNumber}
           </p>
           <div className="h-px bg-stone-100 w-12 mx-auto" />
-          <p className="text-stone-400 text-[10px] uppercase tracking-[0.2em] font-bold">
+          <p className=" text-[10px] uppercase tracking-[0.2em] font-bold">
             team@travelingmonk.in
           </p>
         </div>

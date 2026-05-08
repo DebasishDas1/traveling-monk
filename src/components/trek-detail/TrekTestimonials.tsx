@@ -46,7 +46,7 @@ export const TrekTestimonials = ({ trek }: TrekTestimonialsProps) => {
               </div>
               <div>
                 <p className="font-bold text-forest text-lg">{t.name}</p>
-                <p className="text-stone-400 text-xs uppercase tracking-widest font-bold">
+                <p className=" text-xs uppercase tracking-widest font-bold">
                   {t.city}
                 </p>
               </div>

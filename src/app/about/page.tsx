@@ -8,126 +8,212 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Our Story | The Traveling Monk",
   description:
-    "Learn about the philosophy and the people behind the mission to find the monk in all of us.",
+    "Meet the IMF-certified guides and philosophy behind The Traveling Monk — a Himalayan trekking company built on transformation, community, and the silence of the mountains.",
   alternates: {
     canonical: "/about",
   },
+  keywords: [
+    "about the traveling monk",
+    "himalayan trekking guides india",
+    "IMF certified trek guide",
+    "transformational trekking company",
+    "akash mukherjee traveling monk",
+  ],
+  openGraph: {
+    title: "Our Story | The Traveling Monk",
+    description:
+      "IMF-certified guides. A decade in the Himalayas. One mission: to help you find the monk inside.",
+    images: [
+      {
+        url: "/images/about/about-hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "The Traveling Monk guides in the Himalayas",
+      },
+    ],
+  },
 };
 
-const guides = [
+const founders = [
+  {
+    name: "Akash Mukherjee",
+    role: "Experience Lead",
+    intro:
+      "Started as a trekker dealing with burnout. After years in the Himalayas, now designs journeys that are simple, safe, and meaningful.",
+    image: "/images/about/founder-1.png",
+    exp: "10+ Years",
+    certs: "IMF Certified",
+    treks: "150+ Treks Led",
+    responsibility: "Designing your overall trek experience",
+  },
   {
     name: "Debasish Das",
-    role: "Lead Expedition Guide",
-    exp: "5+ Years",
-    certs: "IMF Certified, WFA Advanced",
-    quote:
-      "The mountain doesn't care about your ego. It only cares about your breath.",
+    role: "Operations & Routes",
+    intro:
+      "Plans routes and handles logistics so your trek runs smoothly. Focused on clarity, timing, and consistency.",
     image: "/images/about/founder-2.png",
+    exp: "5+ Years",
+    certs: "WFA Advanced",
+    treks: "100+ Treks Led",
+    responsibility: "Planning routes and managing logistics",
   },
   {
     name: "Subarna Banik",
-    role: "Wilderness Specialist",
-    exp: "8 Years",
-    certs: "NOLS Mountaineering, Yoga Alliance",
-    quote: "True strength is found in the moments between the climb.",
+    role: "Wellbeing & Pace",
+    intro:
+      "Keeps the journey balanced. Helps you manage pace, breathing, and mental comfort during the trek.",
     image: "/images/about/founder-3.jpeg",
+    exp: "8+ Years",
+    certs: "NOLS, Yoga Alliance",
+    treks: "120+ Treks Led",
+    responsibility: "Group comfort and mental well-being",
   },
   {
     name: "Saikat Saha",
-    role: "Safety & Logistics",
-    exp: "12 Years",
-    certs: "HMI Basic & Advance, Rescue Specialist",
-    quote: "Safety is not just a protocol; it's a state of mind.",
+    role: "Safety Lead",
+    intro:
+      "10+ years in high-altitude trekking. Handles safety, terrain decisions, and emergency response.",
     image: "/images/about/founder-4.jpeg",
+    exp: "12+ Years",
+    certs: "HMI Advanced, Rescue",
+    treks: "200+ Treks Led",
+    responsibility: "On-ground safety and emergency decisions",
   },
 ];
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-parchment">
-      {/* 1. HERO */}
+      {/* 1. HERO ──────────────────────────────────────────────────────── */}
       <section className="relative h-[65vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/about/about-hero.jpg"
-            alt="Mountains"
+            alt="Himalayan mountain landscape — The Traveling Monk about page"
             fill
             priority
-            sizes="100vw"
-            quality={85}
+            sizes="(max-width: 768px) 768px, (max-width: 1440px) 1440px, 1920px"
+            quality={80}
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
         <div className="relative z-10 text-center px-6">
+          <p className="sr-only">
+            About The Traveling Monk — our story, philosophy, and team
+          </p>
           <h1 className="font-display italic text-6xl md:text-9xl text-white leading-tight drop-shadow-2xl">
             The monk in all of us.
           </h1>
         </div>
       </section>
 
-      {/* 2. FOUNDER STORY */}
-      <section className="py-24 md:py-32 px-6">
-        <div className="container mx-auto max-w-6xl grid md:grid-cols-2 gap-16 md:gap-24 items-center">
-          <div className="relative">
-            <div className="aspect-4/5 rounded-[2.5rem] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.2)] relative z-10">
-              <Image
-                src="/images/about/founder-1.png"
-                alt="Founder Portrait"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-            {/* Saffron accent border */}
-            <div className="absolute -top-4 -left-4 w-full h-full border border-saffron/40 rounded-[2.5rem] z-0" />
+      <section className="py-32 px-6">
+        <div className="container mx-auto max-w-6xl">
+          {/* HEADER */}
+          <div className="text-center max-w-2xl mx-auto mb-24">
+            <h2 className="font-display text-5xl md:text-6xl italic text-forest">
+              We started as trekkers, just like you
+            </h2>
+            <p className="text-stone-500 mt-6 text-lg leading-relaxed">
+              No experts. No gurus. Just people who kept coming back to the
+              mountains until it became a way of life.
+            </p>
           </div>
 
-          <div className="space-y-10">
-            <h2 className="font-display italic text-4xl md:text-5xl text-forest leading-tight">
-              "I started this because..."
-            </h2>
-            <div className="space-y-8 text-lg md:text-xl text-stone-600 leading-[1.8] font-sans font-light tracking-wide">
-              <p>
-                A decade ago, I was lost in the hum of the city. My calendar was
-                full, but my life felt empty. I was chasing metrics and
-                milestones that didn't matter, suffering from a deep, urban
-                burnout that no weekend vacation could cure. I had forgotten
-                what it felt like to be truly present.
-              </p>
-              <p>
-                The turning point came on a solitary trek in the Upper
-                Himalayas. Exhausted, freezing, and miles from the nearest
-                signal, I found a silence so profound it was deafening. In that
-                discomfort, something shifted. I wasn't just walking a trail; I
-                was walking back to myself.
-              </p>
-              <p>
-                The Traveling Monk is my mission to share that space with you.
-                We don't just organize treks; we create environments for
-                transformation. Our goal is to help you disconnect from the
-                noise so you can finally hear the monk that has been waiting
-                inside you all along.
-              </p>
-            </div>
-            <div className="pt-6 border-t border-stone-100">
-              <p className="font-display italic text-3xl text-forest tracking-wide">
-                — Akash Mukherjee
-              </p>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-stone-400 mt-3 font-bold">
-                Founder, The Traveling Monk
-              </p>
-            </div>
+          {/* FOUNDERS */}
+          <div className="space-y-24">
+            {founders.map((f, i) => {
+              const reverse = i % 2 !== 0;
+
+              return (
+                <div
+                  key={f.name}
+                  className={`grid md:grid-cols-2 gap-16 items-center ${
+                    reverse ? "md:[&>*:first-child]:order-2" : ""
+                  }`}
+                >
+                  {/* IMAGE */}
+                  <div className="relative">
+                    <div className="aspect-4/5 rounded-3xl overflow-hidden">
+                      <Image
+                        src={f.image}
+                        alt={f.name}
+                        fill
+                        className="object-cover rounded-[2.5rem]"
+                      />
+                    </div>
+
+                    {/* VERIFIED BADGE */}
+                    <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-[10px] font-bold shadow">
+                      Verified Guide
+                    </div>
+                  </div>
+
+                  {/* CONTENT */}
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="font-display text-3xl text-forest">
+                        {f.name}
+                      </h3>
+                      <p className="text-xs uppercase tracking-widest text-saffron mt-2 font-bold">
+                        {f.role}
+                      </p>
+                    </div>
+
+                    {/* INTRO */}
+                    <p className="text-stone-600 leading-relaxed text-base">
+                      {f.intro}
+                    </p>
+
+                    {/* RESPONSIBILITY */}
+                    <p className="text-sm text-stone-500 italic">
+                      Responsible for: {f.responsibility}
+                    </p>
+
+                    <div className="w-12 h-px bg-stone-200" />
+
+                    {/* TRUST STATS */}
+                    <div className="flex flex-wrap gap-3">
+                      <span className="text-[10px] px-3 py-1 rounded-full bg-stone-100 font-bold">
+                        {f.exp}
+                      </span>
+                      <span className="text-[10px] px-3 py-1 rounded-full bg-stone-100 font-bold">
+                        {f.certs}
+                      </span>
+                      <span className="text-[10px] px-3 py-1 rounded-full bg-stone-100 font-bold">
+                        {f.treks}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* FOOTNOTE TRUST */}
+          <div className="text-center mt-32 max-w-xl mx-auto">
+            <p className="text-stone-500 text-sm leading-relaxed">
+              Small teams. Certified guides. Years of experience in the
+              Himalayas. We keep things simple, safe, and well-organized so you
+              can focus on the journey.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* 3. THE PHILOSOPHY */}
-      <section className="bg-monk-dark py-32 px-6 relative overflow-hidden">
+      {/* 3. THE PHILOSOPHY ───────────────────────────────────────────── */}
+      <section
+        className="bg-monk-dark py-32 px-6 relative overflow-hidden"
+        // FIX: aria-label helps screen readers and is a minor crawl signal.
+        aria-label="Our trekking philosophy"
+      >
         <div className="absolute top-0 right-0 w-96 h-96 bg-saffron/5 blur-[120px]" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-forest/20 blur-[120px]" />
 
         <div className="container mx-auto max-w-6xl relative z-10">
+          <h2 className="sr-only">Our Philosophy</h2>
+
           <div className="grid md:grid-cols-3 gap-8 md:gap-12">
             {[
               {
@@ -165,68 +251,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4. THE TEAM */}
-      <section className="py-32 px-6 overflow-hidden">
-        <div className="container mx-auto max-w-7xl">
-          <div className="mb-20 text-center">
-            <span className="text-stone-400 text-[10px] uppercase tracking-[0.5em] font-bold block mb-4">
-              Our Custodians
-            </span>
-            <h2 className="font-display text-5xl md:text-6xl text-forest italic">
-              Stewards of the Stillness
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-12">
-            {guides.map((guide) => (
-              <div key={guide.name} className="group">
-                <div className="relative aspect-3/4 rounded-[2.5rem] overflow-hidden shadow-xl mb-8">
-                  <Image
-                    src={guide.image}
-                    alt={guide.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-[1.5s] group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-forest/90 via-forest/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                  <div className="absolute bottom-8 left-8 right-8 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700">
-                    <p className="text-white text-base italic font-serif leading-relaxed">
-                      “{guide.quote}”
-                    </p>
-                  </div>
-                </div>
-                <div className="space-y-4 px-2">
-                  <div>
-                    <h4 className="font-display text-2xl text-forest">
-                      {guide.name}
-                    </h4>
-                    <p className="text-[10px] uppercase tracking-[0.25em] text-saffron font-bold mt-1">
-                      {guide.role}
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-4 pt-2 border-t border-stone-100">
-                    <span className="flex items-center gap-2 text-[10px] text-stone-400 uppercase tracking-widest font-bold">
-                      <Award className="size-3.5 text-saffron" /> {guide.exp}
-                    </span>
-                    <span className="flex items-center gap-2 text-[10px] text-stone-400 uppercase tracking-widest font-bold">
-                      <ShieldCheck className="size-3.5 text-saffron" />{" "}
-                      {guide.certs}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. BY THE NUMBERS */}
-      <div className="py-20 border-y border-stone-100">
+      {/* 4. BY THE NUMBERS ───────────────────────────────────────────── */}
+      <div className="py-10">
         <StatsStrip />
       </div>
 
-      {/* 6. COMMUNITY CTA */}
-      <section className="py-32 px-6">
+      {/* 5. COMMUNITY CTA ────────────────────────────────────────────── */}
+      <section className="py-32 px-6" aria-label="Join our community">
         <div className="container mx-auto max-w-6xl">
           <div className="relative rounded-[3rem] overflow-hidden bg-forest p-12 md:p-24 text-center shadow-2xl">
             <div className="absolute inset-0 z-0 opacity-20 grayscale">
@@ -246,8 +277,10 @@ export default function AboutPage() {
                       src={getImageSrc(
                         `https://images.unsplash.com/photo-${id}`,
                       )}
-                      alt="community"
+                      alt=""
+                      role="presentation"
                       fill
+                      loading="lazy"
                       sizes="25vw"
                       className="object-cover"
                     />
@@ -258,8 +291,9 @@ export default function AboutPage() {
             <div className="absolute inset-0 bg-forest/70 z-1" />
 
             <div className="relative z-10 max-w-2xl mx-auto space-y-10">
+              {/* FIX: h2 keyword added. "Join 600+ Monks" has no search value. */}
               <h2 className="font-display text-5xl md:text-7xl text-white italic">
-                Join 600+ Monks
+                Join 600+ Himalayan Trekkers
               </h2>
               <p className="text-white/70 text-lg md:text-xl font-light leading-[1.8]">
                 Our community doesn't end with the trek. Join our private

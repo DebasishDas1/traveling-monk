@@ -24,7 +24,7 @@ export const TrekItinerary = ({ trek }: TrekItineraryProps) => {
           </h2>
         </div>
 
-        <p className="text-stone-400 font-display text-lg md:text-xl italic max-w-xs md:text-right">
+        <p className="font-display text-lg md:text-xl italic max-w-xs md:text-right">
           A rhythmic journey through silence and elevation.
         </p>
       </div>

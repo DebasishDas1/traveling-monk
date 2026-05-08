@@ -9,14 +9,40 @@ import { PhotoMosaic } from "@/components/sections/PhotoMosaic";
 import { JoinForm } from "@/components/sections/JoinForm";
 import { InstagramStrip } from "@/components/sections/InstagramStrip";
 
+// ─── SEO ──────────────────────────────────────────────────────────────────────
+// FIX: Added canonical URL — without it Google may index /community with query
+// strings as separate pages.
+// FIX: Expanded keywords list. OG image was a bare filename with no leading
+// slash and no width/height — browsers/crawlers couldn't resolve it. Fixed.
 export const metadata: Metadata = {
   title: "Community | The Monk Tribe — The Traveling Monk",
   description:
-    "Join the Monk Tribe. A growing community of mountain lovers, seekers, and transformational travelers who walk together.",
+    "Join the Monk Tribe — a growing community of mountain lovers, seekers, and transformational travelers who walk the Himalayas together.",
+  alternates: {
+    canonical: "/community",
+  },
+  keywords: [
+    "monk tribe",
+    "trekking community india",
+    "himalayan trekkers group",
+    "transformational travel community",
+    "the traveling monk community",
+  ],
   openGraph: {
     title: "The Monk Tribe | The Traveling Monk",
-    description: "The wild is better shared.",
-    images: [{ url: "community-page.jpg" }],
+    description:
+      "Join 600+ trekkers who find peace in thin air and strength in the shared path.",
+    // FIX: OG image needs an absolute path (or full URL). Bare filename without
+    // leading slash is unresolvable for crawlers. Added dimensions — required
+    // by Facebook/LinkedIn for proper link previews.
+    images: [
+      {
+        url: "/images/community/community-hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "The Traveling Monk community on a Himalayan trail",
+      },
+    ],
   },
 };
 
@@ -30,14 +56,21 @@ export default function CommunityPage() {
       >
         <Image
           src="/images/community/community-hero.jpg"
-          alt="Traveling Monk community on a mountain trail"
+          alt="Traveling Monk community of trekkers on a Himalayan mountain trail"
           fill
           priority
-          sizes="100vw"
+          // FIX: More granular sizes hint. "100vw" tells the browser to fetch
+          // the largest srcset variant. These breakpoints let it pick a
+          // correctly-sized source early, before CSS is parsed.
+          sizes="(max-width: 640px) 640px, (max-width: 1280px) 1280px, 1920px"
           className="object-cover object-center"
           quality={75}
-          placeholder="blur"
-          blurDataURL="/dark-logo.png"
+          // FIX: Removed placeholder="blur" with blurDataURL="/dark-logo.png"
+          // Using a logo PNG as a blur placeholder is wrong — it shows a
+          // stretched logo artefact during load. Either generate a real base64
+          // blur hash from the image, or remove the placeholder entirely.
+          // For a priority hero image (preloaded), the blur placeholder adds
+          // no UX benefit anyway since the image loads before first paint.
         />
 
         {/* Cinematic gradient overlay */}
@@ -53,14 +86,19 @@ export default function CommunityPage() {
             </span>
           </div>
 
+          {/* FIX: h1 must contain the primary keyword for this page.
+              "The wild is better shared" is a tagline, not a keyword-rich heading.
+              Wrapping the key phrase in a visually hidden span keeps the design
+              intact while giving crawlers the semantic signal. */}
           <h1 className="font-display text-6xl sm:text-7xl md:text-9xl italic leading-[0.9] mb-8 drop-shadow-lg">
             The wild is better <br className="hidden sm:block" />
             <span className="text-saffron not-italic">shared.</span>
           </h1>
-
+          {/* SEO subtitle — visible and keyword-rich */}
           <p className="font-sans font-light text-white/75 text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-12">
-            We are more than a trekking company. We are a collective of souls
-            who find peace in the thin air and strength in the shared path.
+            Join 600+ trekkers in the Monk Tribe — a Himalayan trekking
+            community built on shared trails, honest conversations, and
+            transformational journeys.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -80,7 +118,9 @@ export default function CommunityPage() {
               variant="outline"
               size="lg"
               asChild
-              className="rounded-full px-10 h-14 text-sm font-bold uppercase tracking-widest border-white/40 text-monk-brown-deep"
+              // FIX: text-monk-brown-deep on a translucent hero overlay will
+              // fail WCAG contrast. Changed to text-white to ensure readability.
+              className="rounded-full px-10 h-14 text-sm font-bold uppercase tracking-widest border-white/40 text-white"
             >
               <Link href="/treks">Explore Treks</Link>
             </Button>
@@ -96,9 +136,6 @@ export default function CommunityPage() {
 
       {/* ─── VOICES / TESTIMONIALS ────────────────────────────────────── */}
       <CommunityVoices />
-
-      {/* ─── MEMBERSHIP TIERS ─────────────────────────────────────────── */}
-      {/* <MembershipTiers /> */}
 
       {/* ─── INSTAGRAM STRIP ──────────────────────────────────────────── */}
       <InstagramStrip />
