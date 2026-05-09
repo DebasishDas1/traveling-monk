@@ -1,3 +1,5 @@
+import * as z from "zod";
+
 export type ItineraryDayType = {
   day: number;
   title: string;
@@ -84,3 +86,22 @@ export type TrekType = {
   minAge?: number;
   pickupDrop?: string;
 };
+
+// ─── Zod Schema ───────────────────────────────────────────────────────────────
+export const bookingSchema = z.object({
+  trekSlug: z.string().min(1, "Please select a trek"),
+  name:     z.string().min(2, "Name must be at least 2 characters"),
+  email:    z.string().email("Enter a valid email address"),
+  phone:    z.string().regex(/^[6-9]\d{9}$/, "Enter a valid 10-digit Indian mobile number"),
+  date:     z.string().min(1, "Please select a departure date"),
+  guests:   z.number().min(1).max(10),
+});
+
+export type BookingFormValues = z.infer<typeof bookingSchema>;
+
+// ─── Server action response ───────────────────────────────────────────────────
+export type BookingActionState = {
+  success: boolean;
+  message: string;
+  errors?: Record<string, string[] | undefined>;
+} | null;

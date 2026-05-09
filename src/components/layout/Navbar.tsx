@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/sheet";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { usePathname } from "next/navigation";
+import { useBookingStore } from "@/stores/bookingStore";
 
 export const navLinks = [
   { name: "Treks", href: "/treks" },
@@ -40,6 +41,7 @@ export const Navbar = () => {
     closeMobileMenu,
     openBookingDrawer,
   } = useUiStore();
+  const { openDrawer } = useBookingStore();
 
   const pathname = usePathname();
   const isTreksPage = pathname.startsWith("/treks/") && pathname !== "/treks/";
@@ -107,7 +109,7 @@ export const Navbar = () => {
             variant="saffron"
             size="sm"
             className="rounded-full px-6 font-bold uppercase tracking-wider text-[10px] shadow-lg shadow-saffron/20"
-            onClick={() => openBookingDrawer()}
+            onClick={() => openDrawer("valley-of-flowers")}
           >
             Join a Trek <ArrowRight className="size-3 ml-2" />
           </Button>
@@ -184,7 +186,7 @@ export const Navbar = () => {
                   className="w-full rounded-full py-7 text-lg font-bold shadow-xl shadow-saffron/10"
                   onClick={() => {
                     closeMobileMenu();
-                    openBookingDrawer();
+                    openDrawer("valley-of-flowers");
                   }}
                 >
                   Join a Trek <ArrowRight className="size-5 ml-2" />
