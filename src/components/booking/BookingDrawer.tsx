@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence } from "framer-motion";
-import { Drawer, DrawerContent, DrawerTitle } from "@/components/ui/drawer";
+import { Drawer, DrawerContent, DrawerTitle, DrawerDescription } from "@/components/ui/drawer";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 import { useBookingStore } from "@/stores/bookingStore";
@@ -14,16 +14,12 @@ import { IconX } from "@/components/myIcons";
 export function BookingDrawer() {
   const { isOpen, isSuccess, closeDrawer, reset, setSuccess } =
     useBookingStore();
-
-  // Pull shared state up here so sidebar + form stay in sync
   const { state, isPending, form, onSubmit } = useBookingForm();
-  const { setValue, watch } = form;
-  const watchedTrekSlug = watch("trekSlug");
 
   const handleClose = () => {
     setSuccess(false);
     form.reset();
-    reset(); // store reset
+    reset();
     closeDrawer();
   };
 
@@ -37,6 +33,7 @@ export function BookingDrawer() {
 
         <VisuallyHidden>
           <DrawerTitle>Book a Trek</DrawerTitle>
+          <DrawerDescription>Fill out the form to reserve your spot.</DrawerDescription>
         </VisuallyHidden>
 
         <div
@@ -47,16 +44,13 @@ export function BookingDrawer() {
           }}
         >
           <div
-            className="grid grid-cols-1 md:grid-cols-[280px_1fr]"
-            style={{ minHeight: "560px" }}
+            className="grid grid-cols-1 md:grid-cols-[300px_1fr]"
+            style={{ minHeight: "540px" }}
           >
-            {/* LEFT — sidebar (desktop only) */}
-            <BookingSidebar
-              selectedSlug={watchedTrekSlug}
-              onSelectTrek={(slug) => setValue("trekSlug", slug)}
-            />
+            {/* LEFT — brand panel (no props needed) */}
+            <BookingSidebar />
 
-            {/* RIGHT — form panel */}
+            {/* RIGHT — form */}
             <div className="flex flex-col bg-[#fefcf8] overflow-y-auto">
               {/* Header */}
               <div
@@ -81,10 +75,9 @@ export function BookingDrawer() {
                   </p>
                 </div>
 
-                {/* Close button */}
                 <button
                   onClick={handleClose}
-                  className="w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                  className="w-8 h-8 rounded-full flex items-center justify-center transition-colors hover:bg-[#f0e8dc]"
                   style={{ background: "#f5ede0", color: "#8a7660" }}
                   aria-label="Close booking drawer"
                 >
@@ -98,7 +91,7 @@ export function BookingDrawer() {
                   {isSuccess ? (
                     <BookingSuccess
                       key="success"
-                      message={(state as any)?.message}
+                      message={state?.message}
                       onClose={handleClose}
                     />
                   ) : (

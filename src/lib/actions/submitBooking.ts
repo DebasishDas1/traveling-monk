@@ -1,69 +1,85 @@
 "use server";
 
+import { google } from "googleapis";
 import { BookingActionState, BookingFormValues, bookingSchema } from "@/lib/type";
 
+// ─── Google Sheets auth ───────────────────────────────────────────────────────
+function getSheets() {
+  const email = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
+  const key   = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n");
+
+  if (!email || !key) {
+    throw new Error("Missing Google Sheets credentials. Check GOOGLE_SERVICE_ACCOUNT_EMAIL and GOOGLE_PRIVATE_KEY env vars.");
+  }
+
+  const auth = new google.auth.JWT({
+    email,
+    key,
+    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+  });
+
+  return google.sheets({ version: "v4", auth });
+}
+
+// ─── Server action ────────────────────────────────────────────────────────────
 export async function submitBooking(
   _prev: BookingActionState,
   formData: FormData
 ): Promise<BookingActionState> {
-  
-  // 🧪 Raw extraction
+
+  // 1. Extract raw data
   const rawData = {
     trekSlug: formData.get("trekSlug"),
-    name: formData.get("name"),
-    email: formData.get("email"),
-    phone: formData.get("phone"),
-    date: formData.get("date"),
-    guests: Number(formData.get("guests")),
+    name:     formData.get("name"),
+    email:    formData.get("email"),
+    phone:    formData.get("phone"),
+    date:     formData.get("date"),
+    guests:   Number(formData.get("guests")),
   };
 
-  // 🛡️ Validate using the centralized schema
+  // 2. Validate
   const parsed = bookingSchema.safeParse(rawData);
 
   if (!parsed.success) {
     const fieldErrors = parsed.error.flatten().fieldErrors;
-    // Safely extract the first error message
-    const keys = Object.keys(fieldErrors) as (keyof typeof fieldErrors)[];
-    const firstKey = keys[0];
-    const firstErrorMessage = (firstKey && fieldErrors[firstKey]?.[0]) || "Invalid form data";
+    const firstKey    = (Object.keys(fieldErrors) as (keyof typeof fieldErrors)[])[0];
+    const firstMsg    = (firstKey && fieldErrors[firstKey]?.[0]) ?? "Invalid form data";
 
-    return {
-      success: false,
-      message: firstErrorMessage,
-      errors: fieldErrors,
-    };
+    return { success: false, message: firstMsg };
   }
 
-  // ✅ Clean data
-  const payload: BookingFormValues = parsed.data;
+  const { trekSlug, name, email, phone, date, guests }: BookingFormValues = parsed.data;
 
+  // 3. Write directly to Google Sheets (no internal HTTP fetch)
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000";
+    const sheets   = getSheets();
+    const sheetId  = process.env.GOOGLE_SHEET_BOOKING_ID;
+    const sheetTab = process.env.GOOGLE_SHEET_BOOKING_TAB ?? "Bookings";
 
-    const res = await fetch(`${baseUrl}/api/booking`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
+    if (!sheetId) throw new Error("GOOGLE_SHEET_BOOKING_ID env var is not set.");
+
+    await sheets.spreadsheets.values.append({
+      spreadsheetId:    sheetId,
+      range:            `${sheetTab}!A:H`,
+      valueInputOption: "USER_ENTERED",
+      requestBody: {
+        values: [[
+          new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+          trekSlug,
+          name,
+          email,
+          phone,
+          date,
+          guests,
+          "Pending",
+        ]],
+      },
     });
 
-    if (!res.ok) {
-      return {
-        success: false,
-        message: "Failed to submit booking. Try again.",
-      };
-    }
+    return { success: true, message: "Booking recorded successfully." };
 
-    const data = await res.json();
-
-    return {
-      success: data.success,
-      message: data.message,
-    };
-  } catch (error) {
-    console.error("Booking submission error:", error);
-    return {
-      success: false,
-      message: "Network error. Please try again.",
-    };
+  } catch (err) {
+    console.error("[submitBooking] Google Sheets error:", err);
+    return { success: false, message: "Could not save your booking. Please try again." };
   }
 }

@@ -1,7 +1,8 @@
+// src/app/api/booking/route.ts
+
 import { NextRequest, NextResponse } from "next/server";
 import { google } from "googleapis";
 import { bookingSchema } from "@/lib/type";
-
 
 function getAuth() {
   const email = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
@@ -37,8 +38,8 @@ export async function POST(req: NextRequest) {
     const auth   = getAuth();
     const sheets = google.sheets({ version: "v4", auth });
 
-    const sheetId  = process.env.GOOGLE_SHEET_ID!;
-    const sheetTab = process.env.GOOGLE_SHEET_TAB ?? "Bookings";
+    const sheetId  = process.env.GOOGLE_SHEET_BOOKING_ID!;
+    const sheetTab = process.env.GOOGLE_SHEET_BOOKING_TAB ?? "Bookings";
 
     // Append row: [Timestamp, Trek, Name, Email, Phone, Date, Guests, Status]
     await sheets.spreadsheets.values.append({

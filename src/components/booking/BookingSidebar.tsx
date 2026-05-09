@@ -1,139 +1,111 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { trekData } from "@/lib/data/treks";
-import { IconMountain, IconMapPin } from "@/components/myIcons";
+import { IconMountain } from "@/components/myIcons";
 
-interface BookingSidebarProps {
-  selectedSlug: string;
-  onSelectTrek: (slug: string) => void;
-}
-
-export function BookingSidebar({
-  selectedSlug,
-  onSelectTrek,
-}: BookingSidebarProps) {
+// Pure brand + info panel. Trek selection lives in the form now (both breakpoints).
+export function BookingSidebar() {
   return (
     <div
-      className="relative hidden md:flex flex-col gap-5 overflow-hidden p-8"
+      className="relative hidden md:flex flex-col justify-between overflow-hidden p-8"
       style={{ background: "#1e1208" }}
     >
       {/* Decorative orbs */}
       <div
-        className="absolute -top-16 -right-16 w-48 h-48 rounded-full pointer-events-none"
+        className="absolute -top-16 -right-16 w-56 h-56 rounded-full pointer-events-none"
         style={{ background: "rgba(196,131,26,0.08)" }}
       />
       <div
-        className="absolute -bottom-12 -left-12 w-40 h-40 rounded-full pointer-events-none"
+        className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full pointer-events-none"
         style={{ background: "rgba(232,168,50,0.06)" }}
       />
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full pointer-events-none"
+        style={{ background: "rgba(196,131,26,0.03)" }}
+      />
 
-      {/* Brand mark */}
-      <div className="flex items-center gap-2.5 relative z-10">
-        <div
-          className="w-8 h-8 rounded-full flex items-center justify-center"
-          style={{ background: "#c4831a" }}
-        >
-          <IconMountain className="w-4 h-4 text-white" />
-        </div>
-        <div>
-          <p className="text-[10px] uppercase tracking-[0.18em] text-[#c4831a] font-semibold leading-none">
-            The Traveling
-          </p>
-          <p
-            className="text-[14px] italic text-[#f5ede0] leading-tight"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+      {/* Top: brand */}
+      <div className="relative z-10">
+        <div className="flex items-center gap-2.5 mb-8">
+          <div
+            className="w-9 h-9 rounded-full flex items-center justify-center shadow-lg"
+            style={{ background: "#c4831a" }}
           >
-            Monk
-          </p>
+            <IconMountain className="w-4 h-4 text-white" />
+          </div>
+          <div>
+            <p className="text-[10px] uppercase tracking-[0.18em] text-[#c4831a] font-semibold leading-none">
+              The Traveling
+            </p>
+            <p
+              className="text-[15px] italic text-[#f5ede0] leading-tight"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              Monk
+            </p>
+          </div>
         </div>
-      </div>
 
-      {/* Heading */}
-      <div className="relative z-10 mt-2">
         <h2
-          className="text-[#f5ede0] leading-tight"
+          className="text-[#f5ede0] leading-[1.15]"
           style={{
             fontFamily: "'Playfair Display', serif",
-            fontSize: "1.75rem",
+            fontSize: "2rem",
             fontWeight: 400,
           }}
         >
           Your path to the{" "}
-          <em className="not-italic block" style={{ color: "#e8a832" }}>
+          <em className="not-italic" style={{ color: "#e8a832" }}>
             Himalayas
-          </em>
+          </em>{" "}
           awaits.
         </h2>
+
         <p
-          className="mt-3 text-[12px] leading-relaxed"
-          style={{ color: "rgba(245,237,224,0.45)" }}
+          className="mt-4 text-[13px] leading-relaxed"
+          style={{ color: "rgba(245,237,224,0.5)" }}
         >
-          Fill in your details and our team will reach out within 24 hours to
-          confirm your adventure.
+          Tell us where you want to go and we'll handle the rest. No payment
+          needed — our team will call you to confirm everything.
         </p>
       </div>
 
-      {/* Trek list */}
-      <div className="relative z-10 flex flex-col gap-2 mt-auto">
-        <p
-          className="text-[10px] uppercase tracking-[0.16em] font-semibold mb-1"
-          style={{ color: "rgba(245,237,224,0.3)" }}
-        >
-          Featured Treks
-        </p>
-        {trekData.slice(0, 4).map((t) => {
-          const active = selectedSlug === t.slug;
-          return (
-            <button
-              key={t.slug}
-              type="button"
-              onClick={() => onSelectTrek(t.slug)}
-              className={cn(
-                "flex items-center gap-3 rounded-xl px-3 py-2.5 text-left transition-all duration-200 border",
-                active
-                  ? "border-[#c4831a]/50 bg-[#c4831a]/15"
-                  : "border-transparent bg-white/5 hover:bg-white/10",
-              )}
+      {/* Middle: trust badges */}
+      <div className="relative z-10 flex flex-col gap-3 my-8">
+        {[
+          { icon: "🏔", label: "Expert-led treks across India" },
+          { icon: "📞", label: "Personal callback within 24 hrs" },
+          { icon: "✅", label: "No advance payment required" },
+          { icon: "🛡", label: "Safe & responsible trekking" },
+        ].map(({ icon, label }) => (
+          <div key={label} className="flex items-center gap-3">
+            <span className="text-base">{icon}</span>
+            <p
+              className="text-[12px]"
+              style={{ color: "rgba(245,237,224,0.55)" }}
             >
-              <IconMapPin
-                className={cn(
-                  "w-3.5 h-3.5 shrink-0",
-                  active ? "text-[#e8a832]" : "text-[rgba(245,237,224,0.3)]",
-                )}
-              />
-              <div className="flex-1 min-w-0">
-                <p
-                  className={cn(
-                    "text-[12px] font-medium truncate",
-                    active ? "text-[#e8a832]" : "text-[#f5ede0]",
-                  )}
-                >
-                  {t.name}
-                </p>
-                <p
-                  className="text-[10px] mt-0.5 truncate"
-                  style={{ color: "rgba(245,237,224,0.35)" }}
-                >
-                  {t.region}
-                </p>
-              </div>
-            </button>
-          );
-        })}
+              {label}
+            </p>
+          </div>
+        ))}
       </div>
 
-      {/* Risk-free note */}
+      {/* Bottom: live indicator */}
       <div
-        className="relative z-10 flex items-center gap-2 pt-4"
+        className="relative z-10 flex items-center gap-2 pt-5"
         style={{ borderTop: "1px solid rgba(245,237,224,0.08)" }}
       >
-        <div
-          className="w-1.5 h-1.5 rounded-full shrink-0"
-          style={{ background: "#4ade80" }}
-        />
-        <p className="text-[10px]" style={{ color: "rgba(245,237,224,0.35)" }}>
-          No advance payment · Book risk-free
+        <span className="relative flex h-2 w-2">
+          <span
+            className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
+            style={{ background: "#4ade80" }}
+          />
+          <span
+            className="relative inline-flex rounded-full h-2 w-2"
+            style={{ background: "#4ade80" }}
+          />
+        </span>
+        <p className="text-[11px]" style={{ color: "rgba(245,237,224,0.4)" }}>
+          Accepting bookings for 2025 season
         </p>
       </div>
     </div>

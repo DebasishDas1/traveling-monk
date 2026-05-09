@@ -46,6 +46,9 @@ export function BookingSuccess({ message, onClose }: BookingSuccessProps) {
           {message ??
             "Your booking request is in. Our team will reach out shortly to confirm your adventure."}
         </p>
+        <p className="text-[13px] leading-relaxed" style={{ color: "#8a7660" }}>
+          Our team will reach out to you shortly.
+        </p>
       </div>
 
       <button

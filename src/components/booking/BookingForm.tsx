@@ -12,14 +12,12 @@ import {
 import { DatePicker } from "@/components/booking/DatePicker";
 import { GuestsStepper } from "@/components/booking/GuestsStepper";
 import {
-  IconMountain,
+  IconCompass,
   IconUser,
   IconMail,
   IconPhone,
-  IconCompass,
   IconLoader,
 } from "@/components/myIcons";
-
 
 export function BookingForm({
   form,
@@ -39,12 +37,10 @@ export function BookingForm({
     formState: { errors },
   } = form;
 
-  // Derive values needed for the UI from the passed form
   const watchedTrekSlug = watch("trekSlug");
   const watchedDate = watch("date");
-  const currentTrek = trekData.find((t) => t.slug === watchedTrekSlug) ?? null;
-
   const watchedGuests = watch("guests");
+  const currentTrek = trekData.find((t) => t.slug === watchedTrekSlug) ?? null;
 
   return (
     <motion.form
@@ -57,55 +53,59 @@ export function BookingForm({
         isPending && "opacity-40 pointer-events-none",
       )}
     >
-      {/* ── Trek selector (mobile only; desktop uses sidebar) ── */}
-      <div className="md:hidden">
-        <FieldWrapper
-          label="Select Trek"
-          icon={IconCompass}
-          error={errors.trekSlug?.message}
+      {/* ── 1. Trek dropdown — shown on ALL screen sizes ── */}
+      <FieldWrapper
+        label="Select Trek"
+        icon={IconCompass}
+        error={errors.trekSlug?.message}
+      >
+        <select
+          value={watchedTrekSlug}
+          onChange={(e) => setValue("trekSlug", e.target.value)}
+          className={cn(inputClass(!!errors.trekSlug), "cursor-pointer")}
         >
-          <select
-            value={watchedTrekSlug}
-            onChange={(e) => setValue("trekSlug", e.target.value)}
-            className={inputClass(!!errors.trekSlug)}
-          >
-            <option value="">Choose your trek…</option>
-            {trekData.map((t) => (
-              <option key={t.slug} value={t.slug}>
-                {t.name}
-              </option>
-            ))}
-          </select>
-        </FieldWrapper>
-      </div>
+          <option value="">Choose your trek…</option>
+          {trekData.map((t) => (
+            <option key={t.slug} value={t.slug}>
+              {t.name} — {t.region}
+            </option>
+          ))}
+        </select>
+      </FieldWrapper>
 
-      {/* ── Current trek preview (desktop) ── */}
+      {/* ── Trek region badge (appears after selection) ── */}
       <AnimatePresence>
         {currentTrek && (
           <motion.div
-            initial={{ opacity: 0, y: -6 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            className="hidden md:flex items-center gap-3 rounded-xl px-4 py-3"
-            style={{ background: "#f5ede0", border: "1px solid #ddd5c6" }}
+            initial={{ opacity: 0, height: 0, marginTop: -12 }}
+            animate={{ opacity: 1, height: "auto", marginTop: 0 }}
+            exit={{ opacity: 0, height: 0 }}
+            className="overflow-hidden"
           >
-            <IconMountain
-              className="w-5 h-5 shrink-0"
-              style={{ color: "#c4831a" }}
-            />
-            <div>
-              <p className="text-[12px] font-semibold text-[#1a1208]">
-                {currentTrek.name}
-              </p>
-              <p className="text-[10px] uppercase tracking-wider mt-0.5 text-[#8a7660]">
+            <div
+              className="flex items-center gap-2 px-3 py-2 rounded-lg text-[11px]"
+              style={{ background: "#f5ede0", border: "1px solid #e8d9c4" }}
+            >
+              <span style={{ color: "#c4831a" }}>📍</span>
+              <span className="font-medium" style={{ color: "#6b5a45" }}>
                 {currentTrek.region}
-              </p>
+              </span>
+              {currentTrek.availableDates?.length > 0 && (
+                <>
+                  <span style={{ color: "#c4b49e" }}>·</span>
+                  <span style={{ color: "#8a7660" }}>
+                    {currentTrek.availableDates.length} batch
+                    {currentTrek.availableDates.length > 1 ? "es" : ""}{" "}
+                    available
+                  </span>
+                </>
+              )}
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* ── Name + Email ── */}
+      {/* ── 2. Name + Email ── */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <FieldWrapper
           label="Full Name"
@@ -132,7 +132,7 @@ export function BookingForm({
         </FieldWrapper>
       </div>
 
-      {/* ── Phone + Guests ── */}
+      {/* ── 3. Phone + Guests ── */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <FieldWrapper
           label="Phone Number"
@@ -153,7 +153,7 @@ export function BookingForm({
         />
       </div>
 
-      {/* ── Date picker ── */}
+      {/* ── 4. Date picker ── */}
       <DatePicker
         value={watchedDate}
         onChange={(d) => setValue("date", d)}

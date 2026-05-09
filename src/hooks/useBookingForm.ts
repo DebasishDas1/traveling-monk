@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useActionState } from "react";
+import { useEffect, useMemo, useActionState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -12,7 +12,10 @@ import { trekData } from "@/lib/data/treks";
 export function useBookingForm() {
   const { isOpen, activeTrekSlug, setSuccess } = useBookingStore();
 
-  const [state, formAction, isPending] = useActionState(submitBooking, null);
+  const [state, formAction] = useActionState(submitBooking, null);
+
+  // ✅ Fix: wrap formAction in startTransition so isPending works correctly
+  const [isPending, startTransition] = useTransition();
 
   const form = useForm<BookingFormValues>({
     resolver: zodResolver(bookingSchema),
@@ -55,13 +58,15 @@ export function useBookingForm() {
     }
   }, [state, setSuccess, reset]);
 
-  // Serialize form values → FormData for the server action
+  // ✅ Fix: call formAction inside startTransition
   const onSubmit = form.handleSubmit((data) => {
     const fd = new FormData();
     (Object.entries(data) as [string, string | number][]).forEach(([k, v]) => {
       fd.append(k, v.toString());
     });
-    formAction(fd);
+    startTransition(() => {
+      formAction(fd);
+    });
   });
 
   return {
