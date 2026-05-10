@@ -17,7 +17,6 @@ import {
   Sheet,
   SheetContent,
   SheetTrigger,
-  SheetClose,
   SheetTitle,
   SheetDescription,
 } from "@/components/ui/sheet";
@@ -39,7 +38,6 @@ export const Navbar = () => {
     mobileMenuOpen,
     toggleMobileMenu,
     closeMobileMenu,
-    openBookingDrawer,
   } = useUiStore();
   const { openDrawer } = useBookingStore();
 

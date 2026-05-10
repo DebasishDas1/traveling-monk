@@ -11,15 +11,15 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TrekType } from "@/lib/type";
-import { useUiStore } from "@/stores/uiStore";
 import { whatsappNumber } from "@/lib/social-links";
+import { useBookingStore } from "@/stores/bookingStore";
 
 interface TrekBookingWidgetProps {
   trek: TrekType;
 }
 
 export const TrekBookingWidget = ({ trek }: TrekBookingWidgetProps) => {
-  const { openBookingDrawer } = useUiStore();
+  const { openDrawer } = useBookingStore();
 
   const [selectedDate, setSelectedDate] = useState<string>("");
 
@@ -104,7 +104,7 @@ export const TrekBookingWidget = ({ trek }: TrekBookingWidgetProps) => {
             <div className="space-y-3 pt-2">
               <Button
                 variant="saffron"
-                onClick={() => openBookingDrawer(trek.slug)}
+                onClick={() => openDrawer(trek.slug)}
                 className="w-full h-16 rounded-2xl text-base font-black uppercase tracking-[0.2em] shadow-[0_15px_40px_rgba(255,153,0,0.15)] hover:shadow-none transition-all group"
               >
                 Reserve Spot

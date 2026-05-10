@@ -18,7 +18,6 @@ export type UiActions = {
   setSearchQuery: (q: string) => void
   openLightbox: (url: string) => void
   closeLightbox: () => void
-  openBookingDrawer: (trekSlug?: string) => void
   closeBookingDrawer: () => void
   setActiveTrekSlug: (slug: string | null) => void
 }
@@ -39,10 +38,6 @@ export const useUiStore = create<UiState & UiActions>((set) => ({
   setSearchQuery: (q) => set({ searchQuery: q }),
   openLightbox: (url) => set({ lightboxImage: url }),
   closeLightbox: () => set({ lightboxImage: null }),
-  openBookingDrawer: (trekSlug) => set({ 
-    bookingDrawerOpen: true, 
-    activeTrekSlug: trekSlug || null 
-  }),
   closeBookingDrawer: () => set({ bookingDrawerOpen: false }),
   setActiveTrekSlug: (slug) => set({ activeTrekSlug: slug }),
 }))

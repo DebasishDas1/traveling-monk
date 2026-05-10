@@ -44,7 +44,7 @@ const TrekItineraryCard = ({
             />
 
             {/* Soft parchment fade */}
-            <div className="absolute inset-0 bg-linear-to-t from-[#fdfaf4]/60 via-transparent to-transparent" />
+            {/* <div className="absolute inset-0 bg-linear-to-t from-[#fdfaf4]/60 via-transparent to-transparent" /> */}
           </>
         ) : (
           <div className="flex h-full items-center justify-center bg-[#efe7dc]">

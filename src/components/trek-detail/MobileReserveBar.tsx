@@ -2,14 +2,14 @@
 
 import type { TrekType } from "@/lib/type";
 import { Button } from "@/components/ui/button";
-import { useUiStore } from "@/stores/uiStore";
+import { useBookingStore } from "@/stores/bookingStore";
 
 interface MobileReserveBarProps {
   trek: TrekType;
 }
 
 export const MobileReserveBar = ({ trek }: MobileReserveBarProps) => {
-  const { openBookingDrawer } = useUiStore();
+  const { openDrawer } = useBookingStore();
 
   return (
     <div className="lg:hidden fixed bottom-0 inset-x-0 z-50 bg-white/90 backdrop-blur-xl border-t border-stone-200 p-4 sm:p-6 flex items-center justify-between shadow-[0_-20px_40px_rgba(0,0,0,0.05)]">
@@ -23,7 +23,7 @@ export const MobileReserveBar = ({ trek }: MobileReserveBarProps) => {
       </div>
       <Button
         variant="saffron"
-        onClick={() => openBookingDrawer(trek.slug)}
+        onClick={() => openDrawer(trek.slug)}
         className="h-12 sm:h-14 px-6 w-2/3 sm:px-10 rounded-full font-black uppercase tracking-widest text-[10px] sm:text-xs shadow-xl shadow-saffron/20"
       >
         Reserve

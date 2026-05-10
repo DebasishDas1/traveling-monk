@@ -15,7 +15,12 @@ export const trekData: TrekType[] = [
     // CORRECTED: Most authoritative sources cite 2,950 m / 9,711 ft. Previous value (9,700 ft / ~2,950 m) was close but imprecise.
     altitude: "9,711 ft (2,950 m)",
     gallery: [
-      "https://drive.google.com/file/d/1TxqE89xYRDCCUIZvkTL8cGXjF4YXOzLC/view?usp=sharing",
+      "https://drive.google.com/file/d/14IytdjzH85A4v--3Mv6xwEL0_NoU6AiI/view?usp=drive_link",
+      "https://drive.google.com/file/d/1EBjoiJ5nearBmpUvm1AT7KxsFcyXMciU/view?usp=drive_link",
+      "https://drive.google.com/file/d/1sxo31nlGNcuVgDq5sif4Ty8Ua4MxUKLZ/view?usp=drive_link",
+      "https://drive.google.com/file/d/1d-1-U1JeLCCxQu8SpJLJ6f-RgrCCTY5a/view?usp=drive_link",
+      "https://drive.google.com/file/d/1QZHJiekFy90BXZfFBj7mLcaH-rwcjdEf/view?usp=drive_link",
+      "https://drive.google.com/file/d/1GFY9vJJIum3ebXkmg3hwNY-6z16XR9Yk/view?usp=drive_link",
     ],
     highlights: [
       "Parvati Kund natural hot springs",
@@ -42,7 +47,7 @@ export const trekData: TrekType[] = [
         description:
           "Start from Barshaini and trek along the Parvati River through pine forests, villages, and the Rudra Nag waterfall. Reach Kheerganga by evening and soak in the famous hot springs before overnight camping in the peaceful mountain setting.",
         imageUrl:
-          "https://drive.google.com/file/d/1TxqE89xYRDCCUIZvkTL8cGXjF4YXOzLC/view?usp=sharing",
+          "https://drive.google.com/file/d/1lKNxNcwiu6jIQ08w_nrA7bdEzNgPlq_j/view?usp=drive_link",
       },
       {
         day: 2,
@@ -54,6 +59,7 @@ export const trekData: TrekType[] = [
         duration: "4–5 hrs",
         description:
           "Rise early for a sunrise dip in the Parvati Kund hot springs. After breakfast, descend back to Barshaini through the same scenic forest trail. Optionally explore the nearby Tosh village before concluding the trek.",
+        imageUrl: "https://drive.google.com/file/d/1wUTOcs1yG_b-LDWxGBGlVTQ5tAoNRYCW/view?usp=drive_link",
       },
     ],
     testimonials: [
@@ -95,7 +101,11 @@ export const trekData: TrekType[] = [
     // CORRECTED: Multiple sources confirm 2,850 m / 9,350 ft. Previous value of 2,875 m was incorrect.
     altitude: "9,350 ft (2,850 m)",
     gallery: [
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=1000",
+      "https://drive.google.com/file/d/1BM3K292yWM3lfdTjC8hPvcdhiR4WLlLi/view?usp=drive_link",
+      "https://drive.google.com/file/d/1hDdeXtqa-nrOEuTg-mk_Pbfy_IZFyPhe/view?usp=drive_link",
+      "https://drive.google.com/file/d/14ifcSg8KloL1hdkzdFcZNUqP49q9r3ha/view?usp=drive_link",
+      "https://drive.google.com/file/d/1WXEx_X6VZhNo6SOL7zTtvFFqDc9zM8fM/view?usp=drive_link",
+      "https://drive.google.com/file/d/17pkQa7-WHrRtLjs0_mE1BS0S4UcQyyT_/view?usp=drive_link",
     ],
     highlights: [
       "Panoramic Dhauladhar range views",
@@ -121,6 +131,7 @@ export const trekData: TrekType[] = [
         duration: "4–5 hrs (~7–8 km)",
         description:
           "Start early from Dharamkot and ascend through scenic forests to the Galu Devi Temple clearing. Continue through the Magic View Café and follow the main trail up to the Triund ridge for stunning panoramas and overnight camping.",
+        imageUrl: "https://drive.google.com/file/d/18uPdErLm1bi2ln4Gxl8BjDH-LKC1tPjw/view?usp=drive_link",
       },
       {
         day: 2,
@@ -132,6 +143,7 @@ export const trekData: TrekType[] = [
         duration: "3–4 hrs descent",
         description:
           "Witness a stunning sunrise over the Dhauladhar peaks. After a leisurely breakfast at camp, begin your descent back to Dharamkot, stopping at the famous trail cafés along the way.",
+        imageUrl: "https://drive.google.com/file/d/1qlpTuPLAhHncQGDHK_G7qte2vILdAf6g/view?usp=drive_link",
       },
     ],
     testimonials: [
@@ -173,7 +185,11 @@ export const trekData: TrekType[] = [
     // Hampta Pass altitude confirmed at 14,100 ft / 4,300 m across multiple sources — unchanged
     altitude: "14,100 ft (4,300 m)",
     gallery: [
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000",
+      "https://drive.google.com/file/d/1kNeOC1-Ls9ApHJGgsHcox2pD2MR6XQmx/view?usp=drive_link",
+      "https://drive.google.com/file/d/1TlBGM2Vju3SK0zaRAXgufnqMIShVB4Tw/view?usp=drive_link",
+      "https://drive.google.com/file/d/1QMe16sYKdbPSLqCvFRO5X0LQ1KTlOt6P/view?usp=drive_link",
+      "https://drive.google.com/file/d/1IrZXh9ei8q6uoTs-Av6dZpgnrDklwSB5/view?usp=drive_link",
+      "https://drive.google.com/file/d/1BMlfWB95gFrhIbsl--WBRNzbS3pKttqk/view?usp=drive_link",
     ],
     highlights: [
       "Chandratal Lake — 'Moon Lake' at 14,100 ft",
@@ -197,6 +213,7 @@ export const trekData: TrekType[] = [
         duration: "2–3 hrs trek",
         description:
           "Scenic drive from Manali to Jobra, followed by a short but beautiful trek through pine woodland and wooden bridges to the riverside camp at Chika beside the Hamta River.",
+        imageUrl: "https://drive.google.com/file/d/1IrZXh9ei8q6uoTs-Av6dZpgnrDklwSB5/view?usp=drive_link",
       },
       {
         day: 2,
@@ -207,6 +224,7 @@ export const trekData: TrekType[] = [
         duration: "3–4 hrs",
         description:
           "Follow the Hamta River upstream through meadows and rocky boulders, with the first sweeping views of snow-capped Pir Panjal peaks appearing ahead.",
+        imageUrl: "https://drive.google.com/file/d/1JkhT_uR3YVnsFxMRkL656Oyi_LTXH8_S/view?usp=drive_link",
       },
       {
         day: 3,
@@ -217,6 +235,7 @@ export const trekData: TrekType[] = [
         duration: "7–8 hrs",
         description:
           "The highlight day. Cross the pass and witness the breathtaking landscape shift from green Kullu to barren Lahaul. Descend to the dramatic Shea Goru campsite on the Spiti side.",
+        imageUrl: "https://drive.google.com/file/d/1QMe16sYKdbPSLqCvFRO5X0LQ1KTlOt6P/view?usp=drive_link",
       },
       {
         day: 4,
@@ -227,6 +246,7 @@ export const trekData: TrekType[] = [
         duration: "3 hrs trek + drive",
         description:
           "Trek to Chatru and drive to the sacred Chandratal Lake. Witness the stunning turquoise water change hues with the shifting light before returning to camp.",
+        imageUrl: "https://drive.google.com/file/d/1lmDzbgDyciFqbbY2MN61mhCO8NdUd0m-/view?usp=drive_link",
       },
       {
         day: 5,
@@ -237,6 +257,7 @@ export const trekData: TrekType[] = [
         duration: "Drive via Atal Tunnel",
         description:
           "Return journey to Manali through the Atal Tunnel. Expected arrival by early afternoon for onward travel.",
+        imageUrl: "https://drive.google.com/file/d/1FClcEPo4CWAjIMRUE_Mp8QPM-pehwzV6/view?usp=drive_link",
       },
     ],
     testimonials: [
@@ -278,7 +299,10 @@ export const trekData: TrekType[] = [
     // Altitude confirmed at 16,207 ft / 4,950 m — unchanged and correct
     altitude: "16,207 ft (4,950 m)",
     gallery: [
-      "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=1000",
+      "https://drive.google.com/file/d/1OJoNXgb7mV4MgGkj2HSGQSdK6pzQsPk-/view?usp=drive_link",
+      "https://drive.google.com/file/d/1F4QtEdayW3MGsfnAzFNO16O58jDyZlrp/view?usp=drive_link",
+      "https://drive.google.com/file/d/1xkv3je28UOFC6C2U8CzjB-m4Xi1pNg9r/view?usp=drive_link",
+      "https://drive.google.com/file/d/1wOidsJOh8dpiy7Te-ZwgTlnlAFlu9fnS/view?usp=drive_link",
     ],
     highlights: [
       "Ruinsara Tal glacial lake at 11,800 ft",
@@ -303,6 +327,7 @@ export const trekData: TrekType[] = [
         duration: "8–10 hrs drive",
         description:
           "Scenic long-distance drive through Mussoorie and Purola to Sankri, the base camp village situated within Govind Wildlife Sanctuary.",
+        imageUrl:"https://drive.google.com/file/d/1jMqxnJR2pxCKCibpkqJSciWXM1TlWZ8i/view?usp=drive_link",
       },
       {
         day: 2,
@@ -313,6 +338,7 @@ export const trekData: TrekType[] = [
         duration: "6–7 hrs",
         description:
           "Short drive to Taluka then trek through dense chestnut and walnut forests and open meadows to the ancient heritage village of Osla.",
+        imageUrl:"https://drive.google.com/file/d/1VPlhROWzgqkGh3lIUSNkj5_0yS0xJDBC/view?usp=drive_link",
       },
       {
         day: 3,
@@ -324,6 +350,7 @@ export const trekData: TrekType[] = [
         duration: "6–7 hrs",
         description:
           "Follow the Supin River upstream into the Ruinsara valley, where pine and fir give way to birch and rhododendron. Camp by the river amid impressive waterfalls.",
+        imageUrl:"https://drive.google.com/file/d/12BSkA7xkGcmmLjHaXQAgsU8iwtvM97XG/view?usp=drive_link",
       },
       {
         day: 4,
@@ -335,6 +362,7 @@ export const trekData: TrekType[] = [
         duration: "5–6 hrs",
         description:
           "A rewarding trek to the sacred Ruinsara Tal — a pristine glacial lake surrounded by snow-clad peaks including the Swargarohini massif and Kala Nag. The reflections are extraordinary on calm mornings.",
+          imageUrl:"https://drive.google.com/file/d/1Mw1kt76i-apMODe4qQ41KFBjw-7eKOey/view?usp=drive_link",
       },
       {
         day: 5,
@@ -346,6 +374,7 @@ export const trekData: TrekType[] = [
         duration: "4–5 hrs",
         description:
           "Gradual climb to the high-altitude camp at Odari, situated beside a natural rock cave linked to local folklore about Bali, brother of Hanuman. Sweeping views of the Swargarohini peaks.",
+          imageUrl:"https://drive.google.com/file/d/1tcluyDSNIhh-bs5KOcTFnQ4QmpahqO1Q/view?usp=drive_link",
       },
       {
         day: 6,
@@ -357,6 +386,7 @@ export const trekData: TrekType[] = [
         duration: "5–6 hrs",
         description:
           "Steep ascent on a narrow moraine ridge with exposed sections. Reach the high-altitude base camp at the foot of the Bali Pass wall. Preparation and early sleep before the summit push.",
+          imageUrl:"https://drive.google.com/file/d/1MvM2SCHxD51yumN4hm02btrVJGmGf7fk/view?usp=drive_link",
       },
       {
         day: 7,
@@ -368,6 +398,7 @@ export const trekData: TrekType[] = [
         duration: "9–11 hrs",
         description:
           "The ultimate challenge. An early start before dawn for the steep snow ascent to the Bali Pass summit at 16,207 ft. Panoramic views of Bandarpoonch, Swargarohini, and Kala Nag reward the effort. Steep descent to the Yamunotri Valley and camp at Lower Dhamni.",
+          imageUrl:"https://drive.google.com/file/d/1ybZIZN6rmjruMC_ZSS-00jXl5pUYnBJ9/view?usp=drive_link",
       },
       {
         day: 8,
@@ -378,6 +409,7 @@ export const trekData: TrekType[] = [
         duration: "4 hrs trek + 7–8 hrs drive",
         description:
           "Trek down to Janki Chatti, then visit the sacred Yamunotri temple for Darshan before the long drive back to Dehradun.",
+        imageUrl:"https://drive.google.com/file/d/1OwEi8OclfZezq64Wk2xLZbjvzwIOZwkR/view?usp=drive_link",
       },
     ],
     testimonials: [
@@ -419,7 +451,13 @@ export const trekData: TrekType[] = [
     // Sar Pass altitude confirmed at 13,800 ft / 4,200 m across all sources — unchanged and correct
     altitude: "13,800 ft (4,200 m)",
     gallery: [
-      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&q=80&w=1000",
+      "https://drive.google.com/file/d/1e0F8OyEW1dD8XoFRhHf2n8NAa18ViqtT/view?usp=drive_link",
+      "https://drive.google.com/file/d/1GtnUgXTmgl5QhqFnl8H70JiHq0xyl1bg/view?usp=drive_link",
+      "https://drive.google.com/file/d/1SRUWscKla3apSCw0A4myDr2B4SL7Wdn9/view?usp=drive_link",
+      "https://drive.google.com/file/d/11zlgowBBEGLoCKaIEHU8oaSH8sZloHLx/view?usp=drive_link",
+      "https://drive.google.com/file/d/1hFfvqmcC4iVPj-l2f30oiC0_2GqRKDz3/view?usp=drive_link",
+      "https://drive.google.com/file/d/1czsgVUWLeWaRVwEs9AAAhQJU9n66KJeT/view?usp=drive_link",
+
     ],
     highlights: [
       "360-degree Himalayan summit views at 13,800 ft",
@@ -443,6 +481,7 @@ export const trekData: TrekType[] = [
         duration: "5–6 hrs (~10 km)",
         description:
           "Follow the Grahan Nallah through rhododendron and pine forests, passing local tea stalls serving the famous rhododendron syrup, to reach the traditional village of Grahan.",
+          imageUrl:"https://drive.google.com/file/d/1gWscRrQYMwgKfKpyKfqXW3d1XMKKc4dT/view?usp=drive_link",
       },
       {
         day: 2,
@@ -453,6 +492,7 @@ export const trekData: TrekType[] = [
         duration: "5–6 hrs",
         description:
           "Ascend through increasingly dense forests and open into the scenic alpine meadow camp of Mung Thach (Min Thach), with expansive views opening up on all sides.",
+          imageUrl:"https://drive.google.com/file/d/1UAYCLMq8ZTwIO2disaF6y61c21uE1Opf/view?usp=drive_link",
       },
       {
         day: 3,
@@ -463,6 +503,7 @@ export const trekData: TrekType[] = [
         duration: "4–5 hrs",
         description:
           "A steeper climb above the treeline to the ridge camp at Nagaru, with sweeping views down the Parvati Valley. Snow is likely encountered on this section.",
+          imageUrl:"https://drive.google.com/file/d/1QJzKTOfE1i4OgfqpZfAm6IRVW1b3hDRi/view?usp=drive_link",
       },
       {
         day: 4,
@@ -473,6 +514,7 @@ export const trekData: TrekType[] = [
         duration: "7–8 hrs",
         description:
           "Early alpine start for the summit push. Cross the snow-covered Sar Pass at 13,800 ft for panoramic Himalayan views, then enjoy the exhilarating snow slide descent to Biskeri Thach camp.",
+          imageUrl:"https://drive.google.com/file/d/12088R1sJGjvEymV4UQvYQEN47Ar0aWtI/view?usp=drive_link",
       },
       {
         day: 5,
@@ -483,6 +525,7 @@ export const trekData: TrekType[] = [
         duration: "5–6 hrs",
         description:
           "Descend through the scenic twin villages of Pulga and Tulga and across the Parvati River bridge to complete the full circuit back to Kasol base camp.",
+          imageUrl:"https://drive.google.com/file/d/1fABZ_er8hIgnzv76qcFvBYVKZfHux332/view?usp=drive_link",
       },
     ],
     testimonials: [
@@ -524,7 +567,10 @@ export const trekData: TrekType[] = [
     // Buran Ghati pass altitude confirmed at 15,000 ft / 4,570 m across all sources — unchanged and correct
     altitude: "15,000 ft (4,570 m)",
     gallery: [
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=1000",
+      "https://drive.google.com/file/d/1jexXCOYJVa76kkKrbfih6lekIsLuXxAS/view?usp=drive_link",
+      "https://drive.google.com/file/d/19ODfTsLQlda7CEsW21q3J0_9PPABcosG/view?usp=drive_link",
+      "https://drive.google.com/file/d/1hMzQu96sSDqbC6Q-eRuKoTmHlSclPyVH/view?usp=drive_link",
+      "https://drive.google.com/file/d/1ThC9es711K2v1glFqJ-SV5eWK5c1pVkU/view?usp=drive_link",
     ],
     highlights: [
       "Buran Ghati Pass at 15,000 ft",
@@ -549,6 +595,7 @@ export const trekData: TrekType[] = [
         duration: "8–9 hrs drive",
         description:
           "Drive through the picturesque Pabbar Valley to the remote heritage village of Janglik. Explore the traditional Kath-Kuni wooden architecture before an overnight briefing and rest.",
+          imageUrl:"https://drive.google.com/file/d/1JkS_n1YrzRe2Xx7L-7RiZ8OUuiNDySEO/view?usp=drive_link",
       },
       {
         day: 2,
@@ -559,6 +606,7 @@ export const trekData: TrekType[] = [
         duration: "5–6 hrs (~8 km)",
         description:
           "Trek through traditional Himachali village trails into wide, lush alpine meadows of Dayara, with grazing horses and panoramic views of the surrounding snow-capped ridges.",
+          imageUrl:"https://drive.google.com/file/d/1DILH5Ho0l1_OVg0H-YeyaCylYh2nBZYp/view?usp=drive_link",
       },
       {
         day: 3,
@@ -569,6 +617,7 @@ export const trekData: TrekType[] = [
         duration: "3–4 hrs (~3 km)",
         description:
           "Walk through dense pine forests to the stunning Litham campsite, dramatically positioned at the confluence of two valleys with the Chandranahan waterfall cascading ahead.",
+          imageUrl:"https://drive.google.com/file/d/1ypIMyjwCQCSEIcIE-cTSqhanpdRQPojC/view?usp=drive_link",
       },
       {
         day: 4,
@@ -580,6 +629,7 @@ export const trekData: TrekType[] = [
         duration: "6–7 hrs return",
         description:
           "Day hike without backpacks to the sacred Chandranahan glacial lakes — the source of the Pabbar River — passing through the dramatic waterfall snout. Up to seven alpine tarns reflect the surrounding peaks in perfect stillness.",
+          imageUrl:"https://drive.google.com/file/d/1ITQXIRxkCGzUVV9Y_d10LYOPtdjJuNht/view?usp=drive_link",
       },
       {
         day: 5,
@@ -590,6 +640,7 @@ export const trekData: TrekType[] = [
         duration: "4–5 hrs",
         description:
           "Leave the treeline behind and enter the boulder and moraine zone of the upper Pabbar valley. Camp at Dhunda, directly below the imposing Buran Ghati wall.",
+          imageUrl:"https://drive.google.com/file/d/1BM7b9lFs3d8EmZhOOy1P1bN8gAabRvrp/view?usp=drive_link",
       },
       {
         day: 6,
@@ -600,6 +651,7 @@ export const trekData: TrekType[] = [
         duration: "9–10 hrs",
         description:
           "The summit day. Depart before dawn, ascend steep scree and moraine to Buran Ghati at 15,000 ft for 360-degree views of Kinner Kailash. Descend the famous near-vertical snow wall — by rappel or thrilling slide — into the Sangla Valley.",
+          imageUrl:"https://drive.google.com/file/d/1C7UlArPC_SN-UwZH5Nqq3WHMX5KAkJX2/view?usp=drive_link",
       },
       {
         day: 7,
@@ -610,6 +662,7 @@ export const trekData: TrekType[] = [
         duration: "3–4 hrs trek + drive",
         description:
           "Descend through the magnificent apple and apricot orchards of Barua village — the most beautiful trail ending in the Himalayas — and drive back to Shimla.",
+          imageUrl:"https://drive.google.com/file/d/1bJIQlsY2tCOJbxfiTIFkwDCFq5QEyNOc/view?usp=drive_link",
       },
     ],
     testimonials: [
@@ -650,7 +703,10 @@ export const trekData: TrekType[] = [
     maxGroupSize: 30,
     altitude: "14,000 ft (4,267 m)",
     gallery: [
-      "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&q=80&w=1000",
+      "https://drive.google.com/file/d/11S_PwkRUP3l-7oWPdkoF7yHY3V7sxJK2/view?usp=drive_link",
+      "https://drive.google.com/file/d/1qV9al06wyCJKkZknnREHYPZlicDSurMc/view?usp=drive_link",
+      "https://drive.google.com/file/d/1PsJxs7jOS8qKmKFmiNZkNwsyjoMWflJO/view?usp=drive_link",
+      "https://drive.google.com/file/d/1_FHngAlTmhtY69saOeSxaPVsckvMXpMm/view?usp=drive_link",
     ],
     highlights: [
       "Bhrigu Lake at 14,000 ft — sacred alpine lake",
@@ -673,6 +729,7 @@ export const trekData: TrekType[] = [
         duration: "Acclimatisation",
         description:
           "Arrive in Manali and acclimatise. Explore the vibrant Mall Road, visit Hadimba Devi Temple, and receive your trek briefing for the days ahead.",
+          imageUrl:"https://drive.google.com/file/d/1FClcEPo4CWAjIMRUE_Mp8QPM-pehwzV6/view?usp=drive_link",
       },
       {
         day: 2,
@@ -683,6 +740,7 @@ export const trekData: TrekType[] = [
         duration: "5–6 hrs",
         description:
           "Drive to Gulaba (10,000 ft) and trek through beautiful rolling meadows, crossing streams and glacial patches to the high camp at Rola Kholi.",
+          imageUrl:"https://drive.google.com/file/d/1QMe16sYKdbPSLqCvFRO5X0LQ1KTlOt6P/view?usp=drive_link",
       },
       {
         day: 3,
@@ -693,6 +751,7 @@ export const trekData: TrekType[] = [
         duration: "6–7 hrs return",
         description:
           "Trek to the sacred Bhrigu Lake at 14,000 ft amid a bowl of snow-covered ridges. Spend time soaking in the panoramic views of the Kullu Valley before descending back to camp.",
+          imageUrl:"https://drive.google.com/file/d/1Zczqfgz9CHIZZHXe9gUnWUwoH2yvbr3r/view?usp=drive_link",
       },
       {
         day: 4,
@@ -703,6 +762,7 @@ export const trekData: TrekType[] = [
         duration: "4–5 hrs",
         description:
           "Descend through Kulang village, re-joining the road for a drive back to Manali to conclude the trek.",
+          imageUrl:"https://drive.google.com/file/d/1wUTOcs1yG_b-LDWxGBGlVTQ5tAoNRYCW/view?usp=drive_link",
       },
     ],
     testimonials: [
@@ -744,6 +804,8 @@ export const trekData: TrekType[] = [
     altitude: "12,139 ft (3,700 m)",
     gallery: [
       "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&q=80&w=1000",
+      "https://drive.google.com/file/d/1WKS1MzYNa5xCvmGsv3XCvHVUOZsNKggZ/view?usp=drive_link",
+      "https://drive.google.com/file/d/1EZa_3fNCoUYP3IvvFWcT94ivrje-3C8E/view?usp=drive_link",
     ],
     highlights: [
       "Beas Kund — glacial origin of the sacred River Beas",
@@ -766,6 +828,7 @@ export const trekData: TrekType[] = [
         duration: "Explore",
         description:
           "Visit the ancient Manu temple and Hadimba Devi Temple, and settle into the gateway of the Beas Kund valley. Trek briefing in the evening.",
+          imageUrl:"https://drive.google.com/file/d/1FClcEPo4CWAjIMRUE_Mp8QPM-pehwzV6/view?usp=drive_link",
       },
       {
         day: 2,
@@ -776,6 +839,7 @@ export const trekData: TrekType[] = [
         duration: "3–4 hrs",
         description:
           "Short drive to Dhundi at the head of Solang Nala, then trek upstream through spectacular open valley views and wildflower-filled meadows to the Bakarthach camp.",
+          imageUrl:"https://drive.google.com/file/d/12f2uv75CRGIFnLrLGcVkXdMXT4G4ZY9W/view?usp=drive_link",
       },
       {
         day: 3,
@@ -786,6 +850,7 @@ export const trekData: TrekType[] = [
         duration: "5–6 hrs return",
         description:
           "Day hike to the sacred Beas Kund lake at the foot of the Shitidhar glacier. Standing beneath the sheer walls of Hanuman Tibba and Friendship Peak is a truly humbling experience.",
+          imageUrl:"https://drive.google.com/file/d/1V1bk5jPuieLxMP7DPT1HjM8MELU8EZwN/view?usp=drive_link",
       },
       {
         day: 4,
@@ -796,6 +861,7 @@ export const trekData: TrekType[] = [
         duration: "3–4 hrs",
         description:
           "Easy descent back through Dhundi and the scenic Solang Nala valley, with a final drive back to Manali.",
+          imageUrl:"https://drive.google.com/file/d/11f6L5QEp-wTxozHEXwgIskNOpLpc5hY1/view?usp=drive_link",
       },
     ],
     testimonials: [
