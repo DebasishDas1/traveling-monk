@@ -29,9 +29,9 @@ const TrekItineraryCard = ({
   const imageSrc = getImageSrc(image);
 
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-[#e7dccd] bg-[#fffdf9] shadow-[0_10px_40px_rgba(60,40,20,0.08)]">
+    <div className="overflow-hidden rounded-[2rem] border border-[#e7dccd] bg-linear-to-br from-[#F6F1E8] via-[#EFE6D8] to-[#E4D6C3] shadow-[0_10px_40px_rgba(60,40,20,0.08)]">
       {/* 🖼️ Image */}
-      <div className="relative h-[260px] md:h-[320px] w-full overflow-hidden rounded-[1.75rem] bg-[#efe7dc]">
+      <div className="relative h-[260px] md:h-[320px] w-full overflow-hidden rounded-[1.75rem]">
         {imageSrc ? (
           <>
             <Image
@@ -63,7 +63,7 @@ const TrekItineraryCard = ({
       <div className="space-y-6 px-6 py-7 md:px-8 md:py-8">
         {/* Title + Route */}
         <div className="space-y-3">
-          <h3 className="font-display text-3xl italic leading-tight text-[#1f3427]">
+          <h3 className="font-display text-3xl italic leading-tight text-[#1f3427] font-bold tracking-wide">
             {title}
           </h3>
 

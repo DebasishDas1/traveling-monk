@@ -4,10 +4,12 @@ export const trekData: TrekType[] = [
   // ── KHEERGANGA TREK ─────────────────────────────────────────────────────────────────
   {
     slug: "kheerganga-trek",
+    featured: true,
+    active: true,
     name: "Kheerganga Trek",
     tagline: "Soak in the mountains.",
     region: "Himachal Pradesh",
-    duration: "2D/1N",
+    duration: "2 Days / 1 Nights",
     difficulty: "Easy",
     tier: "Beginner",
     priceFrom: 1499,
@@ -62,9 +64,10 @@ export const trekData: TrekType[] = [
         imageUrl: "https://drive.google.com/file/d/1wUTOcs1yG_b-LDWxGBGlVTQ5tAoNRYCW/view?usp=drive_link",
       },
     ],
+
     testimonials: [
       {
-        name: "Aman Sharma",
+        name: "Aarav Sharma",
         city: "Delhi",
         quote:
           "Perfect first trek! The hot springs at the top felt unreal after the hike.",
@@ -73,12 +76,11 @@ export const trekData: TrekType[] = [
         rating: 5,
       },
       {
-        name: "Sneha Iyer",
+        name: "Sneha Roy",
         city: "Chennai",
         quote:
           "Loved the forest trails and camping under the stars. Super beginner friendly.",
-        image:
-          "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150",
+        image:"",
         rating: 5,
       },
     ],
@@ -91,9 +93,11 @@ export const trekData: TrekType[] = [
   {
     slug: "triund-trek",
     name: "Triund Trek",
+    featured: true,
+    active: true,
     tagline: "Your first Himalayan horizon.",
     region: "Himachal Pradesh",
-    duration: "2D/1N",
+    duration: "2 Days / 1 Nights",
     difficulty: "Easy",
     tier: "Beginner",
     priceFrom: 1199,
@@ -148,13 +152,13 @@ export const trekData: TrekType[] = [
     ],
     testimonials: [
       {
-        name: "Rohit Mehta",
-        city: "Delhi",
+        name: "Debasish Das",
+        city: "Kolkata",
         quote:
           "Perfect weekend escape. The Dhauladhar views at sunrise were unreal.",
         rating: 5,
         image:
-          "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150",
+          "",
       },
       {
         name: "Ananya Sen",
@@ -175,10 +179,12 @@ export const trekData: TrekType[] = [
   {
     slug: "hampta-pass",
     name: "Hampta Pass Trek",
+    featured: true,
+    active: true,
     tagline: "Where green valleys meet desert skies.",
     region: "Himachal Pradesh",
-    duration: "5D/4N",
-    difficulty: "Moderate",
+    duration: "5 Days / 4 Nights",
+    difficulty: "Easy to Moderate",
     tier: "Intermediate",
     priceFrom: 6999,
     maxGroupSize: 30,
@@ -289,10 +295,12 @@ export const trekData: TrekType[] = [
   {
     slug: "bali-pass",
     name: "Bali Pass Trek",
+    featured: false,
+    active: true,
     tagline: "Cross the Himalayas. Don't just climb them.",
     region: "Uttarakhand",
-    duration: "8D/7N",
-    difficulty: "Difficult",
+    duration: "8 Days / 7 Nights",
+    difficulty: "Easy to Moderate",
     tier: "Advanced",
     priceFrom: 18499,
     maxGroupSize: 30,
@@ -441,10 +449,12 @@ export const trekData: TrekType[] = [
   {
     slug: "sar-pass",
     name: "Sar Pass Trek",
+    featured: true,
+    active: true,
     tagline: "Snow in summer. Magic all year.",
     region: "Himachal Pradesh",
-    duration: "5D/4N",
-    difficulty: "Moderate",
+    duration: "5 Days / 4 Nights",
+    difficulty: "Easy to Moderate",
     tier: "Beginner",
     priceFrom: 5999,
     maxGroupSize: 30,
@@ -557,9 +567,11 @@ export const trekData: TrekType[] = [
   {
     slug: "buran-ghati",
     name: "Buran Ghati Trek",
+    featured: false,
+    active: true,
     tagline: "Forests, glaciers, and a snow wall to remember.",
     region: "Himachal Pradesh",
-    duration: "7D/6N",
+    duration: "7 Days / 6 Nights",
     difficulty: "Moderate to Difficult",
     tier: "Intermediate",
     priceFrom: 16500,
@@ -694,10 +706,12 @@ export const trekData: TrekType[] = [
   {
     slug: "bhrigu-lake",
     name: "Bhrigu Lake Trek",
+    featured: false,
+    active: true,
     tagline: "The most accessible alpine lake in the Himalayas.",
     region: "Himachal Pradesh",
-    duration: "4D/3N",
-    difficulty: "Moderate",
+    duration: "4 Days / 3 Nights",
+    difficulty: "Easy",
     tier: "Beginner",
     priceFrom: 5599,
     maxGroupSize: 30,
@@ -794,10 +808,12 @@ export const trekData: TrekType[] = [
   {
     slug: "beas-kund",
     name: "Beas Kund Trek",
+    featured: false,
+    active: true,
     tagline: "Find the source. Lose yourself.",
     region: "Himachal Pradesh",
-    duration: "4D/3N",
-    difficulty: "Easy to Moderate",
+    duration: "4 Days / 3 Nights",
+    difficulty: "Easy",
     tier: "Beginner",
     priceFrom: 5599,
     maxGroupSize: 30,
@@ -888,4 +904,602 @@ export const trekData: TrekType[] = [
       { date: "Flexible", spots: 30 },
     ],
   },
+
+  //--- Har Ki Dun Trek---------------------------------------------------
+  {
+    slug: "har-ki-dun-trek",
+    featured: false,
+    active: true,
+    name: "Har Ki Dun Trek",
+    tagline: "Walk into the Valley of Gods through ancient Himalayan trails",
+    region: "Uttarkashi, Uttarakhand, India",
+    duration: "6 Days / 5 Nights",
+    altitude: "11,700 ft",
+    difficulty: "Moderate",
+    tier: "Beginner",
+    priceFrom: 9000,
+    maxGroupSize: 30,
+    gallery: [
+      "https://drive.google.com/file/d/1lZ72Ttrluj_DPq0U7UBemoH8Otz3c1Yo/view?usp=drive_link",
+      "https://drive.google.com/file/d/1nVp9Rab-HaZd1Yv78U56_WgrCj6WQWWl/view?usp=drive_link",
+      "https://drive.google.com/file/d/1iL7yQOi0msUWRD6fvR29L1FOcpS-AcXs/view?usp=drive_link",
+      "https://drive.google.com/file/d/1cj-8aNyqX_5geXzfZzk6QxAXR-aKQv1f/view?usp=drive_link",
+      "https://drive.google.com/file/d/1UmV6eTfCWyQQL9OelqUVOZySlUWwGnbH/view?usp=drive_link",
+    ],
+
+    highlights: [
+      "Explore the stunning Har Ki Dun valley, also known as the Valley of Gods",
+      "Walk through dense pine, deodar, and rhododendron forests",
+      "Witness panoramic views of Swargarohini, Bandarpoonch, and Black Peak",
+      "Experience remote Himalayan village life in Osla",
+      "Pass through Govind Pashu Vihar National Park rich in flora and fauna",
+      "Visit the ancient Duryodhana temple in Osla village",
+      "See alpine meadows, rivers, and glacial valleys including Jaundhar Glacier",
+    ],
+
+    nextDate: "Flexible",
+    spotsLeft: 12,
+
+    description:
+      "Har Ki Dun is one of the most scenic valley treks in the Western Himalayas, ideal for beginners and nature lovers. Nestled inside the Govind Pashu Vihar National Park, this cradle-shaped valley offers a perfect mix of forests, rivers, alpine meadows, and traditional Himalayan villages. The trail provides a gradual ascent, making it suitable for first-time trekkers while still offering rewarding views of snow-clad peaks and rich biodiversity.",
+
+    itinerary: [
+      {
+        day: 1,
+        title: "Drive from Dehradun to Sankri",
+        from: "Dehradun",
+        to: "Sankri",
+        altitude: "6,400 ft",
+        duration: "10 hrs drive",
+        description:
+          "Drive through Mussoorie, Purola, Mori, and Netwar along the Tons River to reach Sankri, a scenic Himalayan village and the base for several popular treks. Enjoy beautiful mountain views and settle in for the night.",
+        imageUrl: "https://drive.google.com/file/d/1UoTAZlRb2tGpdj6jLbW3svupwh07ztk1/view?usp=drive_link",
+      },
+      {
+        day: 2,
+        title: "Drive to Gangad and Trek to Osla",
+        from: "Sankri",
+        to: "Osla",
+
+        altitude: "8,500 ft",
+        duration: "4–5 hrs trek",
+
+        description:
+          "Drive to Gangad village and begin a gradual trek to Osla. Walk along rivers, forests, and small waterfalls. Reach Osla village, known for its traditional wooden houses and the historic Duryodhana temple.",
+        imageUrl: "https://drive.google.com/file/d/1Ya4CwJOfF-fg2dTIbDdV3xbVXg-S1Suo/view?usp=drive_link",
+      },
+      {
+        day: 3,
+        title: "Trek from Osla to Kalkatiyadhar",
+        from: "Osla",
+        to: "Kalkatiyadhar",
+
+        altitude: "8,956 ft",
+        duration: "5–6 hrs trek",
+
+        description:
+          "Trek through forest clearings and river crossings. Witness the confluence of the Supin and Ruinsara rivers and enjoy views of Black Peak and Bandarpoonch. Camp at Kalkatiyadhar.",
+        imageUrl: "https://drive.google.com/file/d/1j3neZOzyq-9veAecwLaDRPkIQIAIWli5/view?usp=drive_link",
+      },
+      {
+        day: 4,
+        title: "Trek to Har Ki Dun Valley and Return",
+        from: "Kalkatiyadhar",
+        to: "Har Ki Dun & back",
+
+        altitude: "11,700 ft",
+        duration: "6–7 hrs trek",
+
+        description:
+          "Reach the breathtaking Har Ki Dun valley surrounded by towering peaks. Explore alpine meadows, streams, and distant glaciers before returning to camp.",
+        imageUrl: "https://drive.google.com/file/d/1lZ72Ttrluj_DPq0U7UBemoH8Otz3c1Yo/view?usp=drive_link",
+      },
+      {
+        day: 5,
+        title: "Trek back to Osla and Drive to Sankri",
+        from: "Kalkatiyadhar",
+        to: "Sankri",
+
+        altitude: "6,400 ft",
+        duration: "6–7 hrs",
+
+        description:
+          "Descend back to Osla via the same scenic route and drive to Sankri. Enjoy a relaxed evening after completing the trek.",
+        imageUrl: "https://drive.google.com/file/d/1aRo2VzJgFbaQElFVefi03j4M1G2rY05m/view?usp=drive_link",
+      },
+      {
+        day: 6,
+        title: "Drive back to Dehradun",
+        from: "Sankri",
+        to: "Dehradun",
+
+        altitude: "-",
+        duration: "10 hrs drive",
+
+        description:
+          "Return journey to Dehradun with memories of forests, valleys, and Himalayan life.",
+        imageUrl: "https://drive.google.com/file/d/1ZqbA7eLPmwReQOtbIO-W3zEDbHxLQ3Mq/view?usp=drive_link",
+      },
+    ],
+
+    testimonials: [
+      {
+        name: "Rohit Sharma",
+        city: "Delhi",
+        quote:
+          "Perfect trek for beginners. The valley views and village experience were unforgettable.",
+        image: "/images/users/user1.jpg",
+        rating: 5,
+      },
+      {
+        name: "Ananya Sen",
+        city: "Kolkata",
+        quote:
+          "Beautiful trails, well-organized camps, and amazing guides. Highly recommended.",
+        image: "/images/users/user2.jpg",
+        rating: 4,
+      },
+    ],
+
+    availableDates: [
+      { date: "Apr 15, 2026", spots: 10 },
+      { date: "May 10, 2026", spots: 8 },
+      { date: "Sep 20, 2026", spots: 12 },
+      { date: "Flexible", spots: 15 },
+    ],
+
+    inclusions: [
+      "Dehradun to Dehradun transport",
+      "All meals during the trek",
+      "Accommodation in tents and guesthouses",
+      "Experienced trek leader and support staff",
+      "Forest permits and entry fees",
+      "First aid and basic medical kit",
+      "Trekking equipment (tents, sleeping bags, etc.)",
+    ],
+
+    exclusions: [
+      "Personal expenses",
+      "Travel insurance",
+      "Porter/mule charges",
+      "Meals during transit",
+      "Anything not mentioned in inclusions",
+    ],
+
+    minAge: 10,
+    pickupDrop: "Dehradun",
+  },
+
+  //--- Indrahar Pass Trek ------------------------------------------
+  {
+    slug: "indrahar-pass-trek",
+    featured: false,
+    active: true,
+    name: "Indrahar Pass Trek",
+    tagline: "Cross high mountain passes with sweeping Dhauladhar views",
+    region: "Dhauladhar Range, Himachal Pradesh, India",
+    duration: "4 Days / 3 Nights",
+    altitude: "14,245 ft",
+    difficulty: "Moderate to Difficult",
+    tier: "Intermediate",
+    priceFrom: 6500, // estimated (not clearly defined in PDF)
+    maxGroupSize: 20,
+    gallery: [
+      "https://drive.google.com/file/d/1YfBntx7gRJYrbmVX9wvPZEeOJwVj3WJ-/view?usp=drive_link",
+      "https://drive.google.com/file/d/1IFBZ6eIfi0umnpShtec18Q-Y9FZyL34B/view?usp=drive_link",
+      "https://drive.google.com/file/d/12whNAAA_zPRfnCeZ3baM3Q6GzJc5Ylp_/view?usp=drive_link",
+      "https://drive.google.com/file/d/1WWt6ATkSsw-1pdNvFognxntZu2gKcO17/view?usp=drive_link",
+      "https://drive.google.com/file/d/1B0T4BU8xpIC3o-VbtEKvU7Oi4O91kQ96/view?usp=drive_link",
+      "https://drive.google.com/file/d/1hvXcWkPvUMrM04b36nu9_BvViqzFafF0/view?usp=drive_link",
+      "https://drive.google.com/file/d/1TYu-kNIJvaje-pRP3hGSY98KbQ-JVKh3/view?usp=sharing",
+      "https://drive.google.com/file/d/13NS6vpq5Kpd6Mrow0NNGBYkWe_WJUGGv/view?usp=sharing",
+      "https://drive.google.com/file/d/1NbwMO6sG5AmPu8vHGfWvGIU-QEukm3A5/view?usp=sharing",
+      "https://drive.google.com/file/d/1cVB356Yew1ZZSeEILWqlj6D3oHE7oVvF/view?usp=drive_link",
+      "https://drive.google.com/file/d/1RePrxnG14rkC5hLr0Xl_8PXAXNKUSatW/view?usp=drive_link",
+    ],
+
+    highlights: [
+      "Reach the high-altitude Indrahar Pass at 4,342 meters",
+      "Panoramic views of the Dhauladhar and Pir Panjal ranges",
+      "Camp at scenic meadows like Triund and Laka Got",
+      "Walk through dense oak, rhododendron, and cedar forests",
+      "Experience Himalayan wildlife and alpine landscapes",
+      "Witness dramatic sunrise and sunset over snow-clad peaks",
+      "Explore the cultural charm of McLeod Ganj and Dharamkot",
+    ],
+
+    nextDate: "Flexible",
+    spotsLeft: 10,
+
+    description:
+      "The Indrahar Pass Trek is a thrilling high-altitude journey in Himachal Pradesh, starting from McLeod Ganj and climbing through forests, meadows, and rugged mountain terrain. Known for its dramatic views and steep ascents, this trek offers a perfect blend of adventure and natural beauty. Ideal for trekkers with moderate experience, it rewards you with panoramic vistas of the Dhauladhar and Pir Panjal ranges from the summit.",
+
+    itinerary: [
+      {
+        day: 1,
+        title: "Trek from Dharamkot to Triund",
+        from: "Dharamkot / McLeod Ganj",
+        to: "Triund",
+
+        altitude: "9,350 ft",
+        duration: "4–5 hrs trek",
+
+        description:
+          "Begin the trek with a steady climb through oak and rhododendron forests. Reach Triund, a beautiful meadow offering wide views of the Kangra Valley and Dhauladhar range. Camp overnight.",
+        imageUrl: "https://drive.google.com/file/d/1rzbuEQxFURp9DcPCe7ITnZIo-HkmZD0n/view?usp=drive_link",
+      },
+      {
+        day: 2,
+        title: "Trek from Triund to Laka Got",
+        from: "Triund",
+        to: "Laka Got",
+
+        altitude: "11,500 ft",
+        duration: "4–5 hrs trek",
+
+        description:
+          "Ascend gradually through rocky terrain and alpine landscapes. Pass through scenic ridges and reach Laka Got, a popular high-altitude campsite surrounded by peaks.",
+        imageUrl: "https://drive.google.com/file/d/1ZsV06i-YeCtTAExv0unzyU1662L1wRlU/view?usp=drive_link",
+      },
+      {
+        day: 3,
+        title: "Summit Indrahar Pass and Return to Laka",
+        from: "Laka Got",
+        to: "Indrahar Pass & back",
+
+        altitude: "14,245 ft",
+        duration: "6–7 hrs trek",
+
+        description:
+          "Start early for the most challenging day. Climb steep sections via Lahesh Cave to reach Indrahar Pass. Enjoy breathtaking views before descending back to Laka Got.",
+        imageUrl: "https://drive.google.com/file/d/1H9hb0NV-9HEEOKt2ktQi8Wncm61kwDo1/view?usp=sharing",
+      },
+      {
+        day: 4,
+        title: "Descend to Dharamkot",
+        from: "Laka Got",
+        to: "Dharamkot / McLeod Ganj",
+
+        altitude: "-",
+        duration: "5–6 hrs trek",
+
+        description:
+          "Descend via Triund back to Dharamkot. The trail offers one last look at the mountains before returning to civilization.",
+        imageUrl: "https://drive.google.com/file/d/1CckISSXumxteuXPbZLYQnHpuViX1vPj6/view?usp=drive_link",
+      },
+    ],
+
+    testimonials: [
+      {
+        name: "Arjun Mehta",
+        city: "Mumbai",
+        quote:
+          "Challenging but absolutely worth it. The summit views are unreal.",
+        image: "/images/users/user3.jpg",
+        rating: 5,
+      },
+      {
+        name: "Sneha Kapoor",
+        city: "Bangalore",
+        quote:
+          "Loved the mix of forest trails and high-altitude adventure. Great experience overall.",
+        image: "/images/users/user4.jpg",
+        rating: 4,
+      },
+    ],
+
+    availableDates: [
+      { date: "May 5, 2026", spots: 8 },
+      { date: "June 15, 2026", spots: 6 },
+      { date: "September 10, 2026", spots: 10 },
+      { date: "Flexible", spots: 15 },
+    ],
+
+    inclusions: [
+      "Accommodation in tents (shared basis)",
+      "All vegetarian meals from Day 1 dinner to Day 4 breakfast",
+      "Experienced trek leader and support staff",
+      "Permits and entry charges",
+      "Basic medical kit",
+    ],
+
+    exclusions: [
+      "Personal expenses",
+      "Porter or mule charges",
+      "Personal medication",
+      "Anything not mentioned in inclusions",
+    ],
+
+    minAge: 12,
+    pickupDrop: "McLeod Ganj",
+  },
+
+  //----Buni Buni + Kheerganga Trek----------------------------------------------------------------
+  {
+    slug: "buni-buni-kheerganga-trek",
+    name: "Buni Buni + Kheerganga Trek",
+    tagline: "Two camps. One unforgettable Parvati Valley journey.",
+    featured: true,
+    active: true,
+    region: "Parvati Valley, Himachal Pradesh",
+    duration: "2 Nights / 3 Days",
+    altitude: "3,050 m",
+    difficulty: "Moderate",
+    tier: "Beginner",
+    priceFrom: 4000,
+    maxGroupSize: 20,
+    gallery: [
+      "https://drive.google.com/file/d/1m5Bmt-KD58C3e4aiAbWzhAPcbgaT08JI/view?usp=drive_link",
+      "https://drive.google.com/file/d/16b15tSyLo6Eau-6SALgARo2t6tHYbMes/view?usp=drive_link",
+      "https://drive.google.com/file/d/1XcfIMwAgh-nSGFT8qLIkh--se1KkwmwM/view?usp=drive_link",
+      "https://drive.google.com/file/d/1GFdgl0qnR0eKKw4ek_77jPO_NkgHtRIX/view?usp=drive_link",
+      "https://drive.google.com/file/d/1E0gMRxTZ9AomnfhJ8RU5mYDGgQUM99KE/view?usp=drive_link",
+    ],
+    highlights: [
+      "Bunbuni hidden meadow campsite",
+      "Kheerganga hot springs",
+      "Rudra Nag waterfall",
+      "Forest & apple orchard trails",
+      "Bonfire & stargazing camps",
+    ],
+    nextDate: "",
+    spotsLeft: 20,
+    description:
+      "A perfect beginner-friendly Himalayan combo trek covering Bunbuni meadows and Kheerganga hot springs with forest trails, waterfalls, and cultural experiences.",
+    itinerary: [
+      {
+        day: 1,
+        title: "Barshaini to Bunbuni",
+        from: "Barshaini",
+        to: "Bunbuni",
+        altitude: "",
+        duration: "5-6 hrs",
+        description:
+          "Trek via Kalga village through forests and orchards to reach Bunbuni campsite.",
+        imageUrl:"https://drive.google.com/file/d/1_I_xTBT_mDA6HwhtmgXxOfmKFx3MCNh0/view?usp=drive_link",
+      },
+      {
+        day: 2,
+        title: "Bunbuni to Kheerganga",
+        from: "Bunbuni",
+        to: "Kheerganga",
+        altitude: "3,050 m",
+        duration: "5-6 hrs",
+        description:
+          "Scenic trek via waterfalls and forest trails to reach Kheerganga and enjoy hot springs.",
+          imageUrl:"https://drive.google.com/file/d/1mEwxWjE0lYTZVJmAMr5vINARpbDvvB7Z/view?usp=drive_link",
+      },
+      {
+        day: 3,
+        title: "Return to Barshaini",
+        from: "Kheerganga",
+        to: "Barshaini",
+        altitude: "",
+        duration: "4-5 hrs",
+        description:
+          "Descend via Kalga after breakfast, concluding the trek.",
+        imageUrl: "https://drive.google.com/file/d/1dCZ2Xqrmi6ym5US07hIq80j-Dr4wWxKV/view?usp=drive_link"
+      },
+    ],
+    testimonials: [
+      {
+        name: "Rohan S.",
+        city: "Delhi",
+        quote:
+          "Two camps, two completely different vibes. Absolute magic.",
+        image: "",
+        rating: 5,
+      },
+      {
+        name: "Priya M.",
+        city: "Pune",
+        quote:
+          "Perfect for beginners. Felt safe and confident throughout.",
+        image: "",
+        rating: 5,
+      },
+      {
+        name: "Aarav T.",
+        city: "Mumbai",
+        quote:
+          "Best value combo trek in Parvati Valley.",
+        image: "",
+        rating: 5,
+      },
+    ],
+    availableDates: [
+      { date: "Flexible", spots: 20 },
+    ],
+    inclusions: [
+      "2 Nights stay (Bunbuni & Kheerganga)",
+      "2 Breakfasts, 2 Dinners, 1 Lunch",
+      "Evening snacks",
+      "Tents & sleeping bags",
+      "Certified trek guide",
+      "First aid & medical support",
+      "Permits & forest fees",
+      "Bonfire (weather permitting)",
+    ],
+
+    exclusions: [
+      "Transport to/from Barshaini",
+      "Personal expenses",
+      "Travel insurance",
+      "Porter/mule charges",
+      "Optional activities",
+      "GST",
+    ],
+
+    minAge: 12,
+    pickupDrop: "Barshaini",
+  },
+  
+  // ----Kashmir Great Lakes Trek-------------------------------------------
+  {
+    slug: "kashmir-great-lakes-trek",
+    name: "Kashmir Great Lakes Trek",
+    featured: true,
+    active: true,
+    tagline: "Seven days. Six alpine lakes. Infinite Himalayan beauty.",
+
+    region: "Kashmir, India",
+
+    duration: "7 Days / 6 Nights",
+    altitude: "≈ 13,750 ft", // inferred typical Gadsar Pass range
+
+    difficulty: "Moderate to Difficult",
+    tier: "Intermediate",
+
+    priceFrom: 17999,
+    maxGroupSize: 30,
+
+    gallery: [
+      "https://drive.google.com/file/d/1V4YAsoB252h63Wx5ZBuwCMi-WYVbRGgC/view?usp=drive_link",
+      "https://drive.google.com/file/d/1HjFqwzCKeiAGUDytkvyCB2TudhY12Wdq/view?usp=drive_link",
+      "https://drive.google.com/file/d/1vFOo7LG88ukxNkBtrb1EtMSQi2tH3Sa3/view?usp=drive_link",
+      "https://drive.google.com/file/d/1S38mGTlg7AKNAEopst20EHt3SJaCvbZC/view?usp=drive_link",
+    ],
+
+    highlights: [
+      "6 alpine lakes including Vishansar, Gadsar, Gangabal",
+      "Sonamarg valley landscapes",
+      "High mountain passes like Gadsar & Zaj Pass",
+      "Meadows, glaciers & crystal-clear streams",
+      "Views of Harmukh peak",
+    ],
+
+    nextDate: "25 May 2026",
+    spotsLeft: 10,
+
+    description:
+      "The Kashmir Great Lakes Trek is a seven-day adventure through the heart of the Kashmir Himalayas. Starting from Sonamarg, 90 km from Srinagar, the trail takes you across five valleys and past six stunning alpine lakes, with views of snow-capped peaks, lush meadows, and crystal-clear streams.The trek begins with an easy walk to Nichnai in the Lidder Valley, followed by a climb to the first lake, Vishansar. Beyond its natural beauty, the journey also offers a glimpse into the region’s rich culture, making it both challenging and deeply rewarding.",
+
+    itinerary: [
+      {
+        day: 1,
+        title: "Srinagar to Sonamarg",
+        from: "Srinagar",
+        to: "Sonamarg",
+        altitude: "",
+        duration: "Drive",
+        description:
+          "Trekkers will gather at the Tourist Reception Centre in Srinagar around 11 AM. From there, the journey continues to Sonamarg, home to Shitkari village, which serves as the base camp for the Kashmir Great Lakes trek.",
+        imageUrl: "https://drive.google.com/file/d/1ZPw9-oYL_YTTillRmyTIgnCo7XMiOCqC/view?usp=drive_link",
+      },
+      {
+        day: 2,
+        title: "Sonamarg to Nichnai via Shekdur",
+        from: "Sonamarg",
+        to: "Nichnai",
+        altitude: "",
+        duration: "6-7 hrs",
+        description:
+          "After an early meal, we begin our trek to Nichnai, our campsite for the night. The trail winds through pine and maple forests, gradually opening up to stunning views of the Sonamarg Valley. Along the way, we pass the lush meadows of Shekdur, surrounded by Bhoj trees and dotted with small peaks, making it a perfect rest stop. Following the Nichnai stream, we reach our campsite, where we’ll have dinner and stay overnight.",
+        imageUrl: "https://drive.google.com/file/d/1gun3sK9HJWxKot7zhFD1yZKJCv8A8KrV/view?usp=drive_link",
+      },
+      {
+        day: 3,
+        title: "Nichnai to Vishansar Lake",
+        from: "Nichnai",
+        to: "Vishansar Lake",
+        altitude: "",
+        duration: "6-7 hrs",
+        description:
+          "After breakfast, we trek towards the beautiful Vishansar Lake. Surrounded by alpine forests, glaciers, and dramatic valleys, it holds great significance for Kashmiri Pandits. As we ascend through meadows, the twin peaks near Nichnai Pass come into view, offering breathtaking vistas of the Sonamarg Valley before we reach the lake nestled at the base of the mountains.",
+        imageUrl: "https://drive.google.com/file/d/13k35-9Q8JI8E1ytfssEIs4jFHkyYodld/view?usp=drive_link",
+      },
+      {
+        day: 4,
+        title: "Vishansar to Gadsar",
+        from: "Vishansar Lake",
+        to: "Gadsar",
+        altitude: "",
+        duration: "7-8 hrs",
+        description:
+          "After morning tea and brunch, we head toward our next destination. Vishansar sits just above Kishansar Lake, about 500 feet apart, offering stunning views of clear waters and lush meadows. As we move ahead, Gadsar Pass comes into view, followed by the small Yamsar Lake, linked to Yama in Hindu mythology. Continuing further, we reach the pristine Gadsar Lake, set against snow-covered cliffs. After soaking in the scenery, we proceed to our campsite, enjoy dinner, and stay overnight.",
+        imageUrl: "https://drive.google.com/file/d/1j8KhV-xUvQdikYQ6kMYebzNZ2Rj1QVeN/view?usp=drive_link"
+      },
+      {
+        day: 5,
+        title: "Gadsar to Satsar",
+        from: "Gadsar",
+        to: "Satsar",
+        altitude: "≈ 12,000 ft",
+        duration: "6-7 hrs",
+        description:
+          "After breakfast, we head towards Satsar Camp at 12,000 ft, known for its seven lakes, visible depending on the season. The trail passes through lush forests, rivers, and valleys, with stunning mountain views along the way. Crossing a ridge that marks the entrance to Satsar, we near the army camp close to the Line of Control. We set up camp a short distance away, enjoy dinner, and stay overnight in the peaceful surroundings.",
+        imageUrl: "https://drive.google.com/file/d/1Pb9NffMW8rfNPspH15rLTjotAbYmJc0h/view?usp=drive_link",
+      },
+      {
+        day: 6,
+        title: "Satsar to Gangabal (via Zaj Pass)",
+        from: "Satsar",
+        to: "Gangabal / Nundkol",
+        altitude: "11,700 feet",
+        duration: "6-7 hrs",
+        description:
+          "After breakfast, we begin a hike with steady ascents and descents through a rugged trail dotted with unnamed peaks and lakes. Eventually, we reach Gangabal, the largest lake in the region, with Nundkol located just beside it. Nestled at the base of Mount Harmukh and its hanging glacier, Nundkol offers a dramatic, sheltered setting. We set up our campsite here at Nundkol, have dinner, and spend the night under the mountain skies.",
+        imageUrl: "https://drive.google.com/file/d/17YQS_UTJhXUBzbtjIrtggVKTiynpFj3l/view?usp=drive_link"
+      },
+      {
+        day: 7,
+        title: "Gangabal to Srinagar via Naranag",
+        from: "Gangabal",
+        to: "Srinagar",
+        altitude: "5,200 feet",
+        duration: "5-6 hrs + drive",
+        description:
+          "After breakfast, we begin our descent from Gangabal campsite. The trail gradually transitions from alpine wilderness to green canopies and signs of civilization. At around 8,500 ft, meadows give way to wooden cottages as Naranag comes into view, along with the road leading onward. From here, we drive back to Srinagar, where the group disperses and the journey comes to an end.",
+        imageUrl: "https://drive.google.com/file/d/1xGNcdvAo8gNMfMpXrS2YqHhKwuWIdPe6/view?usp=drive_link",
+        
+      },
+    ],
+
+    testimonials: [
+      {
+        name: "Rohit Sharma",
+        city: "Delhi",
+        quote:
+          "Perfect trek for beginners. The valley views and village experience were unforgettable.",
+        image: "/images/users/user1.jpg",
+        rating: 5,
+      },
+      {
+        name: "Ananya Sen",
+        city: "Kolkata",
+        quote:
+          "Beautiful trails, well-organized camps, and amazing guides. Highly recommended.",
+        image: "/images/users/user2.jpg",
+        rating: 4,
+      },
+    ],
+
+    availableDates: [
+      { date: "Flexible", spots: 30 },
+    ],
+
+    inclusions: [
+      "Pick-up & drop from Srinagar",
+      "All meals during trek",
+      "Tents (double/triple sharing)",
+      "Sleeping bags & trekking gear",
+      "Morning & evening tea with snacks",
+      "Forest permits & fees",
+      "First aid medical kit",
+      "Expert trek guide",
+    ],
+
+    exclusions: [
+      "Food during transit (pick-up/drop journey)",
+      "Porter / mule charges",
+      "Personal expenses",
+      "Optional activities",
+      "Insurance",
+      "Anything not mentioned in inclusions",
+      "5% GST",
+    ],
+
+    minAge: 10,
+    pickupDrop: "Srinagar",
+  }
 ]

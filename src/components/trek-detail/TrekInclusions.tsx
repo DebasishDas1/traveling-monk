@@ -84,11 +84,6 @@ export const TrekInclusions = () => {
               </li>
             ))}
           </ul>
-
-          <p className="p-6 rounded-2xl bg-stone-50 border border-stone-100 text-[11px]  leading-relaxed font-light italic">
-            "We recommend carrying only what you need. A light pack leads to a
-            clear mind."
-          </p>
         </div>
       </div>
     </section>

@@ -49,6 +49,9 @@ export type TrekInclusionExclusionType = {
 export type TrekType = {
   slug: string;
 
+  featured: boolean;
+  active: boolean;
+
   name: string;
   tagline: string;
 

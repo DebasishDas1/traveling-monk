@@ -12,7 +12,7 @@ export const instagramLink = "https://www.instagram.com/thetravelingmonk.in?igsh
 
 
 // youtube
-export const youtubeLink = "https://www.youtube.com/@thetravelingmonk";
+export const youtubeLink = "https://www.youtube.com/@travelwiththemonk";
 
 
 // twitter

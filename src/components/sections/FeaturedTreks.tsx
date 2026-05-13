@@ -8,8 +8,6 @@ import TrekCard from "./TrekCard";
 import { trekData } from "@/lib/data/treks";
 
 export const FeaturedTreks = () => {
-  const treks = trekData.slice(0, 3);
-
   return (
     <section className="relative py-32 px-6 overflow-hidden">
       {/* 🌾 Base parchment */}
@@ -28,23 +26,48 @@ export const FeaturedTreks = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {treks.map((trek, index) => (
-            <motion.div
-              key={trek.slug}
-              initial={{ opacity: 0, y: 40, scale: 0.98 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{
-                delay: index * 0.08,
-                duration: 0.7,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="will-change-transform"
-            >
-              <TrekCard trek={trek} index={index} />
-            </motion.div>
-          ))}
+        <div className="relative">
+          {/* subtle background glow to separate section */}
+          <div
+            className="absolute inset-0 -z-10 
+    bg-[radial-gradient(circle_at_center,rgba(120,90,60,0.08),transparent_70%)]"
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+            {trekData
+              .filter((t) => t.featured)
+              .map((trek, index) => (
+                <motion.div
+                  key={trek.slug}
+                  initial={{ opacity: 0, y: 60, scale: 0.96 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{
+                    delay: index * 0.1,
+                    duration: 0.8,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  whileHover={{ y: -6 }}
+                  className="group relative will-change-transform"
+                >
+                  {/* soft outer glow / aura */}
+                  <div
+                    className="absolute inset-0 rounded-[36px] 
+            bg-[radial-gradient(circle,rgba(0,0,0,0.08),transparent_70%)]
+            opacity-0 group-hover:opacity-100 
+            transition duration-500 blur-xl"
+                  />
+
+                  {/* slight perspective layering */}
+                  <div
+                    className="transform-gpu transition duration-500 
+            group-hover:scale-[1.01]"
+                  >
+                    <TrekCard trek={trek} index={index} />
+                  </div>
+                </motion.div>
+              ))}
+          </div>
         </div>
 
         {/* CTA */}

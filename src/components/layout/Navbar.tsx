@@ -26,6 +26,7 @@ import { useBookingStore } from "@/stores/bookingStore";
 
 export const navLinks = [
   { name: "Treks", href: "/treks" },
+  { name: "Escapes", href: "/escapes" },
   { name: "About", href: "/about" },
   { name: "Community", href: "/community" },
   { name: "Contact", href: "/contact" },
@@ -109,7 +110,7 @@ export const Navbar = () => {
             className="rounded-full px-6 font-bold uppercase tracking-wider text-[10px] shadow-lg shadow-saffron/20"
             onClick={() => openDrawer("valley-of-flowers")}
           >
-            Join a Trek <ArrowRight className="size-3 ml-2" />
+            Join a trip <ArrowRight className="size-3 ml-2" />
           </Button>
         </div>
         {/* Mobile Menu Toggle */}
@@ -187,7 +188,7 @@ export const Navbar = () => {
                     openDrawer("valley-of-flowers");
                   }}
                 >
-                  Join a Trek <ArrowRight className="size-5 ml-2" />
+                  Join a trip <ArrowRight className="size-5 ml-2" />
                 </Button>
               </div>
             </SheetContent>

@@ -10,57 +10,91 @@ interface TrekGalleryProps {
 }
 
 export const TrekGallery = ({ trek }: TrekGalleryProps) => {
-  // ✅ reverse images (non-mutating)
   const images = (trek.gallery ?? []).slice().reverse();
-
   if (images.length === 0) return null;
 
   return (
-    <section className="space-y-12 py-12 md:py-20">
-      {/* Header */}
+    <section className="relative space-y-14 py-16 md:py-24">
+      {/* ambient parchment light */}
+      <div
+        className="absolute inset-0 -z-10 
+        bg-[radial-gradient(circle_at_top,rgba(120,90,60,0.10),transparent_70%)]"
+      />
+
+      {/* ===== HEADER ===== */}
       <div className="flex items-center gap-6">
-        <h2 className="font-display text-4xl md:text-5xl text-forest italic shrink-0">
+        <h2 className="font-display text-4xl md:text-5xl italic text-[#2B1F14] shrink-0">
           Captured Stillness
         </h2>
-        <div className="h-px bg-stone-200 grow" />
-        <Camera className="size-6 text-stone-300 hidden md:block" />
+
+        <div className="h-px bg-[#CBB79C] grow" />
+
+        <Camera className="size-5 text-[#8C7A6B] hidden md:block" />
       </div>
 
-      {/* Layout */}
-      <div className="grid gap-4 md:gap-6">
-        {/* 🌄 Hero Image */}
-        <div className="group relative w-full h-[320px] md:h-[520px] rounded-3xl overflow-hidden bg-stone-900 shadow-[0_20px_60px_rgba(0,0,0,0.25)]">
+      {/* ===== GALLERY ===== */}
+      <div className="grid gap-5 md:gap-8">
+        {/* 🌄 HERO */}
+        <div
+          className="group relative w-full h-[340px] md:h-[560px] rounded-[28px] overflow-hidden
+          bg-[#2B1F14]
+          shadow-[0_25px_80px_rgba(60,45,30,0.35)]"
+        >
           <Image
             src={getImageSrc(images[0])}
             alt="Trek view"
             fill
             priority
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             sizes="100vw"
+            className="object-cover transition-transform duration-1200 ease-out 
+            group-hover:scale-105 group-hover:brightness-110"
           />
 
-          {/* Premium gradient overlay */}
-          <div className="absolute inset-0 bg-linear-to-t from-black/40 via-black/10 to-transparent" />
+          {/* cinematic overlays */}
+          <div
+            className="absolute inset-0 
+            bg-linear-to-t from-[#1f1510]/70 via-transparent to-transparent"
+          />
+
+          <div
+            className="absolute inset-0 
+            bg-[radial-gradient(circle_at_center,transparent_40%,rgba(0,0,0,0.35))]"
+          />
+
+          {/* soft edge glow */}
+          <div className="absolute inset-0 ring-1 ring-white/10 rounded-[28px]" />
         </div>
 
-        {/* 🧱 Grid */}
+        {/* 🧱 THUMB GRID */}
         {images.length > 1 && (
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-8">
             {images.slice(1).map((img, i) => (
               <div
                 key={`${img}-${i}`}
-                className="group relative h-[180px] md:h-[220px] rounded-2xl overflow-hidden bg-stone-900 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+                className="group relative h-[170px] md:h-[230px] rounded-2xl overflow-hidden
+                bg-[#2B1F14]
+                shadow-[0_15px_50px_rgba(60,45,30,0.25)]"
               >
                 <Image
                   src={getImageSrc(img)}
                   alt={`Trek image ${i + 2}`}
                   fill
                   sizes="(max-width: 768px) 50vw, 33vw"
-                  className="object-cover transition-all duration-700 ease-out group-hover:scale-105 group-hover:brightness-110"
+                  className="object-cover transition-all duration-900 ease-out 
+                  group-hover:scale-105 group-hover:brightness-110"
                 />
 
-                {/* subtle overlay */}
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
+                {/* warm tint instead of black overlay */}
+                <div className="absolute inset-0 bg-[#6b4a2f]/10 group-hover:bg-transparent transition duration-500" />
+
+                {/* subtle vignette */}
+                <div
+                  className="absolute inset-0 
+                  bg-[radial-gradient(circle,transparent_50%,rgba(0,0,0,0.25))]"
+                />
+
+                {/* micro highlight edge */}
+                <div className="absolute inset-0 rounded-2xl ring-1 ring-white/5" />
               </div>
             ))}
           </div>

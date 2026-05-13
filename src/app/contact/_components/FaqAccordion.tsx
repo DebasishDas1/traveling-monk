@@ -10,57 +10,80 @@ export function FaqAccordion() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   return (
-    <section className="py-32 px-6 container mx-auto max-w-4xl">
-      <div className="text-center mb-16 space-y-4">
-        <h2 className="font-display text-4xl text-forest">
-          Common Questions
-        </h2>
-        <p className="text-stone-500 max-w-xl mx-auto">
-          Everything you need to know before you lace up your boots.
-        </p>
-      </div>
+    <section className="py-32 px-6">
+      <div className="container mx-auto max-w-4xl">
+        {/* Header */}
+        <div className="text-center mb-20 space-y-5">
+          <h2 className="font-serif italic text-4xl md:text-5xl text-[#2B1F14]">
+            Common Questions
+          </h2>
+          <p className="text-[#6B5A4A] max-w-xl mx-auto text-sm leading-relaxed">
+            Everything you need to know before you step into the mountains.
+          </p>
+        </div>
 
-      <div className="space-y-4">
-        {faqs.map((faq, idx) => (
-          <div key={idx} className="border-b border-stone-200 last:border-0">
-            <button
-              onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
-              className="w-full py-6 flex items-center justify-between text-left group"
-            >
-              <span
+        {/* Accordion */}
+        <div className="space-y-5">
+          {faqs.map((faq, idx) => {
+            const isOpen = activeFaq === idx;
+
+            return (
+              <div
+                key={idx}
                 className={cn(
-                  "font-sans font-medium text-lg transition-colors duration-300",
-                  activeFaq === idx
-                    ? "text-saffron"
-                    : "text-forest group-hover:text-saffron",
+                  "group rounded-[24px] border transition-all duration-500 overflow-hidden",
+                  isOpen
+                    ? "bg-[#F3EDE3] border-[#D6C4A8]"
+                    : "bg-[#F8F3EA] border-[#E6D8C3] hover:border-[#C9A24A]/40",
                 )}
               >
-                {faq.q}
-              </span>
-              <ChevronDown
-                className={cn(
-                  "size-5  transition-transform duration-300",
-                  activeFaq === idx && "rotate-180 text-saffron",
-                )}
-              />
-            </button>
-            <AnimatePresence>
-              {activeFaq === idx && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="overflow-hidden"
+                {/* Question */}
+                <button
+                  onClick={() => setActiveFaq(isOpen ? null : idx)}
+                  className="w-full px-8 py-6 flex items-center justify-between text-left"
                 >
-                  <div className="pb-8 text-stone-500 leading-relaxed font-sans">
-                    {faq.a}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        ))}
+                  <span
+                    className={cn(
+                      "font-serif text-[17px] leading-relaxed transition-colors duration-300",
+                      isOpen
+                        ? "text-[#C9A24A]"
+                        : "text-[#2B1F14] group-hover:text-[#C9A24A]",
+                    )}
+                  >
+                    {faq.q}
+                  </span>
+
+                  <ChevronDown
+                    className={cn(
+                      "size-5 shrink-0 transition-all duration-300",
+                      isOpen ? "rotate-180 text-[#C9A24A]" : "text-[#8A7A68]",
+                    )}
+                  />
+                </button>
+
+                {/* Answer */}
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -6 }}
+                      transition={{ duration: 0.25 }}
+                      className="px-8 pb-8"
+                    >
+                      {/* subtle divider */}
+                      <div className="h-px w-12 bg-[#D6C4A8] mb-5" />
+
+                      <p className="text-[#6B5A4A] text-[14px] leading-[1.9]">
+                        {faq.a}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

@@ -65,10 +65,10 @@ export const StatsStrip = () => {
       {/* Content */}
       <div className="relative container max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 group">
-          <StatItem value={47} label="Treks Completed" suffix="+" />
-          <StatItem value={600} label="Lives Changed" suffix="+" />
+          <StatItem value={27} label="Treks Completed" suffix="+" />
+          <StatItem value={99} label="Lives Changed" suffix="+" />
           <StatItem value={12} label="Mountain Ranges" />
-          <StatItem value={4.9} label="Avg. Rating" />
+          <StatItem value={4.5} label="Avg. Rating" />
         </div>
       </div>
     </section>

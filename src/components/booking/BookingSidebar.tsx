@@ -74,7 +74,6 @@ export function BookingSidebar() {
         {[
           { icon: "🏔", label: "Expert-led treks across India" },
           { icon: "📞", label: "Personal callback within 24 hrs" },
-          { icon: "✅", label: "No advance payment required" },
           { icon: "🛡", label: "Safe & responsible trekking" },
         ].map(({ icon, label }) => (
           <div key={label} className="flex items-center gap-3">

@@ -5,7 +5,7 @@ import { FaqAccordion } from "./_components/FaqAccordion";
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-parchment">
+    <main className="min-h-screen">
       <HeroSection />
       <ContactOptions />
       <LeadForm />

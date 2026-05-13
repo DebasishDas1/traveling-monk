@@ -11,55 +11,84 @@ interface TrekItineraryProps {
 
 export const TrekItinerary = ({ trek }: TrekItineraryProps) => {
   return (
-    <section className="space-y-20 py-12">
+    <section className="relative space-y-24 py-16 md:py-24">
+      {/* 🌿 soft parchment atmosphere */}
+      <div className="absolute inset-0 -z-10 bg-[#FAF6EF]" />
+      <div
+        className="absolute inset-0 -z-10 
+        bg-[radial-gradient(circle_at_top,rgba(120,90,60,0.06),transparent_75%)]"
+      />
+
       {/* 🧭 Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-        <div className="space-y-4">
-          <span className="text-saffron text-[10px] uppercase tracking-[0.5em] font-black block">
+        <div className="space-y-3">
+          <span className="text-[#8C6B4A] text-[10px] uppercase tracking-[0.5em] font-semibold block">
             The Daily Passage
           </span>
 
-          <h2 className="font-display text-4xl md:text-5xl text-forest italic tracking-tight">
+          <h2 className="font-display text-3xl md:text-5xl text-[#2B1F14] italic">
             The Experience Arc
           </h2>
         </div>
 
-        <p className="font-display text-lg md:text-xl italic max-w-xs md:text-right">
+        <p className="font-serif text-lg md:text-xl italic text-[#5A4A3B] max-w-xs md:text-right">
           A rhythmic journey through silence and elevation.
         </p>
       </div>
 
       {/* 🧵 Timeline */}
-      <div className="relative pl-12 md:pl-20">
-        {/* 🌿 Timeline Line */}
-        <div className="absolute left-[35px] md:left-[58px] top-10 bottom-10 w-[2px] bg-black" />
+      <div className="relative pl-10 md:pl-20">
+        {/* 🌿 Soft gradient timeline line */}
+        <div
+          className="absolute left-[32px] md:left-[58px] top-10 bottom-10 w-px
+          bg-linear-to-b from-[#CBB79C]/20 via-[#CBB79C]/60 to-[#CBB79C]/20"
+        />
+
+        {/* ⏳ Moving time flow dot */}
+        <motion.div
+          className="absolute left-[29px] md:left-[55px] top-10 w-2 h-2 rounded-full bg-[#C9A24A]
+          shadow-[0_0_18px_rgba(201,162,74,0.35)]"
+          animate={{
+            y: ["0%", "100%"],
+            opacity: [0.25, 0.8, 0.25],
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
 
         {trek.itinerary.map((day, idx) => {
+          const progress = (idx + 1) / trek.itinerary.length;
+
           return (
             <motion.div
               key={day.day}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.35, delay: idx * 0.04 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.5, delay: idx * 0.05 }}
               className="relative pb-16 md:pb-20"
+              style={{
+                opacity: 0.72 + progress * 0.28, // subtle time progression
+              }}
             >
-              {/* 📍 Timeline Marker */}
+              {/* 📍 Day Marker (soft seal style) */}
               <div
                 className={cn(
-                  "absolute left-[-38px] md:left-[-60px] top-2 z-20",
-                  "w-14 h-14 md:w-20 md:h-20 rounded-full",
-                  "bg-linear-to-b from-monk-brown-warm to-monk-dark",
+                  "absolute left-[-34px] md:left-[-58px] top-2 z-20",
+                  "w-12 h-12 md:w-16 md:h-16 rounded-full",
+                  "bg-[#F3E7D6] border border-[#CBB79C]",
                   "flex flex-col items-center justify-center",
-                  "shadow-[0_12px_40px_rgba(0,0,0,0.35)]",
-                  "ring-4 ring-white",
+                  "shadow-[0_8px_25px_rgba(60,45,30,0.12)]",
                 )}
               >
-                <span className="text-[8px] md:text-[10px] tracking-[0.3em] uppercase text-white/40 leading-none mb-1">
+                <span className="text-[8px] md:text-[9px] uppercase tracking-[0.25em] text-[#8C7A6B] mb-1">
                   Day
                 </span>
 
-                <span className="font-display text-2xl md:text-4xl font-extrabold text-white leading-none tracking-tight drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
+                <span className="font-serif text-xl md:text-3xl font-bold text-[#2B1F14]">
                   {day.day}
                 </span>
               </div>
@@ -80,22 +109,24 @@ export const TrekItinerary = ({ trek }: TrekItineraryProps) => {
         })}
       </div>
 
-      {/* 🌄 Journey End Marker */}
+      {/* 🌄 End marker */}
       <motion.div
-        initial={{ opacity: 0, y: 24 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="relative text-center"
+        transition={{ duration: 0.6 }}
+        className="relative text-center space-y-5"
       >
-        {/* Soft Glow Dot */}
-        <div className="mx-auto mb-6 h-3 w-3 rounded-full bg-saffron shadow-[0_0_25px_rgba(255,180,60,0.6)]" />
+        <div
+          className="mx-auto h-2 w-2 rounded-full bg-[#C9A24A]
+          shadow-[0_0_20px_rgba(201,162,74,0.35)]"
+        />
 
-        <h3 className="font-display text-2xl md:text-3xl italic text-forest">
+        <h3 className="font-serif text-2xl md:text-3xl italic text-[#2B1F14]">
           The journey completes, but something remains.
         </h3>
 
-        <p className="mt-3 mx-auto max-w-md text-sm md:text-base leading-relaxed text-stone-500">
+        <p className="mx-auto max-w-md text-sm md:text-base leading-relaxed text-[#6B5A48]">
           You return to where you started — but the mountains do not leave you.
           They settle quietly within.
         </p>
