@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useInView, animate } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { trekData } from "@/lib/data/treks";
 
 const StatItem = ({
   value,
@@ -20,7 +21,7 @@ const StatItem = ({
   useEffect(() => {
     if (isInView) {
       const controls = animate(0, value, {
-        duration: 2,
+        duration: 2.5,
         ease: "easeOut",
         onUpdate: (latest) =>
           setCount(
@@ -36,20 +37,20 @@ const StatItem = ({
       ref={ref}
       className={cn(
         "relative flex flex-col items-center justify-center",
-        "py-14 px-6 text-center group",
+        "py-16 px-6 text-center group",
       )}
     >
-      {/* ✨ Subtle divider */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 h-12 w-px bg-linear-to-b from-transparent via-forest/20 to-transparent hidden md:block group-first:hidden" />
+      {/* Organic divider */}
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 h-16 w-px bg-linear-to-b from-transparent via-[#CBB79C]/40 to-transparent hidden md:block group-first:hidden" />
 
-      {/* 🔢 Number */}
-      <div className="font-display text-5xl md:text-7xl font-semibold text-forest tracking-tight">
+      {/* Number */}
+      <div className="font-serif italic text-5xl md:text-7xl text-[#2B1F14] tracking-tight">
         {count}
-        <span className="text-saffron ml-1">{suffix}</span>
+        <span className="text-[#C9A24A] ml-1">{suffix}</span>
       </div>
 
-      {/* 🏷 Label */}
-      <div className="mt-3 text-sm md:text-base text-forest/60 tracking-wide">
+      {/* Label */}
+      <div className="mt-4 text-[11px] uppercase tracking-[0.3em] text-[#8C6B4A] font-semibold">
         {label}
       </div>
     </div>
@@ -58,16 +59,15 @@ const StatItem = ({
 
 export const StatsStrip = () => {
   return (
-    <section className="relative py-10 z-20">
-      {/* 🌾 Background layers */}
-      <div className="absolute inset-0 backdrop-blur-xl" />
+    <section className="relative py-12 z-20">
+      {/* Background wash */}
+      <div className="absolute inset-0 backdrop-blur-md" />
 
-      {/* Content */}
       <div className="relative container max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 group">
-          <StatItem value={27} label="Treks Completed" suffix="+" />
-          <StatItem value={99} label="Lives Changed" suffix="+" />
-          <StatItem value={12} label="Mountain Ranges" />
+        <div className="grid grid-cols-2 md:grid-cols-4">
+          <StatItem value={127} label="Treks Completed" suffix="+" />
+          <StatItem value={1799} label="Lives Changed" suffix="+" />
+          <StatItem value={trekData.length} label="Mountain Ranges" />
           <StatItem value={4.5} label="Avg. Rating" />
         </div>
       </div>

@@ -31,23 +31,12 @@ export const TrekGrid = () => {
 
   return (
     <div className="relative w-full">
-      {/* ===== BACKGROUND TEXTURE LAYERS ===== */}
-      <div
-        className="absolute inset-0 -z-10 
-        bg-[radial-gradient(circle_at_top,rgba(120,90,60,0.08),transparent_60%)]"
-      />
-
-      <div
-        className="absolute inset-0 -z-10 
-        bg-[linear-gradient(to_bottom,rgba(255,248,235,0.9),rgba(240,228,210,0.95))]"
-      />
-
       {/* ===== FILTER BAR ===== */}
       <div className="w-full mb-10">
         <div className="mx-auto max-w-5xl px-4">
           <div
             className="relative flex flex-wrap gap-3 items-center justify-center 
-            py-6 px-5"
+      py-6 px-5"
           >
             {FILTERS.map((filter) => {
               const isActive = activeFilter === filter;
@@ -57,21 +46,22 @@ export const TrekGrid = () => {
                   key={filter}
                   onClick={() => setActiveFilter(filter)}
                   className={cn(
-                    "relative px-5 py-2 rounded-full text-[11px] uppercase tracking-[0.25em] font-serif transition-all duration-300 border overflow-hidden",
+                    "group relative px-5 py-2 rounded-full text-[11px] uppercase tracking-[0.25em] font-serif transition-all duration-300 border overflow-hidden",
 
                     isActive
                       ? "bg-monk-brown-warm text-parchment border-monk-black shadow-md"
-                      : "bg-transparent text-black border-black",
+                      : "bg-transparent text-black border-black hover:text-parchment",
                   )}
                 >
+                  {/* text */}
                   <span className="relative z-10">{filter}</span>
 
-                  {/* ink fill hover (inactive only) */}
+                  {/* ink fill hover */}
                   {!isActive && (
                     <span
                       className="absolute inset-0 bg-[#2B1F14] 
-                    translate-y-full group-hover:translate-y-0 
-                    transition-transform duration-300"
+                translate-y-full group-hover:translate-y-0 
+                transition-transform duration-300"
                     />
                   )}
                 </button>
@@ -93,11 +83,11 @@ export const TrekGrid = () => {
 
         {/* ===== EMPTY STATE (STYLED) ===== */}
         {filteredTreks.length === 0 && (
-          <div className="text-center py-20 text-[#5C4A3D] font-serif">
-            <p className="text-lg tracking-wide italic">
-              No expeditions found in this realm…
-            </p>
-          </div>
+          <section className="flex items-center justify-center h-[50vh] md:h-[60vh]">
+            <h1 className="font-display italic text-6xl md:text-8xl text-monk-brown-deep">
+              Coming Soon ...
+            </h1>
+          </section>
         )}
       </div>
     </div>

@@ -1,7 +1,6 @@
-"use client";
 
 import Image from "next/image";
-import { cn } from "@/lib/utils";
+import { cn, getImageSrc } from "@/lib/utils";
 import type { TrekType } from "@/lib/type";
 import {
   Breadcrumb,
@@ -11,16 +10,6 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { getImageSrc } from "@/lib/utils";
-
-// Fallback for any unrecognised slug
-const FALLBACK_GALLERY = {
-  hero: "1506905925346-21bda4d32df4",
-  side: ["1551632811-561732d1e306", "1464822759023-fed622ff2c3b"] as [
-    string,
-    string,
-  ],
-};
 
 const difficultyColor: Record<string, string> = {
   Easy: "bg-emerald-500/90 text-white",
@@ -36,10 +25,10 @@ interface TrekHeroProps {
 
 export const TrekHero = ({ trek }: TrekHeroProps) => {
   const gallery = trek.gallery || [];
-  const heroImage = getImageSrc(gallery[0]); // Using existing hero pic as fallback
+  const heroImage = getImageSrc(gallery[0], 1600); // Higher res for big hero
   const sideImages = gallery
     .slice(1, 3)
-    .map((url) => getImageSrc(url))
+    .map((url) => getImageSrc(url, 600)) // Smaller res for sides
     .filter(Boolean) as string[];
 
   return (

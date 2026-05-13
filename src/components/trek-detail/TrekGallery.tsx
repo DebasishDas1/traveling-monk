@@ -1,4 +1,3 @@
-"use client";
 
 import Image from "next/image";
 import { Camera } from "lucide-react";
@@ -41,11 +40,12 @@ export const TrekGallery = ({ trek }: TrekGalleryProps) => {
           shadow-[0_25px_80px_rgba(60,45,30,0.35)]"
         >
           <Image
-            src={getImageSrc(images[0])}
+            src={getImageSrc(images[0], 1200)}
             alt="Trek view"
             fill
             priority
-            sizes="100vw"
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            quality={60}
             className="object-cover transition-transform duration-1200 ease-out 
             group-hover:scale-105 group-hover:brightness-110"
           />
@@ -76,7 +76,7 @@ export const TrekGallery = ({ trek }: TrekGalleryProps) => {
                 shadow-[0_15px_50px_rgba(60,45,30,0.25)]"
               >
                 <Image
-                  src={getImageSrc(img)}
+                  src={getImageSrc(img, 600)}
                   alt={`Trek image ${i + 2}`}
                   fill
                   sizes="(max-width: 768px) 50vw, 33vw"

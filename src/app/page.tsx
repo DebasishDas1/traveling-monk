@@ -1,7 +1,13 @@
 import dynamic from "next/dynamic";
 import { Hero } from "@/components/sections/Hero";
-import { StatsStrip } from "@/components/sections/StatsStrip";
 import { dummyTestimonials } from "@/lib/data/dummyTestimonials";
+
+const StatsStrip = dynamic(
+  () => import("@/components/sections/StatsStrip").then((mod) => mod.StatsStrip),
+  {
+    loading: () => <div className="h-40 animate-pulse bg-parchment/10" />,
+  },
+);
 
 const FeaturedTreks = dynamic(
   () =>
@@ -42,9 +48,10 @@ export default function HomePage() {
     <main className="min-h-screen">
       {/* 🏔️ Above the fold: Priority loading */}
       <Hero />
-      <StatsStrip />
 
       {/* 🗺️ Below the fold: Lazy loading */}
+      <StatsStrip />
+      
       <FeaturedTreks />
 
       <HandWrittenTitle
@@ -60,3 +67,4 @@ export default function HomePage() {
     </main>
   );
 }
+

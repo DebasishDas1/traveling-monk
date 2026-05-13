@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { TrekGrid } from "@/components/sections/TrekGrid";
 import { Metadata } from "next";
+import { EscapeGrid } from "@/components/sections/EscapeGrid";
 
 export const metadata: Metadata = {
   title: "Himalayan Treks 2025–26 | Beginner to Advanced | The Traveling Monk",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function TreksPage() {
+export default function EscapesPage() {
   return (
     <main className="min-h-screen bg-parchment">
       {/* Hero Header ──────────────────────────────────────────────────── */}
@@ -61,16 +61,10 @@ export default function TreksPage() {
 
           <p className="font-sans font-light text-white/80 text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto drop-shadow-lg">
             Some places ask you to slow down, breathe, and arrive — not conquer.
-            Curated escapes for the traveller who needs rest as much as
-            adventure.
           </p>
         </div>
       </section>
-      <section className="flex items-center justify-center h-[50vh] md:h-[60vh]">
-        <h1 className="font-display italic text-6xl md:text-8xl text-monk-brown-deep">
-          Coming Soon ...
-        </h1>
-      </section>
+      <EscapeGrid />
     </main>
   );
 }

@@ -8,7 +8,7 @@ import { getImageSrc } from "@/lib/utils";
 import { Mountain, Users } from "lucide-react";
 
 const TrekCard = ({ trek, index }: { trek: TrekType; index: number }) => {
-  const imageSrc = getImageSrc(trek.gallery[0]);
+  const imageSrc = getImageSrc(trek.gallery[0], 800);
   if (!imageSrc) return null;
 
   return (
@@ -36,7 +36,7 @@ const TrekCard = ({ trek, index }: { trek: TrekType; index: number }) => {
               src={imageSrc}
               alt={trek.name}
               fill
-              sizes="(max-width: 768px) 100vw, 33vw"
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover transition-transform duration-1200 ease-out 
               group-hover:scale-110 group-hover:rotate-1"
             />

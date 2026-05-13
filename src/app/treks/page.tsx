@@ -36,8 +36,8 @@ export const metadata: Metadata = {
 
 export default function TreksPage() {
   return (
-    <main className="min-h-screen bg-parchment">
-      {/* Hero Header ──────────────────────────────────────────────────── */}
+    <main className="min-h-screen">
+      {/* Hero Header */}
       <section
         className="relative h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden"
         aria-label="Treks page hero"
@@ -45,34 +45,32 @@ export default function TreksPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/treks/treks-hero.jpg"
-            alt="Himalayan mountain trekking landscape — browse all treks"
+            alt="Himalayan mountain trekking landscape"
             fill
             priority
             quality={75}
-            sizes="(max-width: 768px) 768px, (max-width: 1440px) 1440px, 1920px"
-            className="object-cover"
+            sizes="100vw"
+            className="object-cover scale-105"
           />
-          <div className="absolute inset-0 bg-forest/50" />
+          <div className="absolute inset-0 bg-linear-to-t from-[#1f1510]/80 via-[#1f1510]/30 to-transparent" />
+          <div className="absolute inset-0 bg-[#7a5a3a]/20 mix-blend-multiply" />
         </div>
 
-        <div className="relative z-10 text-center px-6 max-w-4xl">
-          <h1 className="font-display italic text-6xl md:text-8xl text-white leading-[1.1] mb-6 drop-shadow-2xl">
+        <div className="relative z-10 text-center px-6 max-w-4xl mt-12">
+          <h1 className="font-serif italic text-6xl md:text-8xl text-white leading-tight mb-6">
             <span className="sr-only">Himalayan Treks — </span>
             Find your trail.
           </h1>
 
-          <p className="font-sans font-light text-white/80 text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto drop-shadow-lg">
+          <p className="font-serif text-white/80 text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto drop-shadow-md">
             Curated Himalayan trekking expeditions in Himachal Pradesh and
-            Uttarakhand — beginner to advanced, year-round.
+            Uttarakhand — beginner to advanced.
           </p>
         </div>
       </section>
 
-      {/* Filter Bar & Trek Grid (Client Component) ───────────────────── */}
+      {/* Filter Bar & Trek Grid (Client Component) */}
       <TrekGrid />
-
-      {/* Decorative footer gradient */}
-      <div className="h-40 bg-linear-to-b from-parchment to-monk-beige/30" />
     </main>
   );
 }

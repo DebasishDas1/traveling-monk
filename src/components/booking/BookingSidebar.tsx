@@ -37,8 +37,7 @@ export function BookingSidebar() {
               The Traveling
             </p>
             <p
-              className="text-[15px] italic text-[#f5ede0] leading-tight"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              className="text-[15px] italic text-[#f5ede0] leading-tight font-serif"
             >
               Monk
             </p>
@@ -46,9 +45,8 @@ export function BookingSidebar() {
         </div>
 
         <h2
-          className="text-[#f5ede0] leading-[1.15]"
+          className="text-[#f5ede0] leading-[1.15] font-serif"
           style={{
-            fontFamily: "'Playfair Display', serif",
             fontSize: "2rem",
             fontWeight: 400,
           }}

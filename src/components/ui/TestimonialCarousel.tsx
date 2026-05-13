@@ -30,53 +30,55 @@ export const TestimonialCarousel = ({
 
   useEffect(() => {
     if (isPaused || isSingle) return;
-    const interval = setInterval(next, 7000);
+    const interval = setInterval(next, 8000);
     return () => clearInterval(interval);
   }, [isPaused, next, isSingle]);
 
   return (
     <section
-      className="relative py-32 px-6 overflow-hidden bg-parchment"
+      className="relative py-32 px-6 overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Section Header */}
-      <div className="text-center mb-16">
-        <SectionHeader title="Returned. Changed." subtitle="What Monks Say" />
-      </div>
+      {/* ambient parchment atmosphere */}
+      <div className="absolute inset-0 -z-10" />
 
-      {/* Single Card */}
+      {/* Section Header */}
+      <SectionHeader title="Returned. Changed." subtitle="What Monks Say" />
+
       <div className="max-w-3xl mx-auto">
         <AnimatePresence mode="wait">
           <motion.div
             key={active}
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -16 }}
-            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-            className="relative bg-parchment-light border border-monk-brown-deep/10 rounded-3xl p-10 md:p-14 shadow-sm"
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="relative p-10 md:p-16 rounded-[40px]
+            bg-linear-to-br from-[#F7F1E6] via-[#EFE3D1] to-[#E6D3BC]
+            border border-[#CBB79C]
+            shadow-[0_15px_60px_rgba(60,45,30,0.1)]"
           >
-            {/* Large opening quote mark */}
-            <span
-              className="block font-display text-saffron leading-none select-none mb-6"
-              style={{ fontSize: "4rem", lineHeight: 1 }}
+            {/* Opening quote seal */}
+            <div
+              className="mb-8 font-serif italic text-6xl text-[#8C6B4A]/30 leading-none select-none"
               aria-hidden="true"
             >
-              "
-            </span>
+              “
+            </div>
 
             {/* Quote body */}
-            <p className="font-serif italic text-xl md:text-2xl text-monk-dark leading-relaxed mb-10">
+            <p className="font-serif italic text-xl md:text-3xl text-[#2B1F14] leading-[1.8] mb-12">
               {testimonials[active].quote}
             </p>
 
             {/* Author */}
-            <div className="flex items-center gap-4 pt-6 border-t border-monk-brown-deep/10">
-              <div className="space-y-0.5">
-                <p className="font-sans font-bold text-sm uppercase tracking-widest text-monk-dark">
+            <div className="flex items-center gap-5 pt-8 border-t border-[#D8C4A8]/60">
+              <div className="space-y-1">
+                <p className="font-serif font-bold text-lg text-[#2B1F14] tracking-wide">
                   {testimonials[active].name}
                 </p>
-                <p className="font-sans text-xs text-monk-muted tracking-wide">
+                <p className="text-[11px] uppercase tracking-[0.3em] text-[#7A6A58]">
                   {testimonials[active].designation}
                 </p>
               </div>
@@ -84,20 +86,24 @@ export const TestimonialCarousel = ({
           </motion.div>
         </AnimatePresence>
 
-        {/* Dot Navigation */}
+        {/* Navigation */}
         {!isSingle && (
-          <div className="flex items-center justify-center gap-3 mt-10">
+          <div className="flex items-center justify-center gap-4 mt-12">
             {testimonials.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setActive(idx)}
                 aria-label={`Go to testimonial ${idx + 1}`}
-                className={`rounded-full transition-all duration-300 ${
-                  idx === active
-                    ? "w-6 h-2 bg-saffron"
-                    : "w-2 h-2 bg-monk-brown-deep/20 hover:bg-monk-brown-deep/40"
-                }`}
-              />
+                className="group relative py-2 px-1"
+              >
+                <div
+                  className={`h-1.5 rounded-full transition-all duration-500 ${
+                    idx === active
+                      ? "w-8 bg-[#8C6B4A]"
+                      : "w-1.5 bg-[#CBB79C]/40"
+                  }`}
+                />
+              </button>
             ))}
           </div>
         )}

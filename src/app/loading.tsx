@@ -1,45 +1,42 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-
 export default function Loading() {
   return (
-    <div className="fixed inset-0 z-100 flex items-center justify-center bg-parchment">
-      <div className="flex flex-col items-center">
-        {/* Simple fast pulse */}
-        <motion.div
-          initial={{ scale: 0.9, opacity: 0.6 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{
-            duration: 0.4,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeOut",
-          }}
-          className="mb-4"
-        >
-          <svg
-            viewBox="0 0 100 100"
-            className="w-16 h-16 text-forest fill-current"
-          >
-            <path d="M50 10 L90 90 L10 90 Z" />
-          </svg>
-        </motion.div>
+    <div className="flex items-center justify-center min-h-screen bg-[#1f1510]">
+      <div className="relative w-[70px] aspect-square">
+        {/* outer ring */}
+        <span className="absolute inset-0 rounded-full animate-loaderAncient border border-[#C9A24A]/30" />
 
-        {/* Minimal text */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            duration: 0.3,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="text-sm text-forest/70"
-        >
-          Loading...
-        </motion.p>
+        {/* inner ring */}
+        <span className="absolute inset-0 rounded-full animate-loaderAncient delay border border-[#C9A24A]/60" />
+
+        {/* center glow */}
+        <div className="absolute inset-[22px] rounded-full bg-[#C9A24A]/20 blur-[2px]" />
+
+        <style>{`
+          @keyframes loaderAncient {
+            0% {
+              transform: rotate(0deg) scale(0.9);
+              opacity: 0.4;
+            }
+            50% {
+              transform: rotate(180deg) scale(1);
+              opacity: 1;
+            }
+            100% {
+              transform: rotate(360deg) scale(0.9);
+              opacity: 0.4;
+            }
+          }
+
+          .animate-loaderAncient {
+            animation: loaderAncient 3.5s infinite ease-in-out;
+          }
+
+          .delay {
+            animation-delay: -1.75s;
+          }
+        `}</style>
       </div>
     </div>
   );

@@ -90,6 +90,39 @@ export type TrekType = {
   pickupDrop?: string;
 };
 
+
+export type EscapeType = {
+  id: number;
+
+  name: string;
+  slug: string;
+
+  location: string;
+  duration: string;
+
+  pickup: string;
+
+  price: {
+    double: number;
+    triple: number;
+  };
+
+  gallery: string[];
+
+  description: string;
+
+  highlights: string[];
+
+  itinerary: {
+    day: number;
+    title: string;
+    description: string;
+  }[];
+
+  inclusions: string[];
+  exclusions: string[];
+};
+
 // ─── Zod Schema ───────────────────────────────────────────────────────────────
 export const bookingSchema = z.object({
   trekSlug: z.string().min(1, "Please select a trek"),
@@ -108,3 +141,4 @@ export type BookingActionState = {
   message: string;
   errors?: Record<string, string[] | undefined>;
 } | null;
+

@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 
 const FALLBACK_IMAGE = "/dark-logo.png";
 
-export const getImageSrc = (url?: string | null): string => {
+export const getImageSrc = (url?: string | null, width: number = 1200): string => {
   if (!url) return FALLBACK_IMAGE;
 
   const cleanUrl = url.trim();
@@ -21,7 +21,8 @@ export const getImageSrc = (url?: string | null): string => {
 
     if (driveMatch) {
       const id = driveMatch[1];
-      return `https://lh3.googleusercontent.com/d/${id}=w1200`;
+      // LH3 supports dynamic resizing via =wXXX suffix
+      return `https://lh3.googleusercontent.com/d/${id}=w${width}`;
     }
 
     // --- Validate URL ---
@@ -32,7 +33,7 @@ export const getImageSrc = (url?: string | null): string => {
       parsed.searchParams.set("auto", "format");
       parsed.searchParams.set("fit", "crop");
       parsed.searchParams.set("q", "80");
-      parsed.searchParams.set("w", "1200");
+      parsed.searchParams.set("w", width.toString());
       return parsed.toString();
     }
 
@@ -46,6 +47,7 @@ export const getImageSrc = (url?: string | null): string => {
     return FALLBACK_IMAGE;
   }
 };
+
 
 
 export const isValidEmail = (email: string) =>

@@ -100,7 +100,7 @@ export const trekData: TrekType[] = [
     duration: "2 Days / 1 Nights",
     difficulty: "Easy",
     tier: "Beginner",
-    priceFrom: 1199,
+    priceFrom: 1499,
     maxGroupSize: 30,
     // CORRECTED: Multiple sources confirm 2,850 m / 9,350 ft. Previous value of 2,875 m was incorrect.
     altitude: "9,350 ft (2,850 m)",
@@ -161,10 +161,10 @@ export const trekData: TrekType[] = [
           "",
       },
       {
-        name: "Ananya Sen",
+        name: "Srijita Das",
         city: "Kolkata",
         quote:
-          "My first trek ever and I loved every bit of it. Not too hard, super rewarding.",
+          "Perfect weekend escape. The Dhauladhar views at sunrise were unreal.",
         rating: 5,
         image:
           "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150",
@@ -191,11 +191,9 @@ export const trekData: TrekType[] = [
     // Hampta Pass altitude confirmed at 14,100 ft / 4,300 m across multiple sources — unchanged
     altitude: "14,100 ft (4,300 m)",
     gallery: [
-      "https://drive.google.com/file/d/1kNeOC1-Ls9ApHJGgsHcox2pD2MR6XQmx/view?usp=drive_link",
       "https://drive.google.com/file/d/1TlBGM2Vju3SK0zaRAXgufnqMIShVB4Tw/view?usp=drive_link",
       "https://drive.google.com/file/d/1QMe16sYKdbPSLqCvFRO5X0LQ1KTlOt6P/view?usp=drive_link",
       "https://drive.google.com/file/d/1IrZXh9ei8q6uoTs-Av6dZpgnrDklwSB5/view?usp=drive_link",
-      "https://drive.google.com/file/d/1BMlfWB95gFrhIbsl--WBRNzbS3pKttqk/view?usp=drive_link",
     ],
     highlights: [
       "Chandratal Lake — 'Moon Lake' at 14,100 ft",
@@ -302,7 +300,7 @@ export const trekData: TrekType[] = [
     duration: "8 Days / 7 Nights",
     difficulty: "Easy to Moderate",
     tier: "Advanced",
-    priceFrom: 18499,
+    priceFrom: 18999,
     maxGroupSize: 30,
     // Altitude confirmed at 16,207 ft / 4,950 m — unchanged and correct
     altitude: "16,207 ft (4,950 m)",
@@ -456,7 +454,7 @@ export const trekData: TrekType[] = [
     duration: "5 Days / 4 Nights",
     difficulty: "Easy to Moderate",
     tier: "Beginner",
-    priceFrom: 5999,
+    priceFrom: 6999,
     maxGroupSize: 30,
     // Sar Pass altitude confirmed at 13,800 ft / 4,200 m across all sources — unchanged and correct
     altitude: "13,800 ft (4,200 m)",
@@ -546,7 +544,7 @@ export const trekData: TrekType[] = [
           "Snow slides were insanely fun. Easily the most exciting part of the trek.",
         rating: 5,
         image:
-          "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150",
+          "",
       },
       {
         name: "Neha Gupta",
@@ -555,7 +553,7 @@ export const trekData: TrekType[] = [
           "Great mix of forests, snow, and views. Ideal for first high-altitude trek.",
         rating: 5,
         image:
-          "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150",
+          "",
       },
     ],
     availableDates: [
@@ -917,7 +915,7 @@ export const trekData: TrekType[] = [
     altitude: "11,700 ft",
     difficulty: "Moderate",
     tier: "Beginner",
-    priceFrom: 9000,
+    priceFrom: 8999,
     maxGroupSize: 30,
     gallery: [
       "https://drive.google.com/file/d/1lZ72Ttrluj_DPq0U7UBemoH8Otz3c1Yo/view?usp=drive_link",
@@ -1219,14 +1217,14 @@ export const trekData: TrekType[] = [
     slug: "buni-buni-kheerganga-trek",
     name: "Buni Buni + Kheerganga Trek",
     tagline: "Two camps. One unforgettable Parvati Valley journey.",
-    featured: true,
+    featured: false,
     active: true,
     region: "Parvati Valley, Himachal Pradesh",
     duration: "2 Nights / 3 Days",
     altitude: "3,050 m",
     difficulty: "Moderate",
     tier: "Beginner",
-    priceFrom: 4000,
+    priceFrom: 3999,
     maxGroupSize: 20,
     gallery: [
       "https://drive.google.com/file/d/1m5Bmt-KD58C3e4aiAbWzhAPcbgaT08JI/view?usp=drive_link",
@@ -1338,7 +1336,7 @@ export const trekData: TrekType[] = [
   {
     slug: "kashmir-great-lakes-trek",
     name: "Kashmir Great Lakes Trek",
-    featured: true,
+    featured: false,
     active: true,
     tagline: "Seven days. Six alpine lakes. Infinite Himalayan beauty.",
 
@@ -1347,7 +1345,7 @@ export const trekData: TrekType[] = [
     duration: "7 Days / 6 Nights",
     altitude: "≈ 13,750 ft", // inferred typical Gadsar Pass range
 
-    difficulty: "Moderate to Difficult",
+    difficulty: "Easy to Moderate",
     tier: "Intermediate",
 
     priceFrom: 17999,

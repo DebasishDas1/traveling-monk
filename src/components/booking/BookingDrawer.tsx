@@ -59,9 +59,8 @@ export function BookingDrawer() {
               >
                 <div>
                   <h3
-                    className="text-[#1a1208] leading-tight"
+                    className="text-[#1a1208] leading-tight font-serif"
                     style={{
-                      fontFamily: "'Playfair Display', serif",
                       fontSize: "1.35rem",
                       fontWeight: 400,
                     }}
