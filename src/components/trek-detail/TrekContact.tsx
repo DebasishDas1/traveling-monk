@@ -6,19 +6,7 @@ import { whatsappLink, whatsappNumber } from "@/lib/social-links";
 export const TrekContact = () => {
   return (
     <section className="relative py-8 md:py-12 px-4 md:px-0">
-      {/* soft warm background */}
-      <div className="absolute inset-0 -z-10 bg-[#FAF6EF]" />
-
-      {/* subtle light vignette */}
-      <div
-        className="absolute inset-0 -z-10 
-        bg-[radial-gradient(circle_at_top,rgba(120,90,60,0.06),transparent_70%)]"
-      />
-
-      {/* CARD */}
-
       <div className="space-y-10 max-w-3xl">
-        {/* TEXT */}
         <div className="space-y-5">
           <h3 className="font-serif text-2xl md:text-4xl text-[#2B1F14] italic leading-snug">
             Still have questions about this journey?
@@ -35,10 +23,10 @@ export const TrekContact = () => {
           <Link href={whatsappLink} target="_blank">
             <Button
               className="h-12 px-8 rounded-full 
-                bg-[#2B1F14] text-[#FAF6EF]
+                text-black bg-[#FAF6EF]
                 text-xs uppercase tracking-[0.2em] font-semibold
                 transition-all duration-300
-                hover:bg-[#3A2A1D]"
+                hover:bg-[#2B1F14] hover:text-white"
             >
               Request a Callback
             </Button>

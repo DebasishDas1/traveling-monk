@@ -7,15 +7,15 @@ export type ItineraryDayType = {
   from: string;
   to: string;
 
-  altitude: string;
-  duration: string;
+  altitude?: string;
+  duration?: string;
 
   description: string;
 
   imageUrl?: string; // optional visual per day
 };
 
-export type TrekTestimonialType = {
+export type TestimonialType = {
   name: string;
   city: string;
   quote: string;
@@ -77,7 +77,7 @@ export type TrekType = {
 
   itinerary: ItineraryDayType[];
 
-  testimonials: TrekTestimonialType[];
+  testimonials: TestimonialType[];
 
   availableDates: TrekAvailableDateType[];
 
@@ -113,14 +113,11 @@ export type EscapeType = {
 
   highlights: string[];
 
-  itinerary: {
-    day: number;
-    title: string;
-    description: string;
-  }[];
+  itinerary: ItineraryDayType[]
 
   inclusions: string[];
   exclusions: string[];
+  testimonials: TestimonialType[];
 };
 
 // ─── Zod Schema ───────────────────────────────────────────────────────────────

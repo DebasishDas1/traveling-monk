@@ -5,14 +5,14 @@ import { trekData } from "@/lib/data/treks";
 
 import { TrekHero } from "@/components/trek-detail/TrekHero";
 import { TrekOverview } from "@/components/trek-detail/TrekOverview";
-import { TrekItinerary } from "@/components/trek-detail/TrekItinerary";
+import { MyItinerary } from "@/components/sections/MyItinerary";
 import { TrekInclusions } from "@/components/trek-detail/TrekInclusions";
-import { TrekGallery } from "@/components/trek-detail/TrekGallery";
-import { TrekTestimonials } from "@/components/trek-detail/TrekTestimonials";
+import { MyGallery } from "@/components/sections/MyGallery";
+import { MyTestimonials } from "@/components/sections/MyTestimonials";
 import { TrekBookingWidget } from "@/components/trek-detail/TrekBookingWidget";
 import { TrekContact } from "@/components/trek-detail/TrekContact";
 import { TrekRelated } from "@/components/trek-detail/TrekRelated";
-import { MobileReserveBar } from "@/components/trek-detail/MobileReserveBar";
+import { MobileReserveBar } from "@/components/sections/MobileReserveBar";
 
 // --- Types ---
 interface PageProps {
@@ -213,7 +213,7 @@ export default async function TrekDetailPage({ params }: PageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-parchment pb-32">
+    <main className="min-h-screen pb-32">
       {/* JSON-LD structured data */}
       <script
         type="application/ld+json"
@@ -236,10 +236,13 @@ export default async function TrekDetailPage({ params }: PageProps) {
             <div className="pt-8 border-t border-stone-200/50">
               <TrekOverview trek={trek} />
             </div>
-            <TrekItinerary trek={trek} />
-            <TrekInclusions />
-            <TrekGallery trek={trek} />
-            <TrekTestimonials trek={trek} />
+            <MyItinerary itinerary={trek.itinerary} />
+            <TrekInclusions
+              inclusions={trek.inclusions}
+              exclusions={trek.exclusions}
+            />
+            <MyGallery gallery={trek.gallery} />
+            <MyTestimonials testimonials={trek.testimonials} />
             <TrekContact />
             <TrekRelated currentTrekSlug={trek.slug} />
           </div>
@@ -251,7 +254,7 @@ export default async function TrekDetailPage({ params }: PageProps) {
         </div>
       </div>
 
-      <MobileReserveBar trek={trek} />
+      <MobileReserveBar priceFrom={trek.priceFrom} slug={trek.slug} />
     </main>
   );
 }

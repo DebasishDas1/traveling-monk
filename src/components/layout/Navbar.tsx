@@ -44,6 +44,8 @@ export const Navbar = () => {
 
   const pathname = usePathname();
   const isTreksPage = pathname.startsWith("/treks/") && pathname !== "/treks/";
+  const isEscapePage =
+    pathname.startsWith("/escapes/") && pathname !== "/escapes/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,7 +56,8 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [setNavScrolled]);
 
-  const textColor = isTreksPage || navScrolled ? "text-black" : "text-white";
+  const textColor =
+    isTreksPage || isEscapePage || navScrolled ? "text-black" : "text-white";
 
   const isActiveLink = useCallback(
     (href: string) => pathname === href || pathname.startsWith(href + "/"),

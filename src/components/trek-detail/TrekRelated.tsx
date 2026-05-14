@@ -14,15 +14,6 @@ export const TrekRelated = ({ currentTrekSlug }: TrekRelatedProps) => {
 
   return (
     <section className="relative py-16 md:py-24 space-y-14">
-      {/* soft background wash */}
-      <div className="absolute inset-0 -z-10 bg-[#FAF6EF]" />
-
-      {/* subtle top glow */}
-      <div
-        className="absolute inset-0 -z-10 
-        bg-[radial-gradient(circle_at_top,rgba(120,90,60,0.06),transparent_70%)]"
-      />
-
       {/* HEADER */}
       <div className="flex items-center gap-6">
         <h2 className="font-serif text-3xl md:text-4xl italic text-[#2B1F14] shrink-0">

@@ -1,25 +1,17 @@
-
 import Image from "next/image";
 import { Camera } from "lucide-react";
-import type { TrekType } from "@/lib/type";
 import { getImageSrc } from "@/lib/utils";
 
-interface TrekGalleryProps {
-  trek: TrekType;
+interface MyGalleryProps {
+  gallery: string[];
 }
 
-export const TrekGallery = ({ trek }: TrekGalleryProps) => {
-  const images = (trek.gallery ?? []).slice().reverse();
+export const MyGallery = ({ gallery }: MyGalleryProps) => {
+  const images = (gallery ?? []).slice().reverse();
   if (images.length === 0) return null;
 
   return (
     <section className="relative space-y-14 py-16 md:py-24">
-      {/* ambient parchment light */}
-      <div
-        className="absolute inset-0 -z-10 
-        bg-[radial-gradient(circle_at_top,rgba(120,90,60,0.10),transparent_70%)]"
-      />
-
       {/* ===== HEADER ===== */}
       <div className="flex items-center gap-6">
         <h2 className="font-display text-4xl md:text-5xl italic text-[#2B1F14] shrink-0">

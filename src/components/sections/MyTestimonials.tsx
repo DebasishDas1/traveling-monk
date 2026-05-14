@@ -1,20 +1,14 @@
 import { Star } from "lucide-react";
-import type { TrekType } from "@/lib/type";
+import type { TestimonialType } from "@/lib/type";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
-interface TrekTestimonialsProps {
-  trek: TrekType;
+interface MyTestimonialsProps {
+  testimonials: TestimonialType[];
 }
 
-export const TrekTestimonials = ({ trek }: TrekTestimonialsProps) => {
+export const MyTestimonials = ({ testimonials }: MyTestimonialsProps) => {
   return (
     <section className="relative py-28 space-y-20">
-      {/* ambient parchment glow */}
-      <div
-        className="absolute inset-0 -z-10 
-        bg-[radial-gradient(circle_at_top,rgba(120,90,60,0.08),transparent_70%)]"
-      />
-
       {/* Header */}
       <div className="text-center space-y-5">
         <span className="text-[10px] uppercase tracking-[0.5em] font-bold text-[#8C6B4A]">
@@ -35,7 +29,7 @@ export const TrekTestimonials = ({ trek }: TrekTestimonialsProps) => {
 
       {/* Grid */}
       <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
-        {trek.testimonials.map((t, i) => {
+        {testimonials.map((t, i) => {
           const initial = t.name?.charAt(0)?.toUpperCase() ?? "?";
 
           return (

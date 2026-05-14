@@ -2,23 +2,16 @@
 
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import type { TrekType } from "@/lib/type";
+import type { ItineraryDayType } from "@/lib/type";
 import TrekItineraryCard from "@/components/trek-detail/TrekItineraryCard";
 
-interface TrekItineraryProps {
-  trek: TrekType;
-}
-
-export const TrekItinerary = ({ trek }: TrekItineraryProps) => {
+export const MyItinerary = ({
+  itinerary,
+}: {
+  itinerary: ItineraryDayType[];
+}) => {
   return (
     <section className="relative space-y-24 py-16 md:py-24">
-      {/* 🌿 soft parchment atmosphere */}
-      <div className="absolute inset-0 -z-10 bg-[#FAF6EF]" />
-      <div
-        className="absolute inset-0 -z-10 
-        bg-[radial-gradient(circle_at_top,rgba(120,90,60,0.06),transparent_75%)]"
-      />
-
       {/* 🧭 Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div className="space-y-3">
@@ -59,8 +52,8 @@ export const TrekItinerary = ({ trek }: TrekItineraryProps) => {
           }}
         />
 
-        {trek.itinerary.map((day, idx) => {
-          const progress = (idx + 1) / trek.itinerary.length;
+        {itinerary.map((day, idx) => {
+          const progress = (idx + 1) / itinerary.length;
 
           return (
             <motion.div

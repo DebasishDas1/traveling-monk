@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { trekData } from "@/lib/data/treks";
+import { escapesData } from "@/lib/data/escapes";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://thetravelingmonk.in";
@@ -12,10 +13,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  // Dynamic escape routes
+  const escapeRoutes = escapesData.map((escape) => ({
+    url: `${baseUrl}/escapes/${escape.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
   // Static routes
   const routes = [
     "",
     "/treks",
+    "/escapes",
     "/about",
     "/community",
     "/contact",
@@ -26,5 +36,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "" ? 1 : 0.9,
   }));
 
-  return [...routes, ...trekRoutes];
+  return [...routes, ...trekRoutes, ...escapeRoutes];
 }

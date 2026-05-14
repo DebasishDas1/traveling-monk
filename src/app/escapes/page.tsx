@@ -3,32 +3,29 @@ import { Metadata } from "next";
 import { EscapeGrid } from "@/components/sections/EscapeGrid";
 
 export const metadata: Metadata = {
-  title: "Himalayan Treks 2025–26 | Beginner to Advanced | The Traveling Monk",
+  title: "Escapes 2025–26 | The Traveling Monk",
   description:
-    "Explore curated Himalayan treks in Himachal Pradesh and Uttarakhand. Beginner, intermediate, and advanced expeditions — Kheerganga, Hampta Pass, Triund, Bali Pass & more.",
+    "Explore curated Himalayan escapes in Himachal Pradesh, Uttarakhand & more.",
   alternates: {
-    canonical: "/treks",
+    canonical: "/escapes",
   },
   keywords: [
-    "himalayan treks india",
-    "himachal pradesh trekking packages",
-    "uttarakhand treks",
-    "beginner treks himalayas",
-    "trekking company india",
-    "kheerganga trek",
-    "hampta pass trek",
-    "triund trek",
+    "himalayan escapes india",
+    "himachal pradesh escapes",
+    "uttarakhand escapes",
+    "beginner escapes himalayas",
+    "travel company india",
   ],
   openGraph: {
-    title: "Himalayan Treks | The Traveling Monk",
+    title: "Himalayan Escapes | The Traveling Monk",
     description:
-      "Curated seasonal treks through the Himalayas. Beginner to advanced. Book your next expedition.",
+      "Curated seasonal escapes through the Himalayas. Beginner to advanced. Book your next expedition.",
     images: [
       {
         url: "/images/treks/treks-hero.jpg",
         width: 1200,
         height: 630,
-        alt: "Himalayan trekking trails — The Traveling Monk",
+        alt: "Himalayan escapes trails — The Traveling Monk",
       },
     ],
   },

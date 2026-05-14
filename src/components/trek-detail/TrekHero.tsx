@@ -59,8 +59,8 @@ export const TrekHero = ({ trek }: TrekHeroProps) => {
             alt={trek.name}
             fill
             priority
-            sizes="(max-width: 1024px) 100vw, 75vw"
-            quality={60}
+            sizes="(max-width: 1024px) 100vw, (max-width: 1536px) 75vw, 1200px"
+            quality={85}
             className="object-cover object-center bg-stone-900"
           />
 

@@ -30,7 +30,7 @@ export const EscapeGrid = () => {
               },
             },
           }}
-          className="grid gap-8 grid-cols-1 md:grid-cols-2"
+          className="grid gap-8 grid-cols-1 md:grid-cols-1"
         >
           {escapesData.map((escape) => (
             <motion.div

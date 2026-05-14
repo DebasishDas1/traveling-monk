@@ -10,8 +10,16 @@ import {
   Sparkles,
 } from "lucide-react";
 
-export const TrekInclusions = () => {
-  const inclusions = [
+interface TrekInclusionsProps {
+  inclusions?: string[];
+  exclusions?: string[];
+}
+
+export const TrekInclusions = ({ 
+  inclusions: propsInclusions, 
+  exclusions: propsExclusions 
+}: TrekInclusionsProps) => {
+  const defaultInclusions = [
     { text: "Expert Monk Guides", icon: <Map className="size-4" /> },
     { text: "Mindfulness Workshops", icon: <Sparkles className="size-4" /> },
     { text: "Traditional Mountain Stays", icon: <Home className="size-4" /> },
@@ -23,7 +31,7 @@ export const TrekInclusions = () => {
     { text: "Trek Equipment", icon: <ShieldCheck className="size-4" /> },
   ];
 
-  const exclusions = [
+  const defaultExclusions = [
     "Travel to Base Camp",
     "Personal Gear",
     "Insurance",
@@ -31,6 +39,12 @@ export const TrekInclusions = () => {
     "Personal Expenses",
     "GST Charges",
   ];
+
+  const inclusions = propsInclusions 
+    ? propsInclusions.map(text => ({ text, icon: <CheckCircle2 className="size-4" /> }))
+    : defaultInclusions;
+
+  const exclusions = propsExclusions || defaultExclusions;
 
   return (
     <section className="py-24 px-10 bg-white/40 rounded-[3rem] border border-white border-b-stone-200/50 shadow-sm">

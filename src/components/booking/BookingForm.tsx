@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { trekData } from "@/lib/data/treks";
+import { escapesData } from "@/lib/data/escapes";
 
 import { BookingActionState } from "@/lib/type";
 import {
@@ -40,7 +41,11 @@ export function BookingForm({
   const watchedTrekSlug = watch("trekSlug");
   const watchedDate = watch("date");
   const watchedGuests = watch("guests");
-  const currentTrek = trekData.find((t) => t.slug === watchedTrekSlug) ?? null;
+
+  const currentTrek =
+    trekData.find((t) => t.slug === watchedTrekSlug) ||
+    escapesData.find((e) => e.slug === watchedTrekSlug) ||
+    null;
 
   return (
     <motion.form
@@ -64,12 +69,21 @@ export function BookingForm({
           onChange={(e) => setValue("trekSlug", e.target.value)}
           className={cn(inputClass(!!errors.trekSlug), "cursor-pointer")}
         >
-          <option value="">Choose your trek…</option>
-          {trekData.map((t) => (
-            <option key={t.slug} value={t.slug}>
-              {t.name} — {t.region}
-            </option>
-          ))}
+          <option value="">Choose your journey…</option>
+          <optgroup label="Himalayan Treks">
+            {trekData.map((t) => (
+              <option key={t.slug} value={t.slug}>
+                {t.name}
+              </option>
+            ))}
+          </optgroup>
+          <optgroup label="Leisure Escapes">
+            {escapesData.map((e) => (
+              <option key={e.slug} value={e.slug}>
+                {e.name}
+              </option>
+            ))}
+          </optgroup>
         </select>
       </FieldWrapper>
 
@@ -88,18 +102,29 @@ export function BookingForm({
             >
               <span style={{ color: "#c4831a" }}>📍</span>
               <span className="font-medium" style={{ color: "#6b5a45" }}>
-                {currentTrek.region}
+                {"region" in currentTrek
+                  ? currentTrek.region
+                  : currentTrek.location}
               </span>
-              {currentTrek.availableDates?.length > 0 && (
-                <>
-                  <span style={{ color: "#c4b49e" }}>·</span>
-                  <span style={{ color: "#8a7660" }}>
-                    {currentTrek.availableDates.length} batch
-                    {currentTrek.availableDates.length > 1 ? "es" : ""}{" "}
-                    available
-                  </span>
-                </>
-              )}
+              {"availableDates" in currentTrek &&
+                currentTrek.availableDates &&
+                currentTrek.availableDates.length > 0 && (
+                  <>
+                    <span style={{ color: "#c4b49e" }}>·</span>
+                    <span style={{ color: "#8a7660" }}>
+                      {"availableDates" in currentTrek &&
+                      currentTrek.availableDates
+                        ? currentTrek.availableDates.length
+                        : 1}{" "}
+                      batch
+                      {"availableDates" in currentTrek &&
+                      currentTrek.availableDates?.length > 1
+                        ? "es"
+                        : ""}{" "}
+                      available
+                    </span>
+                  </>
+                )}
             </div>
           </motion.div>
         )}
@@ -157,7 +182,11 @@ export function BookingForm({
       <DatePicker
         value={watchedDate}
         onChange={(d) => setValue("date", d)}
-        dates={currentTrek?.availableDates ?? []}
+        dates={
+          currentTrek && "availableDates" in currentTrek
+            ? (currentTrek.availableDates ?? [])
+            : []
+        }
         hasTrek={!!currentTrek}
         error={errors.date?.message}
       />

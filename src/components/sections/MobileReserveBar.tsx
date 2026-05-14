@@ -1,14 +1,15 @@
 "use client";
 
-import type { TrekType } from "@/lib/type";
 import { Button } from "@/components/ui/button";
 import { useBookingStore } from "@/stores/bookingStore";
 
-interface MobileReserveBarProps {
-  trek: TrekType;
-}
-
-export const MobileReserveBar = ({ trek }: MobileReserveBarProps) => {
+export const MobileReserveBar = ({
+  priceFrom,
+  slug,
+}: {
+  priceFrom: number | string | undefined;
+  slug: string;
+}) => {
   const { openDrawer } = useBookingStore();
 
   return (
@@ -18,12 +19,12 @@ export const MobileReserveBar = ({ trek }: MobileReserveBarProps) => {
           Exchange
         </p>
         <p className="font-display text-2xl sm:text-3xl text-forest">
-          ₹{trek.priceFrom.toLocaleString()}
+          ₹{priceFrom}
         </p>
       </div>
       <Button
         variant="saffron"
-        onClick={() => openDrawer(trek.slug)}
+        onClick={() => openDrawer(slug)}
         className="h-12 sm:h-14 px-6 w-2/3 sm:px-10 rounded-full font-black uppercase tracking-widest text-[10px] sm:text-xs shadow-xl shadow-saffron/20"
       >
         Reserve
