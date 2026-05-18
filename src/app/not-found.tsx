@@ -21,8 +21,8 @@ export default function NotFound() {
             <span className="text-saffron">It never was.</span>
           </h1>
           <p className="text-xl text-forest/60 font-sans font-light max-w-lg mx-auto">
-            You've reached a trail that doesn't exist yet. Perhaps the journey
-            you're looking for is elsewhere.
+            You&apos;ve reached a trail that doesn&apos;t exist yet. Perhaps the journey
+            you&apos;re looking for is elsewhere.
           </p>
         </div>
 

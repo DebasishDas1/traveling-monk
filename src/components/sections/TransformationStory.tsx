@@ -41,8 +41,8 @@ export const TransformationStory = () => {
               </div>
 
               <blockquote className="font-display italic text-saffron text-2xl md:text-3xl border-l-2 border-saffron pl-8 mb-10">
-                "The mountains are calling and I must go — not to see, but to
-                be."
+                &quot;The mountains are calling and I must go — not to see, but to
+                be.&quot;
               </blockquote>
 
               <Button
@@ -68,6 +68,8 @@ export const TransformationStory = () => {
                   src="/images/story-1.jpg"
                   alt="Meditation in mountains"
                   fill
+                  quality={60}
+                  sizes="(max-width: 768px) 100vw, 45vw"
                   className="object-cover"
                 />
               </motion.div>
@@ -83,6 +85,8 @@ export const TransformationStory = () => {
                   src="/images/story-2.jpg"
                   alt="Summit moment"
                   fill
+                  quality={60}
+                  sizes="(max-width: 768px) 100vw, 45vw"
                   className="object-cover"
                 />
               </motion.div>
@@ -98,6 +102,8 @@ export const TransformationStory = () => {
                   src="/images/story-3.jpg"
                   alt="Valley view"
                   fill
+                  quality={60}
+                  sizes="(max-width: 768px) 100vw, 45vw"
                   className="object-cover"
                 />
               </motion.div>
@@ -113,6 +119,8 @@ export const TransformationStory = () => {
                   src="/images/story-4.jpg"
                   alt="Campfire conversation"
                   fill
+                  quality={60}
+                  sizes="(max-width: 768px) 100vw, 45vw"
                   className="object-cover"
                 />
               </motion.div>

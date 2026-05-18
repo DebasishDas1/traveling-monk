@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { cn, getImageSrc } from "@/lib/utils";
 import type { TrekType } from "@/lib/type";
@@ -59,6 +58,7 @@ export const TrekHero = ({ trek }: TrekHeroProps) => {
             alt={trek.name}
             fill
             priority
+            fetchPriority="high"
             sizes="(max-width: 1024px) 100vw, (max-width: 1536px) 75vw, 1200px"
             quality={85}
             className="object-cover object-center bg-stone-900"

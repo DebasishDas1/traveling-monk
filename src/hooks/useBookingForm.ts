@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useActionState, useTransition } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { bookingSchema, BookingFormValues } from "@/lib/type";
@@ -26,9 +26,9 @@ export function useBookingForm() {
     },
   });
 
-  const { setValue, watch, reset } = form;
-  const watchedTrekSlug = watch("trekSlug");
-  const watchedDate     = watch("date");
+  const { setValue, control, reset } = form;
+  const watchedTrekSlug = useWatch({ control, name: "trekSlug" });
+  const watchedDate = useWatch({ control, name: "date" });
 
   // Derive selected trek object
   const currentTrek = useMemo(

@@ -204,7 +204,7 @@ export const MembershipTiers = () => (
         </h2>
         <p className="text-forest/55 font-sans max-w-md mx-auto text-base leading-relaxed">
           Every level of the Monk Tribe gets you closer to the mountain. Start
-          free, upgrade when you're ready.
+          free, upgrade when you&apos;re ready.
         </p>
       </div>
 

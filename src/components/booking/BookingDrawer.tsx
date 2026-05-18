@@ -65,11 +65,11 @@ export function BookingDrawer() {
                       fontWeight: 400,
                     }}
                   >
-                    {isSuccess ? "You're on the trail 🏔" : "Reserve your spot"}
+                    {isSuccess ? "You&apos;re on the trail 🏔" : "Reserve your spot"}
                   </h3>
                   <p className="text-[12px] mt-1" style={{ color: "#8a7660" }}>
                     {isSuccess
-                      ? "We'll contact you within 24 hours."
+                      ? "We&apos;ll contact you within 24 hours."
                       : "Complete the form below — no payment needed now."}
                   </p>
                 </div>

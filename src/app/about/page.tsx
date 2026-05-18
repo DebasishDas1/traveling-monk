@@ -68,6 +68,9 @@ export default function AboutPage() {
             alt="Himalayan landscape"
             fill
             priority
+            fetchPriority="high"
+            sizes="100vw"
+            quality={60}
             className="object-cover scale-105"
           />
 
@@ -112,6 +115,7 @@ export default function AboutPage() {
                         alt={f.name}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        quality={60}
                         className="object-cover"
                       />
                       <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />

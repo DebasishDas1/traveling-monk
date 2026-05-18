@@ -18,7 +18,7 @@ export function HeroSection() {
       </div>
       <div className="relative z-10 text-center px-6">
         <h1 className="font-display italic text-5xl md:text-7xl text-white drop-shadow-2xl">
-          Let's talk.
+          Let&apos;s talk.
         </h1>
       </div>
     </section>

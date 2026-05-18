@@ -3,6 +3,11 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { google } from "googleapis";
+import { z } from "zod";
+
+const subscribeSchema = z.object({
+  email: z.string().email("Enter a valid email address"),
+});
 
 // ─── Google Sheets auth ───────────────────────────────────────────────────────
 function getSheets() {
@@ -32,12 +37,17 @@ export async function POST(req: Request) {
     );
   }
 
-  // 1. Validate email
-  const { email } = await req.json();
+  const body = await req.json();
+  const parsed = subscribeSchema.safeParse(body);
 
-  if (!email || !email.includes("@")) {
-    return NextResponse.json({ error: "Invalid email." }, { status: 400 });
+  if (!parsed.success) {
+    return NextResponse.json(
+      { error: parsed.error.issues[0]?.message || "Invalid email." },
+      { status: 400 }
+    );
   }
+
+  const { email } = parsed.data;
 
   // 2. Send welcome email via Resend
   const resend = new Resend(apiKey);
@@ -109,7 +119,7 @@ export async function POST(req: Request) {
     const sheetId  = process.env.GOOGLE_SHEET_SUBSCRIBER_ID;  // separate sheet from bookings
     const sheetTab = process.env.GOOGLE_SHEET_SUBSCRIBER_TAB ?? "Subscribers";
 
-    if (!sheetId) throw new Error("GOOGLE_SHEET_NEWSLETTER_ID env var is not set.");
+    if (!sheetId) throw new Error("GOOGLE_SHEET_SUBSCRIBER_ID env var is not set.");
 
     await sheets.spreadsheets.values.append({
       spreadsheetId:    sheetId,

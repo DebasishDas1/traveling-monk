@@ -35,7 +35,7 @@ export default function Error({
             A small pebble in the path
           </h1>
           <p className="text-forest/60 font-sans font-light leading-relaxed">
-            Even the most curated journeys face unexpected turns. We've
+            Even the most curated journeys face unexpected turns. We&apos;ve
             encountered a technical glitch.
           </p>
         </div>

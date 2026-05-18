@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useEffect } from "react";
+import { useMemo } from "react";
 import Link from "next/link";
 import {
   ChevronRight,
@@ -20,14 +20,6 @@ interface TrekBookingWidgetProps {
 
 export const TrekBookingWidget = ({ trek }: TrekBookingWidgetProps) => {
   const { openDrawer } = useBookingStore();
-
-  const [selectedDate, setSelectedDate] = useState<string>("");
-
-  useEffect(() => {
-    if (trek.availableDates?.length) {
-      setSelectedDate(trek.availableDates[0].date);
-    }
-  }, [trek]);
 
   const whatsappLink = useMemo(() => {
     const text = encodeURIComponent(
@@ -71,8 +63,7 @@ export const TrekBookingWidget = ({ trek }: TrekBookingWidgetProps) => {
 
               <select
                 id="trek-date"
-                value={selectedDate}
-                onChange={(e) => setSelectedDate(e.target.value)}
+                defaultValue={trek.availableDates?.[0]?.date}
                 className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-saffron/50 transition-all appearance-none cursor-pointer"
               >
                 {trek.availableDates.map((d) => (

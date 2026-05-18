@@ -62,7 +62,7 @@ export function BookingSidebar() {
           className="mt-4 text-[13px] leading-relaxed"
           style={{ color: "rgba(245,237,224,0.5)" }}
         >
-          Tell us where you want to go and we'll handle the rest. No payment
+          Tell us where you want to go and we&apos;ll handle the rest. No payment
           needed — our team will call you to confirm everything.
         </p>
       </div>

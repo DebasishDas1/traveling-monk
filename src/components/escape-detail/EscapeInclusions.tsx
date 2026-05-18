@@ -1,7 +1,5 @@
 import {
   CheckCircle2,
-  XCircle,
-  ShieldCheck,
   Soup,
   Home,
   Map,

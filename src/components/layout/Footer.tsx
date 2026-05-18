@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -89,15 +89,11 @@ const FooterLinkGroup = ({
 };
 
 export const Footer = () => {
-  const [year, setYear] = useState<number | null>(null);
+  const year = new Date().getFullYear();
   const [email, setEmail] = useState("");
 
   const { submit, reset, error, isLoading, isSuccess, isError } =
     useSubscribe();
-
-  useEffect(() => {
-    setYear(new Date().getFullYear());
-  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

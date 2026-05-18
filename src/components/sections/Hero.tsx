@@ -15,6 +15,7 @@ export const Hero = () => {
           alt="The Traveling Monk"
           fill
           priority
+          fetchPriority="high"
           sizes="(max-width: 1920px) 100vw, 1920px"
           quality={60}
           className="object-cover scale-105"
@@ -44,7 +45,7 @@ export const Hero = () => {
           </h1>
 
           <p className="font-serif text-[#FAF6EF]/80 text-lg md:text-2xl max-w-2xl mb-12 leading-relaxed italic">
-            Curated journeys through the world's most sacred landscapes,
+            Curated journeys through the world&apos;s most sacred landscapes,
             designed to challenge the body and quiet the mind.
           </p>
 
@@ -52,7 +53,7 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-5">
             <Link href="/treks">
               <Button
-                className="min-w-[200px] h-14 rounded-full bg-[#FAF6EF] text-[#2B1F14] hover:bg-white transition-all
+                className="min-w-50 h-14 rounded-full bg-[#FAF6EF] text-[#2B1F14] hover:bg-white transition-all
                 text-xs uppercase tracking-[0.3em] font-bold shadow-xl"
               >
                 Explore Paths
@@ -61,7 +62,7 @@ export const Hero = () => {
             <Link href="/about">
               <Button
                 variant="outline"
-                className="min-w-[200px] h-14 rounded-full bg-monk-stone text-white hover:bg-white/10 transition-all
+                className="min-w-50 h-14 rounded-full bg-monk-stone text-white hover:bg-white/10 transition-all
                 text-xs uppercase tracking-[0.3em] font-bold"
               >
                 Our Story

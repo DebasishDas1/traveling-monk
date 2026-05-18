@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { motion, AnimatePresence } from "framer-motion";
@@ -29,16 +29,15 @@ export function LeadForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
     reset,
-    watch,
+    control,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
   });
 
-  const userName = watch("name");
+  const userName = useWatch({ control, name: "name" });
 
-  const onSubmit = async (data: ContactFormData) => {
+  const onSubmit = async () => {
     setIsSubmitting(true);
     await new Promise((r) => setTimeout(r, 1200));
     setIsSuccess(true);

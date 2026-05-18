@@ -43,12 +43,6 @@ const ScrollExpandMedia = ({
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    setScrollProgress(0);
-    setShowContent(false);
-    setMediaFullyExpanded(false);
-  }, [mediaType]);
-
-  useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
       if (mediaFullyExpanded && e.deltaY < 0 && window.scrollY <= 5) {
         setMediaFullyExpanded(false);
@@ -192,6 +186,7 @@ const ScrollExpandMedia = ({
                 objectPosition: "center",
               }}
               priority
+              fetchPriority="high"
             />
             <div className="absolute inset-0 bg-black/10" />
           </motion.div>

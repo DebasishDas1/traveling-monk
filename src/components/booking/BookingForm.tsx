@@ -1,11 +1,13 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
+import type { FormEventHandler } from "react";
+import type { UseFormReturn } from "react-hook-form";
 import { cn } from "@/lib/utils";
 import { trekData } from "@/lib/data/treks";
 import { escapesData } from "@/lib/data/escapes";
 
-import { BookingActionState } from "@/lib/type";
+import { BookingActionState, BookingFormValues } from "@/lib/type";
 import {
   FieldWrapper,
   inputClass,
@@ -26,8 +28,8 @@ export function BookingForm({
   state,
   isPending,
 }: {
-  form: any;
-  onSubmit: any;
+  form: UseFormReturn<BookingFormValues>;
+  onSubmit: FormEventHandler<HTMLFormElement>;
   state: BookingActionState;
   isPending: boolean;
 }) {

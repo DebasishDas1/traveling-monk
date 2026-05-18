@@ -12,16 +12,15 @@ type Testimonial = {
 };
 
 export const TestimonialCarousel = ({
-  testimonials,
+  testimonials = [],
 }: {
-  testimonials: Testimonial[];
+  testimonials?: Testimonial[];
 }) => {
+  const items = testimonials;
   const [active, setActive] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  if (!testimonials?.length) return null;
-
-  const length = testimonials.length;
+  const length = items.length;
   const isSingle = length <= 1;
 
   const next = useCallback(() => {
@@ -33,6 +32,8 @@ export const TestimonialCarousel = ({
     const interval = setInterval(next, 8000);
     return () => clearInterval(interval);
   }, [isPaused, next, isSingle]);
+
+  if (!length) return null;
 
   return (
     <section

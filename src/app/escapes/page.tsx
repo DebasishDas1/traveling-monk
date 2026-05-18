@@ -45,6 +45,7 @@ export default function EscapesPage() {
             alt="Himalayan mountain trekking landscape — browse all treks"
             fill
             priority
+            fetchPriority="high"
             quality={75}
             sizes="(max-width: 768px) 768px, (max-width: 1440px) 1440px, 1920px"
             className="object-cover"

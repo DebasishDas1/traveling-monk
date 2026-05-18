@@ -48,6 +48,7 @@ export default function TreksPage() {
             alt="Himalayan mountain trekking landscape"
             fill
             priority
+            fetchPriority="high"
             quality={75}
             sizes="100vw"
             className="object-cover scale-105"
