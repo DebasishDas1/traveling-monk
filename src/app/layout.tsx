@@ -26,7 +26,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://thetravelingmonk.in"),
+  metadataBase: new URL("https://www.thetravelingmonk.in"),
   title: {
     template: "%s | The Traveling Monk",
     default: "The Traveling Monk — Premium Treks & Transformational Travel",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://thetravelingmonk.in",
+    url: "https://www.thetravelingmonk.in",
     siteName: "The Traveling Monk",
     title: "The Traveling Monk | Transformational Trekking",
     description:
@@ -118,8 +118,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "The Traveling Monk",
-    url: "https://thetravelingmonk.in",
-    logo: "https://thetravelingmonk.in/dark-logo.png",
+    url: "https://www.thetravelingmonk.in",
+    logo: "https://www.thetravelingmonk.in/dark-logo.png",
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+91-9108216171",

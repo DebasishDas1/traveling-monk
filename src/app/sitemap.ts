@@ -3,7 +3,7 @@ import { trekData } from "@/lib/data/treks";
 import { escapesData } from "@/lib/data/escapes";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://thetravelingmonk.in";
+  const baseUrl = "https://www.thetravelingmonk.in";
 
   // Dynamic trek routes
   const trekRoutes = trekData.map((trek) => ({

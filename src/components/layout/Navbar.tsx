@@ -96,18 +96,21 @@ export const Navbar = () => {
             <NavigationMenuList className="gap-2">
               {navLinks.map((link) => {
                 const isActive = isActiveLink(link.href);
+                const isLightBg = isTreksPage || isEscapePage || navScrolled;
 
                 const base =
-                  "px-5 py-2 rounded-full text-[11px] uppercase tracking-[0.3em] font-semibold transition-all duration-300";
+                  "relative px-5 py-2 rounded-full text-[11px] uppercase tracking-[0.3em] font-semibold transition-colors duration-300 block";
 
                 const inactive = cn(
                   textColor,
-                  "opacity-70 hover:opacity-100 hover:bg-white/10",
+                  "opacity-70 hover:opacity-100",
+                  isLightBg ? "hover:bg-black/5" : "hover:bg-white/10"
                 );
 
-                const active = navScrolled
-                  ? "bg-[#2B1F14] text-white shadow-sm"
-                  : "bg-white/90 text-black backdrop-blur-md shadow-md border border-black/10";
+                const active = cn(
+                  textColor,
+                  "opacity-100",
+                );
 
                 return (
                   <NavigationMenuItem key={link.name}>
@@ -116,7 +119,17 @@ export const Navbar = () => {
                         href={link.href}
                         className={cn(base, isActive ? active : inactive)}
                       >
-                        {link.name}
+                        <span className="relative z-10">{link.name}</span>
+                        {isActive && (
+                          <motion.div
+                            layoutId="navbar-active-pill"
+                            className={cn(
+                              "absolute inset-0 rounded-full",
+                              isLightBg ? "bg-black/5" : "bg-white/15"
+                            )}
+                            transition={{ type: "spring", stiffness: 400, damping: 35 }}
+                          />
+                        )}
                       </Link>
                     </NavigationMenuLink>
                   </NavigationMenuItem>

@@ -13,6 +13,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/", "/static/"],
       }
     ],
-    sitemap: "https://thetravelingmonk.in/sitemap.xml",
+    sitemap: "https://www.thetravelingmonk.in/sitemap.xml",
   };
 }

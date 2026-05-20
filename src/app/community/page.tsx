@@ -8,6 +8,7 @@ import { CommunityVoices } from "@/components/sections/CommunityVoices";
 import { PhotoMosaic } from "@/components/sections/PhotoMosaic";
 import { JoinForm } from "@/components/sections/JoinForm";
 import { InstagramStrip } from "@/components/sections/InstagramStrip";
+import { PremiumFeedback } from "@/components/sections/PremiumFeedback";
 
 export const metadata: Metadata = {
   title: "Community | The Monk Tribe — The Traveling Monk",
@@ -114,6 +115,9 @@ export default function CommunityPage() {
 
       {/* ─── VOICES / TESTIMONIALS ────────────────────────────────────── */}
       <CommunityVoices />
+
+      {/* ─── PREMIUM FEEDBACK ─────────────────────────────────────────── */}
+      <PremiumFeedback />
 
       {/* ─── INSTAGRAM STRIP ──────────────────────────────────────────── */}
       <InstagramStrip />

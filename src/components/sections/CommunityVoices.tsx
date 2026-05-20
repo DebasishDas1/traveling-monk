@@ -24,8 +24,8 @@ const voices: Voice[] = [
       "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=800",
   },
   {
-    name: "David Kumar",
-    location: "Mumbai",
+    name: "Debasish Das",
+    location: "Kolkata",
     trek: "Kashmir Great Lakes, 2023",
     quote:
       "I came for the views, but I stayed for the people. There's a special bond that forms when you're sharing a warm meal after a 10-hour trek. We're a tribe for life now.",
@@ -33,8 +33,8 @@ const voices: Voice[] = [
       "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?auto=format&fit=crop&q=80&w=800",
   },
   {
-    name: "Elena Rodriguez",
-    location: "Hyderabad",
+    name: "Manjuri Das",
+    location: "Kolkata",
     trek: "Kedarkantha, 2025",
     quote:
       "Every step was a challenge, and every challenge was a lesson. The guides didn't just lead the way — they inspired us to find our own strength. An unforgettable transformation.",

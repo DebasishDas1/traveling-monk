@@ -231,7 +231,7 @@ export default function AboutPage() {
 
               <Button className="h-16 px-14 rounded-full uppercase tracking-[0.3em] text-xs">
                 <MessageCircle className="size-5 mr-3" />
-                Connect to Sangha
+                Connect
               </Button>
             </div>
           </div>
