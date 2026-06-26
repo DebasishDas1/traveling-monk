@@ -142,7 +142,7 @@ export const TrekBookingWidget = ({ trek }: TrekBookingWidgetProps) => {
           <p className=" text-[10px] uppercase tracking-[0.2em] font-bold">
             Guiding Line
           </p>
-          <p className="text-stone-600 font-display text-xl italic">
+          <p className="text-stone-600 font-display text-xl ">
             +91 {whatsappNumber}
           </p>
           <div className="h-px bg-stone-100 w-12 mx-auto" />

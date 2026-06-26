@@ -60,7 +60,7 @@ const TrekCard = ({ trek, index }: { trek: TrekType; index: number }) => {
                   key={i}
                   className="bg-[#EADFCF] border border-[#CBB79C] 
                   text-[#4A3A2A] text-[10px] px-4 py-1.5 
-                  font-serif font-bold uppercase tracking-[0.25em] 
+                  font-bold uppercase tracking-[0.25em] 
                   rounded-full shadow-sm"
                 >
                   {item}
@@ -70,14 +70,14 @@ const TrekCard = ({ trek, index }: { trek: TrekType; index: number }) => {
 
             {/* TITLE */}
             <h3
-              className="text-[30px] text-[#2B1F14] font-serif tracking-wide leading-[1.2] mb-1 
+              className="text-[30px] text-[#2B1F14] tracking-wide leading-[1.2] mb-1 
             group-hover:text-[#5A3E28] transition-colors"
             >
               {trek.name}
             </h3>
 
             {/* REGION */}
-            <p className="text-[#7A6A58] text-[13px] font-serif italic tracking-wide mb-6">
+            <p className="text-[#7A6A58] text-[13px]  tracking-wide mb-6">
               {trek.region}
             </p>
 
@@ -116,7 +116,7 @@ const TrekCard = ({ trek, index }: { trek: TrekType; index: number }) => {
                     key={i}
                     className="bg-[#F3ECE3] border border-[#DED0BD] 
                     text-[#5C4A3D] px-3.5 py-1 rounded-full 
-                    text-[12px] font-serif italic tracking-wide"
+                    text-[12px]  tracking-wide"
                   >
                     {tag}
                   </span>
@@ -124,24 +124,22 @@ const TrekCard = ({ trek, index }: { trek: TrekType; index: number }) => {
             </div>
 
             {/* DESCRIPTION */}
-            <p className="text-[#4A3A2A] text-[14px] font-serif leading-[1.8] mb-8 line-clamp-3">
+            <p className="text-[#4A3A2A] text-[14px] leading-[1.8] mb-8 line-clamp-3">
               {trek.tagline}
             </p>
 
             {/* FOOTER */}
             <div className="flex justify-between items-end mt-auto pt-5 border-t border-dashed border-[#CBB79C]">
               <div>
-                <div className="font-serif text-[30px] text-[#2B1F14] font-bold tracking-wide">
+                <div className="text-[30px] text-[#2B1F14] font-bold tracking-wide">
                   ₹{trek.priceFrom.toLocaleString()}
                 </div>
-                <div className="text-[#7A6A58] italic text-[12px] mt-1">
-                  per soul
-                </div>
+                <div className="text-[#7A6A58]  text-[12px] mt-1">per soul</div>
               </div>
 
               <button
                 className="relative px-6 py-2.5 rounded-full text-[11px] 
-                font-serif font-bold uppercase tracking-[0.25em]
+                font-bold uppercase tracking-[0.25em]
                 border border-[#2B1F14] text-[#2B1F14]
                 overflow-hidden"
               >

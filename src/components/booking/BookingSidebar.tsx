@@ -36,9 +36,7 @@ export function BookingSidebar() {
             <p className="text-[10px] uppercase tracking-[0.18em] text-[#c4831a] font-semibold leading-none">
               The Traveling
             </p>
-            <p
-              className="text-[15px] italic text-[#f5ede0] leading-tight font-serif"
-            >
+            <p className="text-[15px]  text-[#f5ede0] leading-tight font-serif">
               Monk
             </p>
           </div>
@@ -52,7 +50,7 @@ export function BookingSidebar() {
           }}
         >
           Your path to the{" "}
-          <em className="not-italic" style={{ color: "#e8a832" }}>
+          <em className="not-" style={{ color: "#e8a832" }}>
             Himalayas
           </em>{" "}
           awaits.
@@ -62,8 +60,8 @@ export function BookingSidebar() {
           className="mt-4 text-[13px] leading-relaxed"
           style={{ color: "rgba(245,237,224,0.5)" }}
         >
-          Tell us where you want to go and we&apos;ll handle the rest. No payment
-          needed — our team will call you to confirm everything.
+          Tell us where you want to go and we&apos;ll handle the rest. No
+          payment needed — our team will call you to confirm everything.
         </p>
       </div>
 

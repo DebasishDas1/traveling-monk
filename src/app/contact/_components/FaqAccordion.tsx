@@ -14,7 +14,7 @@ export function FaqAccordion() {
       <div className="container mx-auto max-w-4xl">
         {/* Header */}
         <div className="text-center mb-20 space-y-5">
-          <h2 className="font-serif italic text-4xl md:text-5xl text-[#2B1F14]">
+          <h2 className=" text-4xl md:text-5xl text-[#2B1F14]">
             Common Questions
           </h2>
           <p className="text-[#6B5A4A] max-w-xl mx-auto text-sm leading-relaxed">
@@ -44,7 +44,7 @@ export function FaqAccordion() {
                 >
                   <span
                     className={cn(
-                      "font-serif text-[17px] leading-relaxed transition-colors duration-300",
+                      " text-[17px] leading-relaxed transition-colors duration-300",
                       isOpen
                         ? "text-[#C9A24A]"
                         : "text-[#2B1F14] group-hover:text-[#C9A24A]",

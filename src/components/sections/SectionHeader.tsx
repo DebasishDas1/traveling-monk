@@ -11,7 +11,7 @@ const SectionHeader = ({
         {subtitle}
       </span>
 
-      <h2 className="text-4xl md:text-6xl text-[#2B1F14] font-serif italic tracking-tight leading-[1.1]">
+      <h2 className="text-4xl md:text-6xl text-[#2B1F14]  tracking-tight leading-[1.1]">
         {title}
       </h2>
 
@@ -26,4 +26,3 @@ const SectionHeader = ({
 };
 
 export default SectionHeader;
-

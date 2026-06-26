@@ -75,7 +75,7 @@ export const JoinForm = () => {
             id="join-heading"
             className="font-display text-4xl md:text-6xl text-white mb-6 leading-tight"
           >
-            Become a <em className="italic text-saffron">Traveling Monk.</em>
+            Become a <em className=" text-saffron">Traveling Monk.</em>
           </h2>
 
           <p className="text-white/60 text-sm md:text-base leading-relaxed mb-10 max-w-xl mx-auto">
@@ -90,7 +90,7 @@ export const JoinForm = () => {
               aria-live="polite"
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="bg-saffron/10 border border-saffron/30 rounded-2xl px-6 py-5 text-saffron font-display italic text-lg"
+              className="bg-saffron/10 border border-saffron/30 rounded-2xl px-6 py-5 text-saffron font-display  text-lg"
             >
               Welcome to the tribe. Your trail awaits. 🏔️
             </motion.div>

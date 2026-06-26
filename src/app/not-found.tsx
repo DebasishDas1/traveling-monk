@@ -16,13 +16,13 @@ export default function NotFound() {
               <Compass className="w-10 h-10 text-saffron" />
             </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-display italic text-forest leading-tight">
+          <h1 className="text-5xl md:text-7xl font-display  text-forest leading-tight">
             The path is not outside. <br />
             <span className="text-saffron">It never was.</span>
           </h1>
           <p className="text-xl text-forest/60 font-sans font-light max-w-lg mx-auto">
-            You&apos;ve reached a trail that doesn&apos;t exist yet. Perhaps the journey
-            you&apos;re looking for is elsewhere.
+            You&apos;ve reached a trail that doesn&apos;t exist yet. Perhaps the
+            journey you&apos;re looking for is elsewhere.
           </p>
         </div>
 

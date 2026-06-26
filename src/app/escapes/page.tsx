@@ -53,7 +53,7 @@ export default function EscapesPage() {
           <div className="absolute inset-0 bg-forest/50" />
         </div>
         <div className="relative z-10 text-center px-6 max-w-4xl">
-          <h1 className="font-display italic text-6xl md:text-8xl text-white leading-[1.1] mb-6 drop-shadow-2xl">
+          <h1 className="font-display  text-6xl md:text-8xl text-white leading-[1.1] mb-6 drop-shadow-2xl">
             Rest is also a journey.
           </h1>
 

@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Suspense } from "react";
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Geist } from 'next/font/google'
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/layout/Navbar";
@@ -10,20 +10,11 @@ import { BookingDrawer } from "@/components/booking/BookingDrawer";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { instagramLink, facebookLink, youtubeLink } from "@/lib/social-links";
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-body",
-  weight: ["300", "400", "500", "700"],
-  display: "swap",
-});
+const geist = Geist({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.thetravelingmonk.in"),
@@ -138,8 +129,7 @@ export default function RootLayout({
       className={cn(
         "h-full scroll-smooth",
         "antialiased",
-        cormorant.variable,
-        dmSans.variable,
+        geist.variable,
       )}
     >
       <body className="min-h-full flex flex-col font-body bg-parchment text-forest">

@@ -44,7 +44,7 @@ const StatItem = ({
       <div className="absolute left-0 top-1/2 -translate-y-1/2 h-16 w-px bg-linear-to-b from-transparent via-[#CBB79C]/40 to-transparent hidden md:block group-first:hidden" />
 
       {/* Number */}
-      <div className="font-serif italic text-5xl md:text-7xl text-[#2B1F14] tracking-tight">
+      <div className="text-5xl md:text-7xl text-[#2B1F14] tracking-tight">
         {count}
         <span className="text-[#C9A24A] ml-1">{suffix}</span>
       </div>

@@ -58,12 +58,12 @@ export default function TreksPage() {
         </div>
 
         <div className="relative z-10 text-center px-6 max-w-4xl mt-12">
-          <h1 className="font-serif italic text-6xl md:text-8xl text-white leading-tight mb-6">
+          <h1 className="  text-6xl md:text-8xl text-white leading-tight mb-6">
             <span className="sr-only">Himalayan Treks — </span>
             Find your trail.
           </h1>
 
-          <p className="font-serif text-white/80 text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto drop-shadow-md">
+          <p className=" text-white/80 text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto drop-shadow-md">
             Curated Himalayan trekking expeditions in Himachal Pradesh and
             Uttarakhand — beginner to advanced.
           </p>

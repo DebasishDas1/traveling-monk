@@ -46,23 +46,15 @@ const CTABanner = dynamic(() =>
 export default function HomePage() {
   return (
     <main className="min-h-screen">
-      {/* 🏔️ Above the fold: Priority loading */}
       <Hero />
-
-      {/* 🗺️ Below the fold: Lazy loading */}
       <StatsStrip />
-      
       <FeaturedTreks />
-
       <HandWrittenTitle
         title="The path"
         subtitle="is not outside. It never was."
       />
-
       <TestimonialCarousel testimonials={dummyTestimonials} />
-
       <HowItWorks />
-
       <CTABanner />
     </main>
   );

@@ -90,7 +90,7 @@ const VoiceCard = ({ voice, index }: { voice: Voice; index: number }) => (
 
     {/* Quote body */}
     <div className="flex flex-col flex-1 p-7">
-      <blockquote className="text-forest/85 text-[15px] leading-relaxed font-serif italic flex-1">
+      <blockquote className="text-forest/85 text-[15px] leading-relaxed   flex-1">
         &ldquo;{voice.quote}&rdquo;
       </blockquote>
 
@@ -123,7 +123,7 @@ export const CommunityVoices = () => (
             className="font-display text-5xl md:text-6xl text-forest leading-[1.05]"
           >
             Shared journeys,{" "}
-            <em className="text-monk-brown-warm not-italic">unified souls.</em>
+            <em className="text-monk-brown-warm not-">unified souls.</em>
           </h2>
         </div>
 

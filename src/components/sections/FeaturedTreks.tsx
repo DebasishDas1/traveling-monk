@@ -65,7 +65,7 @@ export const FeaturedTreks = () => {
         <div className="mt-28 text-center">
           <Link
             href="/treks"
-            className="group inline-flex items-center gap-4 text-[#2B1F14] font-serif font-bold italic tracking-[0.2em] text-sm hover:text-[#8C6B4A] transition-all"
+            className="group inline-flex items-center gap-4 text-[#2B1F14] font-bold  tracking-[0.2em] text-sm hover:text-[#8C6B4A] transition-all"
           >
             <span className="relative">
               Explore more paths

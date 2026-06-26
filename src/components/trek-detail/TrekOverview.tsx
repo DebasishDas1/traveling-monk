@@ -18,9 +18,7 @@ export const TrekOverview = ({ trek }: TrekOverviewProps) => {
               Altitude
             </span>
           </div>
-          <p className="font-display text-2xl text-forest italic">
-            {trek.altitude}
-          </p>
+          <p className="font-display text-2xl text-forest ">{trek.altitude}</p>
         </div>
 
         <div className="space-y-2">
@@ -30,7 +28,7 @@ export const TrekOverview = ({ trek }: TrekOverviewProps) => {
               Difficulty
             </span>
           </div>
-          <p className="font-display text-2xl text-forest italic">
+          <p className="font-display text-2xl text-forest ">
             {trek.difficulty}
           </p>
         </div>
@@ -42,7 +40,7 @@ export const TrekOverview = ({ trek }: TrekOverviewProps) => {
               Group Size
             </span>
           </div>
-          <p className="font-display text-2xl text-forest italic">
+          <p className="font-display text-2xl text-forest ">
             Max {trek.maxGroupSize}
           </p>
         </div>
@@ -54,9 +52,7 @@ export const TrekOverview = ({ trek }: TrekOverviewProps) => {
               Next Date
             </span>
           </div>
-          <p className="font-display text-2xl text-forest italic">
-            {trek.nextDate}
-          </p>
+          <p className="font-display text-2xl text-forest ">{trek.nextDate}</p>
         </div>
       </div>
 
@@ -67,7 +63,7 @@ export const TrekOverview = ({ trek }: TrekOverviewProps) => {
             <span className="text-saffron text-[10px] uppercase tracking-[0.5em] font-black block">
               The Calling
             </span>
-            <h2 className="font-display text-4xl md:text-5xl text-forest italic leading-tight">
+            <h2 className="font-display text-4xl md:text-5xl text-forest  leading-tight">
               Ancient trails, <br /> modern awakening.
             </h2>
           </div>
@@ -78,7 +74,7 @@ export const TrekOverview = ({ trek }: TrekOverviewProps) => {
                 key={i}
                 className={cn(
                   i === 0 &&
-                    "first-letter:text-6xl first-letter:font-display first-letter:italic first-letter:float-left first-letter:mr-3 first-letter:text-forest first-letter:mt-1",
+                    "first-letter:text-6xl first-letter:font-display first-letter: first-letter:float-left first-letter:mr-3 first-letter:text-forest first-letter:mt-1",
                 )}
               >
                 {para}
@@ -87,7 +83,7 @@ export const TrekOverview = ({ trek }: TrekOverviewProps) => {
           </div>
 
           {/* Highlights Section */}
-          <h2 className="font-display text-4xl md:text-5xl text-forest italic">
+          <h2 className="font-display text-4xl md:text-5xl text-forest ">
             Why this trek?
           </h2>
 
@@ -106,7 +102,7 @@ export const TrekOverview = ({ trek }: TrekOverviewProps) => {
         {/* 🌿 Atmosphere Details */}
         <div className="space-y-10 bg-forest/5 p-8 rounded-[2.5rem] border border-forest/10 self-start">
           <div className="space-y-6">
-            <h4 className="font-display text-xl text-forest italic border-b border-forest/10 pb-4">
+            <h4 className="font-display text-xl text-forest  border-b border-forest/10 pb-4">
               Vibe & Spirit
             </h4>
 

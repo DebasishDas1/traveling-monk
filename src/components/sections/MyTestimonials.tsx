@@ -15,7 +15,7 @@ export const MyTestimonials = ({ testimonials }: MyTestimonialsProps) => {
           Voices of the Path
         </span>
 
-        <h2 className="font-display text-4xl md:text-5xl text-[#2B1F14] italic">
+        <h2 className="font-display text-4xl md:text-5xl text-[#2B1F14] ">
           Reflections from Fellow Travellers
         </h2>
 
@@ -60,7 +60,7 @@ export const MyTestimonials = ({ testimonials }: MyTestimonialsProps) => {
               </div>
 
               {/* 💬 Quote */}
-              <p className="relative text-[#3E2F22] italic leading-[1.9] font-serif text-xl md:text-2xl mb-10">
+              <p className="relative text-[#3E2F22]  leading-[1.9] text-xl md:text-2xl mb-10">
                 “{t.quote}”
               </p>
 
@@ -74,7 +74,7 @@ export const MyTestimonials = ({ testimonials }: MyTestimonialsProps) => {
                 </Avatar>
 
                 <div>
-                  <p className="font-serif font-bold text-[#2B1F14] text-lg tracking-wide">
+                  <p className="font-bold text-[#2B1F14] text-lg tracking-wide">
                     {t.name}
                   </p>
                   <p className="text-[11px] uppercase tracking-[0.3em] text-[#7A6A58]">

@@ -20,7 +20,7 @@ export default function Error({
     <div className="min-h-screen flex items-center justify-center bg-parchment px-6 py-24">
       <div className="max-w-md w-full text-center space-y-8">
         <div className="relative inline-block">
-          <div className="text-[120px] font-display italic text-forest/5 leading-none select-none">
+          <div className="text-[120px] font-display  text-forest/5 leading-none select-none">
             Oops
           </div>
           <div className="absolute inset-0 flex items-center justify-center">
@@ -31,7 +31,7 @@ export default function Error({
         </div>
 
         <div className="space-y-4">
-          <h1 className="text-3xl font-display italic text-forest">
+          <h1 className="text-3xl font-display  text-forest">
             A small pebble in the path
           </h1>
           <p className="text-forest/60 font-sans font-light leading-relaxed">

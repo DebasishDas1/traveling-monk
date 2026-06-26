@@ -40,31 +40,39 @@ export const EscapeBookingWidget = ({ escape }: EscapeBookingWidgetProps) => {
             <p className="text-white/40 text-[10px] uppercase tracking-[0.4em] font-bold">
               Exchange for Value
             </p>
-            
+
             <div className="space-y-3">
               <div className="flex items-center justify-between p-4 bg-white/5 rounded-2xl border border-white/5">
                 <div>
-                  <p className="text-[9px] text-white/30 uppercase tracking-widest mb-0.5">Triple Sharing</p>
+                  <p className="text-[9px] text-white/30 uppercase tracking-widest mb-0.5">
+                    Triple Sharing
+                  </p>
                   <div className="flex items-baseline gap-1">
                     <span className="font-display text-2xl text-saffron">
                       ₹{escape.price.triple.toLocaleString()}
                     </span>
-                    <span className="text-[10px] text-white/20 font-light">/pp</span>
+                    <span className="text-[10px] text-white/20 font-light">
+                      /pp
+                    </span>
                   </div>
                 </div>
                 <div className="h-8 w-px bg-white/5" />
                 <div>
-                  <p className="text-[9px] text-white/30 uppercase tracking-widest mb-0.5">Double Sharing</p>
+                  <p className="text-[9px] text-white/30 uppercase tracking-widest mb-0.5">
+                    Double Sharing
+                  </p>
                   <div className="flex items-baseline gap-1">
                     <span className="font-display text-2xl text-saffron">
                       ₹{escape.price.double.toLocaleString()}
                     </span>
-                    <span className="text-[10px] text-white/20 font-light">/pp</span>
+                    <span className="text-[10px] text-white/20 font-light">
+                      /pp
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
-            
+
             <p className="text-white/30 text-[9px] uppercase tracking-widest font-bold">
               All inclusive · No hidden fees
             </p>
@@ -73,13 +81,11 @@ export const EscapeBookingWidget = ({ escape }: EscapeBookingWidgetProps) => {
           <div className="space-y-6">
             {/* Date */}
             <div className="space-y-3">
-              <label
-                className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/40"
-              >
+              <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/40">
                 Availability
               </label>
 
-              <div className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3.5 text-sm text-white/80 italic">
+              <div className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3.5 text-sm text-white/80 ">
                 Available on Request
               </div>
             </div>
@@ -138,7 +144,7 @@ export const EscapeBookingWidget = ({ escape }: EscapeBookingWidgetProps) => {
           <p className=" text-[10px] uppercase tracking-[0.2em] font-bold">
             Guiding Line
           </p>
-          <p className="text-stone-600 font-display text-xl italic">
+          <p className="text-stone-600 font-display text-xl ">
             +91 {whatsappNumber}
           </p>
           <div className="h-px bg-stone-100 w-12 mx-auto" />

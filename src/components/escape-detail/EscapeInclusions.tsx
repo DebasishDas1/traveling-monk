@@ -20,9 +20,18 @@ export const EscapeInclusions = ({
   // Map strings to icons for a better look
   const getIcon = (text: string) => {
     const t = text.toLowerCase();
-    if (t.includes("stay") || t.includes("accommodation") || t.includes("hotel"))
+    if (
+      t.includes("stay") ||
+      t.includes("accommodation") ||
+      t.includes("hotel")
+    )
       return <Home className="size-4" />;
-    if (t.includes("breakfast") || t.includes("dinner") || t.includes("meal") || t.includes("food"))
+    if (
+      t.includes("breakfast") ||
+      t.includes("dinner") ||
+      t.includes("meal") ||
+      t.includes("food")
+    )
       return <Soup className="size-4" />;
     if (t.includes("transport") || t.includes("cab") || t.includes("travel"))
       return <Car className="size-4" />;
@@ -44,7 +53,7 @@ export const EscapeInclusions = ({
             <span className="text-forest text-[10px] uppercase tracking-[0.4em] font-black block">
               Provisions
             </span>
-            <h3 className="font-display text-3xl text-forest italic">
+            <h3 className="font-display text-3xl text-forest ">
               What&apos;s Included
             </h3>
           </div>
@@ -74,7 +83,9 @@ export const EscapeInclusions = ({
             <span className="text-[10px] uppercase tracking-[0.4em] font-black block">
               Responsibility
             </span>
-            <h3 className="font-display text-3xl italic text-stone-600">What&apos;s Excluded</h3>
+            <h3 className="font-display text-3xl  text-stone-600">
+              What&apos;s Excluded
+            </h3>
           </div>
 
           <ul className="space-y-6">

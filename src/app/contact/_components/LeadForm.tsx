@@ -26,12 +26,7 @@ export function LeadForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-    control,
-  } = useForm<ContactFormData>({
+  const { register, handleSubmit, reset, control } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
   });
 
@@ -74,9 +69,7 @@ export function LeadForm() {
               >
                 {/* Header */}
                 <div className="text-center space-y-4">
-                  <h2 className="font-serif italic text-4xl text-[#2B1F14]">
-                    Plan your trek
-                  </h2>
+                  <h2 className="  text-4xl text-[#2B1F14]">Plan your trek</h2>
                   <p className="text-[#6B5A4A] text-sm">
                     Tell us a little about your journey.
                   </p>
@@ -169,7 +162,7 @@ export function LeadForm() {
                   <CheckCircle2 className="size-10 text-[#C9A24A]" />
                 </div>
 
-                <h2 className="font-serif italic text-3xl text-[#2B1F14]">
+                <h2 className="  text-3xl text-[#2B1F14]">
                   Thank you{userName ? `, ${userName}` : ""}.
                 </h2>
 

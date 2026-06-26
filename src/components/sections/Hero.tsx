@@ -32,19 +32,19 @@ export const Hero = () => {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col items-center"
         >
-          <div className="inline-flex items-center px-5 py-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm mb-10">
-            <span className="text-[10px] uppercase tracking-[0.4em] text-[#EADBC8] font-semibold">
+          <div className="inline-flex items-center px-5 py-2 rounded-full bg-white/5 mb-10">
+            <span className="text-[10px] uppercase tracking-[0.4em] text-white font-semibold">
               Premium Himalayan Expeditions
             </span>
           </div>
 
-          <h1 className="font-serif italic text-6xl md:text-9xl text-white leading-[1.05] mb-8 drop-shadow-2xl">
+          <h1 className=" text-6xl md:text-9xl text-white leading-[1.05] mb-8 drop-shadow-2xl">
             Walk until you
             <br />
             find yourself.
           </h1>
 
-          <p className="font-serif text-[#FAF6EF]/80 text-lg md:text-2xl max-w-2xl mb-12 leading-relaxed italic">
+          <p className="text-white/80 text-lg md:text-2xl max-w-2xl mb-12 leading-relaxed ">
             Curated journeys through the world&apos;s most sacred landscapes,
             designed to challenge the body and quiet the mind.
           </p>
@@ -52,18 +52,14 @@ export const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-5">
             <Link href="/treks">
-              <Button
-                className="min-w-50 h-14 rounded-full bg-[#FAF6EF] text-[#2B1F14] hover:bg-white transition-all
-                text-xs uppercase tracking-[0.3em] font-bold shadow-xl"
-              >
+              <Button className="min-w-50 h-14 rounded-full transition-all">
                 Explore Paths
               </Button>
             </Link>
             <Link href="/about">
               <Button
                 variant="outline"
-                className="min-w-50 h-14 rounded-full bg-monk-stone text-white hover:bg-white/10 transition-all
-                text-xs uppercase tracking-[0.3em] font-bold"
+                className="min-w-50 h-14 rounded-full transition-all"
               >
                 Our Story
               </Button>
@@ -71,19 +67,6 @@ export const Hero = () => {
           </div>
         </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center"
-      >
-        <div className="w-px h-16 bg-linear-to-b from-white/0 via-white/40 to-white/0" />
-        <span className="text-white/40 text-[10px] uppercase tracking-[0.4em] mt-4 font-medium">
-          Scroll
-        </span>
-      </motion.div>
     </section>
   );
 };

@@ -29,7 +29,7 @@ function HandWrittenTitle({
 
         {/* Quote */}
         <motion.p
-          className="font-display italic text-4xl md:text-6xl lg:text-7xl text-parchment-light leading-[1.15] tracking-tight"
+          className="font-display  text-4xl md:text-6xl lg:text-7xl text-parchment-light leading-[1.15] tracking-tight"
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

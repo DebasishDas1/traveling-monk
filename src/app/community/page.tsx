@@ -71,9 +71,9 @@ export default function CommunityPage() {
             </span>
           </div>
 
-          <h1 className="font-display text-6xl sm:text-7xl md:text-9xl italic leading-[0.9] mb-8 drop-shadow-lg">
+          <h1 className="font-display text-6xl sm:text-7xl md:text-9xl  leading-[0.9] mb-8 drop-shadow-lg">
             The wild is better <br className="hidden sm:block" />
-            <span className="text-saffron not-italic">shared.</span>
+            <span className="text-saffron not-">shared.</span>
           </h1>
           {/* SEO subtitle — visible and keyword-rich */}
           <p className="font-sans font-light text-white/75 text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-12">

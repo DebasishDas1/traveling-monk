@@ -18,7 +18,7 @@ export const EscapeOverview = ({ escape }: EscapeOverviewProps) => {
               Duration
             </span>
           </div>
-          <p className="font-display text-2xl text-forest italic">
+          <p className="font-display text-2xl text-forest ">
             {escape.duration}
           </p>
         </div>
@@ -30,9 +30,7 @@ export const EscapeOverview = ({ escape }: EscapeOverviewProps) => {
               Pickup Point
             </span>
           </div>
-          <p className="font-display text-2xl text-forest italic">
-            {escape.pickup}
-          </p>
+          <p className="font-display text-2xl text-forest ">{escape.pickup}</p>
         </div>
 
         <div className="space-y-2">
@@ -42,7 +40,7 @@ export const EscapeOverview = ({ escape }: EscapeOverviewProps) => {
               Region
             </span>
           </div>
-          <p className="font-display text-2xl text-forest italic">
+          <p className="font-display text-2xl text-forest ">
             {escape.location.split(",")[0]}
           </p>
         </div>
@@ -55,7 +53,7 @@ export const EscapeOverview = ({ escape }: EscapeOverviewProps) => {
             <span className="text-saffron text-[10px] uppercase tracking-[0.5em] font-black block">
               The Experience
             </span>
-            <h2 className="font-display text-4xl md:text-5xl text-forest italic leading-tight">
+            <h2 className="font-display text-4xl md:text-5xl text-forest  leading-tight">
               A journey beyond <br /> the ordinary.
             </h2>
           </div>
@@ -66,7 +64,7 @@ export const EscapeOverview = ({ escape }: EscapeOverviewProps) => {
                 key={i}
                 className={cn(
                   i === 0 &&
-                    "first-letter:text-6xl first-letter:font-display first-letter:italic first-letter:float-left first-letter:mr-3 first-letter:text-forest first-letter:mt-1",
+                    "first-letter:text-6xl first-letter:font-display first-letter: first-letter:float-left first-letter:mr-3 first-letter:text-forest first-letter:mt-1",
                 )}
               >
                 {para}
@@ -75,7 +73,7 @@ export const EscapeOverview = ({ escape }: EscapeOverviewProps) => {
           </div>
 
           {/* Highlights Section */}
-          <h2 className="font-display text-4xl md:text-5xl text-forest italic">
+          <h2 className="font-display text-4xl md:text-5xl text-forest ">
             Escape Highlights
           </h2>
 
@@ -94,7 +92,7 @@ export const EscapeOverview = ({ escape }: EscapeOverviewProps) => {
         {/* 🌿 Atmosphere Details */}
         <div className="space-y-10 bg-forest/5 p-8 rounded-[2.5rem] border border-forest/10 self-start">
           <div className="space-y-6">
-            <h4 className="font-display text-xl text-forest italic border-b border-forest/10 pb-4">
+            <h4 className="font-display text-xl text-forest  border-b border-forest/10 pb-4">
               Soul & Spirit
             </h4>
 
@@ -108,7 +106,8 @@ export const EscapeOverview = ({ escape }: EscapeOverviewProps) => {
                     The Vibe
                   </p>
                   <p className="text-sm text-stone-500 font-light mt-1">
-                    Relaxed, exploratory, and deeply immersive nature connection.
+                    Relaxed, exploratory, and deeply immersive nature
+                    connection.
                   </p>
                 </div>
               </div>

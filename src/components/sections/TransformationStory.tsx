@@ -40,9 +40,9 @@ export const TransformationStory = () => {
                 </p>
               </div>
 
-              <blockquote className="font-display italic text-saffron text-2xl md:text-3xl border-l-2 border-saffron pl-8 mb-10">
-                &quot;The mountains are calling and I must go — not to see, but to
-                be.&quot;
+              <blockquote className="font-display  text-saffron text-2xl md:text-3xl border-l-2 border-saffron pl-8 mb-10">
+                &quot;The mountains are calling and I must go — not to see, but
+                to be.&quot;
               </blockquote>
 
               <Button

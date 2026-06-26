@@ -108,7 +108,7 @@ export const EscapeCard = ({
               {name}
             </h3>
 
-            <p className="mt-2 text-lg italic text-[#7A6857]">{location}</p>
+            <p className="mt-2 text-lg  text-[#7A6857]">{location}</p>
           </div>
 
           {/* highlights */}
@@ -119,7 +119,7 @@ export const EscapeCard = ({
                 className="
                   rounded-full bg-[#EFE4D3]
                   px-4 py-2
-                  text-sm italic text-[#6A5643]
+                  text-sm  text-[#6A5643]
                 "
               >
                 {item}
@@ -145,7 +145,7 @@ export const EscapeCard = ({
                 ₹{price.double.toLocaleString("en-IN")}
               </div>
 
-              <p className="mt-1 text-sm italic text-[#7A6857]">per person</p>
+              <p className="mt-1 text-sm  text-[#7A6857]">per person</p>
             </div>
 
             <div

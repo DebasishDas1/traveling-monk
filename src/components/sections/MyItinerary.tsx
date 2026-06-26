@@ -19,12 +19,12 @@ export const MyItinerary = ({
             The Daily Passage
           </span>
 
-          <h2 className="font-display text-3xl md:text-5xl text-[#2B1F14] italic">
+          <h2 className="font-display text-3xl md:text-5xl text-[#2B1F14] ">
             The Experience Arc
           </h2>
         </div>
 
-        <p className="font-serif text-lg md:text-xl italic text-[#5A4A3B] max-w-xs md:text-right">
+        <p className="text-lg md:text-xl  text-[#5A4A3B] max-w-xs md:text-right">
           A rhythmic journey through silence and elevation.
         </p>
       </div>
@@ -81,7 +81,7 @@ export const MyItinerary = ({
                   Day
                 </span>
 
-                <span className="font-serif text-xl md:text-3xl font-bold text-[#2B1F14]">
+                <span className="text-xl md:text-3xl font-bold text-[#2B1F14]">
                   {day.day}
                 </span>
               </div>
@@ -115,7 +115,7 @@ export const MyItinerary = ({
           shadow-[0_0_20px_rgba(201,162,74,0.35)]"
         />
 
-        <h3 className="font-serif text-2xl md:text-3xl italic text-[#2B1F14]">
+        <h3 className="text-2xl md:text-3xl  text-[#2B1F14]">
           The journey completes, but something remains.
         </h3>
 

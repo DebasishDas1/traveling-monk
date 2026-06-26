@@ -54,15 +54,11 @@ export const HowItWorks = () => {
                 {/* inner glow */}
                 <div className="absolute inset-2 rounded-full border border-[#E0D0BA]/40" />
 
-                <span className="font-serif italic text-4xl text-[#2B1F14]">
-                  {index + 1}
-                </span>
+                <span className=" text-4xl text-[#2B1F14]">{index + 1}</span>
               </div>
 
-              <h3 className="font-serif text-2xl text-[#2B1F14] mb-5">
-                {step.title}
-              </h3>
-              <p className="font-serif italic text-[#6B5A4A] text-sm leading-relaxed max-w-[220px]">
+              <h3 className="text-2xl text-[#2B1F14] mb-5">{step.title}</h3>
+              <p className=" text-[#6B5A4A] text-sm leading-relaxed max-w-[220px]">
                 {step.description}
               </p>
             </motion.div>

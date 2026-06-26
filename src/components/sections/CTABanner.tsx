@@ -23,11 +23,11 @@ export const CTABanner = () => {
       {/* ✍️ Content */}
       <div className="relative z-10 container mx-auto px-6 text-center max-w-4xl">
         <div className="space-y-10">
-          <h2 className="text-5xl md:text-8xl text-white font-serif italic leading-tight drop-shadow-2xl">
+          <h2 className="text-5xl md:text-8xl text-white   leading-tight drop-shadow-2xl">
             Ready to find your path?
           </h2>
 
-          <p className="text-white/80 text-lg md:text-2xl font-serif italic max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+          <p className="text-white/80 text-lg md:text-2xl   max-w-2xl mx-auto leading-relaxed drop-shadow-md">
             Join our upcoming seasonal treks and begin your journey of
             transformation. Small groups. Deep silence.
           </p>
@@ -57,4 +57,3 @@ export const CTABanner = () => {
     </section>
   );
 };
-

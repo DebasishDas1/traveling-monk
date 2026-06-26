@@ -115,11 +115,11 @@ export const Footer = () => {
             <div className="space-y-6">
               <Link
                 href="/"
-                className="inline-block font-serif text-3xl italic tracking-tight text-[#FAF6EF] hover:text-[#C9A24A] transition-colors"
+                className="inline-block  text-3xl  tracking-tight text-[#FAF6EF] hover:text-[#C9A24A] transition-colors"
               >
                 The Traveling Monk
               </Link>
-              <p className="max-w-xs font-serif text-xl italic leading-relaxed text-[#FAF6EF]/40">
+              <p className="max-w-xs  text-xl  leading-relaxed text-[#FAF6EF]/40">
                 “Walk until you find yourself.”
               </p>
 
@@ -155,7 +155,7 @@ export const Footer = () => {
               </h4>
 
               <div className="space-y-4">
-                <p className="text-lg font-serif italic text-[#FAF6EF]/60">
+                <p className="text-lg   text-[#FAF6EF]/60">
                   Receive our mountain journals and seasonal trek invitations.
                 </p>
 
@@ -190,7 +190,7 @@ export const Footer = () => {
                   </div>
 
                   {isError && (
-                    <p className="absolute -bottom-6 left-0 text-[10px] italic text-rose-400">
+                    <p className="absolute -bottom-6 left-0 text-[10px]  text-rose-400">
                       {error || "Something went wrong."}
                     </p>
                   )}
@@ -202,7 +202,7 @@ export const Footer = () => {
               <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#C9A24A]/60">
                 Base Camp
               </h4>
-              <p className="text-sm font-serif italic text-[#FAF6EF]/40">
+              <p className="text-sm   text-[#FAF6EF]/40">
                 Based in India · Guiding expeditions through sacred Himalayan
                 landscapes.
               </p>
@@ -228,7 +228,7 @@ export const Footer = () => {
             </Link>
           </div>
 
-          <span className="italic font-serif text-sm tracking-wide lowercase opacity-50">
+          <span className="  text-sm tracking-wide lowercase opacity-50">
             made with purpose in the Himalayas
           </span>
         </div>

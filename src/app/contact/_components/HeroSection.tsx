@@ -17,7 +17,7 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-forest/60" />
       </div>
       <div className="relative z-10 text-center px-6">
-        <h1 className="font-display italic text-5xl md:text-7xl text-white drop-shadow-2xl">
+        <h1 className="font-display  text-5xl md:text-7xl text-white drop-shadow-2xl">
           Let&apos;s talk.
         </h1>
       </div>

@@ -78,7 +78,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-[#7a5a3a]/20 mix-blend-multiply" />
         </div>
 
-        <h1 className="relative z-10 font-serif italic text-6xl md:text-8xl text-white text-center px-6 leading-tight">
+        <h1 className="relative z-10  text-6xl md:text-8xl text-white text-center px-6 leading-tight">
           Every monk has an origin story.
         </h1>
       </section>
@@ -87,7 +87,7 @@ export default function AboutPage() {
       <section className="py-32 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center max-w-2xl mx-auto mb-28">
-            <h2 className="font-serif text-5xl md:text-6xl italic text-[#2B1F14]">
+            <h2 className="text-5xl md:text-6xl  text-[#2B1F14]">
               We started as trekkers
             </h2>
             <p className="text-[#6B5A4A] mt-6 leading-relaxed">
@@ -125,7 +125,7 @@ export default function AboutPage() {
                   {/* CONTENT */}
                   <div className="space-y-8">
                     <div>
-                      <h3 className="font-serif text-3xl md:text-4xl text-[#2B1F14]">
+                      <h3 className="text-3xl md:text-4xl text-[#2B1F14]">
                         {f.name}
                       </h3>
                       <p className="text-[11px] uppercase tracking-[0.35em] text-[#8C6B4A] mt-3 font-semibold">
@@ -137,7 +137,7 @@ export default function AboutPage() {
                       {f.intro}
                     </p>
 
-                    <p className="text-[12px] italic text-[#7A6A58]">
+                    <p className="text-[12px]  text-[#7A6A58]">
                       Responsible for — {f.responsibility}
                     </p>
 
@@ -221,7 +221,7 @@ export default function AboutPage() {
             shadow-[0_40px_120px_rgba(0,0,0,0.5)]"
           >
             <div className="relative z-10 space-y-10 max-w-2xl mx-auto">
-              <h2 className="font-serif text-5xl md:text-7xl text-white italic">
+              <h2 className="text-5xl md:text-7xl text-white ">
                 Join 600+ Himalayan Trekkers
               </h2>
 

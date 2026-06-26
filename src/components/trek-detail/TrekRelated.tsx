@@ -16,7 +16,7 @@ export const TrekRelated = ({ currentTrekSlug }: TrekRelatedProps) => {
     <section className="relative py-16 md:py-24 space-y-14">
       {/* HEADER */}
       <div className="flex items-center gap-6">
-        <h2 className="font-serif text-3xl md:text-4xl italic text-[#2B1F14] shrink-0">
+        <h2 className="text-3xl md:text-4xl  text-[#2B1F14] shrink-0">
           Other Paths
         </h2>
 

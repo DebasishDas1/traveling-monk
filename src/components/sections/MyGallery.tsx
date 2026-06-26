@@ -14,7 +14,7 @@ export const MyGallery = ({ gallery }: MyGalleryProps) => {
     <section className="relative space-y-14 py-16 md:py-24">
       {/* ===== HEADER ===== */}
       <div className="flex items-center gap-6">
-        <h2 className="font-display text-4xl md:text-5xl italic text-[#2B1F14] shrink-0">
+        <h2 className="font-display text-4xl md:text-5xl  text-[#2B1F14] shrink-0">
           Captured Stillness
         </h2>
 

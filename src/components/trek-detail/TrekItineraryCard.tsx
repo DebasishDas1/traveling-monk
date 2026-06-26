@@ -63,7 +63,7 @@ const TrekItineraryCard = ({
       <div className="space-y-6 px-6 py-7 md:px-8 md:py-8">
         {/* Title + Route */}
         <div className="space-y-3">
-          <h3 className="font-display text-3xl italic leading-tight text-[#1f3427] font-bold tracking-wide">
+          <h3 className="font-display text-3xl  leading-tight text-[#1f3427] font-bold tracking-wide">
             {title}
           </h3>
 

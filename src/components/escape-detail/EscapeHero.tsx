@@ -87,7 +87,7 @@ export const EscapeHero = ({ escape }: EscapeHeroProps) => {
             {/* Saffron accent rule */}
             <div className="w-16 md:w-20 h-[3px] bg-saffron mb-4 md:mb-8 rounded-full" />
             <div className="space-y-4 md:space-y-6">
-              <h1 className="text-white font-display text-5xl md:text-8xl italic leading-[1.05] [text-shadow:0_4px_24px_rgb(0_0_0/60%)]">
+              <h1 className="text-white font-display text-5xl md:text-8xl  leading-[1.05] [text-shadow:0_4px_24px_rgb(0_0_0/60%)]">
                 {escape.name}
               </h1>
               <div className="flex flex-wrap items-center gap-4 md:gap-6 text-white/80 text-[11px] md:text-sm font-light tracking-[0.25em] uppercase pt-2 [text-shadow:0_2px_8px_rgb(0_0_0/80%)]">

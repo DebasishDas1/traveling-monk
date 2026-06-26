@@ -8,7 +8,7 @@ export const TrekContact = () => {
     <section className="relative py-8 md:py-12 px-4 md:px-0">
       <div className="space-y-10 max-w-3xl">
         <div className="space-y-5">
-          <h3 className="font-serif text-2xl md:text-4xl text-[#2B1F14] italic leading-snug">
+          <h3 className="text-2xl md:text-4xl text-[#2B1F14]  leading-snug">
             Still have questions about this journey?
           </h3>
 

@@ -13,9 +13,9 @@ interface TrekInclusionsProps {
   exclusions?: string[];
 }
 
-export const TrekInclusions = ({ 
-  inclusions: propsInclusions, 
-  exclusions: propsExclusions 
+export const TrekInclusions = ({
+  inclusions: propsInclusions,
+  exclusions: propsExclusions,
 }: TrekInclusionsProps) => {
   const defaultInclusions = [
     { text: "Expert Monk Guides", icon: <Map className="size-4" /> },
@@ -38,8 +38,11 @@ export const TrekInclusions = ({
     "GST Charges",
   ];
 
-  const inclusions = propsInclusions 
-    ? propsInclusions.map(text => ({ text, icon: <CheckCircle2 className="size-4" /> }))
+  const inclusions = propsInclusions
+    ? propsInclusions.map((text) => ({
+        text,
+        icon: <CheckCircle2 className="size-4" />,
+      }))
     : defaultInclusions;
 
   const exclusions = propsExclusions || defaultExclusions;
@@ -53,7 +56,7 @@ export const TrekInclusions = ({
             <span className="text-forest text-[10px] uppercase tracking-[0.4em] font-black block">
               Provisions
             </span>
-            <h3 className="font-display text-3xl text-forest italic">
+            <h3 className="font-display text-3xl text-forest ">
               The path provides.
             </h3>
           </div>
@@ -83,7 +86,7 @@ export const TrekInclusions = ({
             <span className="text-[10px] uppercase tracking-[0.4em] font-black block">
               Responsibility
             </span>
-            <h3 className="font-display text-3xl italic">Self-reliance.</h3>
+            <h3 className="font-display text-3xl ">Self-reliance.</h3>
           </div>
 
           <ul className="space-y-6">

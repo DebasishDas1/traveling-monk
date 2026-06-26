@@ -46,7 +46,7 @@ export const TrekGrid = () => {
                   key={filter}
                   onClick={() => setActiveFilter(filter)}
                   className={cn(
-                    "group relative px-5 py-2 rounded-full text-[11px] uppercase tracking-[0.25em] font-serif transition-all duration-300 border overflow-hidden",
+                    "group relative px-5 py-2 rounded-full text-[11px] uppercase tracking-[0.25em] transition-all duration-300 border overflow-hidden",
 
                     isActive
                       ? "bg-monk-brown-warm text-parchment border-monk-black shadow-md"
@@ -84,7 +84,7 @@ export const TrekGrid = () => {
         {/* ===== EMPTY STATE (STYLED) ===== */}
         {filteredTreks.length === 0 && (
           <section className="flex items-center justify-center h-[50vh] md:h-[60vh]">
-            <h1 className="font-display italic text-6xl md:text-8xl text-monk-brown-deep">
+            <h1 className="font-display  text-6xl md:text-8xl text-monk-brown-deep">
               Coming Soon ...
             </h1>
           </section>

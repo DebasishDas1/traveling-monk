@@ -33,6 +33,7 @@ export const navLinks = [
 ];
 
 export const Navbar = () => {
+  const PRIMARY_COLOR = "#2B1F14";
   const {
     navScrolled,
     setNavScrolled,
@@ -71,8 +72,8 @@ export const Navbar = () => {
         navScrolled
           ? [
               "py-3",
-              "bg-parchment", // very light tint
-              "backdrop-blur-xl", // stronger blur
+              "bg-parchment",
+              "backdrop-blur-xl",
               "supports-backdrop-filter:bg-parchment/40",
             ]
           : "bg-transparent py-4",
@@ -83,7 +84,7 @@ export const Navbar = () => {
         <Link
           href="/"
           className={cn(
-            "font-serif italic text-xl md:text-2xl font-bold tracking-tight transition-colors duration-500",
+            "  text-xl md:text-2xl font-bold tracking-tight transition-colors duration-500",
             textColor,
           )}
         >
@@ -98,18 +99,16 @@ export const Navbar = () => {
                 const isActive = isActiveLink(link.href);
                 const isLightBg = isTreksPage || isEscapePage || navScrolled;
 
-                const base =
-                  "relative px-5 py-2 rounded-full text-[11px] uppercase tracking-[0.3em] font-semibold transition-colors duration-300 block";
-
                 const inactive = cn(
-                  textColor,
-                  "opacity-70 hover:opacity-100",
-                  isLightBg ? "hover:bg-black/5" : "hover:bg-white/10"
+                  isLightBg
+                    ? "text-black/70 hover:text-black"
+                    : "text-white/70 hover:text-white",
+                  "transition-colors duration-200",
                 );
 
                 const active = cn(
-                  textColor,
-                  "opacity-100",
+                  isLightBg ? "text-black" : "text-white",
+                  "font-medium",
                 );
 
                 return (
@@ -117,17 +116,25 @@ export const Navbar = () => {
                     <NavigationMenuLink asChild>
                       <Link
                         href={link.href}
-                        className={cn(base, isActive ? active : inactive)}
+                        className={cn(
+                          "relative px-5 py-2 text-sm font-medium transition-colors",
+                          isActive ? active : inactive,
+                        )}
                       >
-                        <span className="relative z-10">{link.name}</span>
+                        <span>{link.name}</span>
+
                         {isActive && (
-                          <motion.div
-                            layoutId="navbar-active-pill"
+                          <motion.span
+                            layoutId="navbar-active-underline"
                             className={cn(
-                              "absolute inset-0 rounded-full",
-                              isLightBg ? "bg-black/5" : "bg-white/15"
+                              "absolute left-4 right-4 -bottom-0.5 h-0.5 rounded-full",
+                              isLightBg ? "bg-black" : "bg-white",
                             )}
-                            transition={{ type: "spring", stiffness: 400, damping: 35 }}
+                            transition={{
+                              type: "spring",
+                              stiffness: 500,
+                              damping: 35,
+                            }}
                           />
                         )}
                       </Link>
@@ -139,15 +146,16 @@ export const Navbar = () => {
           </NavigationMenu>
 
           <Button
-            className={cn(
-              "rounded-full px-7 h-11 text-[10px] font-bold uppercase tracking-[0.25em] transition-all duration-500",
-              navScrolled
-                ? "bg-black text-white hover:bg-black/80"
-                : "bg-white text-black hover:bg-white/90 shadow-xl shadow-black/10",
-            )}
             onClick={() => openDrawer("valley-of-flowers")}
+            className={cn(
+              "group h-9 rounded-full px-5 text-sm font-medium tracking-normal transition-all duration-200",
+              navScrolled
+                ? "bg-foreground text-background hover:opacity-90"
+                : "bg-background/90 text-foreground backdrop-blur-md hover:bg-background",
+            )}
           >
-            Join trip <ArrowRight className="size-3.5 ml-2" />
+            Join Journey
+            <ArrowRight className="ml-2 size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
           </Button>
         </div>
 
@@ -183,9 +191,7 @@ export const Navbar = () => {
 
               {/* Mobile Header */}
               <div className="pt-8 flex justify-between items-center">
-                <span className="font-serif italic text-2xl">
-                  The Traveling Monk
-                </span>
+                <span className="  text-2xl">The Traveling Monk</span>
               </div>
 
               <div className="grow flex flex-col justify-center gap-8">
@@ -201,7 +207,11 @@ export const Navbar = () => {
                         <Link
                           href={link.href}
                           onClick={closeMobileMenu}
-                          className="text-4xl font-serif italic text-[#2B1F14] hover:text-[#8C6B4A] transition-colors"
+                          className={cn(
+                            "text-4xl",
+                            "hover:text-[#8C6B4A] transition-colors",
+                          )}
+                          style={{ color: PRIMARY_COLOR }}
                         >
                           {link.name}
                         </Link>
@@ -213,7 +223,10 @@ export const Navbar = () => {
               {/* Mobile Footer */}
               <div className="mt-auto">
                 <Button
-                  className="w-full rounded-full h-16 text-xs uppercase tracking-[0.3em] font-bold bg-[#2B1F14] text-white"
+                  className={cn(
+                    "w-full rounded-full h-16 text-xs uppercase tracking-[0.3em] font-bold text-white",
+                  )}
+                  style={{ backgroundColor: PRIMARY_COLOR }}
                   onClick={() => {
                     closeMobileMenu();
                     openDrawer("valley-of-flowers");

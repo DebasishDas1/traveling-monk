@@ -62,21 +62,21 @@ export const TestimonialCarousel = ({
           >
             {/* Opening quote seal */}
             <div
-              className="mb-8 font-serif italic text-6xl text-[#8C6B4A]/30 leading-none select-none"
+              className="mb-8  text-6xl text-[#8C6B4A]/30 leading-none select-none"
               aria-hidden="true"
             >
               “
             </div>
 
             {/* Quote body */}
-            <p className="font-serif italic text-xl md:text-3xl text-[#2B1F14] leading-[1.8] mb-12">
+            <p className=" text-xl md:text-3xl text-[#2B1F14] leading-[1.8] mb-12">
               {testimonials[active].quote}
             </p>
 
             {/* Author */}
             <div className="flex items-center gap-5 pt-8 border-t border-[#D8C4A8]/60">
               <div className="space-y-1">
-                <p className="font-serif font-bold text-lg text-[#2B1F14] tracking-wide">
+                <p className="font-bold text-lg text-[#2B1F14] tracking-wide">
                   {testimonials[active].name}
                 </p>
                 <p className="text-[11px] uppercase tracking-[0.3em] text-[#7A6A58]">

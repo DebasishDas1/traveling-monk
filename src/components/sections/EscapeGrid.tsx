@@ -7,7 +7,7 @@ import { EscapeCard } from "./EscapeCard";
 export const EscapeGrid = () => {
   if (!escapesData.length) {
     return (
-      <div className="flex items-center justify-center py-32 text-[#C9A24A]/40 font-serif italic">
+      <div className="flex items-center justify-center py-32 text-[#C9A24A]/40  ">
         No journeys found…
       </div>
     );

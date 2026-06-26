@@ -76,7 +76,7 @@ export const PremiumFeedback = () => {
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-white leading-tight mb-6">
               We value your <br />
-              <span className="text-saffron italic">experience.</span>
+              <span className="text-saffron ">experience.</span>
             </h2>
 
             <p className="text-white/60 font-sans text-lg md:text-xl leading-relaxed mb-8">
