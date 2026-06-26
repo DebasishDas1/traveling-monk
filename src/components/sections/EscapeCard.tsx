@@ -25,7 +25,7 @@ export const EscapeCard = ({
         transition={{ duration: 0.35 }}
         className="
           overflow-hidden rounded-[32px]
-          border border-[#C9A24A]/15
+          border border-saffron-light/15
           bg-[#F7F1E8]
           shadow-[0_10px_40px_rgba(0,0,0,0.06)]
           transition-all duration-500
@@ -76,7 +76,7 @@ export const EscapeCard = ({
           <div className="flex flex-wrap gap-3">
             <span
               className="
-                rounded-full border border-[#C9A24A]/20
+                rounded-full border border-saffron-light/20
                 px-4 py-2
                 text-xs font-medium uppercase tracking-[0.25em]
                 text-[#6A5643]
@@ -87,7 +87,7 @@ export const EscapeCard = ({
 
             <span
               className="
-                rounded-full border border-[#C9A24A]/20
+                rounded-full border border-saffron-light/20
                 px-4 py-2
                 text-xs font-medium uppercase tracking-[0.25em]
                 text-[#6A5643]
@@ -136,7 +136,7 @@ export const EscapeCard = ({
           <div
             className="
               flex items-end justify-between
-              border-t border-[#C9A24A]/15
+              border-t border-saffron-light/15
               pt-6
             "
           >

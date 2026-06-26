@@ -15,21 +15,22 @@ export const Hero = () => {
           alt="The Traveling Monk"
           fill
           priority
-          fetchPriority="high"
-          sizes="(max-width: 1920px) 100vw, 1920px"
-          quality={60}
-          className="object-cover scale-105"
+          sizes="100vw"
+          className="object-cover"
         />
         {/* Cinematic Overlays */}
-        <div className="absolute inset-0 bg-linear-to-t from-[#1f1510]/80 via-[#1f1510]/30 to-transparent" />
-        <div className="absolute inset-0 bg-[#7a5a3a]/20 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-linear-to-t from-[var(--color-monk-dark)]/80 via-[var(--color-monk-dark)]/30 to-transparent" />
+        <div className="absolute inset-0 bg-[var(--color-monk-muted)]/20 mix-blend-multiply" />
       </div>
 
       <div className="relative z-10 container max-w-5xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{
+            duration: 0.8,
+            ease: [0.22, 1, 0.36, 1],
+          }}
           className="flex flex-col items-center"
         >
           <div className="inline-flex items-center px-5 py-2 rounded-full bg-white/5 mb-10">
@@ -38,7 +39,7 @@ export const Hero = () => {
             </span>
           </div>
 
-          <h1 className=" text-6xl md:text-9xl text-white leading-[1.05] mb-8 drop-shadow-2xl">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-white leading-[1.05] mb-8 drop-shadow-2xl">
             Walk until you
             <br />
             find yourself.
@@ -50,7 +51,7 @@ export const Hero = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-5">
+          <div className="mt-2 flex flex-col gap-4 sm:flex-row">
             <Link href="/treks">
               <Button className="min-w-50 h-14 rounded-full transition-all">
                 Explore Paths

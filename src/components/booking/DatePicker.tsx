@@ -30,7 +30,7 @@ export function DatePicker({
 
   return (
     <div className="flex flex-col gap-1">
-      <label className="text-[10px] uppercase tracking-[0.18em] font-semibold text-[#8a7660]">
+      <label className="text-[10px] uppercase tracking-[0.18em] font-semibold text-[var(--color-monk-muted)]">
         Departure Date
       </label>
 
@@ -42,16 +42,16 @@ export function DatePicker({
           className={cn(
             "w-full h-11 rounded-xl border px-3 text-left text-[13px] flex items-center gap-2.5 transition-all duration-200",
             open
-              ? "border-[#c4831a] ring-2 ring-[#c4831a]/15 bg-white"
-              : "border-[#ddd5c6] bg-[#faf7f2] hover:border-[#c4b49e]",
+              ? "border-[var(--color-saffron-dark)] ring-2 ring-[var(--color-saffron-dark)]/15 bg-white"
+              : "border-[var(--color-monk-beige)] bg-[var(--color-card)] hover:border-[var(--color-parchment-dark)]",
             error && "border-red-300 bg-red-50/50",
           )}
         >
-          <IconCalendar className="w-4 h-4 text-[#b8a48e] shrink-0" />
+          <IconCalendar className="w-4 h-4 text-[var(--color-monk-beige)] shrink-0" />
           {value ? (
-            <span className="text-[#1a1208] font-medium">{value}</span>
+            <span className="text-[var(--color-foreground)] font-medium">{value}</span>
           ) : (
-            <span className="text-[#c4b49e]">
+            <span className="text-[var(--color-parchment-dark)]">
               {hasTrek ? "Select a departure batch" : "Select a trek first"}
             </span>
           )}
@@ -67,16 +67,16 @@ export function DatePicker({
               transition={{ duration: 0.15 }}
               className="absolute z-50 top-full left-0 right-0 mt-2 rounded-xl overflow-hidden"
               style={{
-                background: "#fefcf8",
-                border: "1px solid #ddd5c6",
+                background: "var(--color-card)",
+                border: "1px solid var(--color-monk-beige)",
                 boxShadow: "0 12px 40px rgba(26,18,8,0.14)",
               }}
             >
               <div
                 className="px-4 py-2.5"
-                style={{ borderBottom: "1px solid #ede6d8" }}
+                style={{ borderBottom: "1px solid var(--color-monk-sand)" }}
               >
-                <p className="text-[10px] uppercase tracking-[0.18em] font-semibold text-[#8a7660]">
+                <p className="text-[10px] uppercase tracking-[0.18em] font-semibold text-[var(--color-monk-muted)]">
                   Available Batches
                 </p>
               </div>
@@ -96,15 +96,15 @@ export function DatePicker({
                         className={cn(
                           "w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-[13px] transition-all",
                           active
-                            ? "bg-[#c4831a] text-white font-semibold"
-                            : "hover:bg-[#f5ede0] text-[#1a1208]",
+                            ? "bg-[var(--color-saffron-dark)] text-white font-semibold"
+                            : "hover:bg-[var(--color-background)] text-[var(--color-foreground)]",
                         )}
                       >
                         <span className="flex items-center gap-2">
                           <IconCalendar
                             className={cn(
                               "w-3.5 h-3.5",
-                              active ? "text-white/70" : "text-[#b8a48e]",
+                              active ? "text-white/70" : "text-[var(--color-monk-beige)]",
                             )}
                           />
                           {d.date}
@@ -112,7 +112,7 @@ export function DatePicker({
                         <span
                           className={cn(
                             "text-[10px] uppercase tracking-wider font-medium",
-                            active ? "text-white/70" : "text-[#8a7660]",
+                            active ? "text-white/70" : "text-[var(--color-monk-muted)]",
                           )}
                         >
                           {d.spots} spots
@@ -122,8 +122,8 @@ export function DatePicker({
                   })
                 ) : (
                   <div className="py-6 text-center">
-                    <IconCompass className="w-6 h-6 mx-auto mb-2 text-[#c4b49e]" />
-                    <p className="text-[12px] text-[#8a7660]">
+                    <IconCompass className="w-6 h-6 mx-auto mb-2 text-[var(--color-parchment-dark)]" />
+                    <p className="text-[12px] text-[var(--color-monk-muted)]">
                       Select a trek to see dates
                     </p>
                   </div>

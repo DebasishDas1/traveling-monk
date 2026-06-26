@@ -51,15 +51,15 @@ export function BookingDrawer() {
             <BookingSidebar />
 
             {/* RIGHT — form */}
-            <div className="flex flex-col bg-[#fefcf8] overflow-y-auto">
+            <div className="flex flex-col bg-[var(--color-card)] overflow-y-auto">
               {/* Header */}
               <div
                 className="flex items-start justify-between px-7 pt-7 pb-5"
-                style={{ borderBottom: "1px solid #ede6d8" }}
+                style={{ borderBottom: "1px solid var(--color-monk-sand)" }}
               >
                 <div>
                   <h3
-                    className="text-[#1a1208] leading-tight font-serif"
+                    className="text-[var(--color-foreground)] leading-tight font-serif"
                     style={{
                       fontSize: "1.35rem",
                       fontWeight: 400,
@@ -67,7 +67,7 @@ export function BookingDrawer() {
                   >
                     {isSuccess ? "You&apos;re on the trail 🏔" : "Reserve your spot"}
                   </h3>
-                  <p className="text-[12px] mt-1" style={{ color: "#8a7660" }}>
+                  <p className="text-[12px] mt-1" style={{ color: "var(--color-monk-muted)" }}>
                     {isSuccess
                       ? "We&apos;ll contact you within 24 hours."
                       : "Complete the form below — no payment needed now."}
@@ -76,8 +76,8 @@ export function BookingDrawer() {
 
                 <button
                   onClick={handleClose}
-                  className="w-8 h-8 rounded-full flex items-center justify-center transition-colors hover:bg-[#f0e8dc]"
-                  style={{ background: "#f5ede0", color: "#8a7660" }}
+                  className="w-8 h-8 rounded-full flex items-center justify-center transition-colors hover:bg-[var(--color-monk-beige)]"
+                  style={{ background: "var(--color-background)", color: "var(--color-monk-muted)" }}
                   aria-label="Close booking drawer"
                 >
                   <IconX className="w-3.5 h-3.5" />

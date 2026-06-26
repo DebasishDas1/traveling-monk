@@ -12,12 +12,11 @@ export const CTABanner = () => {
           alt="Himalayan landscape"
           fill
           sizes="(max-width: 1920px) 100vw, 1920px"
-          quality={60}
           className="object-cover scale-105"
         />
         {/* Cinematic Overlays */}
-        <div className="absolute inset-0 bg-linear-to-t from-[#1f1510]/90 via-[#1f1510]/40 to-transparent" />
-        <div className="absolute inset-0 bg-[#7a5a3a]/25 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-linear-to-t from-(--color-monk-dark)/90 via-(--color-monk-dark)/40 to-transparent" />
+        <div className="absolute inset-0 bg-(--color-monk-muted)/25 mix-blend-multiply" />
       </div>
 
       {/* ✍️ Content */}
@@ -35,8 +34,8 @@ export const CTABanner = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-6 pt-6">
             <Link href="/treks">
               <Button
-                className="h-14 px-12 rounded-full bg-[#FAF6EF] text-[#2B1F14] hover:bg-white transition-all
-                text-xs uppercase tracking-[0.3em] font-bold shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+                className="h-14 px-12 rounded-full text-saffron
+                uppercase tracking-[0.3em] font-bold bg-transparent border-saffron"
               >
                 Book Your Expedition
               </Button>
@@ -44,9 +43,8 @@ export const CTABanner = () => {
 
             <Link href="/contact">
               <Button
-                variant="outline"
-                className="h-14 px-12 rounded-full border-white/40 text-white hover:bg-white/10 transition-all
-                text-xs uppercase tracking-[0.3em] font-bold"
+                className="h-14 px-12 rounded-full text-black
+                uppercase tracking-[0.3em] font-bold"
               >
                 Custom Inquiries
               </Button>

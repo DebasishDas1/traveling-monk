@@ -41,16 +41,16 @@ const StatItem = ({
       )}
     >
       {/* Organic divider */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 h-16 w-px bg-linear-to-b from-transparent via-[#CBB79C]/40 to-transparent hidden md:block group-first:hidden" />
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 h-16 w-px bg-linear-to-b from-transparent via-parchment-dark/40 to-transparent hidden md:block group-first:hidden" />
 
       {/* Number */}
-      <div className="text-5xl md:text-7xl text-[#2B1F14] tracking-tight">
+      <div className="text-5xl md:text-7xl text-black tracking-tight">
         {count}
-        <span className="text-[#C9A24A] ml-1">{suffix}</span>
+        <span className="text-saffron ml-1">{suffix}</span>
       </div>
 
       {/* Label */}
-      <div className="mt-4 text-[11px] uppercase tracking-[0.3em] text-[#8C6B4A] font-semibold">
+      <div className="mt-4 text-[11px] uppercase tracking-[0.3em] text-monk-brown-deep font-semibold">
         {label}
       </div>
     </div>

@@ -7,66 +7,58 @@ interface HandWrittenTitleProps {
   subtitle?: string;
 }
 
-function HandWrittenTitle({
-  title = "Hand Written",
-  subtitle = "Optional subtitle",
+export function HandWrittenTitle({
+  title = "Walk until you find yourself.",
+  subtitle,
 }: HandWrittenTitleProps) {
   return (
-    <section className="relative bg-monk-dark overflow-hidden">
-      {/* Saffron glow blobs */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-saffron/5 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-saffron/5 blur-[120px] pointer-events-none" />
-
-      <div className="relative z-10 max-w-4xl mx-auto px-6 py-32 text-center flex flex-col items-center">
-        {/* Saffron top rule */}
+    <section className="relative overflow-hidden bg-[#f7f4ef]">
+      <div className="mx-auto flex max-w-5xl flex-col items-center px-6 py-28 text-center md:py-36">
         <motion.span
-          className="block w-12 h-px bg-saffron/60 mb-12"
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
+          initial={{ opacity: 0, scaleX: 0.8 }}
+          whileInView={{ opacity: 1, scaleX: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5 }}
+          className="mb-8 h-px w-14 bg-amber-700/40"
         />
 
-        {/* Quote */}
-        <motion.p
-          className="font-display  text-4xl md:text-6xl lg:text-7xl text-parchment-light leading-[1.15] tracking-tight"
-          initial={{ opacity: 0, y: 28 }}
+        <motion.blockquote
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          transition={{
+            duration: 0.5,
+            ease: "easeOut",
+          }}
+          className="max-w-4xl"
         >
-          &ldquo;{title}
-          {subtitle && (
-            <>
-              <br />
-              <span className="text-parchment">{subtitle}</span>
-            </>
-          )}
-          &rdquo;
-        </motion.p>
+          <h2 className="font-display text-4xl leading-tight tracking-tight text-zinc-900 md:text-6xl lg:text-7xl">
+            “{title}”
+          </h2>
 
-        {/* Bottom label */}
-        <motion.span
-          className="mt-10 text-[10px] uppercase tracking-[0.35em] font-bold text-monk-muted"
+          {subtitle && (
+            <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-zinc-500 md:text-xl">
+              {subtitle}
+            </p>
+          )}
+        </motion.blockquote>
+
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.7 }}
+          transition={{ delay: 0.15, duration: 0.4 }}
+          className="mt-14 flex items-center gap-4"
         >
-          The Monk Philosophy
-        </motion.span>
+          <div className="h-px w-8 bg-zinc-300" />
 
-        {/* Saffron bottom rule */}
-        <motion.span
-          className="block w-12 h-px bg-saffron/40 mt-6"
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-        />
+          <span className="text-[11px] font-medium uppercase tracking-[0.35em] text-zinc-500">
+            The Traveling Monk
+          </span>
+
+          <div className="h-px w-8 bg-zinc-300" />
+        </motion.div>
       </div>
     </section>
   );
 }
-
-export { HandWrittenTitle };

@@ -11,19 +11,19 @@ export const MyTestimonials = ({ testimonials }: MyTestimonialsProps) => {
     <section className="relative py-28 space-y-20">
       {/* Header */}
       <div className="text-center space-y-5">
-        <span className="text-[10px] uppercase tracking-[0.5em] font-bold text-[#8C6B4A]">
+        <span className="text-[10px] uppercase tracking-[0.5em] font-bold text-[var(--color-accent)]">
           Voices of the Path
         </span>
 
-        <h2 className="font-display text-4xl md:text-5xl text-[#2B1F14] ">
+        <h2 className="font-display text-4xl md:text-5xl text-[var(--color-primary)] ">
           Reflections from Fellow Travellers
         </h2>
 
         {/* divider */}
         <div className="flex items-center justify-center gap-3 pt-2">
-          <span className="w-10 h-px bg-[#CBB79C]" />
-          <span className="w-1.5 h-1.5 rounded-full bg-[#8C6B4A]" />
-          <span className="w-10 h-px bg-[#CBB79C]" />
+          <span className="w-10 h-px bg-[var(--color-parchment-dark)]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)]" />
+          <span className="w-10 h-px bg-[var(--color-parchment-dark)]" />
         </div>
       </div>
 
@@ -37,7 +37,7 @@ export const MyTestimonials = ({ testimonials }: MyTestimonialsProps) => {
               key={i}
               className="group relative p-10 rounded-[2.5rem]
               bg-linear-to-br from-[#F7F1E6] via-[#EFE3D1] to-[#E6D3BC]
-              border border-[#CBB79C]
+              border border-[var(--color-parchment-dark)]
               shadow-[0_10px_40px_rgba(60,45,30,0.12)]
               hover:shadow-[0_20px_60px_rgba(60,45,30,0.2)]
               transition-all duration-500"
@@ -54,7 +54,7 @@ export const MyTestimonials = ({ testimonials }: MyTestimonialsProps) => {
                 {[...Array(5)].map((_, s) => (
                   <Star
                     key={s}
-                    className="size-3.5 text-[#C9A24A] fill-[#C9A24A]"
+                    className="size-3.5 text-[var(--color-saffron-light)] fill-[var(--color-saffron-light)]"
                   />
                 ))}
               </div>
@@ -68,13 +68,13 @@ export const MyTestimonials = ({ testimonials }: MyTestimonialsProps) => {
               <div className="flex items-center gap-5 pt-6 border-t border-[#D8C4A8]/60">
                 <Avatar className="size-14 ring-2 ring-[#D8C4A8] shadow-md">
                   <AvatarImage src={t.image} alt={t.name} />
-                  <AvatarFallback className="bg-[#EADBC8] text-[#2B1F14] font-bold">
+                  <AvatarFallback className="bg-[#EADBC8] text-[var(--color-primary)] font-bold">
                     {initial}
                   </AvatarFallback>
                 </Avatar>
 
                 <div>
-                  <p className="font-bold text-[#2B1F14] text-lg tracking-wide">
+                  <p className="font-bold text-[var(--color-primary)] text-lg tracking-wide">
                     {t.name}
                   </p>
                   <p className="text-[11px] uppercase tracking-[0.3em] text-[#7A6A58]">

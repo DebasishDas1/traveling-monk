@@ -8,7 +8,7 @@ export const TrekContact = () => {
     <section className="relative py-8 md:py-12 px-4 md:px-0">
       <div className="space-y-10 max-w-3xl">
         <div className="space-y-5">
-          <h3 className="text-2xl md:text-4xl text-[#2B1F14]  leading-snug">
+          <h3 className="text-2xl md:text-4xl text-[var(--color-primary)]  leading-snug">
             Still have questions about this journey?
           </h3>
 
@@ -23,10 +23,10 @@ export const TrekContact = () => {
           <Link href={whatsappLink} target="_blank">
             <Button
               className="h-12 px-8 rounded-full 
-                text-black bg-[#FAF6EF]
+                text-black bg-[var(--color-monk-bone)]
                 text-xs uppercase tracking-[0.2em] font-semibold
                 transition-all duration-300
-                hover:bg-[#2B1F14] hover:text-white"
+                hover:bg-[var(--color-primary)] hover:text-white"
             >
               Request a Callback
             </Button>
@@ -48,7 +48,7 @@ export const TrekContact = () => {
               <p className="text-[10px] uppercase tracking-[0.3em] text-[#8A7A68] font-semibold">
                 Call Us
               </p>
-              <p className="text-[#2B1F14] font-medium">{whatsappNumber}</p>
+              <p className="text-[var(--color-primary)] font-medium">{whatsappNumber}</p>
             </div>
           </div>
 
@@ -65,7 +65,7 @@ export const TrekContact = () => {
               <p className="text-[10px] uppercase tracking-[0.3em] text-[#8A7A68] font-semibold">
                 Email Us
               </p>
-              <p className="text-[#2B1F14] font-medium truncate">
+              <p className="text-[var(--color-primary)] font-medium truncate">
                 www.thetravelingmonk.in
               </p>
             </div>

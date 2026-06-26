@@ -38,7 +38,7 @@ export function ContactOptions() {
     <section className="py-32 px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-20 max-w-xl mx-auto">
-          <h2 className=" text-4xl md:text-5xl text-[#2B1F14]">
+          <h2 className=" text-4xl md:text-5xl text-[var(--color-primary)]">
             Begin the conversation
           </h2>
           <p className="text-[#6B5A4A] mt-5 text-sm leading-relaxed">
@@ -58,14 +58,14 @@ export function ContactOptions() {
                 bg-[#F3EDE3]
                 border border-[#E2D3BD]
                 transition-all duration-500
-                hover:border-[#C9A24A]/40
+                hover:border-[var(--color-saffron-light)]/40
                 hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)]"
               >
                 {/* Icon */}
                 <div
                   className="mx-auto mb-8 size-16 rounded-full 
                   border border-[#D6C4A8]
-                  flex items-center justify-center text-[#C9A24A]"
+                  flex items-center justify-center text-[var(--color-saffron-light)]"
                 >
                   <Icon className="size-6" />
                 </div>
@@ -85,7 +85,7 @@ export function ContactOptions() {
                 </p>
 
                 {/* Title */}
-                <h3 className=" text-2xl text-[#2B1F14] mb-4">
+                <h3 className=" text-2xl text-[var(--color-primary)] mb-4">
                   {card.title}
                 </h3>
 

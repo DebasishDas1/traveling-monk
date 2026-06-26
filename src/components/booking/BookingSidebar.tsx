@@ -7,7 +7,7 @@ export function BookingSidebar() {
   return (
     <div
       className="relative hidden md:flex flex-col justify-between overflow-hidden p-8"
-      style={{ background: "#1e1208" }}
+      style={{ background: "var(--color-monk-dark)" }}
     >
       {/* Decorative orbs */}
       <div
@@ -28,29 +28,29 @@ export function BookingSidebar() {
         <div className="flex items-center gap-2.5 mb-8">
           <div
             className="w-9 h-9 rounded-full flex items-center justify-center shadow-lg"
-            style={{ background: "#c4831a" }}
+            style={{ background: "var(--color-saffron-dark)" }}
           >
             <IconMountain className="w-4 h-4 text-white" />
           </div>
           <div>
-            <p className="text-[10px] uppercase tracking-[0.18em] text-[#c4831a] font-semibold leading-none">
+            <p className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-saffron-dark)] font-semibold leading-none">
               The Traveling
             </p>
-            <p className="text-[15px]  text-[#f5ede0] leading-tight font-serif">
+            <p className="text-[15px]  text-[var(--color-background)] leading-tight font-serif">
               Monk
             </p>
           </div>
         </div>
 
         <h2
-          className="text-[#f5ede0] leading-[1.15] font-serif"
+          className="text-[var(--color-background)] leading-[1.15] font-serif"
           style={{
             fontSize: "2rem",
             fontWeight: 400,
           }}
         >
           Your path to the{" "}
-          <em className="not-" style={{ color: "#e8a832" }}>
+          <em className="not-" style={{ color: "var(--color-saffron)" }}>
             Himalayas
           </em>{" "}
           awaits.

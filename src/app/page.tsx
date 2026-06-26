@@ -3,7 +3,8 @@ import { Hero } from "@/components/sections/Hero";
 import { dummyTestimonials } from "@/lib/data/dummyTestimonials";
 
 const StatsStrip = dynamic(
-  () => import("@/components/sections/StatsStrip").then((mod) => mod.StatsStrip),
+  () =>
+    import("@/components/sections/StatsStrip").then((mod) => mod.StatsStrip),
   {
     loading: () => <div className="h-40 animate-pulse bg-parchment/10" />,
   },
@@ -59,4 +60,3 @@ export default function HomePage() {
     </main>
   );
 }
-

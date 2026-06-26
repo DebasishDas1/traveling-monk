@@ -57,26 +57,26 @@ export const TestimonialCarousel = ({
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="relative p-10 md:p-16 rounded-[40px]
             bg-linear-to-br from-[#F7F1E6] via-[#EFE3D1] to-[#E6D3BC]
-            border border-[#CBB79C]
+            border border-[var(--color-parchment-dark)]
             shadow-[0_15px_60px_rgba(60,45,30,0.1)]"
           >
             {/* Opening quote seal */}
             <div
-              className="mb-8  text-6xl text-[#8C6B4A]/30 leading-none select-none"
+              className="mb-8  text-6xl text-[var(--color-accent)]/30 leading-none select-none"
               aria-hidden="true"
             >
               “
             </div>
 
             {/* Quote body */}
-            <p className=" text-xl md:text-3xl text-[#2B1F14] leading-[1.8] mb-12">
+            <p className=" text-xl md:text-3xl text-[var(--color-primary)] leading-[1.8] mb-12">
               {testimonials[active].quote}
             </p>
 
             {/* Author */}
             <div className="flex items-center gap-5 pt-8 border-t border-[#D8C4A8]/60">
               <div className="space-y-1">
-                <p className="font-bold text-lg text-[#2B1F14] tracking-wide">
+                <p className="font-bold text-lg text-[var(--color-primary)] tracking-wide">
                   {testimonials[active].name}
                 </p>
                 <p className="text-[11px] uppercase tracking-[0.3em] text-[#7A6A58]">
@@ -100,8 +100,8 @@ export const TestimonialCarousel = ({
                 <div
                   className={`h-1.5 rounded-full transition-all duration-500 ${
                     idx === active
-                      ? "w-8 bg-[#8C6B4A]"
-                      : "w-1.5 bg-[#CBB79C]/40"
+                      ? "w-8 bg-[var(--color-accent)]"
+                      : "w-1.5 bg-[var(--color-parchment-dark)]/40"
                   }`}
                 />
               </button>

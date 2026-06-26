@@ -14,13 +14,13 @@ export const MyGallery = ({ gallery }: MyGalleryProps) => {
     <section className="relative space-y-14 py-16 md:py-24">
       {/* ===== HEADER ===== */}
       <div className="flex items-center gap-6">
-        <h2 className="font-display text-4xl md:text-5xl  text-[#2B1F14] shrink-0">
+        <h2 className="font-display text-4xl md:text-5xl  text-[var(--color-primary)] shrink-0">
           Captured Stillness
         </h2>
 
-        <div className="h-px bg-[#CBB79C] grow" />
+        <div className="h-px bg-[var(--color-parchment-dark)] grow" />
 
-        <Camera className="size-5 text-[#8C7A6B] hidden md:block" />
+        <Camera className="size-5 text-[var(--color-monk-stone)] hidden md:block" />
       </div>
 
       {/* ===== GALLERY ===== */}
@@ -28,7 +28,7 @@ export const MyGallery = ({ gallery }: MyGalleryProps) => {
         {/* 🌄 HERO */}
         <div
           className="group relative w-full h-[340px] md:h-[560px] rounded-[28px] overflow-hidden
-          bg-[#2B1F14]
+          bg-[var(--color-primary)]
           shadow-[0_25px_80px_rgba(60,45,30,0.35)]"
         >
           <Image
@@ -45,7 +45,7 @@ export const MyGallery = ({ gallery }: MyGalleryProps) => {
           {/* cinematic overlays */}
           <div
             className="absolute inset-0 
-            bg-linear-to-t from-[#1f1510]/70 via-transparent to-transparent"
+            bg-linear-to-t from-[var(--color-monk-dark)]/70 via-transparent to-transparent"
           />
 
           <div
@@ -64,7 +64,7 @@ export const MyGallery = ({ gallery }: MyGalleryProps) => {
               <div
                 key={`${img}-${i}`}
                 className="group relative h-[170px] md:h-[230px] rounded-2xl overflow-hidden
-                bg-[#2B1F14]
+                bg-[var(--color-primary)]
                 shadow-[0_15px_50px_rgba(60,45,30,0.25)]"
               >
                 <Image
@@ -77,7 +77,7 @@ export const MyGallery = ({ gallery }: MyGalleryProps) => {
                 />
 
                 {/* warm tint instead of black overlay */}
-                <div className="absolute inset-0 bg-[#6b4a2f]/10 group-hover:bg-transparent transition duration-500" />
+                <div className="absolute inset-0 bg-[var(--color-monk-brown-warm)]/10 group-hover:bg-transparent transition duration-500" />
 
                 {/* subtle vignette */}
                 <div

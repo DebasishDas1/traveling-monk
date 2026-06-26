@@ -53,8 +53,8 @@ export default function TreksPage() {
             sizes="100vw"
             className="object-cover scale-105"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-[#1f1510]/80 via-[#1f1510]/30 to-transparent" />
-          <div className="absolute inset-0 bg-[#7a5a3a]/20 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-linear-to-t from-(--color-monk-dark)/80 via-(--color-monk-dark)/30 to-transparent" />
+          <div className="absolute inset-0 bg-(--color-monk-muted)/20 mix-blend-multiply" />
         </div>
 
         <div className="relative z-10 text-center px-6 max-w-4xl mt-12">

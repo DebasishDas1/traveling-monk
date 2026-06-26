@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import SectionHeader from "./SectionHeader";
 import TrekCard from "./TrekCard";
 import { trekData } from "@/lib/data/treks";
+import { Button } from "../ui/button";
 
 export const FeaturedTreks = () => {
   return (
@@ -62,21 +63,12 @@ export const FeaturedTreks = () => {
         </div>
 
         {/* CTA */}
-        <div className="mt-28 text-center">
-          <Link
-            href="/treks"
-            className="group inline-flex items-center gap-4 text-[#2B1F14] font-bold  tracking-[0.2em] text-sm hover:text-[#8C6B4A] transition-all"
-          >
-            <span className="relative">
-              Explore more paths
-              <span className="absolute left-0 -bottom-2 w-0 h-px bg-[#CBB79C] transition-all duration-500 group-hover:w-full" />
-            </span>
-
-            <div className="size-10 rounded-full border border-[#CBB79C] flex items-center justify-center group-hover:bg-[#FAF6EF] transition-all">
-              <ArrowRight className="size-4 transition-transform duration-500 group-hover:translate-x-1" />
-            </div>
-          </Link>
-        </div>
+        <Link href="/treks" className="flex justify-center mt-10">
+          <Button variant="ghost" size="lg">
+            Explore more paths
+            <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </Button>
+        </Link>
       </div>
     </section>
   );

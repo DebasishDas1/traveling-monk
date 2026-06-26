@@ -30,7 +30,7 @@ export const EscapeHero = ({ escape }: EscapeHeroProps) => {
           <BreadcrumbItem>
             <BreadcrumbLink
               href="/"
-              className="hover:text-[#2B1F14] transition"
+              className="hover:text-[var(--color-primary)] transition"
             >
               Home
             </BreadcrumbLink>
@@ -39,14 +39,14 @@ export const EscapeHero = ({ escape }: EscapeHeroProps) => {
           <BreadcrumbItem>
             <BreadcrumbLink
               href="/escapes"
-              className="hover:text-[#2B1F14] transition"
+              className="hover:text-[var(--color-primary)] transition"
             >
               Escapes
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage className="text-[#2B1F14] font-medium">
+            <BreadcrumbPage className="text-[var(--color-primary)] font-medium">
               {escape.name}
             </BreadcrumbPage>
           </BreadcrumbItem>

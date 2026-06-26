@@ -12,22 +12,51 @@
   --font-display: var(--font-display);
   --font-body: var(--font-sans);
 
-  /* ── Monk brand tokens ── */
-  --color-forest:            #0B2019;
-  --color-saffron:           #F5A623;
-  --color-saffron-light:     #FBBF4A;
-  --color-saffron-dark:      #C4791A;
-  --color-parchment:         #DBC8AC;
-  --color-parchment-light:   #EDE3D2;
-  --color-parchment-dark:    #C8A97E;
-  --color-monk-dark:         #1A140F;
-  --color-monk-muted:        #8C7851;
-  --color-monk-beige:        #DAD0BE;
-  --color-monk-brown-deep:   #3B2412;
-  --color-monk-brown-warm:   #4A2E16;
-  --color-monk-stone:        #6B6058;
-  --color-monk-sand:         #E8D5B0;
-  --color-monk-bone:         #F7F3ED;
+  /* ══════════════════════════════════════════
+     MONK BRAND TOKENS — v2 "Ancient Premium"
+     
+     Philosophy:
+     - Saffron = real saffron, not highlighter
+     - Forest = ink on old maps, not pitch black
+     - Parchment = aged manuscript, warm but refined
+     - All colours pulled from actual Himalayan reference:
+       monastery walls, worn stone, prayer flags, dusk sky
+  ══════════════════════════════════════════ */
+
+  /* ── Saffron family — deeper, more ceremonial ── */
+  --color-saffron:           #C4791A;   /* real saffron — monk's robe at golden hour */
+  --color-saffron-light:     #D4893A;   /* hover state — slightly lifted */
+  --color-saffron-warm:      #E09840;   /* parchment-adjacent — borders, dividers */
+  --color-saffron-glow:      #F5A62330; /* 19% opacity — glow rings, selections */
+  --color-saffron-mist:      #F5A62310; /* 6% opacity — section tints */
+
+  /* ── Forest family — rich dark green, not black ── */
+  --color-forest:            #152B1E;   /* primary dark — old forest, ink */
+  --color-forest-deep:       #0D1F15;   /* deeper dark — hero overlays */
+  --color-forest-mid:        #1E3D2A;   /* mid tone — dark cards */
+  --color-forest-mist:       #1E3D2A20; /* 12% opacity — light-mode section tints */
+
+  /* ── Parchment family — aged manuscript ── */
+  --color-parchment:         #E8D9C0;   /* base canvas — aged, not yellow */
+  --color-parchment-light:   #F2EAD8;   /* cards on parchment */
+  --color-parchment-lighter: #F8F4ED;   /* elevated surfaces */
+  --color-parchment-dark:    #C9B899;   /* borders, dividers */
+  --color-parchment-shadow:  #B8A27D;   /* shadows, pressed states */
+
+  /* ── Stone family — trail stone, worn paths ── */
+  --color-stone:             #7A6E64;   /* body text on light — readable, warm */
+  --color-stone-light:       #9E9288;   /* secondary text, captions */
+  --color-stone-dark:        #4A3F36;   /* heavy text, labels */
+
+  /* ── Brown family — earth, bark, roots ── */
+  --color-earth:             #3D2510;   /* deepest brown — used sparingly */
+  --color-earth-warm:        #5C3A1E;   /* secondary brown */
+  --color-earth-mid:         #7A4E2D;   /* tertiary — borders on dark */
+
+  /* ── Dust — off-whites for dark mode surfaces ── */
+  --color-dust:              #D4C8B0;   /* light text on forest */
+  --color-dust-light:        #E8DFD0;   /* primary light text */
+  --color-dust-dim:          #A89880;   /* muted text on dark */
 
   /* ── Radius scale ── */
   --radius-sm:  calc(var(--radius) * 0.6);
@@ -38,31 +67,31 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
-  /* ── Shadcn semantic aliases → monk tokens ── */
-  --color-card:             var(--card);
-  --color-card-foreground:  var(--card-foreground);
-  --color-popover:          var(--popover);
+  /* ── Shadcn semantic aliases ── */
+  --color-card:              var(--card);
+  --color-card-foreground:   var(--card-foreground);
+  --color-popover:           var(--popover);
   --color-popover-foreground: var(--popover-foreground);
-  --color-primary:          var(--primary);
+  --color-primary:           var(--primary);
   --color-primary-foreground: var(--primary-foreground);
-  --color-secondary:        var(--secondary);
+  --color-secondary:         var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted:            var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent:           var(--accent);
+  --color-muted:             var(--muted);
+  --color-muted-foreground:  var(--muted-foreground);
+  --color-accent:            var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-destructive:      var(--destructive);
-  --color-border:           var(--border);
-  --color-input:            var(--input);
-  --color-ring:             var(--ring);
-  --color-sidebar:          var(--sidebar);
+  --color-destructive:       var(--destructive);
+  --color-border:            var(--border);
+  --color-input:             var(--input);
+  --color-ring:              var(--ring);
+  --color-sidebar:           var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary:  var(--sidebar-primary);
+  --color-sidebar-primary:   var(--sidebar-primary);
   --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent:   var(--sidebar-accent);
+  --color-sidebar-accent:    var(--sidebar-accent);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border:   var(--sidebar-border);
-  --color-sidebar-ring:     var(--sidebar-ring);
+  --color-sidebar-border:    var(--sidebar-border);
+  --color-sidebar-ring:      var(--sidebar-ring);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -88,180 +117,149 @@
     0%   { background-position: -200% center; }
     100% { background-position:  200% center; }
   }
+  @keyframes floatSlow {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-8px); }
+  }
 
   --animate-ken-burns:    ken-burns 12s alternate infinite ease-in-out;
   --animate-scroll-pulse: scrollPulse 2s infinite ease-in-out;
   --animate-fade-in-up:   fadeInUp 0.6s cubic-bezier(0.16,1,0.3,1) both;
   --animate-shimmer:      shimmer 2s linear infinite;
+  --animate-float:        floatSlow 6s ease-in-out infinite;
 }
 
-/* ─────────────────────────────────────────────
-   LIGHT MODE  — parchment-first warm palette
-───────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════
+   LIGHT MODE — "Aged Manuscript"
+   
+   Feel: a 200-year-old monastery library.
+   Warm parchment canvas. Dark forest ink.
+   Saffron as sacred accent — never dominant.
+═══════════════════════════════════════════════ */
 :root {
-  /* Page chrome */
-  --background:        #EDE3D2;   /* parchment light — the canvas */
-  --foreground:        #1A140F;   /* monk-dark — primary text */
+  /* Canvas */
+  --background:          #E8D9C0;   /* parchment — aged, not yellow */
+  --foreground:          #1C1208;   /* near-black with warm brown undertone */
 
-  /* Cards & popovers sit slightly lighter than the page */
-  --card:              #F7F3ED;   /* monk-bone */
-  --card-foreground:   #1A140F;
+  /* Cards sit lighter, creating depth */
+  --card:                #F2EAD8;   /* parchment-light */
+  --card-foreground:     #1C1208;
 
-  --popover:           #F7F3ED;
-  --popover-foreground: #1A140F;
+  --popover:             #F8F4ED;   /* lightest surface — popovers float */
+  --popover-foreground:  #1C1208;
 
-  /* Primary action = saffron */
-  --primary:           #F5A623;
-  --primary-foreground: #1A140F;  /* dark text on saffron — always readable */
+  /* Primary = saffron — real, not electric */
+  --primary:             #C4791A;
+  --primary-foreground:  #F8F4ED;   /* light text on saffron */
 
-  /* Secondary = warm beige */
-  --secondary:         #DAD0BE;   /* monk-beige */
-  --secondary-foreground: #3B2412;
+  /* Secondary = warm stone */
+  --secondary:           #D4C4A8;
+  --secondary-foreground: #3D2510;
 
   /* Muted = mid parchment */
-  --muted:             #DBC8AC;   /* parchment */
-  --muted-foreground:  #8C7851;   /* monk-muted */
+  --muted:               #DCCFB8;
+  --muted-foreground:    #7A6E64;   /* stone — readable, warm */
 
-  /* Accent = saffron-light for hover states */
-  --accent:            #FBBF4A;
-  --accent-foreground: #1A140F;
+  /* Accent = saffron-warm for hover tints */
+  --accent:              #F2EAD8;
+  --accent-foreground:   #C4791A;
 
   /* Danger */
-  --destructive:       oklch(0.577 0.245 27.325);
+  --destructive:         #B03A2E;
 
-  /* Borders & inputs — warm, not cold gray */
-  --border:            rgba(59,36,18,0.18);   /* monk-brown-deep at low opacity */
-  --input:             rgba(59,36,18,0.12);
-  --ring:              #F5A623;               /* saffron focus ring */
+  /* Borders — brown at low opacity, not cold gray */
+  --border:              rgba(61,37,16,0.16);
+  --input:               rgba(61,37,16,0.10);
+  --ring:                #C4791A;
 
   /* Radius */
   --radius: 0.625rem;
 
-  /* Charts — warm earth ramp */
-  --chart-1: #F5A623;   /* saffron */
-  --chart-2: #C4791A;   /* saffron-dark */
-  --chart-3: #8C7851;   /* monk-muted */
-  --chart-4: #4A2E16;   /* monk-brown-warm */
-  --chart-5: #0B2019;   /* forest */
+  /* Charts — saffron to forest ramp */
+  --chart-1: #C4791A;
+  --chart-2: #D4893A;
+  --chart-3: #7A6E64;
+  --chart-4: #5C3A1E;
+  --chart-5: #152B1E;
 
   /* Sidebar */
-  --sidebar:                    #DAD0BE;
-  --sidebar-foreground:         #1A140F;
-  --sidebar-primary:            #F5A623;
-  --sidebar-primary-foreground: #1A140F;
-  --sidebar-accent:             #DBC8AC;
-  --sidebar-accent-foreground:  #3B2412;
-  --sidebar-border:             rgba(59,36,18,0.15);
-  --sidebar-ring:               #F5A623;
+  --sidebar:                    #DCCFB8;
+  --sidebar-foreground:         #1C1208;
+  --sidebar-primary:            #C4791A;
+  --sidebar-primary-foreground: #F8F4ED;
+  --sidebar-accent:             #E8D9C0;
+  --sidebar-accent-foreground:  #3D2510;
+  --sidebar-border:             rgba(61,37,16,0.12);
+  --sidebar-ring:               #C4791A;
 
   /* Typography */
   --font-display: "Cormorant Garamond", "Playfair Display", Georgia, serif;
 }
 
-/* ─────────────────────────────────────────────
-   DARK MODE  — forest-first deep palette
-───────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════
+   DARK MODE — "Forest at Night"
+   
+   Feel: sitting by a fire at high camp.
+   Deep forest green backdrop. 
+   Parchment dust for text. Saffron for flame.
+═══════════════════════════════════════════════ */
 .dark {
-  /* Page chrome */
-  --background:        #0B2019;   /* forest — rich dark canvas */
-  --foreground:        #EDE3D2;   /* parchment-light — primary text */
+  /* Canvas */
+  --background:          #152B1E;   /* forest — rich, not black */
+  --foreground:          #E8DFD0;   /* dust-light — warm white */
 
-  /* Cards sit one step lighter than forest */
-  --card:              #1A140F;   /* monk-dark */
-  --card-foreground:   #EDE3D2;
+  /* Cards: dark earth layered over forest */
+  --card:                #1E3D2A;   /* forest-mid */
+  --card-foreground:     #E8DFD0;
 
-  --popover:           #1A140F;
-  --popover-foreground: #EDE3D2;
+  --popover:             #0D1F15;   /* forest-deep — popovers recede */
+  --popover-foreground:  #E8DFD0;
 
-  /* Primary = saffron stays the same — already pops on dark */
-  --primary:           #F5A623;
-  --primary-foreground: #0B2019;
+  /* Primary = saffron — unchanged, pops on dark */
+  --primary:             #C4791A;
+  --primary-foreground:  #F8F4ED;
 
-  /* Secondary = deep brown */
-  --secondary:         #3B2412;
-  --secondary-foreground: #DAD0BE;
+  /* Secondary = earth-warm */
+  --secondary:           #3D2510;
+  --secondary-foreground: #D4C8B0;
 
-  /* Muted */
-  --muted:             #4A2E16;   /* monk-brown-warm */
-  --muted-foreground:  #8C7851;
+  /* Muted = earth-mid */
+  --muted:               #2A4A34;
+  --muted-foreground:    #A89880;   /* dust-dim */
 
-  /* Accent */
-  --accent:            #C4791A;   /* saffron-dark for dark-mode hovers */
-  --accent-foreground: #EDE3D2;
+  /* Accent = saffron-warm for dark hovers */
+  --accent:              #1E3D2A;
+  --accent-foreground:   #D4893A;
 
   /* Danger */
-  --destructive:       oklch(0.704 0.191 22.216);
+  --destructive:         #E05C4A;
 
-  /* Borders & inputs — parchment at low opacity */
-  --border:            rgba(219,200,172,0.12);
-  --input:             rgba(219,200,172,0.08);
-  --ring:              #F5A623;
+  /* Borders — parchment at very low opacity */
+  --border:              rgba(232,223,208,0.10);
+  --input:               rgba(232,223,208,0.07);
+  --ring:                #C4791A;
 
   /* Charts */
-  --chart-1: #F5A623;
-  --chart-2: #FBBF4A;
-  --chart-3: #DBC8AC;
-  --chart-4: #8C7851;
-  --chart-5: #DAD0BE;
+  --chart-1: #C4791A;
+  --chart-2: #D4893A;
+  --chart-3: #D4C8B0;
+  --chart-4: #7A6E64;
+  --chart-5: #E8DFD0;
 
   /* Sidebar */
-  --sidebar:                    #1A140F;
-  --sidebar-foreground:         #EDE3D2;
-  --sidebar-primary:            #F5A623;
-  --sidebar-primary-foreground: #0B2019;
-  --sidebar-accent:             #3B2412;
-  --sidebar-accent-foreground:  #DAD0BE;
-  --sidebar-border:             rgba(219,200,172,0.1);
-  --sidebar-ring:               #F5A623;
+  --sidebar:                    #0D1F15;
+  --sidebar-foreground:         #E8DFD0;
+  --sidebar-primary:            #C4791A;
+  --sidebar-primary-foreground: #F8F4ED;
+  --sidebar-accent:             #1E3D2A;
+  --sidebar-accent-foreground:  #D4C8B0;
+  --sidebar-border:             rgba(232,223,208,0.08);
+  --sidebar-ring:               #C4791A;
 }
 
-/* ─────────────────────────────────────────────
-   TEXTURE & CARD UTILITIES  (inside @layer so
-   Tailwind v4 registers them correctly)
-───────────────────────────────────────────── */
-@layer components {
-
-  .bg-parchment-texture {
-    background-color: var(--color-parchment);
-    /* background-image: url("/images/parchment-bg.jpg"); */
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-  }
-
-  /* Swap to scroll on iOS — fixed causes jank */
-  @media (max-width: 768px) {
-    .bg-parchment-texture {
-      background-attachment: scroll;
-    }
-  }
-
-  /* Transparent card that lets parchment breathe through */
-  .card-parchment {
-    background: rgba(247,243,237,0.55);
-    border: 0.5px solid rgba(59,36,18,0.2);
-    border-top: 2px solid #F5A623;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-  }
-
-  .dark .card-parchment {
-    background: rgba(26,20,15,0.75);
-    border-color: rgba(219,200,172,0.12);
-  }
-
-  /* Forest section overlay — used for dark strips over texture */
-  .section-forest {
-    background: rgba(11,32,25,0.88);
-    border-top: 1px solid rgba(245,166,35,0.2);
-    border-bottom: 1px solid rgba(245,166,35,0.2);
-  }
-
-}
-
-/* ─────────────────────────────────────────────
+/* ═══════════════════════════════════════════════
    BASE LAYER
-───────────────────────────────────────────── */
+═══════════════════════════════════════════════ */
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -279,70 +277,183 @@
     scroll-behavior: smooth;
   }
 
-  /* All headings use the display serif */
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
     font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
   }
 
-  /* Smooth selection colour — saffron tint */
+  /* Saffron selection tint */
   ::selection {
-    background: rgba(245,166,35,0.25);
-    color: #1A140F;
+    background: rgba(196,121,26,0.22);
+    color: #1C1208;
   }
 
-  /* Custom scrollbar — thin, warm */
+  .dark ::selection {
+    background: rgba(196,121,26,0.35);
+    color: #F8F4ED;
+  }
+
+  /* Thin warm scrollbar */
   ::-webkit-scrollbar       { width: 4px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb {
-    background: rgba(140,120,81,0.4);
+    background: rgba(122,110,100,0.35);
     border-radius: 4px;
   }
-  ::-webkit-scrollbar-thumb:hover { background: #F5A623; }
+  ::-webkit-scrollbar-thumb:hover { background: #C4791A; }
 }
 
-/* ─────────────────────────────────────────────
-   COMPONENT UTILITIES
-   Use these as @apply shortcuts in components
-───────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════
+   COMPONENT LAYER
+═══════════════════════════════════════════════ */
 @layer components {
+
+  /* ── Parchment texture background ── */
+  .bg-parchment-texture {
+    background-color: #E8D9C0;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+  /* ── Cards ── */
+
+  /* Light: frosted parchment with saffron top border */
+  .card-parchment {
+    background: rgba(242,234,216,0.60);
+    border: 0.5px solid rgba(61,37,16,0.14);
+    border-top: 2px solid #C4791A;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  /* Dark: frosted forest */
+  .dark .card-parchment {
+    background: rgba(30,61,42,0.65);
+    border: 0.5px solid rgba(232,223,208,0.09);
+    border-top: 2px solid #C4791A;
+  }
+
+  /* Flat card — no blur, for performance-sensitive areas */
+  .card-flat {
+    background: #F2EAD8;
+    border: 0.5px solid rgba(61,37,16,0.12);
+  }
+
+  .dark .card-flat {
+    background: #1E3D2A;
+    border: 0.5px solid rgba(232,223,208,0.08);
+  }
+
+  /* ── Dark overlay strip — for hero sections ── */
+  .section-forest {
+    background: rgba(13,31,21,0.86);
+    border-top:    1px solid rgba(196,121,26,0.18);
+    border-bottom: 1px solid rgba(196,121,26,0.18);
+  }
+
+  /* ── Saffron divider line ── */
+  .saffron-rule {
+    display: block;
+    width: 3rem;
+    height: 1px;
+    background: #C4791A;
+    opacity: 0.6;
+  }
+
+  /* ── Eyebrow label ── */
+  .eyebrow {
+    @apply text-[10px] font-medium tracking-[0.14em] uppercase;
+    color: #C4791A;
+  }
+
+  /* ── Section heading ── */
+  .section-heading {
+    @apply font-display text-4xl font-semibold leading-tight;
+    color: #1C1208;
+  }
+
+  .dark .section-heading {
+    color: #E8DFD0;
+  }
 
   /* ── Buttons ── */
   .btn-monk-primary {
     @apply inline-flex items-center gap-2 px-6 py-3 rounded-full
-           bg-saffron text-monk-dark font-sans font-medium text-sm
-           tracking-wide transition-all duration-200
-           hover:bg-saffron-light hover:scale-[1.02]
-           active:scale-[0.98]
-           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-saffron;
+           font-sans font-medium text-sm tracking-wide
+           transition-all duration-200
+           hover:scale-[1.02] active:scale-[0.98]
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C4791A];
+    background: #C4791A;
+    color: #F8F4ED;
+  }
+
+  .btn-monk-primary:hover {
+    background: #D4893A;
   }
 
   .btn-monk-outline {
     @apply inline-flex items-center gap-2 px-6 py-3 rounded-full
-           border border-monk-brown-deep/40 text-monk-brown-warm
            font-sans font-medium text-sm tracking-wide
            transition-all duration-200
-           hover:border-saffron hover:text-saffron
-           active:scale-[0.98];
+           active:scale-[0.98]
+           focus-visible:outline-none focus-visible:ring-2;
+    border: 1px solid rgba(61,37,16,0.30);
+    color: #5C3A1E;
   }
 
-  /* ── Section headings ── */
-  .eyebrow {
-    @apply text-[11px] font-medium tracking-[0.14em] uppercase text-monk-muted;
+  .btn-monk-outline:hover {
+    border-color: #C4791A;
+    color: #C4791A;
   }
 
-  .section-heading {
-    @apply font-display text-4xl font-semibold text-monk-dark leading-tight;
+  .dark .btn-monk-outline {
+    border-color: rgba(232,223,208,0.25);
+    color: #D4C8B0;
   }
 
-  /* ── Saffron accent rule ── */
-  .saffron-rule {
-    @apply block w-16 h-px bg-saffron mx-auto my-4 opacity-70;
+  .dark .btn-monk-outline:hover {
+    border-color: #C4791A;
+    color: #D4893A;
   }
 
-  /* ── Trek / content cards ── */
+  /* ── Trek / Escape cards ── */
   .trek-card {
     @apply rounded-xl overflow-hidden
            transition-transform duration-300 hover:scale-[1.015];
+  }
+
+  /* ── Navbar ── */
+  .navbar-bg {
+    background: rgba(232,217,192,0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid rgba(61,37,16,0.14);
+  }
+
+  .dark .navbar-bg {
+    background: rgba(21,43,30,0.90);
+    border-bottom: 0.5px solid rgba(196,121,26,0.15);
+  }
+
+  /* ── Saffron glow for featured elements ── */
+  .saffron-glow {
+    box-shadow: 0 0 0 3px rgba(196,121,26,0.15),
+                0 4px 24px rgba(196,121,26,0.12);
+  }
+
+  /* ── Text gradient — display headings ── */
+  .text-gradient-monk {
+    background: linear-gradient(135deg, #C4791A 0%, #E09840 50%, #8B5E3C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* iOS fix — fixed attachment causes jank on mobile */
+@media (max-width: 768px) {
+  .bg-parchment-texture {
+    background-attachment: scroll;
   }
 }

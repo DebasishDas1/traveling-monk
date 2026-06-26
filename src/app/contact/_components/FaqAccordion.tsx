@@ -14,7 +14,7 @@ export function FaqAccordion() {
       <div className="container mx-auto max-w-4xl">
         {/* Header */}
         <div className="text-center mb-20 space-y-5">
-          <h2 className=" text-4xl md:text-5xl text-[#2B1F14]">
+          <h2 className=" text-4xl md:text-5xl text-[var(--color-primary)]">
             Common Questions
           </h2>
           <p className="text-[#6B5A4A] max-w-xl mx-auto text-sm leading-relaxed">
@@ -34,7 +34,7 @@ export function FaqAccordion() {
                   "group rounded-[24px] border transition-all duration-500 overflow-hidden",
                   isOpen
                     ? "bg-[#F3EDE3] border-[#D6C4A8]"
-                    : "bg-[#F8F3EA] border-[#E6D8C3] hover:border-[#C9A24A]/40",
+                    : "bg-[#F8F3EA] border-[#E6D8C3] hover:border-[var(--color-saffron-light)]/40",
                 )}
               >
                 {/* Question */}
@@ -46,8 +46,8 @@ export function FaqAccordion() {
                     className={cn(
                       " text-[17px] leading-relaxed transition-colors duration-300",
                       isOpen
-                        ? "text-[#C9A24A]"
-                        : "text-[#2B1F14] group-hover:text-[#C9A24A]",
+                        ? "text-[var(--color-saffron-light)]"
+                        : "text-[var(--color-primary)] group-hover:text-[var(--color-saffron-light)]",
                     )}
                   >
                     {faq.q}
@@ -56,7 +56,7 @@ export function FaqAccordion() {
                   <ChevronDown
                     className={cn(
                       "size-5 shrink-0 transition-all duration-300",
-                      isOpen ? "rotate-180 text-[#C9A24A]" : "text-[#8A7A68]",
+                      isOpen ? "rotate-180 text-[var(--color-saffron-light)]" : "text-[#8A7A68]",
                     )}
                   />
                 </button>

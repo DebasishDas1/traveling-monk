@@ -46,11 +46,11 @@ export const TrekGrid = () => {
                   key={filter}
                   onClick={() => setActiveFilter(filter)}
                   className={cn(
-                    "group relative px-5 py-2 rounded-full text-[11px] uppercase tracking-[0.25em] transition-all duration-300 border overflow-hidden",
+                    "group relative px-5 py-2 rounded-full text-[11px] uppercase tracking-[0.25em] transition-all duration-300 border overflow-hidden ",
 
                     isActive
-                      ? "bg-monk-brown-warm text-parchment border-monk-black shadow-md"
-                      : "bg-transparent text-black border-black hover:text-parchment",
+                      ? "bg-monk-brown-warm text-parchment shadow-lg bg-earth-mid"
+                      : "text-earth-deep shadow-lg shadow-earth-deep",
                   )}
                 >
                   {/* text */}
@@ -59,7 +59,7 @@ export const TrekGrid = () => {
                   {/* ink fill hover */}
                   {!isActive && (
                     <span
-                      className="absolute inset-0 bg-[#2B1F14] 
+                      className="absolute inset-0 bg-(--color-primary) 
                 translate-y-full group-hover:translate-y-0 
                 transition-transform duration-300"
                     />

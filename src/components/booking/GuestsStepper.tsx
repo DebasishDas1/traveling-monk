@@ -14,17 +14,17 @@ export function GuestsStepper({ value, onChange, error }: GuestsStepperProps) {
   const inc = () => onChange(Math.min(10, value + 1));
 
   const btnClass =
-    "w-11 h-full flex items-center justify-center text-[#8a7660] hover:bg-[#f5ede0] transition-colors text-lg font-light select-none";
+    "w-11 h-full flex items-center justify-center text-[var(--color-monk-muted)] hover:bg-[var(--color-background)] transition-colors text-lg font-light select-none";
 
   return (
     <div className="flex flex-col gap-1">
-      <label className="text-[10px] uppercase tracking-[0.18em] font-semibold text-[#8a7660]">
+      <label className="text-[10px] uppercase tracking-[0.18em] font-semibold text-[var(--color-monk-muted)]">
         Travellers
       </label>
 
       <div
         className="flex items-center h-11 rounded-xl overflow-hidden"
-        style={{ border: "1px solid #ddd5c6", background: "#faf7f2" }}
+        style={{ border: "1px solid var(--color-monk-beige)", background: "var(--color-card)" }}
       >
         <button
           type="button"
@@ -36,10 +36,10 @@ export function GuestsStepper({ value, onChange, error }: GuestsStepperProps) {
         </button>
 
         <div className="flex-1 flex items-center justify-center gap-1.5">
-          <IconUsers className="w-3.5 h-3.5 text-[#b8a48e]" />
-          <span className="text-[13px] font-medium text-[#1a1208]">
+          <IconUsers className="w-3.5 h-3.5 text-[var(--color-monk-beige)]" />
+          <span className="text-[13px] font-medium text-[var(--color-foreground)]">
             {value}{" "}
-            <span className="text-[#8a7660] font-normal">
+            <span className="text-[var(--color-monk-muted)] font-normal">
               {value === 1 ? "person" : "people"}
             </span>
           </span>

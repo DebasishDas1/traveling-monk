@@ -2,16 +2,16 @@
 
 export default function Loading() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#1f1510]">
+    <div className="flex items-center justify-center min-h-screen bg-[var(--color-monk-dark)]">
       <div className="relative w-[70px] aspect-square">
         {/* outer ring */}
-        <span className="absolute inset-0 rounded-full animate-loaderAncient border border-[#C9A24A]/30" />
+        <span className="absolute inset-0 rounded-full animate-loaderAncient border border-[var(--color-saffron-light)]/30" />
 
         {/* inner ring */}
-        <span className="absolute inset-0 rounded-full animate-loaderAncient delay border border-[#C9A24A]/60" />
+        <span className="absolute inset-0 rounded-full animate-loaderAncient delay border border-[var(--color-saffron-light)]/60" />
 
         {/* center glow */}
-        <div className="absolute inset-[22px] rounded-full bg-[#C9A24A]/20 blur-[2px]" />
+        <div className="absolute inset-[22px] rounded-full bg-[var(--color-saffron-light)]/20 blur-[2px]" />
 
         <style>{`
           @keyframes loaderAncient {

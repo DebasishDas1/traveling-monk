@@ -33,7 +33,7 @@ export const HowItWorks = () => {
 
         <div className="relative grid grid-cols-1 md:grid-cols-4 gap-16 md:gap-8">
           {/* Connecting Line (Desktop) */}
-          <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-linear-to-r from-transparent via-[#CBB79C] to-transparent opacity-40 z-0" />
+          <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-linear-to-r from-transparent via-(--color-parchment-dark) to-transparent opacity-40 z-0" />
 
           {steps.map((step, index) => (
             <motion.div
@@ -47,17 +47,21 @@ export const HowItWorks = () => {
               {/* Number Seal */}
               <div
                 className="size-24 rounded-full mb-10 flex items-center justify-center
-                bg-[#F3E7D6] border border-[#E0D0BA]
+                bg-parchment-light
                 shadow-[0_10px_30px_rgba(60,45,30,0.08)]
                 relative group"
               >
                 {/* inner glow */}
-                <div className="absolute inset-2 rounded-full border border-[#E0D0BA]/40" />
+                <div className="absolute inset-2 rounded-full" />
 
-                <span className=" text-4xl text-[#2B1F14]">{index + 1}</span>
+                <span className=" text-4xl text-(--color-primary)">
+                  {index + 1}
+                </span>
               </div>
 
-              <h3 className="text-2xl text-[#2B1F14] mb-5">{step.title}</h3>
+              <h3 className="text-2xl text-(--color-primary) mb-5">
+                {step.title}
+              </h3>
               <p className=" text-[#6B5A4A] text-sm leading-relaxed max-w-[220px]">
                 {step.description}
               </p>

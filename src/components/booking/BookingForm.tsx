@@ -100,10 +100,10 @@ export function BookingForm({
           >
             <div
               className="flex items-center gap-2 px-3 py-2 rounded-lg text-[11px]"
-              style={{ background: "#f5ede0", border: "1px solid #e8d9c4" }}
+              style={{ background: "var(--color-background)", border: "1px solid var(--color-parchment)" }}
             >
-              <span style={{ color: "#c4831a" }}>📍</span>
-              <span className="font-medium" style={{ color: "#6b5a45" }}>
+              <span style={{ color: "var(--color-saffron-dark)" }}>📍</span>
+              <span className="font-medium" style={{ color: "var(--color-monk-stone)" }}>
                 {"region" in currentTrek
                   ? currentTrek.region
                   : currentTrek.location}
@@ -112,8 +112,8 @@ export function BookingForm({
                 currentTrek.availableDates &&
                 currentTrek.availableDates.length > 0 && (
                   <>
-                    <span style={{ color: "#c4b49e" }}>·</span>
-                    <span style={{ color: "#8a7660" }}>
+                    <span style={{ color: "var(--color-parchment-dark)" }}>·</span>
+                    <span style={{ color: "var(--color-monk-muted)" }}>
                       {"availableDates" in currentTrek &&
                       currentTrek.availableDates
                         ? currentTrek.availableDates.length
@@ -218,7 +218,7 @@ export function BookingForm({
           "disabled:opacity-50 disabled:cursor-not-allowed disabled:translate-y-0 shadow-lg",
         )}
         style={{
-          background: "#1e3a2f",
+          background: "var(--color-forest)",
           boxShadow: "0 8px 24px rgba(30,58,47,0.25)",
         }}
       >
@@ -234,7 +234,7 @@ export function BookingForm({
 
       <p
         className="text-center text-[10px] uppercase tracking-[0.2em] font-semibold"
-        style={{ color: "#b8a48e" }}
+        style={{ color: "var(--color-monk-beige)" }}
       >
         Zero payment now · Our monk calls you back
       </p>

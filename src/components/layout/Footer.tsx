@@ -63,7 +63,7 @@ const FooterLinkGroup = ({
 }: FooterLinkGroupProps) => {
   return (
     <div className="space-y-8">
-      <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#C9A24A]/60">
+      <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-saffron-light">
         {title}
       </h4>
 
@@ -74,11 +74,11 @@ const FooterLinkGroup = ({
               href={href}
               target={external ? "_blank" : undefined}
               rel={external ? "noopener noreferrer" : undefined}
-              className="group inline-flex text-sm text-[#FAF6EF]/60 hover:text-[#FAF6EF] transition-all"
+              className="group inline-flex text-sm text-(--color-monk-bone)/60 hover:text-(--color-monk-bone) transition-all"
             >
               <span className="relative">
                 {name}
-                <span className="absolute left-0 -bottom-1 w-0 h-px bg-[#C9A24A]/40 transition-all duration-300 group-hover:w-full" />
+                <span className="absolute left-0 -bottom-1 w-0 h-px bg-saffron-light/40 transition-all duration-300 group-hover:w-full" />
               </span>
             </Link>
           </li>
@@ -104,7 +104,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="relative overflow-hidden bg-[#1f1510] text-[#FAF6EF]">
+    <footer className="relative overflow-hidden text-white bg-earth">
       {/* subtle atmosphere lighting */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(201,162,74,0.08),transparent_50%)]" />
 
@@ -115,11 +115,11 @@ export const Footer = () => {
             <div className="space-y-6">
               <Link
                 href="/"
-                className="inline-block  text-3xl  tracking-tight text-[#FAF6EF] hover:text-[#C9A24A] transition-colors"
+                className="inline-block  text-3xl  tracking-tight text-(--color-saffron-light) transition-colors"
               >
                 The Traveling Monk
               </Link>
-              <p className="max-w-xs  text-xl  leading-relaxed text-[#FAF6EF]/40">
+              <p className="max-w-xs  text-xl  leading-relaxed text-(--color-monk-bone)/40">
                 “Walk until you find yourself.”
               </p>
 
@@ -132,9 +132,9 @@ export const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="group size-12 rounded-full flex items-center justify-center bg-white/5 border border-white/10 hover:bg-[#C9A24A]/10 hover:border-[#C9A24A]/40 transition-all duration-500"
+                    className="group size-12 rounded-full flex items-center justify-center bg-white/5 border border-white/10 hover:bg-saffron-light/10 hover:border-saffron-light/40 transition-all duration-500"
                   >
-                    <Icon className="size-5 text-white/40 group-hover:text-[#C9A24A] transition-colors" />
+                    <Icon className="size-5 text-white/40 group-hover:text-(--color-saffron-light) transition-colors" />
                   </a>
                 ))}
               </div>
@@ -150,12 +150,12 @@ export const Footer = () => {
           {/* Newsletter - 4 columns */}
           <div className="lg:col-span-4 space-y-12">
             <div className="space-y-6">
-              <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#C9A24A]/60">
+              <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-saffron-light/60">
                 Newsletter
               </h4>
 
               <div className="space-y-4">
-                <p className="text-lg   text-[#FAF6EF]/60">
+                <p className="text-lg   text-(--color-monk-bone)/60">
                   Receive our mountain journals and seasonal trek invitations.
                 </p>
 
@@ -199,10 +199,10 @@ export const Footer = () => {
             </div>
 
             <div className="space-y-4">
-              <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#C9A24A]/60">
+              <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-saffron-light/60">
                 Base Camp
               </h4>
-              <p className="text-sm   text-[#FAF6EF]/40">
+              <p className="text-sm   text-(--color-monk-bone)/40">
                 Based in India · Guiding expeditions through sacred Himalayan
                 landscapes.
               </p>
@@ -211,18 +211,18 @@ export const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="flex flex-col items-center justify-between gap-8 border-t border-white/5 pt-12 text-[10px] font-bold uppercase tracking-[0.3em] text-[#FAF6EF]/20 md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-8 border-t border-white/5 pt-12 text-[10px] font-bold uppercase tracking-[0.3em] text-(--color-monk-bone)/20 md:flex-row">
           <div className="flex gap-8">
             <span>© {year ?? "—"} The Traveling Monk</span>
             <Link
               href="/privacy"
-              className="hover:text-[#FAF6EF]/40 transition-colors"
+              className="hover:text-(--color-monk-bone)/40 transition-colors"
             >
               Privacy
             </Link>
             <Link
               href="/terms"
-              className="hover:text-[#FAF6EF]/40 transition-colors"
+              className="hover:text-(--color-monk-bone)/40 transition-colors"
             >
               Terms
             </Link>

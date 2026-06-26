@@ -139,3 +139,37 @@ export type BookingActionState = {
   errors?: Record<string, string[] | undefined>;
 } | null;
 
+
+
+export type ExpeditionType = {
+  id: number;
+
+  name: string;
+  slug: string;
+
+  country: string;
+  location: string;
+
+  duration: string;
+
+  visaRequired?: boolean;
+  bestSeason?: string;
+
+  price: {
+    twin: number;
+    single?: number;
+  };
+
+  gallery: string[];
+
+  description: string;
+
+  highlights: string[];
+
+  itinerary: ItineraryDayType[];
+
+  inclusions: string[];
+  exclusions: string[];
+
+  testimonials: TestimonialType[];
+};

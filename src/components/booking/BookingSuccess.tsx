@@ -33,7 +33,7 @@ export function BookingSuccess({ message, onClose }: BookingSuccessProps) {
       {/* Copy */}
       <div className="space-y-2 max-w-xs">
         <h4
-          className="text-[#1a1208]"
+          className="text-[var(--color-foreground)]"
           style={{
             fontFamily: "'Playfair Display', serif",
             fontSize: "1.25rem",
@@ -42,11 +42,11 @@ export function BookingSuccess({ message, onClose }: BookingSuccessProps) {
         >
           Namaste, traveler 🙏
         </h4>
-        <p className="text-[13px] leading-relaxed" style={{ color: "#8a7660" }}>
+        <p className="text-[13px] leading-relaxed" style={{ color: "var(--color-monk-muted)" }}>
           {message ??
             "Your booking request is in. Our team will reach out shortly to confirm your adventure."}
         </p>
-        <p className="text-[13px] leading-relaxed" style={{ color: "#8a7660" }}>
+        <p className="text-[13px] leading-relaxed" style={{ color: "var(--color-monk-muted)" }}>
           Our team will reach out to you shortly.
         </p>
       </div>
@@ -54,7 +54,7 @@ export function BookingSuccess({ message, onClose }: BookingSuccessProps) {
       <button
         onClick={onClose}
         className="mt-2 px-8 h-11 rounded-xl text-[13px] font-semibold text-white transition-opacity hover:opacity-90"
-        style={{ background: "#1e3a2f" }}
+        style={{ background: "var(--color-forest)" }}
       >
         Back to the trail
       </button>

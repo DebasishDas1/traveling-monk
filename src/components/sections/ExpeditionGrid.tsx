@@ -1,21 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { escapesData } from "@/lib/data/escapes";
-import { EscapeCard } from "./EscapeCard";
+import { expeditionsData } from "@/lib/data/expeditions";
+import { ExpeditionCard } from "./ExpeditionCard";
 
-export const EscapeGrid = () => {
-  if (!escapesData.length) {
+export const ExpeditionGrid = () => {
+  if (!expeditionsData.length) {
     return (
-      <div className="flex items-center justify-center py-32 text-saffron-light/40  ">
-        No journeys found…
+      <div className="flex items-center justify-center py-32 text-saffron-light/40">
+        No expeditions available…
       </div>
     );
   }
 
   return (
-    <section className="relative px-6 md:px-10 py-20">
-      {/* subtle top glow */}
+    <section className="relative px-6 py-20 md:px-10">
+      {/* Subtle top glow */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(201,162,74,0.08),transparent_60%)]" />
 
       <div className="mx-auto max-w-7xl">
@@ -30,18 +30,21 @@ export const EscapeGrid = () => {
               },
             },
           }}
-          className="grid gap-8 grid-cols-1 md:grid-cols-1"
+          className="grid grid-cols-1 gap-8"
         >
-          {escapesData.map((escape) => (
+          {expeditionsData.map((expedition) => (
             <motion.div
-              key={escape.id}
+              key={expedition.id}
               variants={{
-                hidden: { opacity: 0, y: 40 },
+                hidden: { opacity: 0, y: 32 },
                 show: { opacity: 1, y: 0 },
               }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              transition={{
+                duration: 0.5,
+                ease: "easeOut",
+              }}
             >
-              <EscapeCard {...escape} />
+              <ExpeditionCard {...expedition} />
             </motion.div>
           ))}
         </motion.div>

@@ -74,8 +74,8 @@ export default function AboutPage() {
             className="object-cover scale-105"
           />
 
-          <div className="absolute inset-0 bg-linear-to-t from-[#1f1510]/80 via-[#1f1510]/30 to-transparent" />
-          <div className="absolute inset-0 bg-[#7a5a3a]/20 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-linear-to-t from-monk-dark/80 via-monk-dark/30 to-transparent" />
+          <div className="absolute inset-0 bg-monk-muted/20 mix-blend-multiply" />
         </div>
 
         <h1 className="relative z-10  text-6xl md:text-8xl text-white text-center px-6 leading-tight">
@@ -87,7 +87,7 @@ export default function AboutPage() {
       <section className="py-32 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center max-w-2xl mx-auto mb-28">
-            <h2 className="text-5xl md:text-6xl  text-[#2B1F14]">
+            <h2 className="text-5xl md:text-6xl  text-(--color-primary)">
               We started as trekkers
             </h2>
             <p className="text-[#6B5A4A] mt-6 leading-relaxed">
@@ -125,10 +125,10 @@ export default function AboutPage() {
                   {/* CONTENT */}
                   <div className="space-y-8">
                     <div>
-                      <h3 className="text-3xl md:text-4xl text-[#2B1F14]">
+                      <h3 className="text-3xl md:text-4xl text-(--color-primary)">
                         {f.name}
                       </h3>
-                      <p className="text-[11px] uppercase tracking-[0.35em] text-[#8C6B4A] mt-3 font-semibold">
+                      <p className="text-[11px] uppercase tracking-[0.35em] text-(--color-accent) mt-3 font-semibold">
                         {f.role}
                       </p>
                     </div>
@@ -142,8 +142,8 @@ export default function AboutPage() {
                     </p>
 
                     <div className="flex items-center gap-2">
-                      <span className="w-8 h-px bg-[#CBB79C]" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#8C6B4A]" />
+                      <span className="w-8 h-px bg-(--color-parchment-dark)" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-(--color-accent)" />
                     </div>
 
                     <div className="flex flex-wrap gap-3">
@@ -165,7 +165,7 @@ export default function AboutPage() {
       </section>
 
       {/* PHILOSOPHY */}
-      <section className="bg-[#1f1510] py-32 px-6 relative overflow-hidden">
+      <section className="bg-(--color-monk-dark) py-32 px-6 relative overflow-hidden">
         <div className="container mx-auto max-w-6xl grid md:grid-cols-3 gap-10">
           {[
             {
@@ -189,7 +189,7 @@ export default function AboutPage() {
               className="relative p-12 rounded-[32px]
               bg-linear-to-br from-white/5 to-white/2
               border border-white/10
-              hover:border-[#C9A24A]/30 transition-all duration-700"
+              hover:border-saffron-light/30 transition-all duration-700"
             >
               <div
                 className="absolute inset-0 opacity-0 hover:opacity-100 
@@ -197,8 +197,8 @@ export default function AboutPage() {
                 transition duration-700 blur-xl"
               />
 
-              <div className="text-6xl text-[#C9A24A]/20 mb-6">{p.num}</div>
-              <h3 className="text-xl text-[#C9A24A] mb-4 font-serif">
+              <div className="text-6xl text-saffron-light/20 mb-6">{p.num}</div>
+              <h3 className="text-xl text-(--color-saffron-light) mb-4 font-serif">
                 {p.title}
               </h3>
               <p className="text-white/60 text-sm">{p.desc}</p>
@@ -216,7 +216,7 @@ export default function AboutPage() {
         <div className="container mx-auto max-w-6xl">
           <div
             className="relative rounded-[40px] overflow-hidden 
-            bg-linear-to-br from-[#1f1510] via-[#2B1F14] to-[#1a120d]
+            bg-linear-to-br from-(--color-monk-dark) via-(--color-primary) to-[#1a120d]
             p-16 md:p-24 text-center 
             shadow-[0_40px_120px_rgba(0,0,0,0.5)]"
           >

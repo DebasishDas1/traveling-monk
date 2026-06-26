@@ -41,7 +41,7 @@ export function LeadForm() {
   };
 
   const inputBase =
-    "w-full rounded-xl px-4 py-3 text-sm bg-[#F6F1E8] border border-[#E2D3BD] text-[#2B1F14] placeholder:text-[#8A7A68] focus:outline-none focus:border-[#C9A24A] transition";
+    "w-full rounded-xl px-4 py-3 text-sm bg-[#F6F1E8] border border-[#E2D3BD] text-[var(--color-primary)] placeholder:text-[#8A7A68] focus:outline-none focus:border-[var(--color-saffron-light)] transition";
 
   const labelBase = "text-[10px] uppercase tracking-[0.35em] text-[#8A7A68]";
 
@@ -69,7 +69,7 @@ export function LeadForm() {
               >
                 {/* Header */}
                 <div className="text-center space-y-4">
-                  <h2 className="  text-4xl text-[#2B1F14]">Plan your trek</h2>
+                  <h2 className="  text-4xl text-[var(--color-primary)]">Plan your trek</h2>
                   <p className="text-[#6B5A4A] text-sm">
                     Tell us a little about your journey.
                   </p>
@@ -158,11 +158,11 @@ export function LeadForm() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center py-16 space-y-6"
               >
-                <div className="size-20 rounded-full border border-[#C9A24A] flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="size-10 text-[#C9A24A]" />
+                <div className="size-20 rounded-full border border-[var(--color-saffron-light)] flex items-center justify-center mx-auto">
+                  <CheckCircle2 className="size-10 text-[var(--color-saffron-light)]" />
                 </div>
 
-                <h2 className="  text-3xl text-[#2B1F14]">
+                <h2 className="  text-3xl text-[var(--color-primary)]">
                   Thank you{userName ? `, ${userName}` : ""}.
                 </h2>
 

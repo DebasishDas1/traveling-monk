@@ -7,19 +7,44 @@ const SectionHeader = ({
 }) => {
   return (
     <div className="mb-24 text-center">
-      <span className="text-[#8C6B4A] text-[10px] font-bold uppercase tracking-[0.6em] block mb-6">
+      {/* Eyebrow */}
+      <span
+        className="block mb-5 text-[10px] font-semibold uppercase tracking-[0.18em]"
+        style={{ color: "var(--color-saffron)" }}
+      >
         {subtitle}
       </span>
 
-      <h2 className="text-4xl md:text-6xl text-[#2B1F14]  tracking-tight leading-[1.1]">
+      {/* Title */}
+      <h2
+        className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] tracking-tight"
+        style={{ color: "var(--color-foreground)" }}
+      >
         {title}
       </h2>
 
-      {/* subtle underline with organic dots */}
-      <div className="flex items-center justify-center gap-3 mt-8">
-        <span className="w-12 h-px bg-[#CBB79C]" />
-        <span className="w-1.5 h-1.5 rounded-full bg-[#8C6B4A]" />
-        <span className="w-12 h-px bg-[#CBB79C]" />
+      {/* Divider */}
+      <div className="flex items-center justify-center gap-3 mt-7">
+        <span
+          className="block w-10 h-px"
+          style={{ background: "var(--color-parchment-dark)" }}
+        />
+        <span
+          className="block w-1.5 h-1.5 rounded-full"
+          style={{ background: "var(--color-saffron)" }}
+        />
+        <span
+          className="block w-1.5 h-1.5 rounded-full opacity-40"
+          style={{ background: "var(--color-saffron)" }}
+        />
+        <span
+          className="block w-1.5 h-1.5 rounded-full opacity-20"
+          style={{ background: "var(--color-saffron)" }}
+        />
+        <span
+          className="block w-10 h-px"
+          style={{ background: "var(--color-parchment-dark)" }}
+        />
       </div>
     </div>
   );

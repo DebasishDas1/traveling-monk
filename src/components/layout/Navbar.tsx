@@ -27,13 +27,14 @@ import { useBookingStore } from "@/stores/bookingStore";
 export const navLinks = [
   { name: "Treks", href: "/treks" },
   { name: "Escapes", href: "/escapes" },
+  { name: "Expeditions", href: "/expeditions" },
   { name: "About", href: "/about" },
   { name: "Community", href: "/community" },
   { name: "Contact", href: "/contact" },
 ];
 
 export const Navbar = () => {
-  const PRIMARY_COLOR = "#2B1F14";
+  const PRIMARY_COLOR = "var(--color-primary)";
   const {
     navScrolled,
     setNavScrolled,
@@ -209,7 +210,7 @@ export const Navbar = () => {
                           onClick={closeMobileMenu}
                           className={cn(
                             "text-4xl",
-                            "hover:text-[#8C6B4A] transition-colors",
+                            "hover:text-(--color-accent) transition-colors",
                           )}
                           style={{ color: PRIMARY_COLOR }}
                         >
